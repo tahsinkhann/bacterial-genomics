@@ -1,16 +1,30 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "materials",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "hello peps\n\n\nhello peps two"
+  },
+  {
+    "objectID": "materials.html#this-second-title",
+    "href": "materials.html#this-second-title",
+    "title": "materials",
+    "section": "",
+    "text": "hello peps two"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "bacterial-genomics",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "This is the first part of pathogen genomics\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   }
 ]
