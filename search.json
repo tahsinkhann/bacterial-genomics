@@ -4,21 +4,22 @@
     "href": "materials.html",
     "title": "materials",
     "section": "",
-    "text": "hello peps\n\n\nhello peps two"
+    "text": "hello peps\n\n\nhello peps two",
+    "crumbs": [
+      "Home",
+      "materials"
+    ]
   },
   {
     "objectID": "materials.html#this-second-title",
     "href": "materials.html#this-second-title",
     "title": "materials",
     "section": "",
-    "text": "hello peps two"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "bacterial-genomics",
-    "section": "",
-    "text": "This is the first part of pathogen genomics\n\n1 + 1\n\n[1] 2"
+    "text": "hello peps two",
+    "crumbs": [
+      "Home",
+      "materials"
+    ]
   },
   {
     "objectID": "about.html",
