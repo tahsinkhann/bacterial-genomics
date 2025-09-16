@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tahsin Khan">
-<meta name="dcterms.date" content="2025-09-15">
+<meta name="author" content="Tahsin khan, Tanzim Rahman">
 
-<title>materials – Introduction to Bacterial Genomics</title>
+<title>Materials – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,6 +142,10 @@ div.csl-indent {
     <a class="dropdown-item" href="./help/report_a_bug.html">
  <span class="dropdown-text">Report a bug</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/tahsinkhann/bacterial-genomics/issues" rel="noopener" target="_blank">
+ <span class="dropdown-text">Report bugs</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -156,7 +159,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./materials.html">materials</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./materials.html">Materials</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -175,7 +178,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./materials.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">materials</span></a>
+ <span class="menu-text">Materials</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -230,6 +233,7 @@ div.csl-indent {
   <ul>
   <li><a href="#this-is-first-title" id="toc-this-is-first-title" class="nav-link active" data-scroll-target="#this-is-first-title">this is first title</a>
   <ul class="collapse">
+  <li><a href="#toolspipline-ready" id="toc-toolspipline-ready" class="nav-link" data-scroll-target="#toolspipline-ready">Tools/Pipline ready ?</a></li>
   <li><a href="#this-second-title" id="toc-this-second-title" class="nav-link" data-scroll-target="#this-second-title">this second title</a>
   <ul class="collapse">
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">materials</h1>
+<h1 class="title">Materials</h1>
 </div>
 
 
@@ -253,16 +257,10 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Tahsin Khan </p>
+             <p>Tahsin khan, Tanzim Rahman </p>
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 15, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -275,6 +273,10 @@ div.csl-indent {
 <section id="this-is-first-title" class="level1">
 <h1>this is first title</h1>
 <p>hello peps</p>
+<section id="toolspipline-ready" class="level2">
+<h2 class="anchored" data-anchor-id="toolspipline-ready">Tools/Pipline ready ?</h2>
+<p>Before jumping to our work, let’s first clarify if all our tools or software installed properly. If not, go to <a href="./setup.html#setup-conda">Conda setup section</a>.</p>
+</section>
 <section id="this-second-title" class="level2">
 <h2 class="anchored" data-anchor-id="this-second-title">this second title</h2>
 <p>hello peps two. There are two types of bacterial staining, gram +ve and -ve<span class="citation" data-cites="khan2024-cauris"><sup><a href="#ref-khan2024-cauris" role="doc-biblioref">1</a></sup></span>, Khan et. al says<span class="citation" data-cites="khan2022-legionella"><sup><a href="#ref-khan2022-legionella" role="doc-biblioref">2</a></sup></span>. In another work regarding West Nile Virus Khan et al.&nbsp;said<span class="citation" data-cites="khan2021immunoinformatics"><sup><a href="#ref-khan2021immunoinformatics" role="doc-biblioref">3</a></sup></span> next gen vaccine is execellent.</p>
@@ -399,6 +401,11 @@ div.csl-indent {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

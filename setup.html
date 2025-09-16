@@ -157,6 +157,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./help/report_a_bug.html">
  <span class="dropdown-text">Report a bug</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/tahsinkhann/bacterial-genomics/issues" rel="noopener" target="_blank">
+ <span class="dropdown-text">Report bugs</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -175,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#installing-conda" id="toc-installing-conda" class="nav-link active" data-scroll-target="#installing-conda">Installing conda</a></li>
+  <li><a href="#setup-conda" id="toc-setup-conda" class="nav-link active" data-scroll-target="#setup-conda">Installing conda</a></li>
   </ul>
 </nav>
     </div>
@@ -221,9 +225,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Note that we use tabsets to provide instructions for linux max and windows.</p>
-<section id="installing-conda" class="level2">
-<h2 class="anchored" data-anchor-id="installing-conda">Installing conda</h2>
-<p>we will perform fresh installation of the conda package</p>
+<section id="setup-conda" class="level2">
+<h2 class="anchored" data-anchor-id="setup-conda">Installing conda</h2>
+<p>we will perform fresh installation of the conda package. I will say first visit the <a href="https://docs.conda.io/en/latest/">conda installation</a> to their mother site .</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Note">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -370,6 +374,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

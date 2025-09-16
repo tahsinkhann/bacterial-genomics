@@ -21,11 +21,11 @@
     "text": "TipWorkshop Attendees\n\n\n\nif you are attending our workshops, please follow the guidelines to download required software and data\nNote that we use tabsets to provide instructions for linux max and windows."
   },
   {
-    "objectID": "setup.html#installing-conda",
-    "href": "setup.html#installing-conda",
+    "objectID": "setup.html#setup-conda",
+    "href": "setup.html#setup-conda",
     "title": "Setup",
     "section": "Installing conda",
-    "text": "Installing conda\nwe will perform fresh installation of the conda package\n\n\n\n\n\n\nNoteNote\n\n\n\nif you already have miniconda just download the docker file\nconda update conda\nafter updating conda, proceed further\n\n\n\nWindowsMac OSLinux\n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\n\nconda"
+    "text": "Installing conda\nwe will perform fresh installation of the conda package. I will say first visit the conda installation to their mother site .\n\n\n\n\n\n\nNoteNote\n\n\n\nif you already have miniconda just download the docker file\nconda update conda\nafter updating conda, proceed further\n\n\n\nWindowsMac OSLinux\n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\n\nconda"
   },
   {
     "objectID": "about.html",
@@ -111,7 +111,7 @@
     "href": "index.html#overview",
     "title": "Bacterial Genomics",
     "section": "Overview",
-    "text": "Overview\nThis course is designed for beginners who want to analyse whole genome sequencing data from bacterial isolates. Throughout the course we will introduce tools that are commonly used and basic requirements for analyzing any bacterial genomes. We will teach you how\n\n\n\n\n\n\nTipLearning Objectives\n\n\n\nBy the end of this course, participants should be able to:\n\nunderstand what the main technologies\nuse the unix and shell based command\nrecognize\nqc\nassembly\n\n\n\n\nTarget audiance\nchickens who don’t know genomics\n\n\nPre requisite\npeople who have\n\nbrain\npc\nmoney"
+    "text": "Overview\nThis course is designed for beginners who want to analyse whole genome sequencing data from bacterial isolates. Throughout the course we will introduce tools that are commonly used and basic requirements for analyzing any bacterial genomes. We will teach you how\n\n\n\n\n\n\nTipLearning Objectives\n\n\n\nBy the end of this course, participants should be able to:\n\nunderstand what the main technologies\nuse the unix and shell based command\nrecognize\nqc\nassembly\n\n\n\n\nTarget audiance\nThe course is designed for\n\nStudents\nFresh graduates\nEarly career reserchers\n\n\n\nPre requisite\npeople who have\n\nPersonal computer or laptop\nFamiliarity with R and Bash"
   },
   {
     "objectID": "index.html#authors",
@@ -125,28 +125,36 @@
     "href": "index.html#acknowledgements",
     "title": "Bacterial Genomics",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\n\nThis course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility2 and other open access training materials.\n\nReferences\n\n\n1. Khan, M. T. & Rahman, T. Introduction to bacterial genomics. (2025).\n\n\n2. Faculity, C. B. T. Bioinfomartics for AWD-related pathogens. https://cambiotraining.github.io/awd-pathogen-bioinformatics/."
+    "text": "Acknowledgements\n\nThis course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility2 and other open access training materials.\n\nReferences\n\n\n1. Khan, T. & Rahman, T. Introduction to bacterial genomics. https://tahsinkhann.github.io/bacterial-genomics/ (2025).\n\n\n2. Faculity, C. B. T. Bioinfomartics for AWD-related pathogens. https://cambiotraining.github.io/awd-pathogen-bioinformatics/."
   },
   {
     "objectID": "materials.html",
     "href": "materials.html",
-    "title": "materials",
+    "title": "Materials",
     "section": "",
-    "text": "hello peps\n\n\nhello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2. In another work regarding West Nile Virus Khan et al. said3 next gen vaccine is execellent.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).\n\n\n3. Khan, M. T. et al. Immunoinformatics and molecular dynamics approaches: Next generation vaccine design against west nile virus. Plos one 16, e0253393 (2021).",
+    "text": "hello peps\n\n\nBefore jumping to our work, let’s first clarify if all our tools or software installed properly. If not, go to Conda setup section.\n\n\n\nhello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2. In another work regarding West Nile Virus Khan et al. said3 next gen vaccine is execellent.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).\n\n\n3. Khan, M. T. et al. Immunoinformatics and molecular dynamics approaches: Next generation vaccine design against west nile virus. Plos one 16, e0253393 (2021).",
     "crumbs": [
-      "Materials",
-      "materials"
+      "Materials"
+    ]
+  },
+  {
+    "objectID": "materials.html#toolspipline-ready",
+    "href": "materials.html#toolspipline-ready",
+    "title": "Materials",
+    "section": "",
+    "text": "Before jumping to our work, let’s first clarify if all our tools or software installed properly. If not, go to Conda setup section.",
+    "crumbs": [
+      "Materials"
     ]
   },
   {
     "objectID": "materials.html#this-second-title",
     "href": "materials.html#this-second-title",
-    "title": "materials",
+    "title": "Materials",
     "section": "",
     "text": "hello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2. In another work regarding West Nile Virus Khan et al. said3 next gen vaccine is execellent.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).\n\n\n3. Khan, M. T. et al. Immunoinformatics and molecular dynamics approaches: Next generation vaccine design against west nile virus. Plos one 16, e0253393 (2021).",
     "crumbs": [
-      "Materials",
-      "materials"
+      "Materials"
     ]
   },
   {

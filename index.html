@@ -144,6 +144,10 @@ div.csl-indent {
     <a class="dropdown-item" href="./help/report_a_bug.html">
  <span class="dropdown-text">Report a bug</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/tahsinkhann/bacterial-genomics/issues" rel="noopener" target="_blank">
+ <span class="dropdown-text">Report bugs</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -251,15 +255,19 @@ div.csl-indent {
 </div>
 <section id="target-audiance" class="level3">
 <h3 class="anchored" data-anchor-id="target-audiance">Target audiance</h3>
-<p>chickens who don’t know genomics</p>
+<p>The course is designed for</p>
+<ul>
+<li>Students</li>
+<li>Fresh graduates</li>
+<li>Early career reserchers</li>
+</ul>
 </section>
 <section id="pre-requisite" class="level3">
 <h3 class="anchored" data-anchor-id="pre-requisite">Pre requisite</h3>
 <p>people who have</p>
 <ol type="1">
-<li>brain</li>
-<li>pc</li>
-<li>money</li>
+<li>Personal computer or laptop</li>
+<li>Familiarity with R and Bash</li>
 </ol>
 </section>
 </section>
@@ -328,7 +336,7 @@ Note
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>this is collapse</p>
+<p>gotcha! hehehe</p>
 </div>
 </div>
 </div>
@@ -346,7 +354,7 @@ Note
 <h3 class="anchored" data-anchor-id="references">References</h3>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-khan2025-bactgen-site" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Khan, M. T. &amp; Rahman, T. <a href="https://tahsinkhann.github.io/bacterial-genomics/">Introduction to bacterial genomics</a>. (2025).</div>
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Khan, T. &amp; Rahman, T. Introduction to bacterial genomics. <a href="https://tahsinkhann.github.io/bacterial-genomics/">https://tahsinkhann.github.io/bacterial-genomics/</a> (2025).</div>
 </div>
 <div id="ref-cambridge-bioinformatics-training-facility" class="csl-entry" role="listitem">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">Faculity, C. B. T. Bioinfomartics for AWD-related pathogens. <a href="https://cambiotraining.github.io/awd-pathogen-bioinformatics/">https://cambiotraining.github.io/awd-pathogen-bioinformatics/</a>.</div>
@@ -443,6 +451,11 @@ Note
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
