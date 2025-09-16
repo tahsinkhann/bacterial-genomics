@@ -23,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -142,6 +162,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
+  <li><a href="#citation" id="toc-citation" class="nav-link active" data-scroll-target="#citation">Citation</a></li>
   
   </ul>
 </nav>
@@ -256,12 +277,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="border">
 <p>This content can be styled with a border</p>
 </div>
-<div id="special" class="sidebar">
-<div class="warning">
-<p>Here is a warning.</p>
-</div>
-<p>More content.</p>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -317,13 +332,29 @@ Note
 </div>
 </div>
 </div>
+<section id="citation" class="level3">
+<h3 class="anchored" data-anchor-id="citation">Citation</h3>
+<p>You can cite these materials as:</p>
+<p>Khan T and Rahman T. (2025) “Introduction to Bacterial Genomics”, https://tahsinkhann.github.io/bacterial-genomics/<span class="citation" data-cites="khan2025-bactgen-site"><sup><a href="#ref-khan2025-bactgen-site" role="doc-biblioref">1</a></sup></span></p>
+</section>
 
 
 <div id="quarto-appendix" class="default"><section id="acknowledgements" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Acknowledgements</h2><div class="quarto-appendix-contents">
 
-<p>This course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility and other open access training materials.</p>
+<p>This course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility<span class="citation" data-cites="cambridge-bioinformatics-training-facility"><sup><a href="#ref-cambridge-bioinformatics-training-facility" role="doc-biblioref">2</a></sup></span> and other open access training materials.</p>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-khan2025-bactgen-site" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Khan, M. T. &amp; Rahman, T. <a href="https://tahsinkhann.github.io/bacterial-genomics/">Introduction to bacterial genomics</a>. (2025).</div>
+</div>
+<div id="ref-cambridge-bioinformatics-training-facility" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Faculity, C. B. T. Bioinfomartics for AWD-related pathogens. <a href="https://cambiotraining.github.io/awd-pathogen-bioinformatics/">https://cambiotraining.github.io/awd-pathogen-bioinformatics/</a>.</div>
+</div>
+</div>
 
 
+</section>
 </div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Licensed CC BY 4.0 by Tahsin Khan and Tanzim Rahman<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">(View License)</a></div></div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>Licensed CC BY 4.0 Tahsin Khan and Tanzim Rahman</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
