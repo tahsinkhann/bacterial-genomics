@@ -1,67 +1,38 @@
 [
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Training Schedule",
+    "objectID": "help/report_a_bug.html",
+    "href": "help/report_a_bug.html",
+    "title": "Report a bug",
     "section": "",
-    "text": "Here we will discuss about training schedule for these 4/5 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories\n\n\n\n\nabc"
+    "text": "hehe"
   },
   {
-    "objectID": "schedule.html#training-schedule",
-    "href": "schedule.html#training-schedule",
-    "title": "Training Schedule",
+    "objectID": "help/report_a_bug.html#hehe",
+    "href": "help/report_a_bug.html#hehe",
+    "title": "Report a bug",
     "section": "",
-    "text": "Here we will discuss about training schedule for these 4/5 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories\n\n\n\n\nabc"
+    "text": "hehe"
   },
   {
-    "objectID": "schedule.html#this-is-new-heading",
-    "href": "schedule.html#this-is-new-heading",
-    "title": "Training Schedule",
-    "section": "This is new heading",
-    "text": "This is new heading\nadfds\n\nabc\na\n\n\nbcd\na\n\n\ncde\na\n\n\n\nDay\nPoint\nCourse\nTime\n\n\n\n\na\na\na\na\n\n\n\na\na\na\n\n\nb\nb\nb\nb"
-  },
-  {
-    "objectID": "materials.html",
-    "href": "materials.html",
-    "title": "materials",
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup",
     "section": "",
-    "text": "hello peps\n\n\nhello peps two\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.",
-    "crumbs": [
-      "Materials",
-      "materials"
-    ]
+    "text": "TipWorkshop Attendees\n\n\n\nif you are attending our workshops, please follow the guidelines to download required software and data\nNote that we use tabsets to provide instructions for linux max and windows."
   },
   {
-    "objectID": "materials.html#this-second-title",
-    "href": "materials.html#this-second-title",
-    "title": "materials",
+    "objectID": "setup.html#installing-conda",
+    "href": "setup.html#installing-conda",
+    "title": "Setup",
+    "section": "Installing conda",
+    "text": "Installing conda\nwe will perform fresh installation of the conda package\n\n\n\n\n\n\nNoteNote\n\n\n\nif you already have miniconda just download the docker file\nconda update conda\nafter updating conda, proceed further\n\n\n\nWindowsMac OSLinux\n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\n\nconda"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "hello peps two\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.",
-    "crumbs": [
-      "Materials",
-      "materials"
-    ]
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "Bacterial Genomics",
-    "section": "Overview",
-    "text": "Overview\nThis course is designed for beginners who want to analyse whole genome sequencing data from bacterial isolates. Throughout the course we will introduce tools that are commonly used and basic requirements for analyzing any bacterial genomes. We will teach you how\n\n\n\n\n\n\nTipLearning Objectives\n\n\n\nBy the end of this course, participants should be able to:\n\nunderstand what the main technologies\nuse the unix and shell based command\nrecognize\nqc\nassembly\n\n\n\n\nTarget audiance\nchickens who don’t know genomics\n\n\nPre requisite\npeople who have\n\nbrain\npc\nmoney"
-  },
-  {
-    "objectID": "index.html#authors",
-    "href": "index.html#authors",
-    "title": "Bacterial Genomics",
-    "section": "Authors",
-    "text": "Authors\nabout the authors:\n\nTahsin\nTanzim"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Bacterial Genomics",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\n\nThis course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility and other open access training materials."
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "materials/2-2-navigating-files.html",
@@ -136,38 +107,67 @@
     ]
   },
   {
-    "objectID": "module/01-intro.html",
-    "href": "module/01-intro.html",
-    "title": "01-intro",
-    "section": "",
-    "text": "hehe"
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Bacterial Genomics",
+    "section": "Overview",
+    "text": "Overview\nThis course is designed for beginners who want to analyse whole genome sequencing data from bacterial isolates. Throughout the course we will introduce tools that are commonly used and basic requirements for analyzing any bacterial genomes. We will teach you how\n\n\n\n\n\n\nTipLearning Objectives\n\n\n\nBy the end of this course, participants should be able to:\n\nunderstand what the main technologies\nuse the unix and shell based command\nrecognize\nqc\nassembly\n\n\n\n\nTarget audiance\nchickens who don’t know genomics\n\n\nPre requisite\npeople who have\n\nbrain\npc\nmoney"
   },
   {
-    "objectID": "module/01-intro.html#hehe",
-    "href": "module/01-intro.html#hehe",
-    "title": "01-intro",
-    "section": "",
-    "text": "hehe"
+    "objectID": "index.html#authors",
+    "href": "index.html#authors",
+    "title": "Bacterial Genomics",
+    "section": "Authors",
+    "text": "Authors\nabout the authors:\n\nTahsin\nTanzim"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Bacterial Genomics",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\nThis course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility and other open access training materials."
   },
   {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Setup",
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "materials",
     "section": "",
-    "text": "TipWorkshop Attendees\n\n\n\nif you are attending our workshops, please follow the guidelines to download required software and data\nNote that we use tabsets to provide instructions for linux max and windows."
+    "text": "hello peps\n\n\nhello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).",
+    "crumbs": [
+      "Materials",
+      "materials"
+    ]
   },
   {
-    "objectID": "setup.html#installing-conda",
-    "href": "setup.html#installing-conda",
-    "title": "Setup",
-    "section": "Installing conda",
-    "text": "Installing conda\nwe will perform fresh installation of the conda package\n\n\n\n\n\n\nNoteNote\n\n\n\nif you already have miniconda just download the docker file\nconda update conda\nafter updating conda, proceed further\n\n\n\nWindowsMac OSLinux\n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\ncontent will be uploaded soon\n\nnavigate to your home directory\n\ncd ~\n\nDownload miniconda\n\nwget \n\n\n\nconda"
+    "objectID": "materials.html#this-second-title",
+    "href": "materials.html#this-second-title",
+    "title": "materials",
+    "section": "",
+    "text": "hello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).",
+    "crumbs": [
+      "Materials",
+      "materials"
+    ]
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Training Schedule",
+    "section": "",
+    "text": "Here we will discuss about training schedule for these 4/5 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories\n\n\n\n\nabc"
+  },
+  {
+    "objectID": "schedule.html#training-schedule",
+    "href": "schedule.html#training-schedule",
+    "title": "Training Schedule",
+    "section": "",
+    "text": "Here we will discuss about training schedule for these 4/5 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories\n\n\n\n\nabc"
+  },
+  {
+    "objectID": "schedule.html#this-is-new-heading",
+    "href": "schedule.html#this-is-new-heading",
+    "title": "Training Schedule",
+    "section": "This is new heading",
+    "text": "This is new heading\nadfds\n\nabc\na\n\n\nbcd\na\n\n\ncde\na\n\n\n\nDay\nPoint\nCourse\nTime\n\n\n\n\na\na\na\na\n\n\n\na\na\na\n\n\nb\nb\nb\nb"
   }
 ]

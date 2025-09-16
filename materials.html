@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -42,7 +62,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b337f537912f5ab074b938eebad4c5d7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c0d8b526fa222858bf56437ad6d5e615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,13 +135,13 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Unix-Cheat-Sheet</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modules" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Modules</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Help</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="./module/01-intro.html">
- <span class="dropdown-text">01-intro</span></a>
+    <a class="dropdown-item" href="./help/report_a_bug.html">
+ <span class="dropdown-text">Report a bug</span></a>
   </li>  
     </ul>
   </li>
@@ -210,7 +230,10 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#this-is-first-title" id="toc-this-is-first-title" class="nav-link active" data-scroll-target="#this-is-first-title">this is first title</a>
   <ul class="collapse">
-  <li><a href="#this-second-title" id="toc-this-second-title" class="nav-link" data-scroll-target="#this-second-title">this second title</a></li>
+  <li><a href="#this-second-title" id="toc-this-second-title" class="nav-link" data-scroll-target="#this-second-title">this second title</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -254,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
 <p>hello peps</p>
 <section id="this-second-title" class="level2">
 <h2 class="anchored" data-anchor-id="this-second-title">this second title</h2>
-<p>hello peps two</p>
+<p>hello peps two. There are two types of bacterial staining, gram +ve and -ve<span class="citation" data-cites="khan2024-cauris"><sup><a href="#ref-khan2024-cauris" role="doc-biblioref">1</a></sup></span>, Khan et. al says<span class="citation" data-cites="khan2022-legionella"><sup><a href="#ref-khan2022-legionella" role="doc-biblioref">2</a></sup></span></p>
 <p>Detailed course materials live in the sidebar on the left. If you’re self-learning, start with the <a href="./setup.html">Setup</a> page.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -269,8 +292,19 @@ ul.task-list li input[type="checkbox"] {
 <p>Use the left sidebar for modules and the right “On this page” TOC for section anchors.</p>
 </div>
 </div>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-khan2024-cauris" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Khan, T. <em>et al.</em> <a href="https://doi.org/10.1128/spectrum.03540-23">Emergence of the novel sixth <span class="nocase">Candida auris</span> clade VI in bangladesh</a>. <em>Microbiology Spectrum</em> <strong>12</strong>, e03540–23 (2024).</div>
+</div>
+<div id="ref-khan2022-legionella" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Khan, M. T. <em>et al.</em> <a href="https://doi.org/10.1128/spectrum.00373-22">Proteome exploration of <span class="nocase">Legionella pneumophila</span> to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach</a>. <em>Microbiology Spectrum</em> <strong>10</strong>, e0037322 (2022).</div>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 
