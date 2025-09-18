@@ -232,12 +232,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ol type="1">
-<li>Go to <code>C:</code> drive and create a new folder named <code>genomics</code></li>
+<li>Go to <code>C:\</code> drive and create a new folder named <code>genomics</code>.</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> genomics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure</p>
+<ul>
+<li>your <code>C:\</code> has atleast 50 GB free space</li>
+<li>the folder name is written in lowercase as shown here: <code>genomics</code></li>
+</ul>
+</div>
+</div>
 <ol start="2" type="1">
-<li><p>Go to <a href="https://www.docker.com">Docker Website</a> and download docker desktop</p></li>
-<li><p>Install <code>Docker Desktop</code> and follow the instructions.</p></li>
+<li>Go to the docker website and click on <code>Download Docker Desktop</code> and select <code>Download for Windows - AMD64</code>. Click here to visit <a href="https://www.docker.com">Docker Website</a>.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -249,17 +264,33 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>If you have <code>ARM</code> system then download that instead.</p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Go to your <code>Downloads</code> folder and click on the file that was just downloaded. Follow the instruction to install <code>Docker Desktop</code> and wait for the installation process to finish.</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>During installation you may be asked to install <code>WSL</code>. If so, please install it.</p>
 </div>
 </div>
 <ol start="4" type="1">
-<li><p>Once installation is complete, go to <code>start menu</code> and start the <code>Docker Desktop</code></p></li>
+<li><p>Once installation is complete, go to <code>start menu</code> and start the <code>Docker Desktop</code>. The first time you start <code>Docker Desktop</code> you will be asked to Login/Sign up. <strong>You may ignore it and just click on <code>skip</code>.</strong></p></li>
 <li><p>Go to <a href="https://github.com/tanzim-rahman/wgs-training" class="uri">https://github.com/tanzim-rahman/wgs-training</a> and click on the green button <code>&lt; &gt; Code v</code> in upper right corner and click on <code>Download ZIP</code></p></li>
 <li><p>Copy the downloaded file <code>file_name</code> to <code>C:\genomics</code> and unzip the file</p></li>
 <li><p>Open a command prompt terminal and type the following code and press <code>ENTER</code></p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:<span class="dt">\g</span>enomics<span class="dt">\w</span>gs-training-main<span class="dt">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> wgs .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:<span class="dt">\g</span>enomics<span class="dt">\w</span>gs-training-main<span class="dt">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> wgs .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -275,32 +306,74 @@ Make sure that you have started the <code>Docker Desktop</code> according to ste
 </div>
 </div>
 <ol start="8" type="1">
-<li><p>Click to the <a href="https://drive.google.com/drive/folders/1Qhbv5aqtU_OMh3kfko5GRDGo3qBg-zOm?usp=sharing">drive link</a> and download all three folders (<code>run_output</code> <code>raw_data</code> <code>kraken2db</code>) and move them to <code>C:\genomics</code></p></li>
-<li><p>There you go! You have completed the setup and have the sequencing data and kraken2 database. Hurray!!!</p></li>
-<li><p>See you in person at icddr,b.</p></li>
+<li>Now you have to download the training <code>materials</code> from the google drive. Once you go to the drive link, you will see a <code>materials.zip</code> file. Download this file from the link below. (#materials_download)</li>
+</ol>
+<p><a href="https://drive.google.com/drive/folders/1Qhbv5aqtU_OMh3kfko5GRDGo3qBg-zOm?usp=sharing">Click here to download the materials file</a></p>
+<ol start="9" type="1">
+<li><p>In your download directory, you will see the file being downloaded as <code>materials-{some_random_numbers}.zip</code>.</p></li>
+<li><p>Now unzip it. Inside the unzipped directory you see three directories named <code>kraken2db</code> <code>raw_data</code> and <code>run_output</code>. Move/copy these three directories to <code>genomics</code> directory.</p></li>
+<li><p>Your <code>genomics</code> directory now should have these three directories:</p></li>
+</ol>
+<ul>
+<li><code>kraken2db</code></li>
+<li><code>raw_data</code></li>
+<li><code>run_output</code></li>
+</ul>
+<p>and some other files or directories you have download or moved here during the setup process.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure those three direcotries mentioned above are present in the <code>genomics</code>. If not, go to <a href="#materials_download">step 8</a> and review the steps to make sure you followed the instructions correctly</p>
+</div>
+</div>
+<ol start="12" type="1">
+<li>There you go! You have completed the setup! You also have the sequence data and kraken2 database. Hurray!!!</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you face any dificculties do not hesitate to reach us at tahsin.khan@icddrb.org or tanzimrahman@gmail.com</p>
+</div>
+</div>
+<ol start="13" type="1">
+<li>See you in person at icddr,b.</li>
 </ol>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ol type="1">
 <li>Open a terminal and type the following</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
 <li>Create a directory named <code>genomics</code> in the terminal and then change the current directory to <code>genomics</code></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> genomics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> genomics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> genomics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> genomics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li><p>Go to <a href="https://www.docker.com">Docker Website</a> and download docker desktop</p></li>
 <li><p>Install <code>Docker Desktop</code> and follow the instructions.</p></li>
-<li><p>Once installation is complete, go to <code>launchpad</code>, look/search <code>Docker Sesktop</code> and start the <code>Docker Desktop</code></p></li>
+<li><p>Once installation is complete, go to <code>Launchpad (Application/Start Menu)</code>, look/search <code>Docker Sesktop</code> and start the <code>Docker Desktop</code>. The first time you start <code>Docker Desktop</code> you will be asked to Login/Sign up. <strong>You may ignore it and just click on <code>skip</code>.</strong></p></li>
 <li><p>Go to <a href="https://github.com/tanzim-rahman/wgs-training" class="uri">https://github.com/tanzim-rahman/wgs-training</a> and click on the green button <code>&lt; &gt; Code v</code> in upper right corner and click on <code>Download ZIP</code></p></li>
 <li><p>Copy the downloaded file to <code>genomics</code> directory and unzip the file</p></li>
 <li><p>In the terminal type the following code and press <code>ENTER</code></p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> wgs-training-main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> wgs .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> wgs-training-main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> wgs .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -312,26 +385,68 @@ Warning
 </div>
 <div class="callout-body-container callout-body">
 <p>This may take a while, please remain patient.<br>
-Make suure that you have started the <code>Docker Desktop</code> accorting to step 5 mentioned above.</p>
+Make sure that you have started the <code>Docker Desktop</code> accorting to step 5 mentioned above.</p>
 </div>
 </div>
+<ol start="8" type="1">
+<li>Now you have to download the training <code>materials</code> from the google drive. Once you go to the drive link, you will see a <code>materials.zip</code> file. Download this file from the link below. (#materials_download_mac)</li>
+</ol>
+<p><a href="https://drive.google.com/drive/folders/1Qhbv5aqtU_OMh3kfko5GRDGo3qBg-zOm?usp=sharing">Click here to download the materials file</a></p>
 <ol start="9" type="1">
-<li><p>Click to the <a href="https://drive.google.com/drive/folders/1Qhbv5aqtU_OMh3kfko5GRDGo3qBg-zOm?usp=sharing">drive link</a> and download all three directories (<code>run_output</code> <code>raw_data</code> <code>kraken2db</code>) and move them to <code>genomics</code> directory</p></li>
-<li><p>There you go! You have completed the setup and have the sequence data including kraken2 database. Hurray!!!</p></li>
-<li><p>See you in person at icddr,b.</p></li>
+<li><p>In your download directory, you will see the file being downloaded as either <code>materials</code> directory or as <code>materials.zip</code>. If you see <code>materials.zip</code>, just unzip or extract the files.</p></li>
+<li><p>Inside the unzipped directory you will see three directories named <code>kraken2db</code> <code>raw_data</code> and <code>run_output</code>. Move/copy these three directories to <code>genomics</code> directory.</p></li>
+<li><p>Your <code>genomics</code> directory should now have these three directories:</p></li>
+</ol>
+<ul>
+<li><code>kraken2db</code></li>
+<li><code>raw_data</code></li>
+<li><code>run_output</code></li>
+</ul>
+<p>and some other files or directories you have downloaded or moved here during the setup process.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure those three direcotries mentioned above are present in the <code>genomics</code>. If not, go to <a href="#materials_download_mac">step 8</a> and review the steps to make sure you followed the instructions correctly</p>
+</div>
+</div>
+<ol start="12" type="1">
+<li>There you go! You have completed the setup! You also have the sequence data and kraken2 database. Hurray!!!</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you face any dificculties do not hesitate to reach us at tahsin.khan@icddrb.org or tanzimrahman@gmail.com</p>
+</div>
+</div>
+<ol start="13" type="1">
+<li>See you in person at icddr,b.</li>
 </ol>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <ol type="1">
 <li>Open a terminal and type the following</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
 <li>Create a directory named <code>genomics</code> in the terminal and then change the current directory to <code>genomics</code></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> genomics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> genomics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> genomics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> genomics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li>Install <code>Docker Desktop</code> and follow the instructions as below.</li>
 </ol>
@@ -348,46 +463,46 @@ Make suure that you have started the <code>Docker Desktop</code> accorting to st
 <ul>
 <li>write the following code in your terminal. It will ask you to type your laptop password. Type your password and press <code>ENTER</code>.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gnome-terminal</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gnome-terminal</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Now install the <code>apt</code> repository</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add Docker's official GPG key:</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install ca-certificates curl</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> install <span class="at">-m</span> 0755 <span class="at">-d</span> /etc/apt/keyrings</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> curl <span class="at">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg <span class="at">-o</span> /etc/apt/keyrings/docker.asc</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod a+r /etc/apt/keyrings/docker.asc</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the repository to Apt sources:</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="dt">\</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"deb [arch=</span><span class="va">$(</span><span class="ex">dpkg</span> <span class="at">--print-architecture</span><span class="va">)</span><span class="st"> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu </span><span class="dt">\</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="st">  </span><span class="va">$(</span><span class="bu">.</span> /etc/os-release <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">"</span><span class="va">${UBUNTU_CODENAME</span><span class="op">:-</span><span class="va">$VERSION_CODENAME}</span><span class="st">"</span><span class="va">)</span><span class="st"> stable"</span> <span class="kw">|</span> <span class="dt">\</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sudo</span> tee /etc/apt/sources.list.d/docker.list <span class="op">&gt;</span> /dev/null</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add Docker's official GPG key:</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install ca-certificates curl</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> install <span class="at">-m</span> 0755 <span class="at">-d</span> /etc/apt/keyrings</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> curl <span class="at">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg <span class="at">-o</span> /etc/apt/keyrings/docker.asc</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod a+r /etc/apt/keyrings/docker.asc</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the repository to Apt sources:</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="dt">\</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"deb [arch=</span><span class="va">$(</span><span class="ex">dpkg</span> <span class="at">--print-architecture</span><span class="va">)</span><span class="st"> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu </span><span class="dt">\</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">  </span><span class="va">$(</span><span class="bu">.</span> /etc/os-release <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">"</span><span class="va">${UBUNTU_CODENAME</span><span class="op">:-</span><span class="va">$VERSION_CODENAME}</span><span class="st">"</span><span class="va">)</span><span class="st"> stable"</span> <span class="kw">|</span> <span class="dt">\</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sudo</span> tee /etc/apt/sources.list.d/docker.list <span class="op">&gt;</span> /dev/null</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Download the <code>DEB</code> file</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-o</span> ./docker-desktop-amd64.deb https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-o</span> ./docker-desktop-amd64.deb https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Install <code>Docker Desktop</code></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install ./docker-desktop-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install ./docker-desktop-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>[optional] remove the <code>docker-desktop-amd64.deb</code> file</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> docker-desktop-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> docker-desktop-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <ol start="4" type="1">
-<li><p>Once installation is complete, go to <code>Applications (Start Menu)</code>, look/search <code>Docker Sesktop</code> and start the <code>Docker Desktop</code>. <strong>You don’t need to <code>login/sign up</code> there, just press <code>skip</code>.</strong></p></li>
+<li><p>Once installation is complete, go to <code>Applications (Start Menu)</code>, look/search <code>Docker Sesktop</code> and start the <code>Docker Desktop</code>. The first time you start <code>Docker Desktop</code> you will be asked to Login/Sign up. <strong>You may ignore it and just click on <code>skip</code>.</strong></p></li>
 <li><p>Go to <a href="https://github.com/tanzim-rahman/wgs-training" class="uri">https://github.com/tanzim-rahman/wgs-training</a> and click on the green button <code>&lt; &gt; Code v</code> in upper right corner and click on <code>Download ZIP</code></p></li>
 <li><p>Copy the downloaded file to <code>genomics</code> directory and unzip the file</p></li>
 <li><p>In the terminal type the following code and press <code>ENTER</code></p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> wgs-training-main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> wgs .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> wgs-training-main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> wgs .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -399,13 +514,55 @@ Warning
 </div>
 <div class="callout-body-container callout-body">
 <p>This may take a while, please remain patient.<br>
-Make suure that you have started the <code>Docker Desktop</code> accorting to step 5 mentioned above.</p>
+Make sure that you have started the <code>Docker Desktop</code> accorting to step 5 mentioned above.</p>
 </div>
 </div>
 <ol start="8" type="1">
-<li><p>Click to the <a href="https://drive.google.com/drive/folders/1Qhbv5aqtU_OMh3kfko5GRDGo3qBg-zOm?usp=sharing">drive link</a> and download all three directories (<code>run_output</code> <code>raw_data</code> <code>kraken2db</code>) and move them to <code>genomics</code> directory</p></li>
-<li><p>There you go! You have completed the setup and have the sequence data including kraken2 database. Hurray!!!</p></li>
-<li><p>See you in person at icddr,b.</p></li>
+<li>Now you have to download the training <code>materials</code> from the google drive. Once you go to the drive link, you will see a <code>materials.zip</code> file. Download this file from the link below. (#materials_download_linux)</li>
+</ol>
+<p><a href="https://drive.google.com/drive/folders/1Qhbv5aqtU_OMh3kfko5GRDGo3qBg-zOm?usp=sharing">Click here to download the materials file</a></p>
+<ol start="9" type="1">
+<li><p>In your download directory, you will see the file being downloaded as <code>materials-{some_random_numbers}.zip</code>.</p></li>
+<li><p>Now unzip it. Inside the unzipped directory you will see three directories named <code>kraken2db</code> <code>raw_data</code> and <code>run_output</code>. Move/copy these three directories to <code>genomics</code> directory.</p></li>
+<li><p>Your <code>genomics</code> directory should now have these three directories:</p></li>
+</ol>
+<ul>
+<li><code>kraken2db</code></li>
+<li><code>raw_data</code></li>
+<li><code>run_output</code></li>
+</ul>
+<p>and some other files or directories you have downloaded or moved here during the setup process.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure those three direcotries mentioned above are present in the <code>genomics</code>. If not, go to <a href="#materials_download_linux">step 8</a> and review the steps to make sure you followed the instructions correctly</p>
+</div>
+</div>
+<ol start="12" type="1">
+<li>There you go! You have completed the setup! You also have the sequence data and kraken2 database. Hurray!!!</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you face any dificculties do not hesitate to reach us at tahsin.khan@icddrb.org or tanzimrahman@gmail.com</p>
+</div>
+</div>
+<ol start="13" type="1">
+<li>See you in person at icddr,b.</li>
 </ol>
 </div>
 </div>
