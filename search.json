@@ -35,6 +35,83 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "unix_cheat_sheet.html",
+    "href": "unix_cheat_sheet.html",
+    "title": "Unix-Cheat-Sheet",
+    "section": "",
+    "text": "This document gives a brief summary of useful Unix commands and is adapted from Andries van Tonder’s training materials1."
+  },
+  {
+    "objectID": "unix_cheat_sheet.html#documentation-and-help",
+    "href": "unix_cheat_sheet.html#documentation-and-help",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Documentation and Help",
+    "text": "Documentation and Help\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nman {command}\nmanual page for the program\nman cp\n\n\n{command} --help\nmany programs use the --help flag to print documentation\nfastqc --help\n\n\nwhatis {command}\nshort description of the program\nwhatis cp"
+  },
+  {
+    "objectID": "unix_cheat_sheet.html#listing-files",
+    "href": "unix_cheat_sheet.html#listing-files",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Listing files",
+    "text": "Listing files\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nls\nlist files in the current directory\nls\n\n\nls {path}\nlist files in the specified path\nls genomics/kraken2db\n\n\nls -l {path}\nlist files in long format (more information)\nls -l genomics/kraken2db\n\n\nls -a {path}\nlist all files (including hidden files)\nls -a genomics/kraken2db"
+  },
+  {
+    "objectID": "unix_cheat_sheet.html#change-directories",
+    "href": "unix_cheat_sheet.html#change-directories",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Change Directories",
+    "text": "Change Directories\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\ncd {path}\nchange to the specified directory\ncd wgs-training-main\n\n\ncd or cd ~\nchange to the home directory\ncd ~\n\n\ncd ..\nmove back one directory\ncd ..\n\n\npwd\nprint working directory. Shows the full path of where you are at the moment (useful if you are lost)\npwd"
+  },
+  {
+    "objectID": "unix_cheat_sheet.html#make-or-remove-directories",
+    "href": "unix_cheat_sheet.html#make-or-remove-directories",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Make or Remove Directories",
+    "text": "Make or Remove Directories\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nmkdir {dirname}\ncreate a directory with specified name\nmkdir test\n\n\nrmdir {dirname}\nremove a directory (only works if the directory is empty)\nrmdir test\n\n\nrm -r {dirname}\nremove the directory and all it’s contents (use with care)\nrm -r test"
+  },
+  {
+    "objectID": "unix_cheat_sheet.html#copy-move-and-remove-files",
+    "href": "unix_cheat_sheet.html#copy-move-and-remove-files",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Copy, Move and Remove Files",
+    "text": "Copy, Move and Remove Files\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\ncp {source/path/file1} {target/path/}\ncopy “file1” to another directory keeping its name\ncp /Users/tahsinkhan/genomics/wgs-training-main/README.md  /Users/tahsinkhan/genomics/run_output/\n\n\ncp {source/path/file1} {target/path/file2}\ncopy “file1” to another directory naming it “file2”\ncp /Users/tahsinkhan/genomics/wgs-training-main/README.md  /Users/tahsinkhan/genomics/run_output/cp_README.md\n\n\ncp {file1} {file2}\nmake a copy of “file1” in the same directory with a new name “file2”\ncp wgs-training-main/README.md wgs-training-main/new_README.md\n\n\nmv {source/path/file1} {target/path/}\nmove “file1” to another directory keeping its name\nmv /Users/tahsinkhan/genomics/wgs-training-main/new_README.md  /Users/tahsinkhan/genomics/run_output/new_README.md\n\n\nmv {source/path/file1} {target/path/file2}\nmove “file1” to another directory renaming it as “file2”\nmv /Users/tahsinkhan/genomics/wgs-training-main/new_README.md  /Users/tahsinkhan/genomics/run_output/mv_README.md\n\n\nmv {file1} {file2}\nis equivalent to renaming a file\nmv /Users/tahsinkhan/genomics/run_output/mv_README.md /Users/tahsinkhan/genomics/run_output/renamed_README.md\n\n\nrm {filename}\nremove a file\nrm /Users/tahsinkhan/genomics/run_output/rename_README.md"
+  },
+  {
+    "objectID": "unix_cheat_sheet.html#view-text-files",
+    "href": "unix_cheat_sheet.html#view-text-files",
+    "title": "Unix-Cheat-Sheet",
+    "section": "View Text Files",
+    "text": "View Text Files\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nless {file}\nview and scroll through a text file\nless wgs-training-main/README.md\n\n\nhead {file}\nprint the first 10 lines of a file\nhead wgs-training-main/README.md\n\n\nhead -n {N} {file}\nprint the first N lines of a file\nhead -n 10 wgs-training-main/README.md\n\n\ntail {file}\nprint the last 10 lines of a file\ntail wgs-training-main/README.md\n\n\ntail -n {N} {file}\nprint the last N lines of a file\ntail -n 10 wgs-training-main/README.md\n\n\nhead -n {N} {file} | tail -n 1\nprint the Nth line of a file\nhead -n 5 wgs-training-main/README.md | tail -n 1 wgs-training-main/README.md\n\n\ncat {file}\nprint the whole content of the file\ncat wgs-training-main/README.md\n\n\ncat {file1} {file2} {...} {fileN}\nconcatenate files and print the result\n\n\n\nzcat {file} and zless {file}\nlike cat and less but for compressed files (.zip or .gz)"
+  },
+  {
+    "objectID": "unix_cheat_sheet.html#find-patterns",
+    "href": "unix_cheat_sheet.html#find-patterns",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Find Patterns",
+    "text": "Find Patterns\nFinding (and replacing) patterns in text is a very powerful feature of several command line programs. The patterns are specified using regular expressions (shortened as regex), which are not covered in this document. See this Regular Expressions Cheat Sheet for a comprehensive overview.\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\ngrep {regex} {file}\nprint the lines of the file that have a match with the regular expression pattern\ngrep docker wgs-training-main/README.md"
+  },
+  {
+    "objectID": "unix_cheat_sheet.html#wildcards",
+    "href": "unix_cheat_sheet.html#wildcards",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Wildcards",
+    "text": "Wildcards\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n*\nmatch any number of characters\n\n\n\n?\nmatch any character only once\n\n\n\nExamples\n\n\n\n\nls sample*\nlist all files that start with the word “sample”\nls kraken2db/database*\n\n\nls *.txt\nlist all the files with .txt extension\nls kraken2db/*.txt\n\n\ncp * {another/directory}\ncopy all the files in the current directory to a different directory\ncp kraken2db/* test/"
+  },
+  {
+    "objectID": "unix_cheat_sheet.html#redirect-output",
+    "href": "unix_cheat_sheet.html#redirect-output",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Redirect Output",
+    "text": "Redirect Output\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n{command} &gt; {file}\nredirect output to a file (overwrites if the file exists)\ncat test/inspect.txt &gt; new_inspect.txt\n\n\n{command} &gt;&gt; {file}\nappend output to a file (creates a new file if it does not already exist)\ncat test/unmapped_accessions.txt &gt;&gt; new_inspect.txt"
+  },
+  {
+    "objectID": "unix_cheat_sheet.html#combining-commands-with-pipes",
+    "href": "unix_cheat_sheet.html#combining-commands-with-pipes",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Combining Commands with | Pipes",
+    "text": "Combining Commands with | Pipes\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n&lt;command1&gt; | &lt;command2&gt;\nthe output of “command1” is passed as input to “command2”\ngiven below\n\n\nls | wc -l\ncount the number of files in a directory\nls new_inspect.txt | wc -l\n\n\ncat {file1} {file2} | less\nconcatenate files and view them with less\ncat test/inspect.txt test/unmapped_accessions.txt  | less\n\n\ncat {file} | grep \"{pattern}\" | wc -l\ncount how many lines in the file have a match with “pattern”\ncat test/inspect.txt | grep \"Pseudomonas\" | wc -l\n\n\n\n\nReferences\n\n\n1. Asare, P. & Tonder, A. van. Avantonder.github.io/ghana_course/: Introduction to bacterial genomics. (2023)."
+  },
+  {
     "objectID": "materials/2-2-navigating-files.html",
     "href": "materials/2-2-navigating-files.html",
     "title": "2-2-navigating-files",
@@ -132,8 +209,9 @@
     "href": "materials.html",
     "title": "Materials",
     "section": "",
-    "text": "hello peps, here we will learn basic terminologies and commands used on a daily basis of computational works, e.g., pwd, ls, cp and so on.\n\n\nBefore jumping to our work, let’s first clarify if all our tools or software installed properly. If not, go to Conda setup section.\n\n\n\nhello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2. In another work regarding West Nile Virus Khan et al. said3 next gen vaccine is execellent.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).\n\n\n3. Khan, M. T. et al. Immunoinformatics and molecular dynamics approaches: Next generation vaccine design against west nile virus. Plos one 16, e0253393 (2021).",
+    "text": "hello peps, here we will learn basic terminologies and commands used on a daily basis of computational works, e.g., pwd, ls, cp and so on.\n\n\nBefore jumping to our work, let’s first clarify if all our tools or software installed properly. If not, go to Conda setup section.\n\n\n\nhello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2. In another work regarding West Nile Virus Khan et al. said3 next gen vaccine is excellent.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).\n\n\n3. Khan, M. T. et al. Immunoinformatics and molecular dynamics approaches: Next generation vaccine design against west nile virus. Plos one 16, e0253393 (2021).",
     "crumbs": [
+      "Home",
       "Materials"
     ]
   },
@@ -144,6 +222,7 @@
     "section": "",
     "text": "Before jumping to our work, let’s first clarify if all our tools or software installed properly. If not, go to Conda setup section.",
     "crumbs": [
+      "Home",
       "Materials"
     ]
   },
@@ -152,8 +231,9 @@
     "href": "materials.html#this-second-title",
     "title": "Materials",
     "section": "",
-    "text": "hello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2. In another work regarding West Nile Virus Khan et al. said3 next gen vaccine is execellent.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).\n\n\n3. Khan, M. T. et al. Immunoinformatics and molecular dynamics approaches: Next generation vaccine design against west nile virus. Plos one 16, e0253393 (2021).",
+    "text": "hello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2. In another work regarding West Nile Virus Khan et al. said3 next gen vaccine is excellent.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).\n\n\n3. Khan, M. T. et al. Immunoinformatics and molecular dynamics approaches: Next generation vaccine design against west nile virus. Plos one 16, e0253393 (2021).",
     "crumbs": [
+      "Home",
       "Materials"
     ]
   },
