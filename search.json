@@ -39,7 +39,7 @@
     "href": "unix_cheat_sheet.html",
     "title": "Unix-Cheat-Sheet",
     "section": "",
-    "text": "This document gives a brief summary of useful Unix commands and is adapted from Andries van Tonder’s training materials1."
+    "text": "This document gives a brief summary of useful Unix commands adapted from Andries van Tonder’s training materials1. In addition, an example of each command which will be frequently used in this training module is described. Participants are adviced to play with these commands at home to get familiarized with unix command lines."
   },
   {
     "objectID": "unix_cheat_sheet.html#documentation-and-help",
