@@ -246,7 +246,7 @@ Caution
 <div class="callout-body-container callout-body">
 <p>Make sure</p>
 <ul>
-<li>your <code>C:\</code> has atleast 50 GB free space</li>
+<li>your <code>C:\</code> has at least 50 GB free space</li>
 <li>the folder name is written in lowercase as shown here: <code>genomics</code></li>
 </ul>
 </div>
@@ -284,10 +284,10 @@ Warning
 </div>
 </div>
 <ol start="4" type="1">
-<li><p>Once installation is complete, go to <code>start menu</code> and start the <code>Docker Desktop</code>. The first time you start <code>Docker Desktop</code> you will be asked to Login/Sign up. <strong>You may ignore it and just click on <code>skip</code>.</strong></p></li>
+<li><p>Once installation is complete, go to <code>start menu</code> and start the <code>Docker Desktop</code>. The first time you start <code>Docker Desktop</code> you will be asked to Login/Sign up. <strong>You may ignore it and just click on <code>skip</code></strong>.</p></li>
 <li><p>Go to <a href="https://github.com/tanzim-rahman/wgs-training" class="uri">https://github.com/tanzim-rahman/wgs-training</a> and click on the green button <code>&lt; &gt; Code v</code> in upper right corner and click on <code>Download ZIP</code></p></li>
-<li><p>Copy the downloaded file <code>file_name</code> to <code>C:\genomics</code> and unzip the file</p></li>
-<li><p>Open a command prompt terminal and type the following code and press <code>ENTER</code></p></li>
+<li><p>Copy the downloaded file to <code>C:\genomics</code> directory and unzip the file.</p></li>
+<li><p>Open a command prompt terminal from <code>Start Menu</code> and type the following code and press <code>ENTER</code></p></li>
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> C:<span class="dt">\g</span>enomics<span class="dt">\w</span>gs-training-main<span class="dt">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> wgs .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -301,17 +301,17 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This may take a while, please remain patient.<br>
+<p>This step requires uninterrupted wifi/internet. This step takes a while (15 GB in size), please remain patient.<br>
 Make sure that you have started the <code>Docker Desktop</code> according to step 4 mentioned above.</p>
 </div>
 </div>
 <ol start="8" type="1">
-<li>Now you have to download the training <code>materials</code> from the google drive. Once you go to the drive link, you will see a <code>materials.zip</code> file. Download this file from the link below. (#materials_download)</li>
+<li>Now you have to download the training <code>materials</code> from the google drive. Once you go to the drive link, you will see a <code>materials.zip</code> file. Download this file from the link below.</li>
 </ol>
 <p><a href="https://drive.google.com/drive/folders/1Qhbv5aqtU_OMh3kfko5GRDGo3qBg-zOm?usp=sharing">Click here to download the materials file</a></p>
 <ol start="9" type="1">
-<li><p>In your download directory, you will see the file being downloaded as <code>materials-{some_random_numbers}.zip</code>.</p></li>
-<li><p>Now unzip it. Inside the unzipped directory you see three directories named <code>kraken2db</code> <code>raw_data</code> and <code>run_output</code>. Move/copy these three directories to <code>genomics</code> directory.</p></li>
+<li><p>In your download directory, you will see the file being downloaded as <code>materials.zip</code>.</p></li>
+<li><p>Now unzip it. Inside the unzipped directory you will see three directories named <code>kraken2db</code> <code>raw_data</code> and <code>run_output</code>. Move/copy these three directories to <code>genomics</code> directory.</p></li>
 <li><p>Your <code>genomics</code> directory now should have these three directories:</p></li>
 </ol>
 <ul>
@@ -330,7 +330,7 @@ Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Make sure those three direcotries mentioned above are present in the <code>genomics</code>. If not, go to <a href="#materials_download">step 8</a> and review the steps to make sure you followed the instructions correctly</p>
+<p>Make sure those three directories mentioned above are present in the <code>genomics</code>. If not, go to step 8 and review the steps to make sure you followed the instructions correctly</p>
 </div>
 </div>
 <ol start="12" type="1">
@@ -384,15 +384,15 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This may take a while, please remain patient.<br>
-Make sure that you have started the <code>Docker Desktop</code> accorting to step 5 mentioned above.</p>
+<p>This step requires uninterrupted wifi/internet. This step takes a while (15 GB in size), please remain patient.<br>
+Make sure that you have started the <code>Docker Desktop</code> according to step 5 mentioned above.</p>
 </div>
 </div>
-<ol start="8" type="1">
-<li>Now you have to download the training <code>materials</code> from the google drive. Once you go to the drive link, you will see a <code>materials.zip</code> file. Download this file from the link below. (#materials_download_mac)</li>
+<ol start="9" type="1">
+<li>Now you have to download the training <code>materials</code> from the google drive. Once you go to the drive link, you will see a <code>materials.zip</code> file. Download this file from the link below.</li>
 </ol>
 <p><a href="https://drive.google.com/drive/folders/1Qhbv5aqtU_OMh3kfko5GRDGo3qBg-zOm?usp=sharing">Click here to download the materials file</a></p>
-<ol start="9" type="1">
+<ol start="10" type="1">
 <li><p>In your download directory, you will see the file being downloaded as either <code>materials</code> directory or as <code>materials.zip</code>. If you see <code>materials.zip</code>, just unzip or extract the files.</p></li>
 <li><p>Inside the unzipped directory you will see three directories named <code>kraken2db</code> <code>raw_data</code> and <code>run_output</code>. Move/copy these three directories to <code>genomics</code> directory.</p></li>
 <li><p>Your <code>genomics</code> directory should now have these three directories:</p></li>
@@ -413,10 +413,10 @@ Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Make sure those three direcotries mentioned above are present in the <code>genomics</code>. If not, go to <a href="#materials_download_mac">step 8</a> and review the steps to make sure you followed the instructions correctly</p>
+<p>Make sure those three direcotries mentioned above are present in the <code>genomics</code>. If not, go to step 9 and review the steps to make sure you followed the instructions correctly</p>
 </div>
 </div>
-<ol start="12" type="1">
+<ol start="13" type="1">
 <li>There you go! You have completed the setup! You also have the sequence data and kraken2 database. Hurray!!!</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -432,7 +432,7 @@ Tip
 <p>If you face any dificculties do not hesitate to reach us at tahsin.khan@icddrb.org or tanzimrahman@gmail.com</p>
 </div>
 </div>
-<ol start="13" type="1">
+<ol start="14" type="1">
 <li>See you in person at icddr,b.</li>
 </ol>
 </div>
@@ -513,12 +513,12 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This may take a while, please remain patient.<br>
+<p>This step requires uninterrupted wifi/internet. This step takes a while (15 GB in size), please remain patient.<br>
 Make sure that you have started the <code>Docker Desktop</code> accorting to step 5 mentioned above.</p>
 </div>
 </div>
 <ol start="8" type="1">
-<li>Now you have to download the training <code>materials</code> from the google drive. Once you go to the drive link, you will see a <code>materials.zip</code> file. Download this file from the link below. (#materials_download_linux)</li>
+<li>Now you have to download the training <code>materials</code> from the google drive. Once you go to the drive link, you will see a <code>materials.zip</code> file. Download this file from the link below.</li>
 </ol>
 <p><a href="https://drive.google.com/drive/folders/1Qhbv5aqtU_OMh3kfko5GRDGo3qBg-zOm?usp=sharing">Click here to download the materials file</a></p>
 <ol start="9" type="1">
@@ -542,7 +542,7 @@ Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Make sure those three direcotries mentioned above are present in the <code>genomics</code>. If not, go to <a href="#materials_download_linux">step 8</a> and review the steps to make sure you followed the instructions correctly</p>
+<p>Make sure those three direcotries mentioned above are present in the <code>genomics</code>. If not, go to step 8 and review the steps to make sure you followed the instructions correctly</p>
 </div>
 </div>
 <ol start="12" type="1">
