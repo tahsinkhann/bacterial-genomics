@@ -144,6 +144,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./docker_tutorial.html"> 
+<span class="menu-text">Docker Tutorial</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./unix_cheat_sheet.html"> 
 <span class="menu-text">Unix-Cheat-Sheet</span></a>
   </li>  
@@ -178,7 +182,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setup-conda" id="toc-setup-conda" class="nav-link active" data-scroll-target="#setup-conda">Setting up requried softwares</a></li>
+  <li><a href="#docker" id="toc-docker" class="nav-link active" data-scroll-target="#docker">Docker</a></li>
+  <li><a href="#setup-conda" id="toc-setup-conda" class="nav-link" data-scroll-target="#setup-conda">Setting up requried softwares</a></li>
+  <li><a href="#docker-binding" id="toc-docker-binding" class="nav-link" data-scroll-target="#docker-binding">Docker Binding</a></li>
   </ul>
 </nav>
     </div>
@@ -220,16 +226,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>if you are attending our workshops, please follow the guidelines to download required software and data</p>
+<p>if you are attending our workshops, please follow the guidelines to download required software and data. During the installation process, it is adviced to read the whole sentence first and follow the instructions accordingly.</p>
 </div>
 </div>
-<p>Note that we use tabsets to provide instructions for linux max and windows.</p>
+<section id="docker" class="level2">
+<h2 class="anchored" data-anchor-id="docker">Docker</h2>
+<p>In this training, we will be using <code>Docker</code> as container where we will install different bioinformatics tools and run it. Containerization is any <strong><em>system that allows multiple isolated operating systems to run inside a larger, host system</em></strong>. <code>Docker</code> is one such container which can be used within any operating sustems such as Windows, Linux or macOS. <code>Docker</code> is an open platform for developers to build and ship applications, whether on laptops, servers in a data center, or the cloud. It is a (relatively?) painless way for you to install and try out Bioinformatics software.</p>
+<blockquote class="blockquote">
+<p>You can think of it as an isolated environment inside your exising operating system where you can install and run software without messing with the main OS.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/docker-library/docs/c350af05d3fac7b5c3f6327ac82fe4d990d8729c/docker/logo.png" class="img-fluid" width="180"></p>
+<p>Note that we use tabsets to provide instructions for <code>macOS</code>, <code>linux</code> and <code>windows</code>.</p>
+</section>
 <section id="setup-conda" class="level2">
 <h2 class="anchored" data-anchor-id="setup-conda">Setting up requried softwares</h2>
-<p>Here will discuss how to setup the required tools and download sequnce dataset and taxonomic database.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
+<p>Here will discuss how to setup <code>Docker Desktop</code> and with it to build images for the required tools. We will download sequence datasets and databases required in this training.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Mac OS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
-<div class="tab-content">
+<div class="tab-content" data-group="os">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ol type="1">
 <li>Go to <code>C:\</code> drive and create a new folder named <code>genomics</code>.</li>
@@ -567,6 +581,51 @@ Tip
 </div>
 </div>
 </div>
+<blockquote class="blockquote">
+<p>Once you have completed these steps its time to bind and mount your genomics directory to <code>Docker</code></p>
+</blockquote>
+<!-- if you use > to focus on specific line you should end double enter-->
+</section>
+<section id="docker-binding" class="level2">
+<h2 class="anchored" data-anchor-id="docker-binding">Docker Binding</h2>
+<p>Based on you computer operating system, choose one of the following instructions</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Linux</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Open command promt terminal (cmd..exe) and type the following:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-it</span> ^</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-v</span> <span class="st">"%USERPROFILE%\genomics\run_output:/run-dir"</span> ^</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-v</span> <span class="st">"%USERPROFILE%\genomics\raw_data:/raw-data"</span> ^</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-v</span> <span class="st">"%USERPROFILE%\genomics\kraken2db:/kraken2db"</span> ^</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">wgs</span> /bin/bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or if you are using Powershell type the following:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-it</span> <span class="kw">`</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-v</span> <span class="st">"</span><span class="va">${env</span><span class="op">:</span>USERPROFILE<span class="va">}</span><span class="st">\genomics\run_output:/run-dir"</span> <span class="kw">`</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-v</span> <span class="st">"</span><span class="va">${env</span><span class="op">:</span>USERPROFILE<span class="va">}</span><span class="st">\genomics\raw_data:/raw-data"</span> <span class="kw">`</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-v</span> <span class="st">"</span><span class="va">${env</span><span class="op">:</span>USERPROFILE<span class="va">}</span><span class="st">\genomics\kraken2db:/kraken2db"</span> <span class="kw">`</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">wgs</span> /bin/bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now <code>Docker</code> should be accessible to work with.<br>
+Let’s check the images we built duing installation are accessible or not. Type the following and if you see details of the tool, means that your <code>Docker</code> is successuflly installed and software images are build successfully. Hurray!!!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Open terminal and type the following:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-it</span> <span class="at">-v</span> <span class="va">$HOME</span>/genomics/run_output:/run-dir <span class="at">-v</span> <span class="va">$HOME</span>/genomics/raw_data:/raw-data <span class="at">-v</span> <span class="va">$HOME</span>/genomics/kraken2db:/kraken2db wgs /bin/bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now <code>Docker</code> should be accessible to work with.<br>
+Let’s check the images we built duing installation are accessible or not. Type the following and if you see details of the tool, means that your <code>Docker</code> is successuflly installed and software images are build successfully. Hurray!!!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p>Open terminal and type the following:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-it</span> <span class="at">-v</span> <span class="va">$HOME</span>/genomics/run_output:/run-dir <span class="at">-v</span> <span class="va">$HOME</span>/genomics/raw_data:/raw-data <span class="at">-v</span> <span class="va">$HOME</span>/genomics/kraken2db:/kraken2db wgs /bin/bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now <code>Docker</code> should be accessible to work with.<br>
+Let’s check the images we built duing installation are accessible or not. Type the following and if you see details of the tool, means that your <code>Docker</code> is successuflly installed and software images are build successfully. Hurray!!!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>Now go to <a href="./docker_tutorial.html">Docker Tutorial</a> and get familiarized with basic commands. Once you master these basic commands go to <a href="./unix_cheat_sheet.html">Unix-Cheat-Sheet</a> and practice unix commands. But be careful that you do not delete or remove any data from the <code>genomics</code> directory. If you do so, download those files before joining the training at icddr,b.</p>
 
 
 </section>

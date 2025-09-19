@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tahsin Khan">
-<meta name="author" content="Tanzim Rahman">
-<meta name="dcterms.date" content="2025-09-16">
+<meta name="author" content="Tahsin Khan/Tanzim Rahman">
 
-<title>Whole Genome Sequence Analysis of Bacterial Pathogen – Introduction to Bacterial Genomics</title>
+<title>Docker tutorial – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,62 +21,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -98,8 +41,6 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-118c9c8d01a43a1fcc9e9a26f6dbf87f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -152,7 +93,7 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -168,7 +109,7 @@ div.csl-indent {
 <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docker_tutorial.html"> 
+    <a class="nav-link active" href="./docker_cheat_sheet.html" aria-current="page"> 
 <span class="menu-text">Docker Tutorial</span></a>
   </li>  
   <li class="nav-item">
@@ -201,62 +142,28 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#citation" id="toc-citation" class="nav-link active" data-scroll-target="#citation">Citation</a></li>
-  
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Whole Genome Sequence Analysis of Bacterial Pathogen</h1>
+<h1 class="title">Docker tutorial</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliations</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Tahsin Khan, BSc, MS, MPhil <a href="mailto:tahsin.khan@icddrb.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            icddr,b Genome Centre
-          </p>
-        <p class="affiliation">
-            Wellcome Sanger Institute
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Tanzim Rahman, BSc, MS <a href="mailto:tanzimrahman@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            icddr,b Genome Centre
-          </p>
-        <p class="affiliation">
-            BRAC Univerisity
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 16, 2025</p>
-    </div>
+             <p>Tahsin Khan/Tanzim Rahman </p>
+          </div>
   </div>
+    
   
     
   </div>
@@ -266,173 +173,11 @@ div.csl-indent {
 </header>
 
 
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Introduction to Bacterial Genomics</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This course is designed for beginners who want to analyse whole genome sequencing data from bacterial isolates. Throughout the course we will introduce tools that are commonly used and basic requirements for analyzing any bacterial genome. Along the way, we will teach you the foundational bioinformatic skills</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Learning Objectives">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Learning Objectives
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>By the end of this course, participants should be able to:</p>
-<ul>
-<li>understand what the main technologies used for high throuput sequencing are</li>
-<li>use the unix command line to navigate a filesystem, manipulate files, launch programs and write scripts for reproducible analysis</li>
-<li>recognize the structure of common sequence file formats</li>
-<li>run basic quality control of samples</li>
-<li>assemble the reads to construct contigs or scaffolds of the genome</li>
-<li>check the quality and completeness of the contgs</li>
-<li>classify taxonomy of that organism</li>
-<li>annotate the genome to identify coding DNA sequences and proteins</li>
-<li>identify core genes and construc phylogenetic tree</li>
-<li>investigate pathogen transmission dynamics</li>
-</ul>
-</div>
-</div>
-<section id="target-audiance" class="level3">
-<h3 class="anchored" data-anchor-id="target-audiance">Target audiance</h3>
-<p>The course is designed for</p>
-<ul>
-<li>Students</li>
-<li>Fresh graduates</li>
-<li>Early career researchers</li>
-</ul>
-</section>
-<section id="pre-requisite" class="level3">
-<h3 class="anchored" data-anchor-id="pre-requisite">Pre requisite</h3>
-<p>people who have</p>
-<ol type="1">
-<li>Personal computer or laptop</li>
-<li>Familiarity with R and Bash</li>
-</ol>
-</section>
-</section>
-<section id="authors" class="level2">
-<h2 class="anchored" data-anchor-id="authors">Authors</h2>
-<p>about the authors:</p>
-<ul>
-<li><p><strong>Tahsin Khan</strong> <a href="https://github.com/tahsinkhann"><i class="fa-brands fa-github" title="GitHub" aria-label="github"></i></a> <a href="https://orcid.org/0000-0003-3309-3218"><i class="fa-brands fa-orcid" title="ORCID" aria-label="orcid"></i></a><br>
-<em>Affiliation</em>: Genome Centre, icddr,b<br>
-Roles: writing - original draft; conceptualisation; coding</p></li>
-<li><p><strong>Tanzim Rahman</strong> <a href="https://github.com/tanzim-rahman"><i class="fa-brands fa-github" title="GitHub" aria-label="github"></i></a> <a href="https://orcid.org/0009-0009-4429-7487"><i class="fa-brands fa-orcid" title="ORCID" aria-label="orcid"></i></a><br>
-<em>Affiliation</em>: Genome Centre, icddr,b<br>
-Roles: writing - original draft; conceptualisation; coding</p></li>
-</ul>
-</section>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled" title="Some tips about bold, italic and new line">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Some tips about bold, italic and new line
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><code>double spaces</code> create <code>new line</code><br>
-<code>* *</code> creates <code>italic</code><br>
-<code>** **</code> creates <code>bold</code><br>
-for github and orcid icon after author name, install</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add quarto-ext/fontawesome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<div class="border">
-<p>This content can be styled with a border</p>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note this is callout-note. I am using <code>note</code> now.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Tip with Title">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tip with Title
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note this is callout-tip. I am using <code>tip</code> now.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Warning!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is important for everyone to understand you are <code>okay</code> with this data</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled" title="Caution: Expand to learn about collapse">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Caution: Expand to learn about collapse
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>gotcha! hehehe</p>
-</div>
-</div>
-</div>
-<section id="citation" class="level3">
-<h3 class="anchored" data-anchor-id="citation">Citation</h3>
-<p>You can cite these materials as:</p>
-<p>Khan T and Rahman T. (2025) “Introduction to Bacterial Genomics”, https://tahsinkhann.github.io/bacterial-genomics/<span class="citation" data-cites="khan2025-bactgen-site"><sup><a href="#ref-khan2025-bactgen-site" role="doc-biblioref">1</a></sup></span></p>
-</section>
+<p>Welcome to <code>Docker</code> cheat sheet. If you have followed <a href="./setup.html">Setup tutorial</a> successfully and then you are here to learn more about <code>Docker</code>, then you are in right track. Otherwise return to Setup page and complete <code>Docker</code> installation.</p>
 
 
-<div id="quarto-appendix" class="default"><section id="acknowledgements" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Acknowledgements</h2><div class="quarto-appendix-contents">
 
-<p>This course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility<span class="citation" data-cites="cambridge-bioinformatics-training-facility"><sup><a href="#ref-cambridge-bioinformatics-training-facility" role="doc-biblioref">2</a></sup></span> and other open access training materials.</p>
-<section id="references" class="level3">
-<h3 class="anchored" data-anchor-id="references">References</h3>
-<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-khan2025-bactgen-site" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Khan, T. &amp; Rahman, T. Introduction to bacterial genomics. <a href="https://tahsinkhann.github.io/bacterial-genomics/">https://tahsinkhann.github.io/bacterial-genomics/</a> (2025).</div>
-</div>
-<div id="ref-cambridge-bioinformatics-training-facility" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Faculity, C. B. T. Bioinfomartics for AWD-related pathogens. <a href="https://cambiotraining.github.io/awd-pathogen-bioinformatics/">https://cambiotraining.github.io/awd-pathogen-bioinformatics/</a>.</div>
-</div>
-</div>
-
-
-</section>
-</div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Licensed CC BY 4.0 by Tahsin Khan and Tanzim Rahman<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">(View License)</a></div></div></section><section class="quarto-appendix-contents" id="quarto-copyright"><h2 class="anchored quarto-appendix-heading">Copyright</h2><div class="quarto-appendix-contents"><div>Licensed CC BY 4.0 Tahsin Khan and Tanzim Rahman</div></div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -506,7 +251,7 @@ Note
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tahsinkhann\.github\.io\/bacterial-genomics\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
