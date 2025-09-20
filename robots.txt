@@ -1,1 +1,3 @@
+User-agent: *
+Allow: /
 Sitemap: https://tahsinkhann.github.io/bacterial-genomics/sitemap.xml

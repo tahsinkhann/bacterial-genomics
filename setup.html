@@ -106,6 +106,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Setup – Introduction to Bacterial Genomics">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Introduction to Bacterial Genomics">
+<meta name="twitter:title" content="Setup – Introduction to Bacterial Genomics">
+<meta name="twitter:description" content="">
+<meta name="twitter:site" content="@tahsinkhann">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -116,6 +123,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/images.png" alt="icddr,b" class="navbar-logo light-content">
+    <img src="./assets/images.png" alt="icddr,b" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Introduction to Bacterial Genomics</span>
@@ -163,6 +172,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.icddrb.org" rel="noopener" target="_blank"> 
+<span class="menu-text">icddr,b</span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
@@ -179,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#docker" id="toc-docker" class="nav-link active" data-scroll-target="#docker">Docker</a></li>
-  <li><a href="#setup-conda" id="toc-setup-conda" class="nav-link" data-scroll-target="#setup-conda">Setting up requried softwares</a></li>
+  <li><a href="#setup-conda" id="toc-setup-conda" class="nav-link" data-scroll-target="#setup-conda">Setting up required softwares</a></li>
   <li><a href="#docker-binding" id="toc-docker-binding" class="nav-link" data-scroll-target="#docker-binding">Docker Binding</a></li>
   </ul>
 </nav>
@@ -232,10 +247,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can think of it as an isolated environment inside your exising operating system where you can install and run software without messing with the main OS.</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/docker-library/docs/c350af05d3fac7b5c3f6327ac82fe4d990d8729c/docker/logo.png" class="img-fluid" width="180"></p>
-<p>Note that we use tabsets to provide instructions for <code>wWndows</code>, <code>Linux</code> and `<code>Mac OS</code>. Follow the instructions based on your laptop’s operating system.</p>
+<p>Note that we use tabsets to provide instructions for <code>Windows</code>, <code>Linux</code> and `<code>Mac OS</code>. Follow the instructions based on your laptop’s operating system.</p>
 </section>
 <section id="setup-conda" class="level2">
-<h2 class="anchored" data-anchor-id="setup-conda">Setting up requried softwares</h2>
+<h2 class="anchored" data-anchor-id="setup-conda">Setting up required softwares</h2>
 <p>Here will discuss how to setup <code>Docker Desktop</code> and with it to build images for the required tools. We will download sequence datasets and databases required in this training.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Mac OS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
@@ -377,7 +392,7 @@ Tip
 <ol start="3" type="1">
 <li><p>Go to <a href="https://www.docker.com">Docker Website</a> and download docker desktop</p></li>
 <li><p>Install <code>Docker Desktop</code> and follow the instructions.</p></li>
-<li><p>Once installation is complete, go to <code>Launchpad (Application/Start Menu)</code>, look/search <code>Docker Sesktop</code> and start the <code>Docker Desktop</code>. The first time you start <code>Docker Desktop</code> you will be asked to Login/Sign up. <strong>You may ignore it and just click on <code>skip</code>.</strong></p></li>
+<li><p>Once installation is complete, go to <code>Launchpad (Application/Start Menu)</code>, look/search <code>Docker Desktop</code> and start the <code>Docker Desktop</code>. The first time you start <code>Docker Desktop</code> you will be asked to Login/Sign up. <strong>You may ignore it and just click on <code>skip</code>.</strong></p></li>
 <li><p>Go to <a href="https://github.com/tanzim-rahman/wgs-training" class="uri">https://github.com/tanzim-rahman/wgs-training</a> and click on the green button <code>&lt; &gt; Code v</code> in upper right corner and click on <code>Download ZIP</code></p></li>
 <li><p>Copy the downloaded file to <code>genomics</code> directory and unzip the file</p></li>
 <li><p>In the terminal type the following code and press <code>ENTER</code></p></li>
@@ -700,7 +715,7 @@ Let’s check the images we built duing installation are accessible or not. Type
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tahsinkhann\.github\.io\/bacterial-genomics\/");
+        var filterRegex = new RegExp("https:\/\/tahsinkhann\.github\.io\/bacterial-genomics");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

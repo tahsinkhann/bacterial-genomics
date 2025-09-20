@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tanzim Rahman, Tahsin Khan">
+<meta name="description" content="Install Docker and run containers for the course.">
 
 <title>Docker Tutorial – Introduction to Bacterial Genomics</title>
 <style>
@@ -71,6 +72,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Docker Tutorial – Introduction to Bacterial Genomics">
+<meta property="og:description" content="Install Docker and run containers for the course.">
+<meta property="og:image" content="https://tahsinkhann.github.io/bacterial-genomics/help/assets/docker_logo.png">
+<meta property="og:site_name" content="Introduction to Bacterial Genomics">
+<meta name="twitter:title" content="Docker Tutorial – Introduction to Bacterial Genomics">
+<meta name="twitter:description" content="Install Docker and run containers for the course.">
+<meta name="twitter:image" content="https://tahsinkhann.github.io/bacterial-genomics/help/assets/docker_logo.png">
+<meta name="twitter:site" content="@tahsinkhann">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -81,6 +91,8 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/images.png" alt="icddr,b" class="navbar-logo light-content">
+    <img src="../assets/images.png" alt="icddr,b" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Introduction to Bacterial Genomics</span>
@@ -128,6 +140,12 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.icddrb.org" rel="noopener" target="_blank"> 
+<span class="menu-text">icddr,b</span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
@@ -149,6 +167,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Docker Tutorial</h1>
 </div>
 
+<div>
+  <div class="description">
+    Install Docker and run containers for the course.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -247,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tahsinkhann\.github\.io\/bacterial-genomics\/");
+        var filterRegex = new RegExp("https:\/\/tahsinkhann\.github\.io\/bacterial-genomics");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
