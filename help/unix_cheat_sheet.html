@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Tahsin Khan">
+<meta name="dcterms.date" content="2025-09-19">
 
-<title>Report a bug – Introduction to Bacterial Genomics</title>
+<title>Unix-Cheat-Sheet – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -39,7 +61,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-118c9c8d01a43a1fcc9e9a26f6dbf87f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-87ed84cec5f4a7bbcd93786be63fea16.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,22 +129,18 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../materials.html"> 
 <span class="menu-text">Materials</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../docker_tutorial.html"> 
-<span class="menu-text">Docker Tutorial</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../unix_cheat_sheet.html"> 
-<span class="menu-text">Unix-Cheat-Sheet</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Help</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="../help/report_a_bug.html">
- <span class="dropdown-text">Report a bug</span></a>
+    <a class="dropdown-item" href="../help/docker_tutorial.html">
+ <span class="dropdown-text">Docker Tutorial</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../help/unix_cheat_sheet.html">
+ <span class="dropdown-text">Unix Cheat Sheet</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://github.com/tahsinkhann/bacterial-genomics/issues" rel="noopener" target="_blank">
@@ -146,7 +164,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hehe" id="toc-hehe" class="nav-link active" data-scroll-target="#hehe">hehe</a></li>
+  <li><a href="#documentation-and-help" id="toc-documentation-and-help" class="nav-link active" data-scroll-target="#documentation-and-help">Documentation and Help</a></li>
+  <li><a href="#listing-files" id="toc-listing-files" class="nav-link" data-scroll-target="#listing-files">Listing files</a></li>
+  <li><a href="#change-directories" id="toc-change-directories" class="nav-link" data-scroll-target="#change-directories">Change Directories</a></li>
+  <li><a href="#make-or-remove-directories" id="toc-make-or-remove-directories" class="nav-link" data-scroll-target="#make-or-remove-directories">Make or Remove Directories</a></li>
+  <li><a href="#copy-move-and-remove-files" id="toc-copy-move-and-remove-files" class="nav-link" data-scroll-target="#copy-move-and-remove-files">Copy, Move and Remove Files</a></li>
+  <li><a href="#view-text-files" id="toc-view-text-files" class="nav-link" data-scroll-target="#view-text-files">View Text Files</a></li>
+  <li><a href="#find-patterns" id="toc-find-patterns" class="nav-link" data-scroll-target="#find-patterns">Find Patterns</a></li>
+  <li><a href="#wildcards" id="toc-wildcards" class="nav-link" data-scroll-target="#wildcards">Wildcards</a></li>
+  <li><a href="#redirect-output" id="toc-redirect-output" class="nav-link" data-scroll-target="#redirect-output">Redirect Output</a></li>
+  <li><a href="#combining-commands-with-pipes" id="toc-combining-commands-with-pipes" class="nav-link" data-scroll-target="#combining-commands-with-pipes">Combining Commands with <code>|</code> Pipes</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -155,14 +185,26 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Report a bug</h1>
+<h1 class="title">Unix-Cheat-Sheet</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tahsin Khan </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 19, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -172,11 +214,436 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="hehe" class="level2">
-<h2 class="anchored" data-anchor-id="hehe">hehe</h2>
-<p>hehe</p>
+<p>This document gives a brief summary of useful Unix commands adapted from Andries van Tonder’s training materials<span class="citation" data-cites="avantonder-2023"><sup><a href="#ref-avantonder-2023" role="doc-biblioref">1</a></sup></span>. In addition, an example of each command which will be frequently used in this training module is described. Participants are adviced to play with these commands at home to get familiarized with unix command lines.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Anything wihtin <code>{}</code> indicates a user-proved input.</p>
+</div>
+</div>
+<section id="documentation-and-help" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-and-help">Documentation and Help</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">command</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>man {command}</code></td>
+<td style="text-align: left;">manual page for the program</td>
+<td style="text-align: left;"><code>man cp</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>{command} --help</code></td>
+<td style="text-align: left;">many programs use the <code>--help</code> flag to print documentation</td>
+<td style="text-align: left;"><code>fastqc --help</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>whatis {command}</code></td>
+<td style="text-align: left;">short description of the program</td>
+<td style="text-align: left;"><code>whatis cp</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="listing-files" class="level2">
+<h2 class="anchored" data-anchor-id="listing-files">Listing files</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">command</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>ls</code></td>
+<td style="text-align: left;">list files in the current directory</td>
+<td style="text-align: left;"><code>ls</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ls {path}</code></td>
+<td style="text-align: left;">list files in the specified path</td>
+<td style="text-align: left;"><code>ls genomics/kraken2db</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ls -l {path}</code></td>
+<td style="text-align: left;">list files in long format (more information)</td>
+<td style="text-align: left;"><code>ls -l genomics/kraken2db</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ls -a {path}</code></td>
+<td style="text-align: left;">list all files (including hidden files)</td>
+<td style="text-align: left;"><code>ls -a genomics/kraken2db</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="change-directories" class="level2">
+<h2 class="anchored" data-anchor-id="change-directories">Change Directories</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">command</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>cd {path}</code></td>
+<td style="text-align: left;">change to the specified directory</td>
+<td style="text-align: left;"><code>cd wgs-training-main</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cd</code> or <code>cd ~</code></td>
+<td style="text-align: left;">change to the home directory</td>
+<td style="text-align: left;"><code>cd ~</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cd ..</code></td>
+<td style="text-align: left;">move back one directory</td>
+<td style="text-align: left;"><code>cd ..</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pwd</code></td>
+<td style="text-align: left;">print working directory. Shows the full path of where you are at the moment (useful if you are lost)</td>
+<td style="text-align: left;"><code>pwd</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="make-or-remove-directories" class="level2">
+<h2 class="anchored" data-anchor-id="make-or-remove-directories">Make or Remove Directories</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">command</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>mkdir {dirname}</code></td>
+<td style="text-align: left;">create a directory with specified name</td>
+<td style="text-align: left;"><code>mkdir test</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>rmdir {dirname}</code></td>
+<td style="text-align: left;">remove a directory (only works if the directory is empty)</td>
+<td style="text-align: left;"><code>rmdir test</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>rm -r {dirname}</code></td>
+<td style="text-align: left;">remove the directory and all it’s contents (use with care)</td>
+<td style="text-align: left;"><code>rm -r test</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="copy-move-and-remove-files" class="level2">
+<h2 class="anchored" data-anchor-id="copy-move-and-remove-files">Copy, Move and Remove Files</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">command</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>cp {source/path/file1} {target/path/}</code></td>
+<td style="text-align: left;">copy “file1” to another directory keeping its name</td>
+<td style="text-align: left;"><code>cp /Users/tahsinkhan/genomics/wgs-training-main/README.md  /Users/tahsinkhan/genomics/run_output/</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cp {source/path/file1} {target/path/file2}</code></td>
+<td style="text-align: left;">copy “file1” to another directory naming it “file2”</td>
+<td style="text-align: left;"><code>cp /Users/tahsinkhan/genomics/wgs-training-main/README.md  /Users/tahsinkhan/genomics/run_output/cp_README.md</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cp {file1} {file2}</code></td>
+<td style="text-align: left;">make a copy of “file1” in the same directory with a new name “file2”</td>
+<td style="text-align: left;"><code>cp wgs-training-main/README.md wgs-training-main/new_README.md</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>mv {source/path/file1} {target/path/}</code></td>
+<td style="text-align: left;">move “file1” to another directory keeping its name</td>
+<td style="text-align: left;"><code>mv /Users/tahsinkhan/genomics/wgs-training-main/new_README.md  /Users/tahsinkhan/genomics/run_output/new_README.md</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>mv {source/path/file1} {target/path/file2}</code></td>
+<td style="text-align: left;">move “file1” to another directory renaming it as “file2”</td>
+<td style="text-align: left;"><code>mv /Users/tahsinkhan/genomics/wgs-training-main/new_README.md  /Users/tahsinkhan/genomics/run_output/mv_README.md</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>mv {file1} {file2}</code></td>
+<td style="text-align: left;">is equivalent to renaming a file</td>
+<td style="text-align: left;"><code>mv /Users/tahsinkhan/genomics/run_output/mv_README.md /Users/tahsinkhan/genomics/run_output/renamed_README.md</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>rm {filename}</code></td>
+<td style="text-align: left;">remove a file</td>
+<td style="text-align: left;"><code>rm /Users/tahsinkhan/genomics/run_output/rename_README.md</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="view-text-files" class="level2">
+<h2 class="anchored" data-anchor-id="view-text-files">View Text Files</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">command</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>less {file}</code></td>
+<td style="text-align: left;">view and scroll through a text file</td>
+<td style="text-align: left;"><code>less wgs-training-main/README.md</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>head {file}</code></td>
+<td style="text-align: left;">print the first 10 lines of a file</td>
+<td style="text-align: left;"><code>head wgs-training-main/README.md</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>head -n {N} {file}</code></td>
+<td style="text-align: left;">print the first N lines of a file</td>
+<td style="text-align: left;"><code>head -n 10 wgs-training-main/README.md</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>tail {file}</code></td>
+<td style="text-align: left;">print the last 10 lines of a file</td>
+<td style="text-align: left;"><code>tail wgs-training-main/README.md</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>tail -n {N} {file}</code></td>
+<td style="text-align: left;">print the last N lines of a file</td>
+<td style="text-align: left;"><code>tail -n 10 wgs-training-main/README.md</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>head -n {N} {file} | tail -n 1</code></td>
+<td style="text-align: left;">print the Nth line of a file</td>
+<td style="text-align: left;"><code>head -n 5 wgs-training-main/README.md | tail -n 1 wgs-training-main/README.md</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cat {file}</code></td>
+<td style="text-align: left;">print the whole content of the file</td>
+<td style="text-align: left;"><code>cat wgs-training-main/README.md</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cat {file1} {file2} {...} {fileN}</code></td>
+<td style="text-align: left;">concatenate files and print the result</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>zcat {file}</code> and <code>zless {file}</code></td>
+<td style="text-align: left;">like <code>cat</code> and <code>less</code> but for <em>compressed</em> files (<em>.zip</em> or <em>.gz</em>)</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="find-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="find-patterns">Find Patterns</h2>
+<p>Finding (and replacing) patterns in text is a very powerful feature of several command line programs. The patterns are specified using <em>regular expressions</em> (shortened as <em>regex</em>), which are not covered in this document. See this <a href="https://cheatography.com/davechild/cheat-sheets/regular-expressions/pdf/">Regular Expressions Cheat Sheet</a> for a comprehensive overview.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">command</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>grep {regex} {file}</code></td>
+<td style="text-align: left;">print the lines of the file that have a match with the regular expression pattern</td>
+<td style="text-align: left;"><code>grep docker wgs-training-main/README.md</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wildcards" class="level2">
+<h2 class="anchored" data-anchor-id="wildcards">Wildcards</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">command</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>*</code></td>
+<td style="text-align: left;">match any number of characters</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>?</code></td>
+<td style="text-align: left;">match any character only once</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>Examples</em></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ls sample*</code></td>
+<td style="text-align: left;">list all files that start with the word “sample”</td>
+<td style="text-align: left;"><code>ls kraken2db/database*</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ls *.txt</code></td>
+<td style="text-align: left;">list all the files with <em>.txt</em> extension</td>
+<td style="text-align: left;"><code>ls kraken2db/*.txt</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cp * {another/directory}</code></td>
+<td style="text-align: left;">copy all the files in the current directory to a different directory</td>
+<td style="text-align: left;"><code>cp kraken2db/* test/</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="redirect-output" class="level2">
+<h2 class="anchored" data-anchor-id="redirect-output">Redirect Output</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">command</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>{command} &gt; {file}</code></td>
+<td style="text-align: left;">redirect output to a file (overwrites if the file exists)</td>
+<td style="text-align: left;"><code>cat test/inspect.txt &gt; new_inspect.txt</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>{command} &gt;&gt; {file}</code></td>
+<td style="text-align: left;">append output to a file (creates a new file if it does not already exist)</td>
+<td style="text-align: left;"><code>cat test/unmapped_accessions.txt &gt;&gt; new_inspect.txt</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="combining-commands-with-pipes" class="level2">
+<h2 class="anchored" data-anchor-id="combining-commands-with-pipes">Combining Commands with <code>|</code> Pipes</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">command</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>&lt;command1&gt; | &lt;command2&gt;</code></td>
+<td style="text-align: left;">the output of “command1” is passed as input to “command2”</td>
+<td style="text-align: left;">given below</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ls | wc -l</code></td>
+<td style="text-align: left;">count the number of files in a directory</td>
+<td style="text-align: left;"><code>ls new_inspect.txt | wc -l</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cat {file1} {file2} | less</code></td>
+<td style="text-align: left;">concatenate files and view them with <em>less</em></td>
+<td style="text-align: left;"><code>cat test/inspect.txt test/unmapped_accessions.txt  | less</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cat {file} | grep "{pattern}" | wc -l</code></td>
+<td style="text-align: left;">count how many lines in the file have a match with “pattern”</td>
+<td style="text-align: left;"><code>cat test/inspect.txt | grep "Pseudomonas" | wc -l</code></td>
+</tr>
+</tbody>
+</table>
+<!-- This is how a comment in written; which will not be swhown to the main page -->
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-avantonder-2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Asare, P. &amp; Tonder, A. van. <a href="https://avantonder.github.io/Ghana_course/">Avantonder.github.io/ghana_course/: Introduction to bacterial genomics</a>. (2023).</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

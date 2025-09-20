@@ -1,229 +1,24 @@
 [
   {
-    "objectID": "help/report_a_bug.html",
-    "href": "help/report_a_bug.html",
-    "title": "Report a bug",
-    "section": "",
-    "text": "hehe"
-  },
-  {
-    "objectID": "help/report_a_bug.html#hehe",
-    "href": "help/report_a_bug.html#hehe",
-    "title": "Report a bug",
-    "section": "",
-    "text": "hehe"
-  },
-  {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Setup",
-    "section": "",
-    "text": "TipWorkshop Attendees\n\n\n\nif you are attending our workshops, please follow the guidelines to download required software and data. During the installation process, it is adviced to read the whole sentence first and follow the instructions accordingly."
-  },
-  {
-    "objectID": "setup.html#docker",
-    "href": "setup.html#docker",
-    "title": "Setup",
-    "section": "Docker",
-    "text": "Docker\nIn this training, we will be using Docker as container where we will install different bioinformatics tools and run it. Containerization is any system that allows multiple isolated operating systems to run inside a larger, host system. Docker is one such container which can be used within any operating sustems such as Windows, Linux or macOS. Docker is an open platform for developers to build and ship applications, whether on laptops, servers in a data center, or the cloud. It is a (relatively?) painless way for you to install and try out Bioinformatics software.\n\nYou can think of it as an isolated environment inside your exising operating system where you can install and run software without messing with the main OS.\n\n\nNote that we use tabsets to provide instructions for macOS, linux and windows."
-  },
-  {
-    "objectID": "setup.html#setup-conda",
-    "href": "setup.html#setup-conda",
-    "title": "Setup",
-    "section": "Setting up requried softwares",
-    "text": "Setting up requried softwares\nHere will discuss how to setup Docker Desktop and with it to build images for the required tools. We will download sequence datasets and databases required in this training.\n\nWindowsMac OSLinux\n\n\n\nGo to C:\\ drive and create a new folder named genomics.\n\n\n\n\n\n\n\nCaution\n\n\n\nMake sure\n\nyour C:\\ has at least 50 GB free space\nthe folder name is written in lowercase as shown here: genomics\n\n\n\n\nGo to the docker website and click on Download Docker Desktop and select Download for Windows - AMD64. Click here to visit Docker Website.\n\n\n\n\n\n\n\nNote\n\n\n\nIf you have ARM system then download that instead.\n\n\n\nGo to your Downloads folder and click on the file that was just downloaded. Follow the instruction to install Docker Desktop and wait for the installation process to finish.\n\n\n\n\n\n\n\nWarning\n\n\n\nDuring installation you may be asked to install WSL. If so, please install it.\n\n\n\nOnce installation is complete, go to start menu and start the Docker Desktop. The first time you start Docker Desktop you will be asked to Login/Sign up. You may ignore it and just click on skip.\nGo to https://github.com/tanzim-rahman/wgs-training and click on the green button &lt; &gt; Code v in upper right corner and click on Download ZIP\nCopy the downloaded file to C:\\genomics directory and unzip the file.\nOpen a command prompt terminal from Start Menu and type the following code and press ENTER\n\ncd C:\\genomics\\wgs-training-main\\\ndocker build -t wgs .\n\n\n\n\n\n\nWarning\n\n\n\nThis step requires uninterrupted wifi/internet. This step takes a while (15 GB in size), please remain patient.\nMake sure that you have started the Docker Desktop according to step 4 mentioned above.\n\n\n\nNow you have to download the training materials from the google drive. Once you go to the drive link, you will see a materials.zip file. Download this file from the link below.\n\nClick here to download the materials file\n\nIn your download directory, you will see the file being downloaded as materials.zip.\nNow unzip it. Inside the unzipped directory you will see three directories named kraken2db raw_data and run_output. Move/copy these three directories to genomics directory.\nYour genomics directory now should have these three directories:\n\n\nkraken2db\nraw_data\nrun_output\n\nand some other files or directories you have download or moved here during the setup process.\n\n\n\n\n\n\nCaution\n\n\n\nMake sure those three directories mentioned above are present in the genomics. If not, go to step 8 and review the steps to make sure you followed the instructions correctly\n\n\n\nThere you go! You have completed the setup! You also have the sequence data and kraken2 database. Hurray!!!\n\n\n\n\n\n\n\nTip\n\n\n\nIf you face any dificculties do not hesitate to reach us at tahsin.khan@icddrb.org or tanzimrahman@gmail.com\n\n\n\nSee you in person at icddr,b.\n\n\n\n\nOpen a terminal and type the following\n\npwd\ncd ~\n\nCreate a directory named genomics in the terminal and then change the current directory to genomics\n\nmkdir genomics\ncd genomics\n\nGo to Docker Website and download docker desktop\nInstall Docker Desktop and follow the instructions.\nOnce installation is complete, go to Launchpad (Application/Start Menu), look/search Docker Sesktop and start the Docker Desktop. The first time you start Docker Desktop you will be asked to Login/Sign up. You may ignore it and just click on skip.\nGo to https://github.com/tanzim-rahman/wgs-training and click on the green button &lt; &gt; Code v in upper right corner and click on Download ZIP\nCopy the downloaded file to genomics directory and unzip the file\nIn the terminal type the following code and press ENTER\n\ncd wgs-training-main\ndocker build -t wgs .\n\n\n\n\n\n\nWarning\n\n\n\nThis step requires uninterrupted wifi/internet. This step takes a while (15 GB in size), please remain patient.\nMake sure that you have started the Docker Desktop according to step 5 mentioned above.\n\n\n\nNow you have to download the training materials from the google drive. Once you go to the drive link, you will see a materials.zip file. Download this file from the link below.\n\nClick here to download the materials file\n\nIn your download directory, you will see the file being downloaded as either materials directory or as materials.zip. If you see materials.zip, just unzip or extract the files.\nInside the unzipped directory you will see three directories named kraken2db raw_data and run_output. Move/copy these three directories to genomics directory.\nYour genomics directory should now have these three directories:\n\n\nkraken2db\nraw_data\nrun_output\n\nand some other files or directories you have downloaded or moved here during the setup process.\n\n\n\n\n\n\nCaution\n\n\n\nMake sure those three direcotries mentioned above are present in the genomics. If not, go to step 9 and review the steps to make sure you followed the instructions correctly\n\n\n\nThere you go! You have completed the setup! You also have the sequence data and kraken2 database. Hurray!!!\n\n\n\n\n\n\n\nTip\n\n\n\nIf you face any dificculties do not hesitate to reach us at tahsin.khan@icddrb.org or tanzimrahman@gmail.com\n\n\n\nSee you in person at icddr,b.\n\n\n\n\nOpen a terminal and type the following\n\npwd\ncd ~\n\nCreate a directory named genomics in the terminal and then change the current directory to genomics\n\nmkdir genomics\ncd genomics\n\nInstall Docker Desktop and follow the instructions as below.\n\n\n\n\n\n\n\nTipInstruction for Docker Installation\n\n\n\n\nwrite the following code in your terminal. It will ask you to type your laptop password. Type your password and press ENTER.\n\nsudo apt install gnome-terminal\n\nNow install the apt repository\n\n# Add Docker's official GPG key:\nsudo apt-get update\nsudo apt-get install ca-certificates curl\nsudo install -m 0755 -d /etc/apt/keyrings\nsudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc\nsudo chmod a+r /etc/apt/keyrings/docker.asc\n\n# Add the repository to Apt sources:\necho \\\n  \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \\\n  $(. /etc/os-release && echo \"${UBUNTU_CODENAME:-$VERSION_CODENAME}\") stable\" | \\\n  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null\nsudo apt-get update\n\nDownload the DEB file\n\ncurl -o ./docker-desktop-amd64.deb https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb\n\nInstall Docker Desktop\n\nsudo apt-get update\nsudo apt-get install ./docker-desktop-amd64.deb\n\n[optional] remove the docker-desktop-amd64.deb file\n\nrm docker-desktop-amd64.deb\n\n\n\nOnce installation is complete, go to Applications (Start Menu), look/search Docker Sesktop and start the Docker Desktop. The first time you start Docker Desktop you will be asked to Login/Sign up. You may ignore it and just click on skip.\nGo to https://github.com/tanzim-rahman/wgs-training and click on the green button &lt; &gt; Code v in upper right corner and click on Download ZIP\nCopy the downloaded file to genomics directory and unzip the file\nIn the terminal type the following code and press ENTER\n\ncd wgs-training-main\ndocker build -t wgs .\n\n\n\n\n\n\nWarning\n\n\n\nThis step requires uninterrupted wifi/internet. This step takes a while (15 GB in size), please remain patient.\nMake sure that you have started the Docker Desktop accorting to step 5 mentioned above.\n\n\n\nNow you have to download the training materials from the google drive. Once you go to the drive link, you will see a materials.zip file. Download this file from the link below.\n\nClick here to download the materials file\n\nIn your download directory, you will see the file being downloaded as materials-{some_random_numbers}.zip.\nNow unzip it. Inside the unzipped directory you will see three directories named kraken2db raw_data and run_output. Move/copy these three directories to genomics directory.\nYour genomics directory should now have these three directories:\n\n\nkraken2db\nraw_data\nrun_output\n\nand some other files or directories you have downloaded or moved here during the setup process.\n\n\n\n\n\n\nCaution\n\n\n\nMake sure those three direcotries mentioned above are present in the genomics. If not, go to step 8 and review the steps to make sure you followed the instructions correctly\n\n\n\nThere you go! You have completed the setup! You also have the sequence data and kraken2 database. Hurray!!!\n\n\n\n\n\n\n\nTip\n\n\n\nIf you face any dificculties do not hesitate to reach us at tahsin.khan@icddrb.org or tanzimrahman@gmail.com\n\n\n\nSee you in person at icddr,b.\n\n\n\n\n\nOnce you have completed these steps its time to bind and mount your genomics directory to Docker"
-  },
-  {
-    "objectID": "setup.html#docker-binding",
-    "href": "setup.html#docker-binding",
-    "title": "Setup",
-    "section": "Docker Binding",
-    "text": "Docker Binding\nBased on you computer operating system, choose one of the following instructions\n\nWindowsMac OSLinux\n\n\nOpen command promt terminal (cmd..exe) and type the following:\ndocker run --rm -it ^\n  -v \"%USERPROFILE%\\genomics\\run_output:/run-dir\" ^\n  -v \"%USERPROFILE%\\genomics\\raw_data:/raw-data\" ^\n  -v \"%USERPROFILE%\\genomics\\kraken2db:/kraken2db\" ^\n  wgs /bin/bash\nOr if you are using Powershell type the following:\ndocker run --rm -it `\n  -v \"${env:USERPROFILE}\\genomics\\run_output:/run-dir\" `\n  -v \"${env:USERPROFILE}\\genomics\\raw_data:/raw-data\" `\n  -v \"${env:USERPROFILE}\\genomics\\kraken2db:/kraken2db\" `\n  wgs /bin/bash\nNow Docker should be accessible to work with.\nLet’s check the images we built duing installation are accessible or not. Type the following and if you see details of the tool, means that your Docker is successuflly installed and software images are build successfully. Hurray!!!\nfastqc --help\n\n\nOpen terminal and type the following:\ndocker run --rm -it -v $HOME/genomics/run_output:/run-dir -v $HOME/genomics/raw_data:/raw-data -v $HOME/genomics/kraken2db:/kraken2db wgs /bin/bash\nNow Docker should be accessible to work with.\nLet’s check the images we built duing installation are accessible or not. Type the following and if you see details of the tool, means that your Docker is successuflly installed and software images are build successfully. Hurray!!!\nfastqc --help\n\n\nOpen terminal and type the following:\ndocker run --rm -it -v $HOME/genomics/run_output:/run-dir -v $HOME/genomics/raw_data:/raw-data -v $HOME/genomics/kraken2db:/kraken2db wgs /bin/bash\nNow Docker should be accessible to work with.\nLet’s check the images we built duing installation are accessible or not. Type the following and if you see details of the tool, means that your Docker is successuflly installed and software images are build successfully. Hurray!!!\nfastqc --help\n\n\n\nNow go to Docker Tutorial and get familiarized with basic commands. Once you master these basic commands go to Unix-Cheat-Sheet and practice unix commands. But be careful that you do not delete or remove any data from the genomics directory. If you do so, download those files before joining the training at icddr,b."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "docker_tutorial.html",
-    "href": "docker_tutorial.html",
+    "objectID": "help/docker_tutorial.html",
+    "href": "help/docker_tutorial.html",
     "title": "Docker Tutorial",
     "section": "",
-    "text": "Welcome to Docker cheat sheet. If you have followed Setup tutorial successfully and then you are here to learn more about Docker, then you are in right track. Otherwise return to Setup page and complete Docker installation."
+    "text": "Welcome to Docker tutorial sheet. If you have followed Setup tutorial successfully and then you are here to learn more about Docker, then you are in right track. Otherwise return to Setup page and complete Docker installation."
   },
   {
-    "objectID": "materials/2-1-unix-shell.html",
-    "href": "materials/2-1-unix-shell.html",
-    "title": "2-1-unix-shell",
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Training Schedule",
     "section": "",
-    "text": "hehe",
-    "crumbs": [
-      "Materials",
-      "2. Intro to Unix",
-      "2-1-unix-shell"
-    ]
+    "text": "Here we will discuss about training schedule for these 4/5 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories"
   },
   {
-    "objectID": "materials/2-1-unix-shell.html#hehe",
-    "href": "materials/2-1-unix-shell.html#hehe",
-    "title": "2-1-unix-shell",
+    "objectID": "schedule.html#training-schedule",
+    "href": "schedule.html#training-schedule",
+    "title": "Training Schedule",
     "section": "",
-    "text": "hehe",
-    "crumbs": [
-      "Materials",
-      "2. Intro to Unix",
-      "2-1-unix-shell"
-    ]
-  },
-  {
-    "objectID": "materials/1-1-wgs.html",
-    "href": "materials/1-1-wgs.html",
-    "title": "1-1-wgs",
-    "section": "",
-    "text": "hehe",
-    "crumbs": [
-      "Materials",
-      "1. Intro to Unix",
-      "1-1-wgs"
-    ]
-  },
-  {
-    "objectID": "materials/1-1-wgs.html#hehe",
-    "href": "materials/1-1-wgs.html#hehe",
-    "title": "1-1-wgs",
-    "section": "",
-    "text": "hehe",
-    "crumbs": [
-      "Materials",
-      "1. Intro to Unix",
-      "1-1-wgs"
-    ]
-  },
-  {
-    "objectID": "materials/2-2-navigating-files.html",
-    "href": "materials/2-2-navigating-files.html",
-    "title": "2-2-navigating-files",
-    "section": "",
-    "text": "hehe",
-    "crumbs": [
-      "Materials",
-      "2. Intro to Unix",
-      "2-2-navigating-files"
-    ]
-  },
-  {
-    "objectID": "materials/2-2-navigating-files.html#hehe",
-    "href": "materials/2-2-navigating-files.html#hehe",
-    "title": "2-2-navigating-files",
-    "section": "",
-    "text": "hehe",
-    "crumbs": [
-      "Materials",
-      "2. Intro to Unix",
-      "2-2-navigating-files"
-    ]
-  },
-  {
-    "objectID": "unix_cheat_sheet.html",
-    "href": "unix_cheat_sheet.html",
-    "title": "Unix-Cheat-Sheet",
-    "section": "",
-    "text": "This document gives a brief summary of useful Unix commands adapted from Andries van Tonder’s training materials1. In addition, an example of each command which will be frequently used in this training module is described. Participants are adviced to play with these commands at home to get familiarized with unix command lines."
-  },
-  {
-    "objectID": "unix_cheat_sheet.html#documentation-and-help",
-    "href": "unix_cheat_sheet.html#documentation-and-help",
-    "title": "Unix-Cheat-Sheet",
-    "section": "Documentation and Help",
-    "text": "Documentation and Help\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nman {command}\nmanual page for the program\nman cp\n\n\n{command} --help\nmany programs use the --help flag to print documentation\nfastqc --help\n\n\nwhatis {command}\nshort description of the program\nwhatis cp"
-  },
-  {
-    "objectID": "unix_cheat_sheet.html#listing-files",
-    "href": "unix_cheat_sheet.html#listing-files",
-    "title": "Unix-Cheat-Sheet",
-    "section": "Listing files",
-    "text": "Listing files\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nls\nlist files in the current directory\nls\n\n\nls {path}\nlist files in the specified path\nls genomics/kraken2db\n\n\nls -l {path}\nlist files in long format (more information)\nls -l genomics/kraken2db\n\n\nls -a {path}\nlist all files (including hidden files)\nls -a genomics/kraken2db"
-  },
-  {
-    "objectID": "unix_cheat_sheet.html#change-directories",
-    "href": "unix_cheat_sheet.html#change-directories",
-    "title": "Unix-Cheat-Sheet",
-    "section": "Change Directories",
-    "text": "Change Directories\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\ncd {path}\nchange to the specified directory\ncd wgs-training-main\n\n\ncd or cd ~\nchange to the home directory\ncd ~\n\n\ncd ..\nmove back one directory\ncd ..\n\n\npwd\nprint working directory. Shows the full path of where you are at the moment (useful if you are lost)\npwd"
-  },
-  {
-    "objectID": "unix_cheat_sheet.html#make-or-remove-directories",
-    "href": "unix_cheat_sheet.html#make-or-remove-directories",
-    "title": "Unix-Cheat-Sheet",
-    "section": "Make or Remove Directories",
-    "text": "Make or Remove Directories\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nmkdir {dirname}\ncreate a directory with specified name\nmkdir test\n\n\nrmdir {dirname}\nremove a directory (only works if the directory is empty)\nrmdir test\n\n\nrm -r {dirname}\nremove the directory and all it’s contents (use with care)\nrm -r test"
-  },
-  {
-    "objectID": "unix_cheat_sheet.html#copy-move-and-remove-files",
-    "href": "unix_cheat_sheet.html#copy-move-and-remove-files",
-    "title": "Unix-Cheat-Sheet",
-    "section": "Copy, Move and Remove Files",
-    "text": "Copy, Move and Remove Files\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\ncp {source/path/file1} {target/path/}\ncopy “file1” to another directory keeping its name\ncp /Users/tahsinkhan/genomics/wgs-training-main/README.md  /Users/tahsinkhan/genomics/run_output/\n\n\ncp {source/path/file1} {target/path/file2}\ncopy “file1” to another directory naming it “file2”\ncp /Users/tahsinkhan/genomics/wgs-training-main/README.md  /Users/tahsinkhan/genomics/run_output/cp_README.md\n\n\ncp {file1} {file2}\nmake a copy of “file1” in the same directory with a new name “file2”\ncp wgs-training-main/README.md wgs-training-main/new_README.md\n\n\nmv {source/path/file1} {target/path/}\nmove “file1” to another directory keeping its name\nmv /Users/tahsinkhan/genomics/wgs-training-main/new_README.md  /Users/tahsinkhan/genomics/run_output/new_README.md\n\n\nmv {source/path/file1} {target/path/file2}\nmove “file1” to another directory renaming it as “file2”\nmv /Users/tahsinkhan/genomics/wgs-training-main/new_README.md  /Users/tahsinkhan/genomics/run_output/mv_README.md\n\n\nmv {file1} {file2}\nis equivalent to renaming a file\nmv /Users/tahsinkhan/genomics/run_output/mv_README.md /Users/tahsinkhan/genomics/run_output/renamed_README.md\n\n\nrm {filename}\nremove a file\nrm /Users/tahsinkhan/genomics/run_output/rename_README.md"
-  },
-  {
-    "objectID": "unix_cheat_sheet.html#view-text-files",
-    "href": "unix_cheat_sheet.html#view-text-files",
-    "title": "Unix-Cheat-Sheet",
-    "section": "View Text Files",
-    "text": "View Text Files\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nless {file}\nview and scroll through a text file\nless wgs-training-main/README.md\n\n\nhead {file}\nprint the first 10 lines of a file\nhead wgs-training-main/README.md\n\n\nhead -n {N} {file}\nprint the first N lines of a file\nhead -n 10 wgs-training-main/README.md\n\n\ntail {file}\nprint the last 10 lines of a file\ntail wgs-training-main/README.md\n\n\ntail -n {N} {file}\nprint the last N lines of a file\ntail -n 10 wgs-training-main/README.md\n\n\nhead -n {N} {file} | tail -n 1\nprint the Nth line of a file\nhead -n 5 wgs-training-main/README.md | tail -n 1 wgs-training-main/README.md\n\n\ncat {file}\nprint the whole content of the file\ncat wgs-training-main/README.md\n\n\ncat {file1} {file2} {...} {fileN}\nconcatenate files and print the result\n\n\n\nzcat {file} and zless {file}\nlike cat and less but for compressed files (.zip or .gz)"
-  },
-  {
-    "objectID": "unix_cheat_sheet.html#find-patterns",
-    "href": "unix_cheat_sheet.html#find-patterns",
-    "title": "Unix-Cheat-Sheet",
-    "section": "Find Patterns",
-    "text": "Find Patterns\nFinding (and replacing) patterns in text is a very powerful feature of several command line programs. The patterns are specified using regular expressions (shortened as regex), which are not covered in this document. See this Regular Expressions Cheat Sheet for a comprehensive overview.\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\ngrep {regex} {file}\nprint the lines of the file that have a match with the regular expression pattern\ngrep docker wgs-training-main/README.md"
-  },
-  {
-    "objectID": "unix_cheat_sheet.html#wildcards",
-    "href": "unix_cheat_sheet.html#wildcards",
-    "title": "Unix-Cheat-Sheet",
-    "section": "Wildcards",
-    "text": "Wildcards\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n*\nmatch any number of characters\n\n\n\n?\nmatch any character only once\n\n\n\nExamples\n\n\n\n\nls sample*\nlist all files that start with the word “sample”\nls kraken2db/database*\n\n\nls *.txt\nlist all the files with .txt extension\nls kraken2db/*.txt\n\n\ncp * {another/directory}\ncopy all the files in the current directory to a different directory\ncp kraken2db/* test/"
-  },
-  {
-    "objectID": "unix_cheat_sheet.html#redirect-output",
-    "href": "unix_cheat_sheet.html#redirect-output",
-    "title": "Unix-Cheat-Sheet",
-    "section": "Redirect Output",
-    "text": "Redirect Output\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n{command} &gt; {file}\nredirect output to a file (overwrites if the file exists)\ncat test/inspect.txt &gt; new_inspect.txt\n\n\n{command} &gt;&gt; {file}\nappend output to a file (creates a new file if it does not already exist)\ncat test/unmapped_accessions.txt &gt;&gt; new_inspect.txt"
-  },
-  {
-    "objectID": "unix_cheat_sheet.html#combining-commands-with-pipes",
-    "href": "unix_cheat_sheet.html#combining-commands-with-pipes",
-    "title": "Unix-Cheat-Sheet",
-    "section": "Combining Commands with | Pipes",
-    "text": "Combining Commands with | Pipes\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n&lt;command1&gt; | &lt;command2&gt;\nthe output of “command1” is passed as input to “command2”\ngiven below\n\n\nls | wc -l\ncount the number of files in a directory\nls new_inspect.txt | wc -l\n\n\ncat {file1} {file2} | less\nconcatenate files and view them with less\ncat test/inspect.txt test/unmapped_accessions.txt  | less\n\n\ncat {file} | grep \"{pattern}\" | wc -l\ncount how many lines in the file have a match with “pattern”\ncat test/inspect.txt | grep \"Pseudomonas\" | wc -l\n\n\n\n\n\nReferences\n\n\n1. Asare, P. & Tonder, A. van. Avantonder.github.io/ghana_course/: Introduction to bacterial genomics. (2023)."
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "Whole Genome Sequence Analysis of Bacterial Pathogen",
-    "section": "Overview",
-    "text": "Overview\nThis course is designed for beginners who want to analyse whole genome sequencing data from bacterial isolates. Throughout the course we will introduce tools that are commonly used and basic requirements for analyzing any bacterial genome. Along the way, we will teach you the foundational bioinformatic skills\n\n\n\n\n\n\nTipLearning Objectives\n\n\n\nBy the end of this course, participants should be able to:\n\nunderstand what the main technologies used for high throuput sequencing are\nuse the unix command line to navigate a filesystem, manipulate files, launch programs and write scripts for reproducible analysis\nrecognize the structure of common sequence file formats\nrun basic quality control of samples\nassemble the reads to construct contigs or scaffolds of the genome\ncheck the quality and completeness of the contgs\nclassify taxonomy of that organism\nannotate the genome to identify coding DNA sequences and proteins\nidentify core genes and construc phylogenetic tree\ninvestigate pathogen transmission dynamics\n\n\n\n\nTarget audiance\nThe course is designed for\n\nStudents\nFresh graduates\nEarly career researchers\n\n\n\nPre requisite\npeople who have\n\nPersonal computer or laptop\nFamiliarity with R and Bash"
-  },
-  {
-    "objectID": "index.html#authors",
-    "href": "index.html#authors",
-    "title": "Whole Genome Sequence Analysis of Bacterial Pathogen",
-    "section": "Authors",
-    "text": "Authors\nabout the authors:\n\nTahsin Khan  \nAffiliation: Genome Centre, icddr,b\nRoles: writing - original draft; conceptualisation; coding\nTanzim Rahman  \nAffiliation: Genome Centre, icddr,b\nRoles: writing - original draft; conceptualisation; coding"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Whole Genome Sequence Analysis of Bacterial Pathogen",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\n\nThis course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility2 and other open access training materials.\n\nReferences\n\n\n1. Khan, T. & Rahman, T. Introduction to bacterial genomics. https://tahsinkhann.github.io/bacterial-genomics/ (2025).\n\n\n2. Faculity, C. B. T. Bioinfomartics for AWD-related pathogens. https://cambiotraining.github.io/awd-pathogen-bioinformatics/."
+    "text": "Here we will discuss about training schedule for these 4/5 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories"
   },
   {
     "objectID": "materials.html",
@@ -259,17 +54,208 @@
     ]
   },
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Training Schedule",
-    "section": "",
-    "text": "Here we will discuss about training schedule for these 4/5 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories"
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Whole Genome Sequence Analysis of Bacterial Pathogen",
+    "section": "Overview",
+    "text": "Overview\nThis course is designed for beginners who want to analyse whole genome sequencing data from bacterial isolates. Throughout the course we will introduce tools that are commonly used and basic requirements for analyzing any bacterial genome. Along the way, we will teach you the foundational bioinformatic skills\n\n\n\n\n\n\nTipLearning Objectives\n\n\n\nBy the end of this course, participants should be able to:\n\nunderstand what the main technologies used for high throuput sequencing are\nuse the unix command line to navigate a filesystem, manipulate files, launch programs and write scripts for reproducible analysis\nrecognize the structure of common sequence file formats\nrun basic quality control of samples\nassemble the reads to construct contigs or scaffolds of the genome\ncheck the quality and completeness of the contgs\nclassify taxonomy of that organism\nannotate the genome to identify coding DNA sequences and proteins\nidentify core genes and construc phylogenetic tree\ninvestigate pathogen transmission dynamics\n\n\n\n\nTarget audiance\nThe course is designed for\n\nStudents\nFresh graduates\nEarly career researchers\n\n\n\nPre requisite\npeople who have\n\nPersonal computer or laptop\nFamiliarity with R and Bash"
   },
   {
-    "objectID": "schedule.html#training-schedule",
-    "href": "schedule.html#training-schedule",
-    "title": "Training Schedule",
+    "objectID": "index.html#authors",
+    "href": "index.html#authors",
+    "title": "Whole Genome Sequence Analysis of Bacterial Pathogen",
+    "section": "Authors",
+    "text": "Authors\nabout the authors:\n\nTahsin Khan  \nAffiliation: Genome Centre, icddr,b\nRoles: writing - original draft; conceptualisation; coding\nTanzim Rahman  \nAffiliation: Genome Centre, icddr,b\nRoles: writing - original draft; conceptualisation; coding"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Whole Genome Sequence Analysis of Bacterial Pathogen",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\nThis course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility2 and other open access training materials.\n\nReferences\n\n\n1. Khan, T. & Rahman, T. Introduction to bacterial genomics. https://tahsinkhann.github.io/bacterial-genomics/ (2025).\n\n\n2. Faculity, C. B. T. Bioinfomartics for AWD-related pathogens. https://cambiotraining.github.io/awd-pathogen-bioinformatics/."
+  },
+  {
+    "objectID": "materials/2-2-navigating-files.html",
+    "href": "materials/2-2-navigating-files.html",
+    "title": "2-2-navigating-files",
     "section": "",
-    "text": "Here we will discuss about training schedule for these 4/5 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories"
+    "text": "hehe",
+    "crumbs": [
+      "Materials",
+      "2. Intro to Unix",
+      "2-2-navigating-files"
+    ]
+  },
+  {
+    "objectID": "materials/2-2-navigating-files.html#hehe",
+    "href": "materials/2-2-navigating-files.html#hehe",
+    "title": "2-2-navigating-files",
+    "section": "",
+    "text": "hehe",
+    "crumbs": [
+      "Materials",
+      "2. Intro to Unix",
+      "2-2-navigating-files"
+    ]
+  },
+  {
+    "objectID": "materials/1-1-wgs.html",
+    "href": "materials/1-1-wgs.html",
+    "title": "1-1-wgs",
+    "section": "",
+    "text": "hehe",
+    "crumbs": [
+      "Materials",
+      "1. Intro to Unix",
+      "1-1-wgs"
+    ]
+  },
+  {
+    "objectID": "materials/1-1-wgs.html#hehe",
+    "href": "materials/1-1-wgs.html#hehe",
+    "title": "1-1-wgs",
+    "section": "",
+    "text": "hehe",
+    "crumbs": [
+      "Materials",
+      "1. Intro to Unix",
+      "1-1-wgs"
+    ]
+  },
+  {
+    "objectID": "materials/2-1-unix-shell.html",
+    "href": "materials/2-1-unix-shell.html",
+    "title": "2-1-unix-shell",
+    "section": "",
+    "text": "hehe",
+    "crumbs": [
+      "Materials",
+      "2. Intro to Unix",
+      "2-1-unix-shell"
+    ]
+  },
+  {
+    "objectID": "materials/2-1-unix-shell.html#hehe",
+    "href": "materials/2-1-unix-shell.html#hehe",
+    "title": "2-1-unix-shell",
+    "section": "",
+    "text": "hehe",
+    "crumbs": [
+      "Materials",
+      "2. Intro to Unix",
+      "2-1-unix-shell"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup",
+    "section": "",
+    "text": "TipWorkshop Attendees\n\n\n\nIf you are attending our workshops, please follow the guidelines to download and install required softwares. During the installation process, it is adviced that you read the whole sentence first and follow the instructions accordingly."
+  },
+  {
+    "objectID": "setup.html#docker",
+    "href": "setup.html#docker",
+    "title": "Setup",
+    "section": "Docker",
+    "text": "Docker\nIn this training, we will be using Docker as container where we will install different bioinformatics tools and run it. Containerization is a system that allows multiple isolated operating systems to run inside a larger, host system. Docker is one such container which can be used within any operating sustems such as Windows, Linux or Mac OS. Docker is an open platform for developers to build and ship applications, whether on laptops, servers in a data center, or the cloud. It is a (relatively?) painless way for you to install and try out Bioinformatics software.\n\nYou can think of it as an isolated environment inside your exising operating system where you can install and run software without messing with the main OS.\n\n\nNote that we use tabsets to provide instructions for wWndows, Linux and `Mac OS. Follow the instructions based on your laptop’s operating system."
+  },
+  {
+    "objectID": "setup.html#setup-conda",
+    "href": "setup.html#setup-conda",
+    "title": "Setup",
+    "section": "Setting up requried softwares",
+    "text": "Setting up requried softwares\nHere will discuss how to setup Docker Desktop and with it to build images for the required tools. We will download sequence datasets and databases required in this training.\n\nWindowsMac OSLinux\n\n\n\nGo to C:\\ drive and create a new folder named genomics.\n\n\n\n\n\n\n\nCaution\n\n\n\nMake sure\n\nyour C:\\ has at least 50 GB free space\nthe folder name is written in lowercase as shown here: genomics\n\n\n\n\nGo to the docker website and click on Download Docker Desktop and select Download for Windows - AMD64. Click here to visit Docker Website.\n\n\n\n\n\n\n\nNote\n\n\n\nIf you have ARM system then download that instead.\n\n\n\nGo to your Downloads folder and click on the file that was just downloaded. Follow the instruction to install Docker Desktop and wait for the installation process to finish.\n\n\n\n\n\n\n\nWarning\n\n\n\nDuring installation you may be asked to install WSL. If so, please install it.\n\n\n\nOnce installation is complete, go to start menu and start the Docker Desktop. The first time you start Docker Desktop you will be asked to Login/Sign up. You may ignore it and just click on skip.\nGo to https://github.com/tanzim-rahman/wgs-training and click on the green button &lt; &gt; Code v in upper right corner and click on Download ZIP\nCopy the downloaded file to C:\\genomics directory and unzip the file.\nOpen a command prompt terminal from Start Menu and type the following code and press ENTER\n\ncd C:\\genomics\\wgs-training-main\\\ndocker build -t wgs .\n\n\n\n\n\n\nWarning\n\n\n\nThis step requires uninterrupted wifi/internet. This step takes a while (15 GB in size), please remain patient.\nMake sure that you have started the Docker Desktop according to step 4 mentioned above.\n\n\n\nNow you have to download the training materials from the google drive. Once you go to the drive link, you will see a materials.zip file. Download this file from the link below.\n\nClick here to download the materials file\n\nIn your download directory, you will see the file being downloaded as materials.zip.\nNow unzip it. Inside the unzipped directory you will see three directories named kraken2db raw_data and run_output. Move/copy these three directories to genomics directory.\nYour genomics directory now should have these three directories:\n\n\nkraken2db\nraw_data\nrun_output\n\nand some other files or directories you have download or moved here during the setup process.\n\n\n\n\n\n\nCaution\n\n\n\nMake sure those three directories mentioned above are present in the genomics. If not, go to step 8 and review the steps to make sure you followed the instructions correctly\n\n\n\nThere you go! You have completed the setup! You also have the sequence data and kraken2 database. Hurray!!!\n\n\n\n\n\n\n\nTip\n\n\n\nIf you face any dificculties do not hesitate to reach us at tahsin.khan@icddrb.org or tanzimrahman@gmail.com\n\n\n\nSee you in person at icddr,b.\n\n\n\n\nOpen a terminal and type the following\n\npwd\ncd ~\n\nCreate a directory named genomics in the terminal and then change the current directory to genomics\n\nmkdir genomics\ncd genomics\n\nGo to Docker Website and download docker desktop\nInstall Docker Desktop and follow the instructions.\nOnce installation is complete, go to Launchpad (Application/Start Menu), look/search Docker Sesktop and start the Docker Desktop. The first time you start Docker Desktop you will be asked to Login/Sign up. You may ignore it and just click on skip.\nGo to https://github.com/tanzim-rahman/wgs-training and click on the green button &lt; &gt; Code v in upper right corner and click on Download ZIP\nCopy the downloaded file to genomics directory and unzip the file\nIn the terminal type the following code and press ENTER\n\ncd wgs-training-main\ndocker build -t wgs .\n\n\n\n\n\n\nWarning\n\n\n\nThis step requires uninterrupted wifi/internet. This step takes a while (15 GB in size), please remain patient.\nMake sure that you have started the Docker Desktop according to step 5 mentioned above.\n\n\n\nNow you have to download the training materials from the google drive. Once you go to the drive link, you will see a materials.zip file. Download this file from the link below.\n\nClick here to download the materials file\n\nIn your download directory, you will see the file being downloaded as either materials directory or as materials.zip. If you see materials.zip, just unzip or extract the files.\nInside the unzipped directory you will see three directories named kraken2db raw_data and run_output. Move/copy these three directories to genomics directory.\nYour genomics directory should now have these three directories:\n\n\nkraken2db\nraw_data\nrun_output\n\nand some other files or directories you have downloaded or moved here during the setup process.\n\n\n\n\n\n\nCaution\n\n\n\nMake sure those three direcotries mentioned above are present in the genomics. If not, go to step 9 and review the steps to make sure you followed the instructions correctly\n\n\n\nThere you go! You have completed the setup! You also have the sequence data and kraken2 database. Hurray!!!\n\n\n\n\n\n\n\nTip\n\n\n\nIf you face any dificculties do not hesitate to reach us at tahsin.khan@icddrb.org or tanzimrahman@gmail.com\n\n\n\nSee you in person at icddr,b.\n\n\n\n\nOpen a terminal and type the following\n\npwd\ncd ~\n\nCreate a directory named genomics in the terminal and then change the current directory to genomics\n\nmkdir genomics\ncd genomics\n\nInstall Docker Desktop and follow the instructions as below.\n\n\n\n\n\n\n\nTipInstruction for Docker Installation\n\n\n\n\nwrite the following code in your terminal. It will ask you to type your laptop password. Type your password and press ENTER.\n\nsudo apt install gnome-terminal\n\nNow install the apt repository\n\n# Add Docker's official GPG key:\nsudo apt-get update\nsudo apt-get install ca-certificates curl\nsudo install -m 0755 -d /etc/apt/keyrings\nsudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc\nsudo chmod a+r /etc/apt/keyrings/docker.asc\n\n# Add the repository to Apt sources:\necho \\\n  \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \\\n  $(. /etc/os-release && echo \"${UBUNTU_CODENAME:-$VERSION_CODENAME}\") stable\" | \\\n  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null\nsudo apt-get update\n\nDownload the DEB file\n\ncurl -o ./docker-desktop-amd64.deb https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb\n\nInstall Docker Desktop\n\nsudo apt-get update\nsudo apt-get install ./docker-desktop-amd64.deb\n\n[optional] remove the docker-desktop-amd64.deb file\n\nrm docker-desktop-amd64.deb\n\n\n\nOnce installation is complete, go to Applications (Start Menu), look/search Docker Sesktop and start the Docker Desktop. The first time you start Docker Desktop you will be asked to Login/Sign up. You may ignore it and just click on skip.\nGo to https://github.com/tanzim-rahman/wgs-training and click on the green button &lt; &gt; Code v in upper right corner and click on Download ZIP\nCopy the downloaded file to genomics directory and unzip the file\nIn the terminal type the following code and press ENTER\n\ncd wgs-training-main\ndocker build -t wgs .\n\n\n\n\n\n\nWarning\n\n\n\nThis step requires uninterrupted wifi/internet. This step takes a while (15 GB in size), please remain patient.\nMake sure that you have started the Docker Desktop accorting to step 5 mentioned above.\n\n\n\nNow you have to download the training materials from the google drive. Once you go to the drive link, you will see a materials.zip file. Download this file from the link below.\n\nClick here to download the materials file\n\nIn your download directory, you will see the file being downloaded as materials-{some_random_numbers}.zip.\nNow unzip it. Inside the unzipped directory you will see three directories named kraken2db raw_data and run_output. Move/copy these three directories to genomics directory.\nYour genomics directory should now have these three directories:\n\n\nkraken2db\nraw_data\nrun_output\n\nand some other files or directories you have downloaded or moved here during the setup process.\n\n\n\n\n\n\nCaution\n\n\n\nMake sure those three direcotries mentioned above are present in the genomics. If not, go to step 8 and review the steps to make sure you followed the instructions correctly\n\n\n\nThere you go! You have completed the setup! You also have the sequence data and kraken2 database. Hurray!!!\n\n\n\n\n\n\n\nTip\n\n\n\nIf you face any dificculties do not hesitate to reach us at tahsin.khan@icddrb.org or tanzimrahman@gmail.com\n\n\n\nSee you in person at icddr,b.\n\n\n\n\n\nOnce you have completed these steps its time to bind and mount your genomics directory to Docker"
+  },
+  {
+    "objectID": "setup.html#docker-binding",
+    "href": "setup.html#docker-binding",
+    "title": "Setup",
+    "section": "Docker Binding",
+    "text": "Docker Binding\nBased on you computer operating system, choose one of the following instructions\n\nWindowsMac OSLinux\n\n\nOpen command promt terminal (cmd..exe) and type the following:\ndocker run --rm -it ^\n  -v \"%USERPROFILE%\\genomics\\run_output:/run-dir\" ^\n  -v \"%USERPROFILE%\\genomics\\raw_data:/raw-data\" ^\n  -v \"%USERPROFILE%\\genomics\\kraken2db:/kraken2db\" ^\n  wgs /bin/bash\nOr if you are using Powershell type the following:\ndocker run --rm -it `\n  -v \"${env:USERPROFILE}\\genomics\\run_output:/run-dir\" `\n  -v \"${env:USERPROFILE}\\genomics\\raw_data:/raw-data\" `\n  -v \"${env:USERPROFILE}\\genomics\\kraken2db:/kraken2db\" `\n  wgs /bin/bash\nNow Docker should be accessible to work with.\nLet’s check the images we built duing installation are accessible or not. Type the following and if you see details of the tool, means that your Docker is successuflly installed and software images are build successfully. Hurray!!!\nfastqc --help\n\n\nOpen terminal and type the following:\ndocker run --rm -it -v $HOME/genomics/run_output:/run-dir -v $HOME/genomics/raw_data:/raw-data -v $HOME/genomics/kraken2db:/kraken2db wgs /bin/bash\nNow Docker should be accessible to work with.\nLet’s check the images we built duing installation are accessible or not. Type the following and if you see details of the tool, means that your Docker is successuflly installed and software images are build successfully. Hurray!!!\nfastqc --help\n\n\nOpen terminal and type the following:\ndocker run --rm -it -v $HOME/genomics/run_output:/run-dir -v $HOME/genomics/raw_data:/raw-data -v $HOME/genomics/kraken2db:/kraken2db wgs /bin/bash\nNow Docker should be accessible to work with.\nLet’s check the images we built duing installation are accessible or not. Type the following and if you see details of the tool, means that your Docker is successuflly installed and software images are build successfully. Hurray!!!\nfastqc --help\n\n\n\nNow go to Help page for Docker Tutorial and get familiarized with basic commands. Once you master these basic commands go to Unix-Cheat-Sheet and practice unix commands. But be careful that you do not delete or remove any data from the genomics directory. If you do so, download those files before joining the training at icddr,b."
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html",
+    "href": "help/unix_cheat_sheet.html",
+    "title": "Unix-Cheat-Sheet",
+    "section": "",
+    "text": "This document gives a brief summary of useful Unix commands adapted from Andries van Tonder’s training materials1. In addition, an example of each command which will be frequently used in this training module is described. Participants are adviced to play with these commands at home to get familiarized with unix command lines."
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html#documentation-and-help",
+    "href": "help/unix_cheat_sheet.html#documentation-and-help",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Documentation and Help",
+    "text": "Documentation and Help\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nman {command}\nmanual page for the program\nman cp\n\n\n{command} --help\nmany programs use the --help flag to print documentation\nfastqc --help\n\n\nwhatis {command}\nshort description of the program\nwhatis cp"
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html#listing-files",
+    "href": "help/unix_cheat_sheet.html#listing-files",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Listing files",
+    "text": "Listing files\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nls\nlist files in the current directory\nls\n\n\nls {path}\nlist files in the specified path\nls genomics/kraken2db\n\n\nls -l {path}\nlist files in long format (more information)\nls -l genomics/kraken2db\n\n\nls -a {path}\nlist all files (including hidden files)\nls -a genomics/kraken2db"
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html#change-directories",
+    "href": "help/unix_cheat_sheet.html#change-directories",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Change Directories",
+    "text": "Change Directories\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\ncd {path}\nchange to the specified directory\ncd wgs-training-main\n\n\ncd or cd ~\nchange to the home directory\ncd ~\n\n\ncd ..\nmove back one directory\ncd ..\n\n\npwd\nprint working directory. Shows the full path of where you are at the moment (useful if you are lost)\npwd"
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html#make-or-remove-directories",
+    "href": "help/unix_cheat_sheet.html#make-or-remove-directories",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Make or Remove Directories",
+    "text": "Make or Remove Directories\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nmkdir {dirname}\ncreate a directory with specified name\nmkdir test\n\n\nrmdir {dirname}\nremove a directory (only works if the directory is empty)\nrmdir test\n\n\nrm -r {dirname}\nremove the directory and all it’s contents (use with care)\nrm -r test"
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html#copy-move-and-remove-files",
+    "href": "help/unix_cheat_sheet.html#copy-move-and-remove-files",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Copy, Move and Remove Files",
+    "text": "Copy, Move and Remove Files\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\ncp {source/path/file1} {target/path/}\ncopy “file1” to another directory keeping its name\ncp /Users/tahsinkhan/genomics/wgs-training-main/README.md  /Users/tahsinkhan/genomics/run_output/\n\n\ncp {source/path/file1} {target/path/file2}\ncopy “file1” to another directory naming it “file2”\ncp /Users/tahsinkhan/genomics/wgs-training-main/README.md  /Users/tahsinkhan/genomics/run_output/cp_README.md\n\n\ncp {file1} {file2}\nmake a copy of “file1” in the same directory with a new name “file2”\ncp wgs-training-main/README.md wgs-training-main/new_README.md\n\n\nmv {source/path/file1} {target/path/}\nmove “file1” to another directory keeping its name\nmv /Users/tahsinkhan/genomics/wgs-training-main/new_README.md  /Users/tahsinkhan/genomics/run_output/new_README.md\n\n\nmv {source/path/file1} {target/path/file2}\nmove “file1” to another directory renaming it as “file2”\nmv /Users/tahsinkhan/genomics/wgs-training-main/new_README.md  /Users/tahsinkhan/genomics/run_output/mv_README.md\n\n\nmv {file1} {file2}\nis equivalent to renaming a file\nmv /Users/tahsinkhan/genomics/run_output/mv_README.md /Users/tahsinkhan/genomics/run_output/renamed_README.md\n\n\nrm {filename}\nremove a file\nrm /Users/tahsinkhan/genomics/run_output/rename_README.md"
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html#view-text-files",
+    "href": "help/unix_cheat_sheet.html#view-text-files",
+    "title": "Unix-Cheat-Sheet",
+    "section": "View Text Files",
+    "text": "View Text Files\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\nless {file}\nview and scroll through a text file\nless wgs-training-main/README.md\n\n\nhead {file}\nprint the first 10 lines of a file\nhead wgs-training-main/README.md\n\n\nhead -n {N} {file}\nprint the first N lines of a file\nhead -n 10 wgs-training-main/README.md\n\n\ntail {file}\nprint the last 10 lines of a file\ntail wgs-training-main/README.md\n\n\ntail -n {N} {file}\nprint the last N lines of a file\ntail -n 10 wgs-training-main/README.md\n\n\nhead -n {N} {file} | tail -n 1\nprint the Nth line of a file\nhead -n 5 wgs-training-main/README.md | tail -n 1 wgs-training-main/README.md\n\n\ncat {file}\nprint the whole content of the file\ncat wgs-training-main/README.md\n\n\ncat {file1} {file2} {...} {fileN}\nconcatenate files and print the result\n\n\n\nzcat {file} and zless {file}\nlike cat and less but for compressed files (.zip or .gz)"
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html#find-patterns",
+    "href": "help/unix_cheat_sheet.html#find-patterns",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Find Patterns",
+    "text": "Find Patterns\nFinding (and replacing) patterns in text is a very powerful feature of several command line programs. The patterns are specified using regular expressions (shortened as regex), which are not covered in this document. See this Regular Expressions Cheat Sheet for a comprehensive overview.\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\ngrep {regex} {file}\nprint the lines of the file that have a match with the regular expression pattern\ngrep docker wgs-training-main/README.md"
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html#wildcards",
+    "href": "help/unix_cheat_sheet.html#wildcards",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Wildcards",
+    "text": "Wildcards\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n*\nmatch any number of characters\n\n\n\n?\nmatch any character only once\n\n\n\nExamples\n\n\n\n\nls sample*\nlist all files that start with the word “sample”\nls kraken2db/database*\n\n\nls *.txt\nlist all the files with .txt extension\nls kraken2db/*.txt\n\n\ncp * {another/directory}\ncopy all the files in the current directory to a different directory\ncp kraken2db/* test/"
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html#redirect-output",
+    "href": "help/unix_cheat_sheet.html#redirect-output",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Redirect Output",
+    "text": "Redirect Output\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n{command} &gt; {file}\nredirect output to a file (overwrites if the file exists)\ncat test/inspect.txt &gt; new_inspect.txt\n\n\n{command} &gt;&gt; {file}\nappend output to a file (creates a new file if it does not already exist)\ncat test/unmapped_accessions.txt &gt;&gt; new_inspect.txt"
+  },
+  {
+    "objectID": "help/unix_cheat_sheet.html#combining-commands-with-pipes",
+    "href": "help/unix_cheat_sheet.html#combining-commands-with-pipes",
+    "title": "Unix-Cheat-Sheet",
+    "section": "Combining Commands with | Pipes",
+    "text": "Combining Commands with | Pipes\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n&lt;command1&gt; | &lt;command2&gt;\nthe output of “command1” is passed as input to “command2”\ngiven below\n\n\nls | wc -l\ncount the number of files in a directory\nls new_inspect.txt | wc -l\n\n\ncat {file1} {file2} | less\nconcatenate files and view them with less\ncat test/inspect.txt test/unmapped_accessions.txt  | less\n\n\ncat {file} | grep \"{pattern}\" | wc -l\ncount how many lines in the file have a match with “pattern”\ncat test/inspect.txt | grep \"Pseudomonas\" | wc -l\n\n\n\n\n\nReferences\n\n\n1. Asare, P. & Tonder, A. van. Avantonder.github.io/ghana_course/: Introduction to bacterial genomics. (2023)."
   }
 ]

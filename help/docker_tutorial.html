@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tahsin Khan/Tanzim Rahman">
+<meta name="author" content="Tanzim Rahman, Tahsin Khan">
 
 <title>Docker Tutorial – Introduction to Bacterial Genomics</title>
 <style>
@@ -24,23 +24,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-118c9c8d01a43a1fcc9e9a26f6dbf87f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-118c9c8d01a43a1fcc9e9a26f6dbf87f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -80,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Introduction to Bacterial Genomics</span>
     </a>
   </div>
@@ -93,28 +93,20 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html"> 
+    <a class="nav-link" href="../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./setup.html"> 
+    <a class="nav-link" href="../setup.html"> 
 <span class="menu-text">Setup</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./materials.html"> 
+    <a class="nav-link" href="../materials.html"> 
 <span class="menu-text">Materials</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./docker_tutorial.html" aria-current="page"> 
-<span class="menu-text">Docker Tutorial</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./unix_cheat_sheet.html"> 
-<span class="menu-text">Unix-Cheat-Sheet</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -122,8 +114,12 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="./help/report_a_bug.html">
- <span class="dropdown-text">Report a bug</span></a>
+    <a class="dropdown-item" href="../help/docker_tutorial.html">
+ <span class="dropdown-text">Docker Tutorial</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../help/unix_cheat_sheet.html">
+ <span class="dropdown-text">Unix Cheat Sheet</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://github.com/tahsinkhann/bacterial-genomics/issues" rel="noopener" target="_blank">
@@ -160,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Tahsin Khan/Tanzim Rahman </p>
+             <p>Tanzim Rahman, Tahsin Khan </p>
           </div>
   </div>
     
@@ -173,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to <code>Docker</code> cheat sheet. If you have followed <a href="./setup.html">Setup tutorial</a> successfully and then you are here to learn more about <code>Docker</code>, then you are in right track. Otherwise return to Setup page and complete <code>Docker</code> installation.</p>
+<p>Welcome to <code>Docker</code> tutorial sheet. If you have followed <a href="../setup.html">Setup tutorial</a> successfully and then you are here to learn more about <code>Docker</code>, then you are in right track. Otherwise return to Setup page and complete <code>Docker</code> installation.</p>
 
 
 

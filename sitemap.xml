@@ -1,47 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/report_a_bug.html</loc>
-    <lastmod>2025-09-16T02:56:22.422Z</lastmod>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/docker_tutorial.html</loc>
+    <lastmod>2025-09-20T19:34:43.913Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/setup.html</loc>
-    <lastmod>2025-09-20T11:07:42.385Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/about.html</loc>
-    <lastmod>2025-09-14T20:22:36.243Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/docker_tutorial.html</loc>
-    <lastmod>2025-09-19T21:20:38.579Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/2-1-unix-shell.html</loc>
-    <lastmod>2025-09-15T18:59:03.963Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/1-1-wgs.html</loc>
-    <lastmod>2025-09-15T18:47:30.852Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/2-2-navigating-files.html</loc>
-    <lastmod>2025-09-15T18:47:22.751Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/unix_cheat_sheet.html</loc>
-    <lastmod>2025-09-19T08:43:36.751Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/index.html</loc>
-    <lastmod>2025-09-19T17:33:02.427Z</lastmod>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/schedule.html</loc>
+    <lastmod>2025-09-17T11:41:21.990Z</lastmod>
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/materials.html</loc>
     <lastmod>2025-09-18T21:47:01.231Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/schedule.html</loc>
-    <lastmod>2025-09-17T11:41:21.990Z</lastmod>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/index.html</loc>
+    <lastmod>2025-09-20T19:47:40.090Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/2-2-navigating-files.html</loc>
+    <lastmod>2025-09-15T18:47:22.751Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/1-1-wgs.html</loc>
+    <lastmod>2025-09-15T18:47:30.852Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/2-1-unix-shell.html</loc>
+    <lastmod>2025-09-15T18:59:03.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/about.html</loc>
+    <lastmod>2025-09-14T20:22:36.243Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/setup.html</loc>
+    <lastmod>2025-09-20T19:34:40.432Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/unix_cheat_sheet.html</loc>
+    <lastmod>2025-09-19T08:43:36.751Z</lastmod>
   </url>
 </urlset>
