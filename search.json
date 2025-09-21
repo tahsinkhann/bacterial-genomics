@@ -11,14 +11,14 @@
     "href": "schedule.html",
     "title": "Training Schedule",
     "section": "",
-    "text": "Here we will discuss about training schedule for these 4/5 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories"
+    "text": "Here we will discuss about training schedule for these 4 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories (draft)\n\n\n\nDay-wise Schedule\n\n\n\n\n\n\n\nDay\nModules\nTime\n\n\n\n\nDay 1\n\nIntroduction of Sequencing Techniques\nIntroduction to Whole Genome Sequencing\nDatabase setup\nIntroduction to bash scripting\nQuality Control (QC)\n\n9:30 am - 4:30 pm\n\n\nDay 2\n\nTrimming\nPost trimming QC\nGenome assembly using spades and shovil\nUnderstand contigs/scaffolds/chromosome\nTaxonomic classification using Kraken2, GTDB-tk,\n\n9:30 am - 4:30 pm\n\n\nDay 3\n\nRecap of previous days\nQC for Completeness and Contamination\nAnnotation of genes and proteins\nDetection of antimicrobial resistance gene (ARG)\nDetection of Virulence factors (VF)\nIdentification of plasmids\n\n9:30 am - 4:30 pm\n\n\nDay 4\n\nRecap of previous day\nPangenome\nSNP-sites identification\nContruction of Phylogenetic tree\nTransmission dynamics of pathogens\n\n9:30 am - 4:30 pm\n\n\nDay 5 (To be scheduled/decided)"
   },
   {
     "objectID": "schedule.html#training-schedule",
     "href": "schedule.html#training-schedule",
     "title": "Training Schedule",
     "section": "",
-    "text": "Here we will discuss about training schedule for these 4/5 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories"
+    "text": "Here we will discuss about training schedule for these 4 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories (draft)\n\n\n\nDay-wise Schedule\n\n\n\n\n\n\n\nDay\nModules\nTime\n\n\n\n\nDay 1\n\nIntroduction of Sequencing Techniques\nIntroduction to Whole Genome Sequencing\nDatabase setup\nIntroduction to bash scripting\nQuality Control (QC)\n\n9:30 am - 4:30 pm\n\n\nDay 2\n\nTrimming\nPost trimming QC\nGenome assembly using spades and shovil\nUnderstand contigs/scaffolds/chromosome\nTaxonomic classification using Kraken2, GTDB-tk,\n\n9:30 am - 4:30 pm\n\n\nDay 3\n\nRecap of previous days\nQC for Completeness and Contamination\nAnnotation of genes and proteins\nDetection of antimicrobial resistance gene (ARG)\nDetection of Virulence factors (VF)\nIdentification of plasmids\n\n9:30 am - 4:30 pm\n\n\nDay 4\n\nRecap of previous day\nPangenome\nSNP-sites identification\nContruction of Phylogenetic tree\nTransmission dynamics of pathogens\n\n9:30 am - 4:30 pm\n\n\nDay 5 (To be scheduled/decided)"
   },
   {
     "objectID": "materials.html",
