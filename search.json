@@ -72,78 +72,150 @@
     "href": "index.html#acknowledgements",
     "title": "Whole Genome Sequence Analysis of Bacterial Pathogen",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\n\nThis course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility2 and other open access training materials.\n\nReferences\n\n\n1. Khan, T., Rahman, T. & Ahmed, T. Introduction to bacterial genomics. https://tahsinkhann.github.io/bacterial-genomics/ (2025).\n\n\n2. Faculity, C. B. T. Bioinfomartics for AWD-related pathogens. https://cambiotraining.github.io/awd-pathogen-bioinformatics/."
+    "text": "Acknowledgements\n\nThis course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility2‘3’4 and other open access training materials.\n\nReferences\n\n\n1. Khan, T., Rahman, T. & Ahmed, T. Introduction to bacterial genomics. https://tahsinkhann.github.io/bacterial-genomics/ (2025).\n\n\n2. Salehe, B. et al. Bioinfomartics for AWD-related pathogens. (2023).\n\n\n3. Asare, P. & Tonder, A. van. Introduction to bacterial genomics. (2023).\n\n\n4. Tonder, A. van, Tavares, H. & Salehe, B. Working with bacterial genomes. (2024)."
   },
   {
     "objectID": "materials/2-2-navigating-files.html",
     "href": "materials/2-2-navigating-files.html",
-    "title": "2-2-navigating-files",
+    "title": "2.2 Navigating files",
     "section": "",
     "text": "hehe",
     "crumbs": [
       "Materials",
-      "2. Intro to Unix",
-      "2-2-navigating-files"
+      "2. Introduction to NGS",
+      "2.2 Navigating files"
     ]
   },
   {
     "objectID": "materials/2-2-navigating-files.html#hehe",
     "href": "materials/2-2-navigating-files.html#hehe",
-    "title": "2-2-navigating-files",
+    "title": "2.2 Navigating files",
     "section": "",
     "text": "hehe",
     "crumbs": [
       "Materials",
-      "2. Intro to Unix",
-      "2-2-navigating-files"
+      "2. Introduction to NGS",
+      "2.2 Navigating files"
     ]
   },
   {
-    "objectID": "materials/1-1-wgs.html",
-    "href": "materials/1-1-wgs.html",
-    "title": "1-1-wgs",
+    "objectID": "materials/1-2-know-your-bug.html",
+    "href": "materials/1-2-know-your-bug.html",
+    "title": "1.2 Know your bug",
     "section": "",
-    "text": "hehe",
+    "text": "TipLearning Objectives\n\n\n\n\nRecognise that there are different ways to approach your analyses depending on which species you’re analysing.\nList the three main questions that should be asked about the organism you are working with, which will determine downstream analyses steps.\nDescribe, at a high-level, the main analyses steps involved in each case.\nBefore starting your analysis, it’s important to understand the characteristics of the species you’re working with as this will determine how best to proceed.\nIn particular, you need to understand how much genetic diversity or plasticity is present in your bug and whether or not it recombines. For instance the approach you take to build a phylogenetic tree of Mycobacterium tuberculosis genomes will differ from the methods you’d use to build a tree with Escherichia coli. To help with making your decision, we’ve provided a flowchart which outlines the best approach to take depending on what your dataset is composed of:\nThis week, we’re going to work with three different bacterial species that each require a different analysis path through the diagram above.",
     "crumbs": [
       "Materials",
-      "1. Intro to Unix",
-      "1-1-wgs"
+      "1. Pathogen of Interest",
+      "1.2 Know your bug"
     ]
   },
   {
-    "objectID": "materials/1-1-wgs.html#hehe",
-    "href": "materials/1-1-wgs.html#hehe",
-    "title": "1-1-wgs",
-    "section": "",
-    "text": "hehe",
+    "objectID": "materials/1-2-know-your-bug.html#summary",
+    "href": "materials/1-2-know-your-bug.html#summary",
+    "title": "1.2 Know your bug",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\nTipKey Points\n\n\n\n\nThree main things should be considered when choosing an analysis workflow for bacterial sequencing data:\n\nHow diverse is the species? Monoclonal species usually have lower diversity in the population.\nDo your isolates likely come from multiple lineages?\nIs bacterial recombination common in your species (transformation, transduction, conjugation)?\n\nDepending on the answer to these questions, your analyses workflow may involve:\n\nMapping to a reference genome or using a pan-genome approach.\nIncluding a recombination removal step.\n\nThe end goal of most bacterial genomics projects is the generation of a phylogenetic tree representing the relationships and diversity of your isolates.",
     "crumbs": [
       "Materials",
-      "1. Intro to Unix",
-      "1-1-wgs"
+      "1. Pathogen of Interest",
+      "1.2 Know your bug"
     ]
   },
   {
-    "objectID": "materials/2-1-unix-shell.html",
-    "href": "materials/2-1-unix-shell.html",
-    "title": "2-1-unix-shell",
-    "section": "",
-    "text": "hehe",
+    "objectID": "materials/2-1-into-ngs.html#next-generation-sequencing",
+    "href": "materials/2-1-into-ngs.html#next-generation-sequencing",
+    "title": "2.1 Introduction to NGS",
+    "section": "Next Generation Sequencing",
+    "text": "Next Generation Sequencing\nThe sequencing of genomes has become more routine due to the rapid drop in DNA sequencing costs seen since the development of Next Generation Sequencing (NGS) technologies in 2007. One main feature of these technologies is that they are high-throughput, allowing one to more fully characterise the genetic material in a sample of interest.\nThere are three main technologies in use nowadays, often referred to as 2nd and 3rd generation sequencing:\n\nIllumina’s sequencing by synthesis (2nd generation)\nOxford Nanopore Technologies, shortened ONT (3rd generation)\nPacific Biosciences, shortened PacBio (3rd generation)\n\nThe video below from the iBiology team gives a great overview of these technologies.\n\n\n\n\n\nIllumina Sequencing\nIllumina’s technology has become a widely popular method, with many applications to study transcriptomes (RNA-seq), epigenomes (ATAC-seq, BS-seq), DNA-protein interactions (ChIP-seq), chromatin conformation (Hi-C/3C-Seq), population and quantitative genetics (variant detection, GWAS), de-novo genome assembly, amongst many others.\nAn overview of the sequencing procedure is shown in the animation video below. Generally, samples are processed to generate so-called sequencing libraries, where the genetic material (DNA or RNA) is processed to generate fragments of DNA with attached oligo adapters necessary for the sequencing procedure (if the starting material is RNA, it can be converted to DNA by a step of reverse transcription). Each of these DNA molecule is then sequenced from both ends, generating pairs of sequences from each molecule, i.e. paired-end sequencing (single-end sequencing, where the molecule is only sequenced from one end is also possible, although much less common nowadays).\nThis technology is a type of short-read sequencing, because we only obtain short sequences from the original DNA molecules. Typical protocols will generate 2x50bp to 2x250bp sequences (the 2x denotes that we sequence from each end of the molecule).\n\n\n\n\nThe main advantage of Illumina sequencing is that it produces very high-quality sequence reads (error rate &lt;1%) at a low cost. However, we only get very short sequences, which is a limitations when it comes to resolving problems such as long sequence repeats (e.g. around centromeres or transposon-rich areas of the genome), distinguishing gene isoforms (in RNA-seq), or resolving haplotypes (combinations of variants in each copy of an individual’s diploid genome).\nIn summary, Illumina:\n\nUtilizes sequencing-by-synthesis chemistry.\nOffers short read lengths.\nKnown for high accuracy with low error rates (&lt;1%).\nWell-suited for applications like DNA resequencing and variant detection.\nScalable and cost-effective for large-scale projects.\nLimited in sequencing long DNA fragments.\nExpensive to set up.\n\n\n\nNanopore Sequencing\nNanopore sequencing, a form of long-read sequencing technology, has distinct advantages in the field of genomics. It excels in its ability to sequence exceptionally lengthy DNA molecules, including those reaching megabase sizes, thus effectively addressing that limitation of short-read sequencing. The portability of some nanopore sequencing devices is another advantageous feature; some are designed to operate via a simple USB connection to a standard laptop, making it exceptionally adaptable for on-the-go applications, including fieldwork.\n\n\n\nOverview of Nanopore sequencing showing the highly-portable MinION device. The device contains thousands of nanopores embedded in a membrane where current is applied. As individual DNA molecules pass through these nanopores they cause changes in this current, which is detected by sensors and read by a dedicated computer program. Each DNA base causes different changes in the current, allowing the software to convert this signal into base calls. Source: Fig. 1 in Wang et al. 2021\n\n\nHowever, optimising this technology presents some challenges, notably in the production of sequencing libraries containing high molecular weight and intact DNA. It’s important to note that nanopore sequencing historically exhibited higher error rates, approximately 5% for older chemistries, compared to Illumina sequencing. However, significant advancements have emerged, enhancing the accuracy of nanopore sequencing technology, now achieving accuracy rates exceeding 99%.\nIn summary, ONT:\n\nOperates on the principle of nanopore technology.\nProvides long read lengths, ranging from thousands to tens of thousands of base pairs.\nIdeal for applications requiring long-range information, such as de novo genome assembly and structural variant analysis.\nPortable, enabling fieldwork and real-time sequencing.\nExhibits higher error rates (around 5%), with improvements in recent versions.\nCosts can be higher per base, compared to Illumina for certain projects.\n\n\n\n\n\n\n\nNoteWhich technology to choose?\n\n\n\nBoth of these platforms have been widely popular for bacterial sequencing. They can both generate data with high-enough quality for the assembly and analysis for most of the pathogen genomic surveillance. Mostly, which one you use will depend on what sequencing facilities you have access to.\nWhile Illumina provides the cheapest option per sample of the two, it has a higher setup cost, requiring access to the expensive sequencing machines. On the other hand, Nanopore is a very flexible platform, especially its portable MinION devices. They require less up-front cost allowing getting started with sequencing very quickly in a standard molecular biology lab.",
     "crumbs": [
       "Materials",
-      "2. Intro to Unix",
-      "2-1-unix-shell"
+      "2. Introduction to NGS",
+      "2.1 Introduction to NGS"
     ]
   },
   {
-    "objectID": "materials/2-1-unix-shell.html#hehe",
-    "href": "materials/2-1-unix-shell.html#hehe",
-    "title": "2-1-unix-shell",
-    "section": "",
-    "text": "hehe",
+    "objectID": "materials/2-1-into-ngs.html#sec-file-formats",
+    "href": "materials/2-1-into-ngs.html#sec-file-formats",
+    "title": "2.1 Introduction to NGS",
+    "section": "Bioinformatics file formats",
+    "text": "Bioinformatics file formats\nBioinformatics relies on various standard file formats for storing diverse types of data. In this section, we’ll discuss some of the key ones we’ll encounter, although there are numerous others. You can refer to the “Common file formats” appendix for a more comprehensive list.\n\nFAST5\nFAST5 is a proprietary format developed by ONT and serves as the standard format generated by its sequencing devices. It is based on the hierarchical data format HDF5, designed for storing extensive and intricate data. Unlike text-based formats like FASTA and FASTQ, FAST5 files are binary, necessitating specialized software for opening and reading.\nWithin these files, you’ll find a Raw/ field containing the original raw current signal measurements. Additionally, tools like basecallers can add Analyses/ fields, converting signals into standard FASTQ data (e.g., Guppy basecaller).\nTypically, manual inspection of these files is unnecessary, as specialized software is used for processing them. For more in-depth information about this format, you can refer to this resource.\n\n\nFASTQ\nFASTQ files are used to store nucleotide sequences along with a quality score for each nucleotide of the sequence. These files are the typical format obtained from NGS sequencing platforms such as Illumina and Nanopore (after basecalling). Common file extensions used for this format include .fastq and .fq.\nThe file format is as follows:\n@SEQ_ID                   &lt;-- SEQUENCE NAME\nAGCGTGTACTGTGCATGTCGATG   &lt;-- SEQUENCE\n+                         &lt;-- SEPARATOR\n%%).1***-+*''))**55CCFF   &lt;-- QUALITY SCORES\nIn FASTQ files each sequence is always represented across 4 lines. The quality scores are encoded in a compact form, using a single character. They represent a score that can vary between 0 and 40 (see Illumina’s Quality Score Encoding). The reason single characters are used to encode the quality scores is that it saves space when storing these large files. Software that work on FASTQ files automatically convert these characters into their score, so we don’t have to worry about doing this conversion ourselves.\nThe quality value in common use is called a Phred score and it represents the probability that the base is an error. For example, a base with quality 20 has a probability \\(10^{-2} = 0.01 = 1\\%\\) of being an error. A base with quality 30 has \\(10^{-3} = 0.001 = 0.1\\%\\) chance of being an error. Typically, a Phred score threshold of &gt;20 or &gt;30 is used when applying quality filters to sequencing reads.\nBecause FASTQ files tend to be quite large, they are often compressed to save space. The most common compression format is called gzip and uses the extension .gz. To look at a gzip file, we can use the command zcat, which decompresses the file and prints the output as text.\nFor example, we can use the following command to count the number of lines in a compressed FASTQ file:\nzcat sequences.fq.gz | wc -l\nIf we want to know how many sequences there are in the file, we can divide the result by 4 (since each sequence is always represented across four lines).\n\n\nFASTA\nFASTA files are used to store nucleotide or amino acid sequences. Common file extensions used for this format include .fasta, .fa, .fas and .fna.\nThe general structure of a FASTA file is illustrated below:\n&gt;sample01                 &lt;-- NAME OF THE SEQUENCE\nAGCGTGTACTGTGCATGTCGATG   &lt;-- SEQUENCE ITSELF\nEach sequence is represented by a name, which always starts with the character &gt;, followed by the actual sequence.\nA FASTA file can contain several sequences, for example:\n&gt;sample01\nAGCGTGTACTGTGCATGTCGATG\n&gt;sample02\nAGCGTGTACTGTGCATGTCGATG\nEach sequence can sometimes span multiple lines, and separate sequences can always be identified by the &gt; character. For example, this contains the same sequences as above:\n&gt;sample01      &lt;-- FIRST SEQUENCE STARTS HERE\nAGCGTGTACTGT\nGCATGTCGATG\n&gt;sample02      &lt;-- SECOND SEQUENCE STARTS HERE\nAGCGTGTACTGT\nGCATGTCGATG\nTo count how many sequences there are in a FASTA file, we can use the following command:\ngrep \"&gt;\" sequences.fa | wc -l\nIn two steps:\n\nfind the lines containing the character “&gt;”, and then\ncount the number of lines of the result.\n\nFASTA files are commonly used to store genome sequences, after they have been assembled. We will see FASTA files several times throughout these materials, so it’s important to be familiar with them.\n\n\nGFF3\nThe GFF3 (Generic Feature Format version 3) is a standardized file format used in bioinformatics to describe genomic features and annotations. It primarily serves as a structured and human-readable way to represent information about genes, transcripts, and other biological elements within a genome. Common file extensions used for this format include .gff and .gff3.\nKey characteristics of the GFF3 format include:\n\nTab-delimited columns: GFF3 files consist of tab-delimited columns, making them easy to read and parse.\nHierarchical structure: the format supports a hierarchical structure, allowing the description of complex relationships between features. For instance, it can represent genes containing multiple transcripts, exons, and other elements.\nNine standard columns: this includes information such as the sequence identifier (e.g. chromosome), feature type (e.g. gene, exon), start and end coordinates, strand and several attributes.\nAttributes field: the ninth column, known as the “attributes” field, contains additional information in a key-value format. This field is often used to store details like gene names, IDs, and functional annotations.\nComments: GFF3 files can include comment lines starting with a “#” symbol to provide context or documentation.\n\nGFF3 is widely supported by various bioinformatics tools and databases, making it a versatile format for storing and sharing genomic annotations.\n\n\nCSV/TSV\nComma-separated values (CSV) and tab-separated values (TSV) files are text-based formats commonly used to store tabular data. While strictly not specific to bioinformatics, they are commonly used as the output of bioinformatic software. CSV files usually have .csv extension, while TSV files often have .tsv or the more generic .txt extension.\nIn both cases, the data is organized into rows and columns. Rows are represented across different lines of the file, while the columns are separated using a delimiting character: a command , in the case of CSV files and a tab space (tab ↹) for TSV files.\nFor example, for this table:\n\n\n\nsample\ndate\nstrain\n\n\n\n\nVCH001\n2023-08-01\nO1 El Tor\n\n\nVCH002\n2023-08-02\nO1 Classical\n\n\nVCH003\n2023-08-03\nO139\n\n\nVCH004\n2023-08-04\nNon-O1 Non-O139\n\n\n\nThis would be its representation as a CSV file:\nsample,date,strain\nVCH001,2023-08-01,O1 El Tor\nVCH002,2023-08-02,O1 Classical\nVCH003,2023-08-03,O139\nVCH004,2023-08-04,Non-O1 Non-O139\nAnd this is its representation as a TSV file (the space between columns is a tab ↹):\nsample    date        strain\nVCH001    2023-08-01  O1 El Tor\nVCH002    2023-08-02  O1 Classical\nVCH003    2023-08-03  O139\nVCH004    2023-08-04  Non-O1 Non-O139\nCSV and TSV files are human-readable and can be opened and edited using basic text editors or spreadsheet software like Microsoft Excel.",
     "crumbs": [
       "Materials",
-      "2. Intro to Unix",
-      "2-1-unix-shell"
+      "2. Introduction to NGS",
+      "2.1 Introduction to NGS"
+    ]
+  },
+  {
+    "objectID": "materials/2-1-into-ngs.html#summary",
+    "href": "materials/2-1-into-ngs.html#summary",
+    "title": "2.1 Introduction to NGS",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\nTipKey Points\n\n\n\n\nHigh-throughput sequencing technologies, often called next-generation sequencing (NGS), enable rapid and cost-effective genome sequencing.\nProminent NGS platforms include Illumina, Oxford Nanopore Technologies (ONT) and Pacific Biosciences (PacBio).\nEach platform employs distinct mechanisms for DNA sequencing, leading to variations in read length, error rates, and applications.\nIllumina sequencing:\n\nUses sequencing-by-synthesis chemistry, produces short read lenghts and has high accuracy with low error rates (&lt;1%).\nWhile it is scalable and cost-effective for large-scale projects, it is expensive to set up and limited in sequencing long DNA fragments.\n\nNanopore sequencing:\n\nUses nanopore technology, provides long read lengths, making it ideal for applications such as de novo genome assembly.\nAlthough the costs can be higher per base, it is cheaper to set up.\nExhibits higher error rates (around 5%), but with significant improvements in recent versions (1%).\n\nCommon file formats in bioinformatics include FASTQ, FASTA and GFF. These are all text-based formats.\nFASTQ format (.fastq or .fq):\n\nDesigned to store sequences along with quality scores.\nContains a sequence identifier, sequence data, a separator line and quality scores.\nWidely used for storing sequence reads generated by NGS platforms.\n\nFASTA format (.fasta, .fa, .fas, .fna):\n\nIs used for storing biological sequences, including DNA, RNA, and protein.\nIt Comprises a sequence identifier (often preceded by “&gt;”) and the sequence data.\nCommonly used for sequence storage and exchange of genome sequences.\n\nGFF format (.gff or .gff3):\n\nA structured, tab-delimited format for describing genomic features and annotations.\nConsists of nine standard columns, including sequence identifier, feature type, start and end coordinates, strand information, and attributes.\nFacilitates the representation of genes, transcripts, and other genomic elements, supporting hierarchical structures and metadata.\nCommonly used for storing and sharing genomic annotation data in bioinformatics.\n\nCSV (.csv) and TSV (.tsv):\n\nPlain text formats to store tables.\nThe columns in the CSV format are delimited by comma, whereas in the TSV format by a tab.\nThese files can be opened in standard spreadsheet software such as Excel.\n\n\n\n\n\nYou can see (Figure 1).\n\n\n\n\n\n\nFigure 1: This is a figure from Khan et al. 2024",
+    "crumbs": [
+      "Materials",
+      "2. Introduction to NGS",
+      "2.1 Introduction to NGS"
+    ]
+  },
+  {
+    "objectID": "materials/1-1-pathogen_genomic_surveillances.html",
+    "href": "materials/1-1-pathogen_genomic_surveillances.html",
+    "title": "1.1 Pathogen genomic surveillances",
+    "section": "",
+    "text": "TipLearning Objectives\n\n\n\nAfter this section you should be able to:\n\nRecognise the role of genomic surveillance in pathogen surveillance.\nSummarise the main methods and steps involved in genomic sequencing analysis.\nDescribe the etiology of acute watery diarrhoea (AWD) and how it relates to the Vibrio cholerae bacterium.\nOutline the main features of the Vibrio cholerae genome and its strains.\nList the key questions addressed by pathogen genomic surveilance.\nGenomics helps track infectious diseases by sequencing the genomes of bacteria, parasites, and viruses. According to the World Health Organisation (WHO), genomic surveillance involves continuously monitoring pathogens and analyzing their genetic similarities and differences. The WHO has developed a 10-year global strategy for genomic surveillance of potentially pandemic and epidemic pathogens, which you can access here.\nGenomic surveillance aims to offer insights into pathogen evolution and understand genetic changes that may affect transmission or resistance to interventions.",
+    "crumbs": [
+      "Materials",
+      "1. Pathogen of Interest",
+      "1.1 Pathogen genomic surveillances"
+    ]
+  },
+  {
+    "objectID": "materials/1-1-pathogen_genomic_surveillances.html#genomic-sequencing-for-pathogen-surveillance",
+    "href": "materials/1-1-pathogen_genomic_surveillances.html#genomic-sequencing-for-pathogen-surveillance",
+    "title": "1.1 Pathogen genomic surveillances",
+    "section": "Genomic sequencing for pathogen surveillance",
+    "text": "Genomic sequencing for pathogen surveillance\nIn genomic surveillance, one crucial technique is genome sequencing. It involves examining the DNA (or RNA) of pathogens to understand their spread in communities, their role in illnesses, and their development of resistance to medications and vaccines.\nWithin pathogen genomic surveillance, a key method is whole genome sequencing (WGS). Here, the aim is to reveal the complete order of the bases in the pathogen’s genome. Today, WGS has become the standard approach for quickly detecting and investigating outbreaks. Public health labs primarily use it to promptly identify outbreak sources and assess antimicrobial resistance.\nBroadly speaking, genome sequencing involves DNA extraction, library preparation, sequencing and bioinformatic analysis. Typically, WGS produces millions of DNA fragments, termed sequence reads, using sequencing technologies such as Illumina, Oxford Nanopore, or PacBio.\n\n\n\n\n\n\nFigure 2: Overview of whole genome sequencing applied to outbreak detection. Source: US CDC\n\n\n\nFollowing WGS, the subsequent step involves bioinformatic and downstream analysis, encompassing:\n\nChecking and filtering sequence read quality\nGenome assembly\nEvaluating genome assembly quality\nIdentifying strain types and their resistance to antimicrobial agents.\n\nDetailed discussions of these analytical steps are presented in the following sections.",
+    "crumbs": [
+      "Materials",
+      "1. Pathogen of Interest",
+      "1.1 Pathogen genomic surveillances"
+    ]
+  },
+  {
+    "objectID": "materials/1-1-pathogen_genomic_surveillances.html#acute-watery-diarrhoea-awd",
+    "href": "materials/1-1-pathogen_genomic_surveillances.html#acute-watery-diarrhoea-awd",
+    "title": "1.1 Pathogen genomic surveillances",
+    "section": "Acute Watery Diarrhoea (AWD)",
+    "text": "Acute Watery Diarrhoea (AWD)\nAcute Watery Diarrhea (AWD) is a rapid-onset gastrointestinal condition characterized by frequent and loose, watery stools. It typically lasts for a short duration and is often caused by bacterial, viral, or parasitic infections, leading to dehydration if left untreated. Cholera, a specific type of AWD, is primarily caused by the bacterium Vibrio cholerae. It can manifest as severe diarrhea and vomiting and can swiftly lead to dehydration and electrolyte imbalances. Cholera outbreaks are of particular concern due to their potential to spread rapidly, especially in areas with limited access to clean water and sanitation facilities. Effective treatment involves rehydration therapy and, in severe cases, antibiotics. Controlling cholera outbreaks often requires a combination of public health measures, including improved hygiene and sanitation practices, as well as vaccination campaigns in some instances.\nThe ability to detect if a spike in AWD cases is caused by a pathogenic strain of Vibrio cholerae is therefore critical for public health action. Genomic surveillance can help in addressing if the patient infected with a pathogenic strain of Vibrio cholerae and whether it is resistant to antimicrobial agents.\n\nVibrio cholerae\nVibrio cholerae is a gram-negative bacterium primarily found in water, making it highly susceptible to waterborne transmission, particularly through contaminated water sources and food. This bacterium exhibits notable genomic plasticity, characterized by the acquisition of various genetic elements that contribute to its pathogenicity. The history of V. cholerae’s evolution involves the integration of these elements, resulting in the emergence of different pathogenic strains (Figure 3).\nStrains of V. cholerae are typically classified through serotyping. The most prevalent serogroup, O1, includes many pathogenic strains. Further subdivisions occur based on serotypes, determined by the methylation status of the terminal lipopolysaccharide in the O-antigen. Additionally, V. cholerae is categorized into biotypes, with El Tor 7PET strains being one example.\nV. cholerae has been associated with several pandemic outbreaks, each featuring distinct prevalent strains that evolved through the acquisition of diverse genetic components. Notably, this evolutionary process often involves the incorporation of genetic elements such as the Vibrio pathogenicity island-1 and cholera toxin phage (CTX). There are multiple versions of this phage, with the current one being the El Tor phage. In summary, V. cholerae possesses a dynamic genome shaped by the acquisition of new genetic elements through horizontal gene transfer mechanisms like conjugation and phage infection, which has implications for understanding antimicrobial resistance (AMR).\n\n\n\n\n\n\nFigure 3: Strain classification of Vibrio cholerae and its associated evolution. Source: Fig. 1 in Montero et al. 2023\n\n\n\nIn addition to serotyping, extensive genomic analysis of numerous Vibrio genomes offers a more refined approach to clustering strains into lineages, enhancing our comprehension of the origins of local outbreaks and transmission pathways. These comprehensive genomic investigations unveil the species’ remarkable diversity, with local strains frequently harboring distinct variants of the cholera toxin and displaying specific transmission dynamics (Weill et al. 2017, Weill et al. 2019, Domman et al. 2017).\nThe Vibrio cholerae genome consists of two chromosomes, for a total of aproximately 4 Mb (million basepairs) (Figure 4). Besides encoding various genes responsible for the bacterium’s structure and metabolism, its genome may also contain additional elements such as plasmids, phages, and pathogenicity islands that contribute to its ability to cause disease.\n\n\n\n\n\n\nFigure 4: Schematic representation of the V. cholerae genome. Source: Fig. 1 in Pant et al. 2020\n\n\n\nFor an excellent overview of cholera global epidemiology and the role of genomics in this area, we recommend the following lecture by Prof. Nick Thomson:",
+    "crumbs": [
+      "Materials",
+      "1. Pathogen of Interest",
+      "1.1 Pathogen genomic surveillances"
+    ]
+  },
+  {
+    "objectID": "materials/1-1-pathogen_genomic_surveillances.html#key-genomic-surveillance-questions",
+    "href": "materials/1-1-pathogen_genomic_surveillances.html#key-genomic-surveillance-questions",
+    "title": "1.1 Pathogen genomic surveillances",
+    "section": "Key genomic surveillance questions",
+    "text": "Key genomic surveillance questions\nDuring genomic surveillance of outbreaks, especially when investigating cases of acute watery diarrhoea (AWD), several critical public health questions arise:\n\nCan Vibrio cholerae be detected in the collected and sequenced samples?\nIf so, is it a recognized pathogenic strain or an unknown variant?\nIf it’s a known strain, then is it likely to be resistant to any antibiotics?\nIf resistance is suspected, then which resistance genes have been detected and which antibiotics are predicted to be affected?\n\nConsequently, one of the primary goals of these materials is to understand how genomic sequencing can be applied to reconstruct the genome of Vibrio cholerae samples collected from patients exhibiting cholera symptoms, including AWD, to address these questions.",
+    "crumbs": [
+      "Materials",
+      "1. Pathogen of Interest",
+      "1.1 Pathogen genomic surveillances"
+    ]
+  },
+  {
+    "objectID": "materials/1-1-pathogen_genomic_surveillances.html#summary",
+    "href": "materials/1-1-pathogen_genomic_surveillances.html#summary",
+    "title": "1.1 Pathogen genomic surveillances",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\nTipKey Points\n\n\n\n\nGenomic surveillance is a crucial tool in tracking and monitoring the spread of pathogens. It helps identify disease outbreaks, track transmission routes, and understand the genetic diversity of pathogens.\nGenomic sequencing involves determining the complete genetic code of an organism. Steps include DNA extraction, library preparation, sequencing, and bioinformatics analysis.\nAWD is characterized by sudden-onset diarrhea and is often caused by infections. Vibrio cholerae is a bacterium responsible for cholera, a severe form of AWD.\nThe Vibrio cholerae genome is composed of two circular chromosomes. It encodes various genes related to structure, metabolism, and pathogenicity.\nDifferent strains of Vibrio cholerea may carry variations in virulence and antibiotic resistance genes.\nPathogen genomic surveillance aims to answer questions like the presence of pathogens, strain identification, antibiotic resistance, and transmission dynamics during outbreaks.",
+    "crumbs": [
+      "Materials",
+      "1. Pathogen of Interest",
+      "1.1 Pathogen genomic surveillances"
     ]
   },
   {
@@ -249,6 +321,6 @@
     "href": "help/unix_cheat_sheet.html#combining-commands-with-pipes",
     "title": "Unix-Cheat-Sheet",
     "section": "Combining Commands with | Pipes",
-    "text": "Combining Commands with | Pipes\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n&lt;command1&gt; | &lt;command2&gt;\nthe output of “command1” is passed as input to “command2”\ngiven below\n\n\nls | wc -l\ncount the number of files in a directory\nls new_inspect.txt | wc -l\n\n\ncat {file1} {file2} | less\nconcatenate files and view them with less\ncat test/inspect.txt test/unmapped_accessions.txt  | less\n\n\ncat {file} | grep \"{pattern}\" | wc -l\ncount how many lines in the file have a match with “pattern”\ncat test/inspect.txt | grep \"Pseudomonas\" | wc -l\n\n\n\n\n\nReferences\n\n\n1. Asare, P. & Tonder, A. van. Avantonder.github.io/ghana_course/: Introduction to bacterial genomics. (2023)."
+    "text": "Combining Commands with | Pipes\n\n\n\n\n\n\n\n\ncommand\ndescription\nexample\n\n\n\n\n&lt;command1&gt; | &lt;command2&gt;\nthe output of “command1” is passed as input to “command2”\ngiven below\n\n\nls | wc -l\ncount the number of files in a directory\nls new_inspect.txt | wc -l\n\n\ncat {file1} {file2} | less\nconcatenate files and view them with less\ncat test/inspect.txt test/unmapped_accessions.txt  | less\n\n\ncat {file} | grep \"{pattern}\" | wc -l\ncount how many lines in the file have a match with “pattern”\ncat test/inspect.txt | grep \"Pseudomonas\" | wc -l\n\n\n\n\n\nReferences\n\n\n1. Asare, P. & Tonder, A. van. Introduction to bacterial genomics. (2023)."
   }
 ]
