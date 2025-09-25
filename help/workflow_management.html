@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tanzim Rahman, Tahsin Khan">
-<meta name="description" content="Install Docker and run containers for the course.">
+<meta name="author" content="Tahsin Khan">
 
-<title>Docker Tutorial – Introduction to Bacterial Genomics</title>
+<title>Workflow Management Systems – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -73,16 +107,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Docker Tutorial – Introduction to Bacterial Genomics">
-<meta property="og:description" content="Install Docker and run containers for the course.">
-<meta property="og:image" content="https://tahsinkhann.github.io/bacterial-genomics/help/assets/docker_logo.png">
+<meta property="og:title" content="Workflow Management Systems – Introduction to Bacterial Genomics">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://tahsinkhann.github.io/bacterial-genomics/assets/chill.jpg">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
-<meta name="twitter:title" content="Docker Tutorial – Introduction to Bacterial Genomics">
-<meta name="twitter:description" content="Install Docker and run containers for the course.">
-<meta name="twitter:image" content="https://tahsinkhann.github.io/bacterial-genomics/help/assets/docker_logo.png">
+<meta name="twitter:title" content="Workflow Management Systems – Introduction to Bacterial Genomics">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://tahsinkhann.github.io/bacterial-genomics/assets/chill.jpg">
 <meta name="twitter:site" content="@tahsinkhann">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -345,8 +382,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-autmation-is-needed-in-bioinformatics-analysis" id="toc-why-autmation-is-needed-in-bioinformatics-analysis" class="nav-link active" data-scroll-target="#why-autmation-is-needed-in-bioinformatics-analysis">Why autmation is needed in bioinformatics analysis?</a></li>
+  <li><a href="#what-is-automation" id="toc-what-is-automation" class="nav-link" data-scroll-target="#what-is-automation">What is automation?</a></li>
+  <li><a href="#automation-in-bioinformatics" id="toc-automation-in-bioinformatics" class="nav-link" data-scroll-target="#automation-in-bioinformatics">Automation in bioinformatics</a></li>
+  <li><a href="#conda-singularity-docker" id="toc-conda-singularity-docker" class="nav-link" data-scroll-target="#conda-singularity-docker">Conda, Singularity, Docker?</a></li>
+  <li><a href="#workflows" id="toc-workflows" class="nav-link" data-scroll-target="#workflows">Workflows</a></li>
+  <li><a href="#workflow-management-systems" id="toc-workflow-management-systems" class="nav-link" data-scroll-target="#workflow-management-systems">Workflow management systems</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -354,14 +402,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Docker Tutorial</h1>
+<h1 class="title">Workflow Management Systems</h1>
 </div>
 
-<div>
-  <div class="description">
-    Install Docker and run containers for the course.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -369,7 +412,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Tanzim Rahman, Tahsin Khan </p>
+             <p>Tahsin Khan </p>
           </div>
   </div>
     
@@ -382,9 +425,175 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to <code>Docker</code> tutorial sheet. If you have followed <a href="../setup.html">Setup tutorial</a> successfully and then you are here to learn more about <code>Docker</code>, then you are in right track. Otherwise return to Setup page and complete <code>Docker</code> installation.</p>
+<section id="why-autmation-is-needed-in-bioinformatics-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="why-autmation-is-needed-in-bioinformatics-analysis">Why autmation is needed in bioinformatics analysis?</h2>
+<p>Working as a bioinformatician is cumbersome and stressful unless you become a bioinformagician, and how you can be a <code>bioinformagician</code>? Simple, all you have to do is automate your tasks, write scripts, make it stable, scalable and reproducible. Once done, give a command to your computer, wait and chill until it finishes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/chill.jpg" class="img-fluid figure-img"></p>
+<figcaption>A bioinformagician is chilling after automating a task</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-is-automation" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-automation">What is automation?</h2>
+<p>Suppose you are an Finance executive in a corporate office. Your office has 1000 employees who comes at 9 am, punch his finger as in and punch again at 6 pm as out. You manager asked you to make salary sheet for all employees and he need it within 2 days! You can’t say a word because a boss is boss! Now, you started to take notes of</p>
+<ul>
+<li>number of working days in that month</li>
+<li>number of paid leaves</li>
+<li>number of unpaid leaves</li>
+<li>number of working hours per day</li>
+<li>number of hours as overtime</li>
+<li>whether a fixed term employee or contractual or daily wager</li>
+<li>festive bonus based on months s/he is working</li>
+</ul>
+<p>Imagine your life if you have to do everything manually! and that’s not just for one employee, you have 999 others!!!</p>
+<p>Now what can do is:</p>
+<ol type="1">
+<li>write a programming script that will automatically calculate everything based on punch in and out for each day and at the end calculate salary.</li>
+</ol>
+<p>What more you can do is write another script that will calculate simultaneously (side by side) for each employee and provide a summary for all 1000 employees.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/workflows.png" class="img-fluid figure-img"></p>
+<figcaption>Concept of automation</figcaption>
+</figure>
+</div>
+<p>That’s it! Your taks is finished with in a day. What you did is just wirte a bunch codes and automated the whole process.</p>
+</section>
+<section id="automation-in-bioinformatics" class="level2">
+<h2 class="anchored" data-anchor-id="automation-in-bioinformatics">Automation in bioinformatics</h2>
+<p>As a bioinformatician you need to learn at least either <code>Python</code>, <code>R</code> or <code>Perl</code> and <code>Bash</code> programming language. You can automate a process, say for example, bacterial genomics starting from data quality check, trimming, assembly, assembly assessment, taxonomic classification, annotation of genome etc. etc. You can write a script either on <code>bash</code>or <code>R</code> or <code>python</code> which will do all these processes one by one of all samples. That’s it! What can go wrong! right?</p>
+<p>While you are writing and testing the script, you observed that a software is working fine but another one is not. You looked for the errors and found that software <code>A</code> is written in <code>Python version 2.7</code> but software <code>B</code> is written in <code>Python version 3.7</code>. That means <code>A</code> is dependent of <code>python 2.7</code> and <code>B</code> is dependent on <code>python 3.7</code>. Since these two are different in syntax, one software is giving error while other one is working fine.</p>
+<p>The solution is you make partition or an environment where <code>A</code> will be installed with <code>Python 2.7</code> and another environment where <code>B</code> will be installed with <code>Python 3.7</code>. You can think of it as 2 bed and a drawing room flat, where each bedroom is environment has separated door to enter.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+ 
+  F[drawing room] --&gt; G[bedroom 1/ environment 1/ python 2.7]
+  F --&gt; H[bedroom 2/ environment 2/ python 3.7]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>This environemtents are created either with <code>Docker</code> or <code>singularity</code> or <code>conda</code>.</p>
+</section>
+<section id="conda-singularity-docker" class="level2">
+<h2 class="anchored" data-anchor-id="conda-singularity-docker">Conda, Singularity, Docker?</h2>
+<p>There are three solutions for managing software dependencies:</p>
+<ul>
+<li><a href="https://docs.docker.com"><em>Docker</em></a> is a software that allows to package a small virtual operating system (or a “container”) containing all the software and data necessary for running an analysis.</li>
+<li><a href="https://docs.sylabs.io/guides/3.5/user-guide/index.html"><em>Singularity</em></a> also creates software containers, similarly to Docker. However, it can more easily interface with the user’s filesystem, without the need to have special permissions.</li>
+<li><a href="https://docs.conda.io/en/latest/"><em>Conda</em></a> is a package manager, also very popular in bioinformatics. Instead of creating virtual OS containers, Conda instead creates software environments (think of them as directories) where all the software is locally installed, including all its dependencies. The use of individual environments ensures that software packages with incompatible dependencies can still be used within the same pipeline.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Conda exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Conda exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have <code>anaconda</code> or <code>miniconda</code> or <code>mamba</code> or <code>micromamba</code> installed, open a terminal and type</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>or</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>or</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">micromamba</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you see version information, that means you have <code>conda</code> or <code>mamba</code> installed. Now we will create an environment</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> first_environmet <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you see it succeeded, type the following to enter the environment, in other others activate the environment.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate first_environment</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>now let’s check <code>python</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What do you see? no <code>python</code> installed in <code>first_environmet</code>. Ok, let’s create another another environment and install <code>python</code> there. So first we have to deactivate our <code>first_environment</code> by typing</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now create a new environment with <code>python</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> second_environment python=3.7 <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If succeded, activate the environment</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate second_environment</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now check python in similar way</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What do you see? <code>python</code> is installed here and it is 3.7.xx . Welldone! I hope you understand now.</p>
+<p>Let’s install a bioinforamtic softawere. Say for example, quality checking tool <code>FastQC</code>. To install <code>FastQC</code> search in web browser as <code>conda fastqc</code>. You will land in https://anaconda.org/bioconda/fastqc. In this website you will see something like <code>conda install bioconda::fastqc</code>. Type it in your terminal and add -y as yes</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install bioconda::fastqc <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Once installed you can check whether it is truly installed or not by typing</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you see details user manual of <code>FastQC</code> tool, that means you have successfully installed <code>FastQC</code></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Follow the instructions to</p>
+<ol type="1">
+<li>Deactivate <code>second_environment</code></li>
+<li>Create a new envirnment named <code>assembly</code> with <code>python 3.10</code></li>
+<li>Activate <code>assembly</code><br>
+</li>
+<li>Install <code>spades</code> using conda</li>
+<li>Type help and version for <code>spades</code></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> assembly python=3.10 <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install bioconda::spades </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- this page is taken from https://avantonder.github.io/Ghana_course/materials/08-workflow_managers/8.1-workflow_managers.html
+-->
+</section>
+<section id="workflows" class="level2">
+<h2 class="anchored" data-anchor-id="workflows">Workflows</h2>
+<p>Analysing data involves a sequence of tasks, including gathering, cleaning, and processing data. These sequence of tasks are called a workflow or a pipeline. These workflows typically require executing multiple software packages, sometimes running on different computing environments, such as a desktop or a compute cluster. Traditionally these workflows have been joined together in scripts using general purpose programming languages such as Bash or Python.</p>
+<p>However, as workflows become larger and more complex, the management of the programming logic and software becomes difficult.</p>
+</section>
+<section id="workflow-management-systems" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-management-systems">Workflow management systems</h2>
+<p><em>Workflow Management Systems</em> (WfMS), such as Snakemake, Galaxy, and Nextflow have been developed specifically to manage computational data-analysis workflows in fields such as Bioinformatics, Imaging, Physics, and Chemistry.</p>
+<p>WfMS contain multiple features that simplify the development, monitoring, execution and sharing of pipelines.</p>
+<p>Key features include;</p>
+<ul>
+<li><strong>Run time management</strong>: Management of program execution on the operating system and splitting tasks and data to run at the same time in a process called parallelisation.</li>
+<li><strong>Software management</strong>: Use of technology like containers, such as <a href="https://www.docker.com">Docker</a> or <a href="https://sylabs.io/singularity">Singularity</a>, that packages up code and all its dependencies so the application runs reliably from one computing environment to another.</li>
+<li><strong>Portability &amp; Interoperability</strong>: Workflows written on one system can be run on another computing infrastructure e.g., local computer, compute cluster, or cloud infrastructure.</li>
+<li><strong>Reproducibility</strong>: The use of software management systems and a pipeline specification means that the workflow will produce the same results when re-run, including on different computing platforms.</li>
+<li><strong>Reentrancy</strong>: Continuous checkpoints allow workflows to resume from the last successfully executed steps.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
