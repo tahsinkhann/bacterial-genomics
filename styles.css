@@ -1,1 +1,6 @@
 /* css styles */
+
+/* center just captions of figures that opt-in with .caption-center */
+.quarto-figure.caption-center .quarto-figure-caption {
+  text-align: center;
+}
