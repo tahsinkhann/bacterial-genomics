@@ -4,3 +4,30 @@
 .quarto-figure.caption-center .quarto-figure-caption {
   text-align: center;
 }
+
+/* Subtle border + spacing for the "On this page" margin sidebar */
+#quarto-margin-sidebar { border-left: 1px solid var(--bs-border-color); padding-left: 0.75rem; }
+
+/* Slightly tighter callout spacing */
+.callout { margin: 1rem 0; }
+
+/* Nicer figure caption spacing + center option (if you use fig-classes="caption-center") */
+.quarto-figure .quarto-figure-caption { margin-top: .35rem; }
+.quarto-figure.caption-center .quarto-figure-caption { text-align: center; }
+
+
+/* this is new comment
+
+/* lock navbar background + text across light & dark modes 
+.navbar { background-color: #003b5c !important; }
+html[data-bs-theme="dark"] .navbar { background-color: #003b5c !important; }
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .navbar-toggler {
+  color: #fff !important;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active { opacity: .85; }
+*/

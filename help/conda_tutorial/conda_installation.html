@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tahsin Khan">
+<meta name="dcterms.date" content="2025-09-27">
 
-<title>Workflow Management Systems – Introduction to Bacterial Genomics</title>
+<title>Conda installation – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,31 +60,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../help/conda_tutorial/conda_installation.html" rel="next">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-81fe5dcfeb64615fe1e55f802320c342.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../help/workflow_management.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-81fe5dcfeb64615fe1e55f802320c342.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,20 +112,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Workflow Management Systems – Introduction to Bacterial Genomics">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Conda installation – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://tahsinkhann.github.io/bacterial-genomics/assets/chill.jpg">
+<meta property="og:image" content="https://tahsinkhann.github.io/bacterial-genomics/assets/conda_environments.svg">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
-<meta name="twitter:title" content="Workflow Management Systems – Introduction to Bacterial Genomics">
+<meta property="og:image:alt" content="Illustration of Conda environments.">
+<meta name="twitter:title" content="Conda installation – Introduction to Bacterial Genomics">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://tahsinkhann.github.io/bacterial-genomics/assets/chill.jpg">
+<meta name="twitter:image" content="https://tahsinkhann.github.io/bacterial-genomics/assets/conda_environments.svg">
 <meta name="twitter:site" content="@tahsinkhann">
+<meta name="twitter:image:alt" content="Illustration of Conda environments.">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -306,11 +306,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/images.png" alt="icddr,b" class="navbar-logo light-content">
-    <img src="../assets/images.png" alt="icddr,b" class="navbar-logo dark-content">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/images.png" alt="icddr,b" class="navbar-logo light-content">
+    <img src="../../assets/images.png" alt="icddr,b" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Introduction to Bacterial Genomics</span>
     </a>
   </div>
@@ -321,19 +321,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../schedule.html"> 
+    <a class="nav-link" href="../../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../setup.html"> 
+    <a class="nav-link" href="../../setup.html"> 
 <span class="menu-text">Setup</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../materials.html"> 
+    <a class="nav-link" href="../../materials.html"> 
 <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -342,15 +342,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="../help/workflow_management.html">
+    <a class="dropdown-item" href="../../help/workflow_management.html">
  <span class="dropdown-text">Workflow Management Systems</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../help/docker_tutorial.html">
+    <a class="dropdown-item" href="../../help/docker_tutorial.html">
  <span class="dropdown-text">Docker Tutorial</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../help/unix_cheat_sheet.html">
+    <a class="dropdown-item" href="../../help/unix_cheat_sheet.html">
  <span class="dropdown-text">Unix Cheat Sheet</span></a>
   </li>  
         <li>
@@ -387,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Workflow Management Systems</h1>
+          <h1 class="quarto-secondary-nav-title">Conda installation</h1>
         </a>     
     </div>
   </nav>
@@ -397,14 +397,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
+      <a href="../../index.html" class="sidebar-logo-link">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../help/workflow_management.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../help/workflow_management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Workflow Management Systems</span></a>
   </div>
 </li>
@@ -419,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../help/conda_tutorial/conda_installation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../help/conda_tutorial/conda_installation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Conda installation</span></a>
   </div>
 </li>
@@ -435,12 +435,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-autmation-is-needed-in-bioinformatics-analysis" id="toc-why-autmation-is-needed-in-bioinformatics-analysis" class="nav-link active" data-scroll-target="#why-autmation-is-needed-in-bioinformatics-analysis">Why autmation is needed in bioinformatics analysis?</a></li>
-  <li><a href="#what-is-automation" id="toc-what-is-automation" class="nav-link" data-scroll-target="#what-is-automation">What is automation?</a></li>
-  <li><a href="#automation-in-bioinformatics" id="toc-automation-in-bioinformatics" class="nav-link" data-scroll-target="#automation-in-bioinformatics">Automation in bioinformatics</a></li>
-  <li><a href="#conda-singularity-docker" id="toc-conda-singularity-docker" class="nav-link" data-scroll-target="#conda-singularity-docker">Conda, Singularity, Docker?</a></li>
-  <li><a href="#workflows" id="toc-workflows" class="nav-link" data-scroll-target="#workflows">Workflows</a></li>
-  <li><a href="#workflow-management-systems" id="toc-workflow-management-systems" class="nav-link" data-scroll-target="#workflow-management-systems">Workflow management systems</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-conda-package-manager" id="toc-the-conda-package-manager" class="nav-link" data-scroll-target="#the-conda-package-manager">The <code>conda</code> Package Manager</a>
+  <ul class="collapse">
+  <li><a href="#installing-conda" id="toc-installing-conda" class="nav-link" data-scroll-target="#installing-conda">Installing <code>Conda</code></a></li>
+  <li><a href="#installing-software-using-conda" id="toc-installing-software-using-conda" class="nav-link" data-scroll-target="#installing-software-using-conda">Installing Software Using <code>Conda</code></a></li>
+  <li><a href="#loading-conda-environments" id="toc-loading-conda-environments" class="nav-link" data-scroll-target="#loading-conda-environments">Loading <code>Conda</code> Environments</a></li>
+  </ul></li>
+  <li><a href="#replacing-conda-with-mamba" id="toc-replacing-conda-with-mamba" class="nav-link" data-scroll-target="#replacing-conda-with-mamba">Replacing conda with Mamba</a></li>
+  <li><a href="#install-tools-required-for-bacterial-genomics" id="toc-install-tools-required-for-bacterial-genomics" class="nav-link" data-scroll-target="#install-tools-required-for-bacterial-genomics">Install tools required for bacterial genomics</a>
+  <ul class="collapse">
+  <li><a href="#installing-tools-with-mamba" id="toc-installing-tools-with-mamba" class="nav-link" data-scroll-target="#installing-tools-with-mamba">Installing tools with <code>Mamba</code></a></li>
+  <li><a href="#confirming-installtion-with---help-command" id="toc-confirming-installtion-with---help-command" class="nav-link" data-scroll-target="#confirming-installtion-with---help-command">Confirming installtion with <code>--help</code> command</a></li>
+  </ul></li>
+  <li><a href="#credit" id="toc-credit" class="nav-link" data-scroll-target="#credit">Credit</a></li>
   </ul>
 </nav>
     </div>
@@ -450,7 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Workflow Management Systems</h1>
+<h1 class="title d-none d-lg-block">Conda installation</h1>
 </div>
 
 
@@ -464,6 +472,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 27, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -473,204 +487,245 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="why-autmation-is-needed-in-bioinformatics-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="why-autmation-is-needed-in-bioinformatics-analysis">Why autmation is needed in bioinformatics analysis?</h2>
-<p>Working as a bioinformatician is cumbersome and stressful unless you become a bioinformagician, and how you can be a <code>bioinformagician</code>? Simple, all you have to do is automate your tasks, write scripts, make it stable, scalable and reproducible. Once done, give a command to your computer, wait and chill until it finishes.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/chill.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>A bioinformagician is chilling after automating a task</figcaption>
-</figure>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-</section>
-<section id="what-is-automation" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-automation">What is automation?</h2>
-<p>Suppose you are an Finance executive in a corporate office. Your office has 1000 employees who comes at 9 am, punch his finger as in and punch again at 6 pm as out. You manager asked you to make salary sheet for all employees and he need it within 2 days! You can’t say a word because a boss is boss! Now, you started to take notes of</p>
-<ul>
-<li>number of working days in that month</li>
-<li>number of paid leaves</li>
-<li>number of unpaid leaves</li>
-<li>number of working hours per day</li>
-<li>number of hours as overtime</li>
-<li>whether a fixed term employee or contractual or daily wager</li>
-<li>festive bonus based on months s/he is working</li>
-</ul>
-<p>Imagine your life if you have to do everything manually! and that’s not just for one employee, you have 999 others!!!</p>
-<p>Now what can do is:</p>
-<ol type="1">
-<li>write a programming script that will automatically calculate everything based on punch in and out for each day and at the end calculate salary.</li>
-</ol>
-<p>What more you can do is write another script that will calculate simultaneously (side by side) for each employee and provide a summary for all 1000 employees.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../assets/workflows.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Concept of automation"><img src="../assets/workflows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Concept of automation"></a></p>
-</figure>
-</div>
-<figcaption>Concept of automation</figcaption>
-</figure>
-</div>
-<!-- {width=300} -->
-<p>That’s it! Your taks is finished with in a day. What you did is just wirte a bunch codes and automated the whole process.</p>
-</section>
-<section id="automation-in-bioinformatics" class="level2">
-<h2 class="anchored" data-anchor-id="automation-in-bioinformatics">Automation in bioinformatics</h2>
-<p>As a bioinformatician you need to learn at least either <code>Python</code>, <code>R</code> or <code>Perl</code> and <code>Bash</code> programming language. You can automate a process, say for example, bacterial genomics starting from data quality check, trimming, assembly, assembly assessment, taxonomic classification, annotation of genome etc. etc. You can write a script either on <code>bash</code>or <code>R</code> or <code>python</code> which will do all these processes one by one of all samples. That’s it! What can go wrong! right?</p>
-<p>While you are writing and testing the script, you observed that a software is working fine but another one is not. You looked for the errors and found that software <code>A</code> is written in <code>Python version 2.7</code> but software <code>B</code> is written in <code>Python version 3.7</code>. That means <code>A</code> is dependent of <code>python 2.7</code> and <code>B</code> is dependent on <code>python 3.7</code>. Since these two are different in syntax, one software is giving error while other one is working fine.</p>
-<p>The solution is you make partition or an environment where <code>A</code> will be installed with <code>Python 2.7</code> and another environment where <code>B</code> will be installed with <code>Python 3.7</code>. You can think of it as 2 bed and a drawing room flat, where each bedroom is environment has separated door to enter.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
- 
-  F[drawing room] --&gt; G[bedroom 1/ environment 1/ python 2.7]
-  F --&gt; H[bedroom 2/ environment 2/ python 3.7]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>This environemtents are created either with <code>Docker</code> or <code>singularity</code> or <code>conda</code>.</p>
-</section>
-<section id="conda-singularity-docker" class="level2">
-<h2 class="anchored" data-anchor-id="conda-singularity-docker">Conda, Singularity, Docker?</h2>
-<p>There are three solutions for managing software dependencies:</p>
-<ul>
-<li><a href="https://docs.docker.com"><em>Docker</em></a> is a software that allows to package a small virtual operating system (or a “container”) containing all the software and data necessary for running an analysis.</li>
-<li><a href="https://docs.sylabs.io/guides/3.5/user-guide/index.html"><em>Singularity</em></a> also creates software containers, similarly to Docker. However, it can more easily interface with the user’s filesystem, without the need to have special permissions.</li>
-<li><a href="https://docs.conda.io/en/latest/"><em>Conda</em></a> is a package manager, also very popular in bioinformatics. Instead of creating virtual OS containers, Conda instead creates software environments (think of them as directories) where all the software is locally installed, including all its dependencies. The use of individual environments ensures that software packages with incompatible dependencies can still be used within the same pipeline.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="Conda exercise">
+<div class="callout-body-container">
+<div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Conda exercise
+<span class="screen-reader-only">Important</span>Questions:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you have <code>anaconda</code> or <code>miniconda</code> or <code>mamba</code> or <code>micromamba</code> installed, open a terminal and type</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>or</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>or</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">micromamba</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you see version information, that means you have <code>conda</code> or <code>mamba</code> installed. Now we will create an environment</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> first_environmet <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you see it succeeded, type the following to enter the environment, in other others activate the environment.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate first_environment</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>now let’s check <code>python</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>What do you see? no <code>python</code> installed in <code>first_environmet</code>. Ok, let’s create another another environment and install <code>python</code> there. So first we have to deactivate our <code>first_environment</code> by typing</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Now create a new environment with <code>python</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> second_environment python=3.7 <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If succeded, activate the environment</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate second_environment</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Now check python in similar way</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>What do you see? <code>python</code> is installed here and it is 3.7.xx . Welldone! I hope you understand now.</p>
-<p>Let’s install a bioinforamtic softawere. Say for example, quality checking tool <code>FastQC</code>. To install <code>FastQC</code> search in web browser as <code>conda fastqc</code>. You will land in https://anaconda.org/bioconda/fastqc. In this website you will see something like <code>conda install bioconda::fastqc</code>. Type it in your terminal and add -y as yes</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install bioconda::fastqc <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Once installed you can check whether it is truly installed or not by typing</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you see details user manual of <code>FastQC</code> tool, that means you have successfully installed <code>FastQC</code></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Exercise">
+<ul>
+<li>How do I install and manage software on my computer or a HPC?</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise
+<span class="screen-reader-only">Important</span>Learning Objectives:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Follow the instructions to</p>
-<ol type="1">
-<li>Deactivate <code>second_environment</code></li>
-<li>Create a new envirnment named <code>assembly</code> with <code>python 3.10</code></li>
-<li>Activate <code>assembly</code><br>
-</li>
-<li>Install <code>spades</code> using conda</li>
-<li>Type help and version for <code>spades</code></li>
-</ol>
+<ul>
+<li>Understand what a package manager is, and how it can be used to manage software installation on a on a personal computer or HPC environment.</li>
+<li>Install the <code>Conda</code> package manager.</li>
+<li>Create a software environment and install software using <code>Conda</code>.</li>
+<li>Understand that <code>mamba</code> is a faster, more efficient version of <code>Conda</code></li>
+</ul>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong><em>Solution</em></strong>
+<span class="screen-reader-only">Tip</span>Keypoints:
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> assembly python=3.10 <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install bioconda::spades </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- this page is taken from https://avantonder.github.io/Ghana_course/materials/08-workflow_managers/8.1-workflow_managers.html
--->
-</section>
-<section id="workflows" class="level2">
-<h2 class="anchored" data-anchor-id="workflows">Workflows</h2>
-<p>Analysing data involves a sequence of tasks, including gathering, cleaning, and processing data. These sequence of tasks are called a workflow or a pipeline. These workflows typically require executing multiple software packages, sometimes running on different computing environments, such as a desktop or a compute cluster. Traditionally these workflows have been joined together in scripts using general purpose programming languages such as Bash or Python.</p>
-<p>However, as workflows become larger and more complex, the management of the programming logic and software becomes difficult.</p>
-</section>
-<section id="workflow-management-systems" class="level2">
-<h2 class="anchored" data-anchor-id="workflow-management-systems">Workflow management systems</h2>
-<p><em>Workflow Management Systems</em> (WfMS), such as Snakemake, Galaxy, and Nextflow have been developed specifically to manage computational data-analysis workflows in fields such as Bioinformatics, Imaging, Physics, and Chemistry.</p>
-<p>WfMS contain multiple features that simplify the development, monitoring, execution and sharing of pipelines.</p>
-<p>Key features include;</p>
 <ul>
-<li><strong>Run time management</strong>: Management of program execution on the operating system and splitting tasks and data to run at the same time in a process called parallelisation.</li>
-<li><strong>Software management</strong>: Use of technology like containers, such as <a href="https://www.docker.com">Docker</a> or <a href="https://sylabs.io/singularity">Singularity</a>, that packages up code and all its dependencies so the application runs reliably from one computing environment to another.</li>
-<li><strong>Portability &amp; Interoperability</strong>: Workflows written on one system can be run on another computing infrastructure e.g., local computer, compute cluster, or cloud infrastructure.</li>
-<li><strong>Reproducibility</strong>: The use of software management systems and a pipeline specification means that the workflow will produce the same results when re-run, including on different computing platforms.</li>
-<li><strong>Reentrancy</strong>: Continuous checkpoints allow workflows to resume from the last successfully executed steps.</li>
+<li>To install your own software, you can use the <code>Conda</code> package manager.</li>
+<li><code>Conda</code> allows you to have separate “software environments”, where multiple package versions can co-exist on your system.</li>
+<li>Use <code>conda create -n &lt;ENV&gt;</code> to create a new software environment and <code>conda install -n &lt;ENV&gt; &lt;PROGRAM&gt;</code> to install a program in that environment.</li>
+<li>Use <code>conda activate &lt;ENV&gt;</code> to “activate” the software environment and make all the programs installed there available. There are many channels through which tools are installted, one such is <code>bioconda</code>. To install a software through a chennel, use <code>conda install -c &lt;CHANNEL&gt; &lt;PROGRAM&gt;</code> or <code>conda install &lt;CHANNEL&gt;::&lt;PROGRAM&gt;</code>.</li>
+<li><code>Conda</code> is a very useful tool but can be slow, so increasingly <code>mamba</code> is being used instead.</li>
 </ul>
-<!-- 
- sidebar:
-    - id: materials-nav
-      title: Materials
-      style: docked
-      collapse-level: 2
-      contents: 
-        - materials.qmd
-        - section: "1. Pathogen of Interest"
-          contents: 
-            - materials/1-1-pathogen_genomic_surveillances.qmd
-            - materials/1-2-know-your-bug.qmd
-        - section: "2. Introduction to NGS"
-          contents: 
-            - materials/2-1-into-ngs.qmd
-            - materials/2-2-navigating-files.qmd
-            
-    - id: conda-installation-nav
-      title: Conda Installation
-      style: docked
-      collapse-level: 2
-      contents: 
-        - help/workflow_management.qmd
-        - section: "1. Conda"
-          contents: 
-            - help/conda_tutorial/conda_installation.qmd
-       -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-conda-package-manager" class="level2">
+<h2 class="anchored" data-anchor-id="the-conda-package-manager">The <code>conda</code> Package Manager</h2>
+<p>Often you may want to use software packages that are not be installed by default on your computer or the compute cluster you may have access to. There are several ways you could manage your own software installation, but in this module we will be using <code>Conda</code>, which gives you access to a large number of scientific packages.</p>
+<p>There are two main software distributions that you can download and install, called <code>Anaconda</code> and <code>Miniconda</code>.<br>
+<code>Miniconda</code> is a lighter version, which includes only base Python, while <code>Anaconda</code> is a much larger bundle of software that includes many other packages (see the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#anaconda-or-miniconda">Documentation Page</a> for more information).</p>
+<p>One of the strengths of using <code>Conda</code> to manage your software is that you can have different versions of your software installed alongside each other, organised in <strong>environments</strong>. Organising software packages into environments is extremely useful, as it allows to have a <em>reproducible</em> set of software versions that you can use and resuse in your projects.</p>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../assets/conda_environments.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Illustration of Conda environments."><img src="../../assets/conda_environments.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Illustration of Conda environments."></a></p>
+</figure>
+</div>
+<figcaption>Illustration of <code>Conda</code> environments.</figcaption>
+</figure>
+</div>
+</div>
+<section id="installing-conda" class="level3">
+<h3 class="anchored" data-anchor-id="installing-conda">Installing <code>Conda</code></h3>
+<p>To start with, let’s install <code>Conda</code> on your machine. In this course we will install the <code>Miniconda</code> bundle, as it’s lighter and faster to install:</p>
+<ol type="1">
+<li>Make sure you have opened a terminal and you are in the home directory (<code>cd ~</code>).</li>
+<li>Download the <code>Miniconda</code> installer by running:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Run the installation script just downloaded:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> Miniconda3-latest-Linux-x86_64.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="1">
+<li>Follow the installation instructions accepting default options (answering ‘yes’ to any questions).</li>
+<li>Restart your terminal and confirm that your shell now starts with the word (<code>base</code>).</li>
+<li>Run the following command:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels defaults<span class="kw">;</span> <span class="ex">conda</span> config <span class="at">--add</span> channels bioconda<span class="kw">;</span> <span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge<span class="kw">;</span> <span class="ex">conda</span> config <span class="at">--set</span> channel_priority strict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This adds two <em>channels</em> (sources of software) useful for bioinformatics and data science applications.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>Anaconda</code> and <code>Miniconda</code> are also available for Windows and Mac OS. See the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#regular-installation">Conda Installation Documents</a> for instructions. However, I will make another tabset about conda installation for Mac OS.</p>
+</div>
+</div>
+</section>
+<section id="installing-software-using-conda" class="level3">
+<h3 class="anchored" data-anchor-id="installing-software-using-conda">Installing Software Using <code>Conda</code></h3>
+<p>The command used to install and manage software is called <code>conda</code>. Although we will only cover the basics in this course, it has an <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/">excellent documentation</a> and a useful <a href="https://docs.conda.io/projects/conda/en/latest/_downloads/1f5ecf5a87b1c1a8aaf5a7ab8a7a0ff7/conda-cheatsheet.pdf">cheatsheet</a>.</p>
+<p>The first thing to do is to create a software environment for our project. Although this is optional (you could instead install everything in the “base” default environment), it is a good practice as it means the software versions remain stable within each project.</p>
+<p>To create an environment we use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> ENV <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Where “ENV” is the name we want to give to that environment. Once the environment is created, we can install packages in two approaches:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href=""><strong>Approach 1</strong></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><strong>Approach 2</strong></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>First approach is activate the envirnment and then install the software.<br>
+To activate the environment, type</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ENV</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will change (<code>base</code>) to (<code>ENV</code>). Now install the software:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> <span class="op">&lt;</span>channel<span class="op">&gt;</span>  PROGRAM <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Where “PROGRAM” is the name of the software we want to install. Once software is installed, type help to understand all functionality of the installed software</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">PROGRAM</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you are done working in this environment, deactivate the envrionment to got <code>base</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You will see (<code>ENV</code>) changed back to (<code>base</code>).</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>You can install a program directly to the environment without activating the environment at all.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">--name</span> ENV PROGRAM <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Once installed, type help to understand the functionality of the software</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> run <span class="at">-n</span> ENV PROGRAM <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Where “PROGRAM” is the name of the software we want to install.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One way to organise your software environments is to create an environment for each kind of analysis that you might be doing regularly. For example, you could have an environment named <code>bioinformatics</code> with software that you use for analysing sequence data (e.g.&nbsp;fastQC, bwa) and another called <code>processing</code> with software you use for downstream analysis of your results (e.g.&nbsp;Python’s pandas). Alternatively, you can create a separate environment for each tool you’d like to install and use.</p>
+</div>
+</div>
+<p>To search for the software packages that are available through <code>conda</code>:</p>
+<ul>
+<li>go to <a href="https://anaconda.org">anaconda.org</a>.</li>
+<li>in the search box search for a program of your choice. For example: “bowtie2”.</li>
+<li>the results should be listed as <code>CHANNEL/PROGRAM</code>, where <em>CHANNEL</em> will the the source channel from where the software is available. Usually scientific/bioinformatics software is available through the <code>conda-forge</code> and <code>bioconda</code> channels.</li>
+</ul>
+<p>If you need to install a program from a different channel than the defaults, you can specify it during the install command using the <code>-c</code> option. For example <code>conda install --channel CHANNEL --name ENV PROGRAM</code>.</p>
+<p>Let’s see this with an example, where we create a new environment called <code>fastqc</code> and install the environment with <code>python v3.10</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> fastqc python=3.10 <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#activate fastqc</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate fastqc </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#see functionality </span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To see all the environments you have available, you can use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> info <span class="at">--envs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code># conda environments:
+#
+base                  *  /home/tahsin/miniconda3
+fastqc                   /home/tahsin/miniconda3/envs/fastqc</code></pre>
+<p>In our case it lists the <em>base</em> (default) environment and the newly created <em>fastqc</em> environment. The asterisk (“*“) tells us which environment we’re using at the moment.</p>
+</section>
+<section id="loading-conda-environments" class="level3">
+<h3 class="anchored" data-anchor-id="loading-conda-environments">Loading <code>Conda</code> Environments</h3>
+<p>Once your packages are installed in an environment, you can load that environment by using <code>conda activate ENV</code>, where “ENV” is the name of your environment. For example, we can activate our previously created environment with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate fastqc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you check which <code>python</code> executable is being used now, you will notice it’s the one from this new environment:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> python</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/tahsin/miniconda3/envs/fastqc/bin/python</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can also check that the new environment is in use from:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code># conda environments:
+#
+base                     /home/tahsin/miniconda3
+fastqc                *  /home/tahsin/miniconda3/envs/fastqc</code></pre>
+<p>And notice that the asterisk “*” is now showing we’re using the <code>fastqc</code> environment.</p>
+</section>
+</section>
+<section id="replacing-conda-with-mamba" class="level2">
+<h2 class="anchored" data-anchor-id="replacing-conda-with-mamba">Replacing conda with Mamba</h2>
+<p><code>conda</code> is an amazing tool which has completely changed the way we install tools, removing the worst of the hassle around ensuring that dependencies are installed alongside the tools. However, <code>conda</code> can be quite slow and sometimes has difficulties resolving the dependencies. Fortunately, <code>Mamba</code> was developed to speed up the process. <code>Mamba</code> is a reimplementation of the <code>conda</code> package manager in C++ and allows you to use exactly the same commands as conda (simply replace <code>conda</code> with <code>mamba</code>). Unlike, the tools we’ve been installing above in their own environments, <code>Mamba</code> needs to be installed in the <code>conda</code> <code>base</code> environment. Let’s try installing it now and activate it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install mamba <span class="at">-n</span> base <span class="at">-c</span> conda-forge</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="install-tools-required-for-bacterial-genomics" class="level2">
+<h2 class="anchored" data-anchor-id="install-tools-required-for-bacterial-genomics">Install tools required for bacterial genomics</h2>
+<p>Once mamba is installed let’s try creating a new environment called <code>wgs</code> with python v3.13.2 and then install all the tools necessary from quality checks to <em>de novo</em> assembly and assembly check for a bacterial genome.</p>
+<section id="installing-tools-with-mamba" class="level3">
+<h3 class="anchored" data-anchor-id="installing-tools-with-mamba">Installing tools with <code>Mamba</code></h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-n</span> wgs python=3.13.2 <span class="at">-y</span> <span class="co">#here -n means --name and -y means --yes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate wgs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> bioconda fastqc <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>You can see the commands we use with <code>Mamba</code> are exactly the same as <code>conda</code> but the output looks very different. Don’t worry it’s doing exactly the same thing as <code>conda</code> but better!</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> bioconda trimmomatic <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> bioconda spades <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> conda-forge <span class="at">-c</span> bioconda quast <span class="at">-y</span> <span class="co">#quast requires both conda-forge and bioconda</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="confirming-installtion-with---help-command" class="level3">
+<h3 class="anchored" data-anchor-id="confirming-installtion-with---help-command">Confirming installtion with <code>--help</code> command</h3>
+<p>Let’s check that we successfully installed fastqc:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">-h</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you get the <code>fastqc</code> help output, congratulations you’ve successfully installed a tool with <code>Mamba</code>. Let’s check that we successfully installed trimmomatic:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">trimmomatic</span> <span class="at">-h</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Let’s check that we successfully installed spades:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">-h</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Let’s check that we successfully installed quast:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quast.py</span> <span class="at">-h</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="further-resources" class="level4">
+<h4 class="anchored" data-anchor-id="further-resources">Further resources</h4>
+<ul>
+<li>Search for <code>Conda</code> packages at <a href="https://anaconda.org">anaconda.org</a></li>
+<li>Learn more about <code>Conda</code> from the <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/">Conda User Guide</a></li>
+<li><a href="https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html">Conda Cheatsheet</a> (PDF)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="credit" class="level2">
+<h2 class="anchored" data-anchor-id="credit">Credit</h2>
+<p>Information on this page has been adapted and modified from the following source(s): https://github.com/cambiotraining/hpc-intro-sanger/blob/main/04-software.md</p>
 
 
 </section>
@@ -1096,11 +1151,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../help/workflow_management.html" class="pagination-link" aria-label="Workflow Management Systems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Workflow Management Systems</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../help/conda_tutorial/conda_installation.html" class="pagination-link" aria-label="Conda installation">
-        <span class="nav-page-text">Conda installation</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
