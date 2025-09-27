@@ -21,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -544,86 +509,123 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://docs.sylabs.io/guides/3.5/user-guide/index.html"><em>Singularity</em></a> also creates software containers, similarly to Docker. However, it can more easily interface with the user’s filesystem, without the need to have special permissions.</li>
 <li><a href="https://docs.conda.io/en/latest/"><em>Conda</em></a> is a package manager, also very popular in bioinformatics. Instead of creating virtual OS containers, Conda instead creates software environments (think of them as directories) where all the software is locally installed, including all its dependencies. The use of individual environments ensures that software packages with incompatible dependencies can still be used within the same pipeline.</li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="Conda exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Conda exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you have <code>anaconda</code> or <code>miniconda</code> or <code>mamba</code> or <code>micromamba</code> installed, open a terminal and type</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>or</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>or</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">micromamba</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you see version information, that means you have <code>conda</code> or <code>mamba</code> installed. Now we will create an environment</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> first_environmet <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you see it succeeded, type the following to enter the environment, in other others activate the environment.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate first_environment</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>now let’s check <code>python</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>What do you see? no <code>python</code> installed in <code>first_environmet</code>. Ok, let’s create another another environment and install <code>python</code> there. So first we have to deactivate our <code>first_environment</code> by typing</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Now create a new environment with <code>python</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> second_environment python=3.7 <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If succeded, activate the environment</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate second_environment</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Now check python in similar way</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>What do you see? <code>python</code> is installed here and it is 3.7.xx . Welldone! I hope you understand now.</p>
-<p>Let’s install a bioinforamtic softawere. Say for example, quality checking tool <code>FastQC</code>. To install <code>FastQC</code> search in web browser as <code>conda fastqc</code>. You will land in https://anaconda.org/bioconda/fastqc. In this website you will see something like <code>conda install bioconda::fastqc</code>. Type it in your terminal and add -y as yes</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install bioconda::fastqc <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Once installed you can check whether it is truly installed or not by typing</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you see details user manual of <code>FastQC</code> tool, that means you have successfully installed <code>FastQC</code></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Follow the instructions to</p>
-<ol type="1">
-<li>Deactivate <code>second_environment</code></li>
-<li>Create a new envirnment named <code>assembly</code> with <code>python 3.10</code></li>
-<li>Activate <code>assembly</code><br>
-</li>
-<li>Install <code>spades</code> using conda</li>
-<li>Type help and version for <code>spades</code></li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><strong><em>Solution</em></strong>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> assembly python=3.10 <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install bioconda::spades </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!--
+::::: {.callout-tip title="Conda exercise"}
+If you have `anaconda` or `miniconda` or `mamba` or `micromamba` installed, open a terminal and type
+
+``` bash
+conda --version
+```
+
+or
+
+``` bash
+mamba --version
+```
+
+or
+
+``` bash
+micromamba --version
+```
+
+If you see version information, that means you have `conda` or `mamba` installed. Now we will create an environment
+
+``` bash
+conda create -n first_environmet -y
+```
+
+If you see it succeeded, type the following to enter the environment, in other others activate the environment.
+
+``` bash
+conda activate first_environment
+```
+
+now let's check `python`
+
+``` bash
+python --version
+```
+
+What do you see? no `python` installed in `first_environmet`. Ok, let's create another another environment and install `python` there. So first we have to deactivate our `first_environment` by typing
+
+``` bash
+conda deactivate
+```
+
+Now create a new environment with `python`
+
+``` bash
+conda create -n second_environment python=3.7 -y
+```
+
+If succeded, activate the environment
+
+``` bash
+conda activate second_environment
+```
+
+Now check python in similar way
+
+``` bash
+python --version
+```
+
+What do you see? `python` is installed here and it is 3.7.xx . Welldone! I hope you understand now.
+
+Let's install a bioinforamtic softawere. Say for example, quality checking tool `FastQC`. To install `FastQC` search in web browser as `conda fastqc`. You will land in https://anaconda.org/bioconda/fastqc. In this website you will see something like `conda install bioconda::fastqc`. Type it in your terminal and add -y as yes
+
+``` bash
+conda install bioconda::fastqc -y
+```
+
+Once installed you can check whether it is truly installed or not by typing
+
+``` bash
+fastqc --help
+```
+
+If you see details user manual of `FastQC` tool, that means you have successfully installed `FastQC`
+
+::: {.callout-note title="Exercise"}
+Follow the instructions to
+
+1.  Deactivate `second_environment`
+2.  Create a new envirnment named `assembly` with `python 3.10`
+3.  Activate `assembly`\
+4.  Install `spades` using conda
+5.  Type help and version for `spades`
+:::
+
+::: {.callout-tip collapse="true"}
+## ***Solution***
+
+``` bash
+conda deactivate
+```
+
+``` bash
+conda create -n assembly python=3.10 -y
+```
+
+``` bash
+conda activate assembly
+```
+
+``` bash
+conda install bioconda::spades 
+```
+
+``` bash
+spades.py --help
+```
+
+``` bash
+spades.py --version
+```
+:::
+:::::
+-->
 <!-- this page is taken from https://avantonder.github.io/Ghana_course/materials/08-workflow_managers/8.1-workflow_managers.html
 -->
 </section>
