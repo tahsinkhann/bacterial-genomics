@@ -442,10 +442,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#installing-software-using-conda" id="toc-installing-software-using-conda" class="nav-link" data-scroll-target="#installing-software-using-conda">Installing Software Using <code>Conda</code></a></li>
   <li><a href="#loading-conda-environments" id="toc-loading-conda-environments" class="nav-link" data-scroll-target="#loading-conda-environments">Loading <code>Conda</code> Environments</a></li>
   </ul></li>
-  <li><a href="#replacing-conda-with-mamba" id="toc-replacing-conda-with-mamba" class="nav-link" data-scroll-target="#replacing-conda-with-mamba">Replacing conda with Mamba</a></li>
   <li><a href="#install-tools-required-for-bacterial-genomics" id="toc-install-tools-required-for-bacterial-genomics" class="nav-link" data-scroll-target="#install-tools-required-for-bacterial-genomics">Install tools required for bacterial genomics</a>
   <ul class="collapse">
-  <li><a href="#installing-tools-with-mamba" id="toc-installing-tools-with-mamba" class="nav-link" data-scroll-target="#installing-tools-with-mamba">Installing tools with <code>Mamba</code></a></li>
+  <li><a href="#installing-tools-with-conda-for-bacterial-genomics" id="toc-installing-tools-with-conda-for-bacterial-genomics" class="nav-link" data-scroll-target="#installing-tools-with-conda-for-bacterial-genomics">Installing tools with <code>Conda</code> for bacterial genomics</a></li>
   <li><a href="#confirming-installtion-with---help-command" id="toc-confirming-installtion-with---help-command" class="nav-link" data-scroll-target="#confirming-installtion-with---help-command">Confirming installtion with <code>--help</code> command</a></li>
   </ul></li>
   <li><a href="#credit" id="toc-credit" class="nav-link" data-scroll-target="#credit">Credit</a></li>
@@ -665,7 +664,7 @@ Tip
 #
 base                  *  /home/tahsin/miniconda3
 fastqc                   /home/tahsin/miniconda3/envs/fastqc</code></pre>
-<p>In our case it lists the <em>base</em> (default) environment and the newly created <em>fastqc</em> environment. The asterisk (“*“) tells us which environment we’re using at the moment.</p>
+<p>In our case it lists the <em>base</em> (default) environment and the newly created <em>fastqc</em> environment. The asterisk (“*”) tells us which environment we’re using at the moment.</p>
 </section>
 <section id="loading-conda-environments" class="level3">
 <h3 class="anchored" data-anchor-id="loading-conda-environments">Loading <code>Conda</code> Environments</h3>
@@ -683,36 +682,108 @@ fastqc                *  /home/tahsin/miniconda3/envs/fastqc</code></pre>
 <p>And notice that the asterisk “*” is now showing we’re using the <code>fastqc</code> environment.</p>
 </section>
 </section>
-<section id="replacing-conda-with-mamba" class="level2">
-<h2 class="anchored" data-anchor-id="replacing-conda-with-mamba">Replacing conda with Mamba</h2>
-<p><code>conda</code> is an amazing tool which has completely changed the way we install tools, removing the worst of the hassle around ensuring that dependencies are installed alongside the tools. However, <code>conda</code> can be quite slow and sometimes has difficulties resolving the dependencies. Fortunately, <code>Mamba</code> was developed to speed up the process. <code>Mamba</code> is a reimplementation of the <code>conda</code> package manager in C++ and allows you to use exactly the same commands as conda (simply replace <code>conda</code> with <code>mamba</code>). Unlike, the tools we’ve been installing above in their own environments, <code>Mamba</code> needs to be installed in the <code>conda</code> <code>base</code> environment. Let’s try installing it now and activate it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install mamba <span class="at">-n</span> base <span class="at">-c</span> conda-forge</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
 <section id="install-tools-required-for-bacterial-genomics" class="level2">
 <h2 class="anchored" data-anchor-id="install-tools-required-for-bacterial-genomics">Install tools required for bacterial genomics</h2>
-<p>Once mamba is installed let’s try creating a new environment called <code>wgs</code> with python v3.13.2 and then install all the tools necessary from quality checks to <em>de novo</em> assembly and assembly check for a bacterial genome.</p>
-<section id="installing-tools-with-mamba" class="level3">
-<h3 class="anchored" data-anchor-id="installing-tools-with-mamba">Installing tools with <code>Mamba</code></h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> create <span class="at">-n</span> wgs python=3.13.2 <span class="at">-y</span> <span class="co">#here -n means --name and -y means --yes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> activate wgs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> bioconda fastqc <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<blockquote class="blockquote">
-<p>You can see the commands we use with <code>Mamba</code> are exactly the same as <code>conda</code> but the output looks very different. Don’t worry it’s doing exactly the same thing as <code>conda</code> but better!</p>
-</blockquote>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> bioconda trimmomatic <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> bioconda spades <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> conda-forge <span class="at">-c</span> bioconda quast <span class="at">-y</span> <span class="co">#quast requires both conda-forge and bioconda</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Once you learned how to create an environment, let’s try creating a new environment called <code>wgs</code> with <code>python v3.13.2</code> and then install all the tools necessary from quality checks to <em>de novo</em> assembly and assembly check for a bacterial genome.</p>
+<section id="installing-tools-with-conda-for-bacterial-genomics" class="level3">
+<h3 class="anchored" data-anchor-id="installing-tools-with-conda-for-bacterial-genomics">Installing tools with <code>Conda</code> for bacterial genomics</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> wgs python=3.13.2 <span class="at">-y</span> <span class="co">#here -n means --name and -y means --yes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate wgs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> bioconda fastqc <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> bioconda trimmomatic <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> bioconda spades <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="at">-c</span> bioconda quast <span class="at">-y</span> <span class="co">#quast requires both conda-forge and bioconda</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="confirming-installtion-with---help-command" class="level3">
 <h3 class="anchored" data-anchor-id="confirming-installtion-with---help-command">Confirming installtion with <code>--help</code> command</h3>
 <p>Let’s check that we successfully installed fastqc:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">-h</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you get the <code>fastqc</code> help output, congratulations you’ve successfully installed a tool with <code>Mamba</code>. Let’s check that we successfully installed trimmomatic:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">trimmomatic</span> <span class="at">-h</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">-h</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you get the <code>fastqc</code> help output, congratulations you’ve successfully installed a tool with <code>Conda</code>. Let’s check that we successfully installed trimmomatic:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">trimmomatic</span> <span class="at">-h</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Let’s check that we successfully installed spades:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">-h</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">-h</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Let’s check that we successfully installed quast:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quast.py</span> <span class="at">-h</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quast.py</span> <span class="at">-h</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Success">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Success
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have installed all this tools and checked thier manuals, then you have succeeded using <code>conda</code>! We will learn more about indivial command in next tutorial (coming soon! stay tuned)</p>
+</div>
+</div>
+<!--
+## Replacing conda with Mamba
+
+`conda` is an amazing tool which has completely changed the way we install tools, removing the worst of the hassle around ensuring that dependencies are installed alongside the tools. However, `conda` can be quite slow and sometimes has difficulties resolving the dependencies. Fortunately, `Mamba` was developed to speed up the process. `Mamba` is a reimplementation of the `conda` package manager in C++ and allows you to use exactly the same commands as conda (simply replace `conda` with `mamba`). Unlike, the tools we've been installing above in their own environments, `Mamba` needs to be installed in the `conda` `base` environment. Let's try installing it now and activate it:
+
+``` bash
+conda install mamba -n base -c conda-forge
+```
+
+## Install tools required for bacterial genomics
+
+Once mamba is installed let's try creating a new environment called `wgs` with python v3.13.2 and then install all the tools necessary from quality checks to *de novo* assembly and assembly check for a bacterial genome.
+
+### Installing tools with `Mamba`
+
+``` bash
+mamba create -n wgs python=3.13.2 -y #here -n means --name and -y means --yes
+```
+
+``` bash
+mamba activate wgs
+```
+
+``` bash
+mamba install -c bioconda fastqc -y
+```
+
+> You can see the commands we use with `Mamba` are exactly the same as `conda` but the output looks very different. Don't worry it's doing exactly the same thing as `conda` but better!
+
+``` bash
+mamba install -c bioconda trimmomatic -y
+```
+
+``` bash
+mamba install -c bioconda spades -y
+```
+
+``` bash
+mamba install -c conda-forge -c bioconda quast -y #quast requires both conda-forge and bioconda
+```
+
+### Confirming installtion with `--help` command
+
+Let's check that we successfully installed fastqc:
+
+``` bash
+fastqc -h
+```
+
+If you get the `fastqc` help output, congratulations you've successfully installed a tool with `Mamba`. Let's check that we successfully installed trimmomatic:
+
+``` bash
+trimmomatic -h 
+```
+
+Let's check that we successfully installed spades:
+
+``` bash
+spades.py -h
+```
+
+Let's check that we successfully installed quast:
+
+``` bash
+quast.py -h
+```
+-->
 <section id="further-resources" class="level4">
 <h4 class="anchored" data-anchor-id="further-resources">Further resources</h4>
 <ul>
@@ -730,7 +801,7 @@ fastqc                *  /home/tahsin/miniconda3/envs/fastqc</code></pre>
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
