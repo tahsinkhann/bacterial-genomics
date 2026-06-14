@@ -36,14 +36,14 @@
     "href": "schedule.html",
     "title": "Training Schedule",
     "section": "",
-    "text": "Here we will discuss about training schedule for these 4 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories (draft)\n\n\n\nDay-wise Schedule\n\n\n\n\n\n\n\nDay\nModules\nTime\n\n\n\n\nDay 1\n\nIntroduction of Sequencing Techniques\nIntroduction to Whole Genome Sequencing\nDatabase setup\nIntroduction to bash scripting\nQuality Control (QC)\n\n9:30 am - 4:30 pm\n\n\nDay 2\n\nTrimming\nPost trimming QC\nGenome assembly using spades and shovil\nUnderstand contigs/scaffolds/chromosome\nTaxonomic classification using Kraken2, GTDB-tk,\n\n9:30 am - 4:30 pm\n\n\nDay 3\n\nRecap of previous days\nQC for Completeness and Contamination\nAnnotation of genes and proteins\nDetection of antimicrobial resistance gene (ARG)\nDetection of Virulence factors (VF)\nIdentification of plasmids\n\n9:30 am - 4:30 pm\n\n\nDay 4\n\nRecap of previous day\nPangenome\nSNP-sites identification\nContruction of Phylogenetic tree\nTransmission dynamics of pathogens\n\n9:30 am - 4:30 pm\n\n\nDay 5 (To be scheduled/decided)"
+    "text": "Here we will discuss about training schedule for these 3 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories\n\n\n\nDay 1Day 2Day 3\n\n\n\n\n\n\n\n\n\n\nTime\nSession\nFacilitator\n\n\n\n\n08:30 AM - 09:00 AM\nRegistration\n\n\n\n09:00 AM - 09:30 AM\nWelcome Speech\nTTU & Dr. Mustafizur Rahman\n\n\n09:30 AM - 09:45 AM\nPre-Test\nTTU\n\n\n09:45 AM - 10:15 AM\nIntro to Next Generation Sequencing\nDr. Mohmaad Jubair\n\n\n10:15 AM - 10:35 AM\nTea Break\n\n\n\n10:35 AM - 11:00 AM\nLab Visit\n\n\n\n11:00 AM - 11:30 AM\nIntro to Bacterial Whole Genome Sequencing\nFaysal\n\n\n11:30 AM - 11:45 AM\nOperating Systems and Environments\nTanzim\n\n\n11:45 AM - 12:30 PM\nRead Quality Control\nTazkia\n\n\n12:30 PM - 01:30 PM\nLunch\n\n\n\n01:30 PM - 02:30 PM\nGenome Assembly\nTahsin\n\n\n02:30 PM - 03:00 PM\nAssembly Quality Control\nTahsin\n\n\n03:00 PM - 03:30 PM\nRecap\nFaysal\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime\nSession\nFacilitator\n\n\n\n\n08:30 AM - 09:15 AM\nDay 1 Recap\nTazkia\n\n\n09:15 AM - 10:00 AM\nCase Study Presentation by Dr. Kara Moser (US CDC)\nTazkia\n\n\n10:00 AM - 10:20 AM\nTea Break\n\n\n\n10:20 AM - 11:00 AM\nTaxonomic Classification\nTanzim\n\n\n11:00 AM - 11:15 AM\nSequence Typing\nFaysal\n\n\n11:15 AM - 12:00 PM\nGenome Annotation\nTazkia\n\n\n12:00 PM - 12:30 PM\nAMR and VF Detection\nTahsin\n\n\n12:30 PM - 01:30 PM\nLunch\n\n\n\n01:30 PM - 02:30 PM\nPangenome Analysis\nTahsin\n\n\n02:30 PM - 03:00 PM\nReference-based Assembly\nFaysal\n\n\n03:00 PM - 03:30 PM\nRecap\nTahsin\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime\nSession\nFacilitator\n\n\n\n\n08:30 AM - 09:15 AM\nDay 2 Recap\nTazkia\n\n\n09:15 AM - 10:15 AM\nPhylogenetic Tree Construction\nTanzim\n\n\n10:15 AM - 10:35 AM\nTea Break\n\n\n\n10:35 AM - 11:00 AM\nTree Visualization\nTanzim\n\n\n11:00 AM - 11:30 AM\nObtaining Sequences from Public Databases\nFaysal\n\n\n11:30 AM - 12:15 PM\nCase Studies\nTahsin\n\n\n12:15 PM - 12:30 PM\nPost-Test\nTTU\n\n\n12:30 PM - 01:30 PM\nCourse Lunch\n\n\n\n01:30 PM - 02:00 PM\nFeedback from Participants\n\n\n\n02:00 PM - 03:00 PM\nGuest Speakers\n\n\n\n03:00 PM - 03:30 PM\nClosing Remarks and Certificate Ceremony"
   },
   {
     "objectID": "schedule.html#training-schedule",
     "href": "schedule.html#training-schedule",
     "title": "Training Schedule",
     "section": "",
-    "text": "Here we will discuss about training schedule for these 4 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories (draft)\n\n\n\nDay-wise Schedule\n\n\n\n\n\n\n\nDay\nModules\nTime\n\n\n\n\nDay 1\n\nIntroduction of Sequencing Techniques\nIntroduction to Whole Genome Sequencing\nDatabase setup\nIntroduction to bash scripting\nQuality Control (QC)\n\n9:30 am - 4:30 pm\n\n\nDay 2\n\nTrimming\nPost trimming QC\nGenome assembly using spades and shovil\nUnderstand contigs/scaffolds/chromosome\nTaxonomic classification using Kraken2, GTDB-tk,\n\n9:30 am - 4:30 pm\n\n\nDay 3\n\nRecap of previous days\nQC for Completeness and Contamination\nAnnotation of genes and proteins\nDetection of antimicrobial resistance gene (ARG)\nDetection of Virulence factors (VF)\nIdentification of plasmids\n\n9:30 am - 4:30 pm\n\n\nDay 4\n\nRecap of previous day\nPangenome\nSNP-sites identification\nContruction of Phylogenetic tree\nTransmission dynamics of pathogens\n\n9:30 am - 4:30 pm\n\n\nDay 5 (To be scheduled/decided)"
+    "text": "Here we will discuss about training schedule for these 3 days.\n\n\n\n\n\n\nNote\n\n\n\nWe have divided each day into following categories\n\n\n\nDay 1Day 2Day 3\n\n\n\n\n\n\n\n\n\n\nTime\nSession\nFacilitator\n\n\n\n\n08:30 AM - 09:00 AM\nRegistration\n\n\n\n09:00 AM - 09:30 AM\nWelcome Speech\nTTU & Dr. Mustafizur Rahman\n\n\n09:30 AM - 09:45 AM\nPre-Test\nTTU\n\n\n09:45 AM - 10:15 AM\nIntro to Next Generation Sequencing\nDr. Mohmaad Jubair\n\n\n10:15 AM - 10:35 AM\nTea Break\n\n\n\n10:35 AM - 11:00 AM\nLab Visit\n\n\n\n11:00 AM - 11:30 AM\nIntro to Bacterial Whole Genome Sequencing\nFaysal\n\n\n11:30 AM - 11:45 AM\nOperating Systems and Environments\nTanzim\n\n\n11:45 AM - 12:30 PM\nRead Quality Control\nTazkia\n\n\n12:30 PM - 01:30 PM\nLunch\n\n\n\n01:30 PM - 02:30 PM\nGenome Assembly\nTahsin\n\n\n02:30 PM - 03:00 PM\nAssembly Quality Control\nTahsin\n\n\n03:00 PM - 03:30 PM\nRecap\nFaysal\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime\nSession\nFacilitator\n\n\n\n\n08:30 AM - 09:15 AM\nDay 1 Recap\nTazkia\n\n\n09:15 AM - 10:00 AM\nCase Study Presentation by Dr. Kara Moser (US CDC)\nTazkia\n\n\n10:00 AM - 10:20 AM\nTea Break\n\n\n\n10:20 AM - 11:00 AM\nTaxonomic Classification\nTanzim\n\n\n11:00 AM - 11:15 AM\nSequence Typing\nFaysal\n\n\n11:15 AM - 12:00 PM\nGenome Annotation\nTazkia\n\n\n12:00 PM - 12:30 PM\nAMR and VF Detection\nTahsin\n\n\n12:30 PM - 01:30 PM\nLunch\n\n\n\n01:30 PM - 02:30 PM\nPangenome Analysis\nTahsin\n\n\n02:30 PM - 03:00 PM\nReference-based Assembly\nFaysal\n\n\n03:00 PM - 03:30 PM\nRecap\nTahsin\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime\nSession\nFacilitator\n\n\n\n\n08:30 AM - 09:15 AM\nDay 2 Recap\nTazkia\n\n\n09:15 AM - 10:15 AM\nPhylogenetic Tree Construction\nTanzim\n\n\n10:15 AM - 10:35 AM\nTea Break\n\n\n\n10:35 AM - 11:00 AM\nTree Visualization\nTanzim\n\n\n11:00 AM - 11:30 AM\nObtaining Sequences from Public Databases\nFaysal\n\n\n11:30 AM - 12:15 PM\nCase Studies\nTahsin\n\n\n12:15 PM - 12:30 PM\nPost-Test\nTTU\n\n\n12:30 PM - 01:30 PM\nCourse Lunch\n\n\n\n01:30 PM - 02:00 PM\nFeedback from Participants\n\n\n\n02:00 PM - 03:00 PM\nGuest Speakers\n\n\n\n03:00 PM - 03:30 PM\nClosing Remarks and Certificate Ceremony"
   },
   {
     "objectID": "materials.html",
@@ -78,23 +78,71 @@
   {
     "objectID": "index.html#overview",
     "href": "index.html#overview",
-    "title": "Whole Genome Sequence Analysis of Bacterial Pathogen",
+    "title": "Bacterial Whole Genome Sequence Analysis",
     "section": "Overview",
-    "text": "Overview\nThis course is designed for beginners who want to analyse whole genome sequencing data from bacterial isolates. Throughout the course we will introduce tools that are commonly used and basic requirements for analyzing any bacterial genome. Along the way, we will teach you the foundational bioinformatic skills\n\n\n\n\n\n\nTipLearning Objectives\n\n\n\nBy the end of this course, participants should be able to:\n\nunderstand what the main technologies used for high throughput sequencing are\nuse the unix command line to navigate a filesystem, manipulate files, launch programs and write scripts for reproducible analysis\nrecognize the structure of common sequence file formats\nrun basic quality control of samples\nassemble the reads to construct contigs or scaffolds of the genome\ncheck the quality and completeness of the contigs\nclassify taxonomy of that organism\nannotate the genome to identify coding DNA sequences and proteins\nidentify core genes and construct phylogenetic tree\ninvestigate pathogen transmission dynamics\n\n\n\n\nTarget audience\nThe course is designed for\n\nStudents\nFresh graduates\nEarly career researchers\nUniversity faculties\nBioinformatics enthusiast\n\n\n\nPrerequisites\npeople who have\n\nPersonal computer or laptop\n\nRAM: 16GB\nCPU: 8 Core\nWindows/Linux/Mac OS\n\nFamiliarity with R and Bash"
+    "text": "Overview\nThis course is designed for beginners who want to analyse whole genome sequencing data from bacterial isolates. Throughout the course we will introduce tools that are commonly used and basic requirements for analyzing any bacterial genome. Along the way, we will teach you the foundational bioinformatic skills\n\n\n\n\n\n\nTipLearning Objectives\n\n\n\nBy the end of this course, participants should be able to:\n\nunderstand what the main technologies used for high throughput sequencing are\nuse the unix command line to navigate a filesystem, manipulate files, launch programs and write scripts for reproducible analysis\nrecognize the structure of common sequence file formats\nrun basic quality control of samples\nassemble the reads to construct contigs or scaffolds of the genome\ncheck the quality and completeness of the contigs\nclassify taxonomy of that organism\nannotate the genome to identify coding DNA sequences and proteins\nidentify core genes and construct phylogenetic tree\ninvestigate pathogen transmission dynamics\n\n\n\n\nTarget audience\nThe course is designed for\nThis course is primarily aimed at public health officials including doctors, lab workers and clinicians who work with bacterial diseases and would like to get started in using genomic and bioinformatics approaches for the surveillance of their causative bacterial pathogens. We assume little or no prior experience in bioinformatics.\n\n\nPrerequisites\npeople who have\n\nPersonal computer or laptop\n\nRAM: 16GB\nCPU: 8 Core\nWindows/Linux/Mac OS\n\nFamiliarity with R and Bash"
   },
   {
     "objectID": "index.html#authors",
     "href": "index.html#authors",
-    "title": "Whole Genome Sequence Analysis of Bacterial Pathogen",
+    "title": "Bacterial Whole Genome Sequence Analysis",
     "section": "Authors",
     "text": "Authors\nabout the authors:\n\nTahsin Khan    \nAffiliation: Genome Centre, icddr,b\nRoles: writing - original draft; conceptualization; coding\nTanzim Rahman  \nAffiliation: Genome Centre, icddr,b\nRoles: writing - original draft; conceptualization; coding\nTazkia Ahmed  \nAffiliation: Genome Centre, icddr,b\nRoles: writing - original draft; conceptualization; coding \n\n\nCitation\nYou can cite these materials as:\nKhan T, Rahman T and Ahmed T. (2025) “Introduction to Bacterial Genomics”, https://tahsinkhann.github.io/bacterial-genomics/1\nOr, in BibTeX format:\n@misc{khan2025-bactgen-site,\n  title   = {Introduction to Bacterial Genomics},\n  author  = {Khan, Tahsin and Rahman, Tanzim and Ahmed, Tazkia},\n  year    = {2025},\n  url     = {https://tahsinkhann.github.io/bacterial-genomics/},\n  urldate = {2025-09-16},\n  note    = {Course website}\n}"
   },
   {
     "objectID": "index.html#acknowledgements",
     "href": "index.html#acknowledgements",
-    "title": "Whole Genome Sequence Analysis of Bacterial Pathogen",
+    "title": "Bacterial Whole Genome Sequence Analysis",
     "section": "Acknowledgements",
     "text": "Acknowledgements\n\nThis course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility2‘3’4 and other open access training materials.\n\nReferences\n\n\n1. Khan, T., Rahman, T. & Ahmed, T. Introduction to bacterial genomics. (2025).\n\n\n2. Salehe, B. et al. Bioinfomartics for AWD-related pathogens. (2023).\n\n\n3. Asare, P. & Tonder, A. van. Introduction to bacterial genomics. (2023).\n\n\n4. Tonder, A. van, Tavares, H. & Salehe, B. Working with bacterial genomes. (2024)."
+  },
+  {
+    "objectID": "materials/day-2.html",
+    "href": "materials/day-2.html",
+    "title": "Day 2-3",
+    "section": "",
+    "text": "conda activate mlst\nmlst assembly/contigs_filtered.fasta &gt; classify/S1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "Day 2-3",
+      "Day 2-3"
+    ]
+  },
+  {
+    "objectID": "materials/day-2.html#extract-variable-sites",
+    "href": "materials/day-2.html#extract-variable-sites",
+    "title": "Day 2-3",
+    "section": "Extract variable sites",
+    "text": "Extract variable sites\nsnp-sites -o pangenome/core_gene_alignment.snp.aln pangenome/core_gene_alignment_filtered.aln",
+    "crumbs": [
+      "Materials",
+      "Day 2-3",
+      "Day 2-3"
+    ]
+  },
+  {
+    "objectID": "materials/day-2.html#get-constant-sites",
+    "href": "materials/day-2.html#get-constant-sites",
+    "title": "Day 2-3",
+    "section": "Get constant sites",
+    "text": "Get constant sites\nsnp-sites -C -o pangenome/core_gene_alignment_countconstant pangenome/core_gene_alignment_filtered.aln\ncat pangenome/core_gene_alignment_countconstant",
+    "crumbs": [
+      "Materials",
+      "Day 2-3",
+      "Day 2-3"
+    ]
+  },
+  {
+    "objectID": "materials/day-2.html#construct-tree-model-asc-doesnt-work-sometimes",
+    "href": "materials/day-2.html#construct-tree-model-asc-doesnt-work-sometimes",
+    "title": "Day 2-3",
+    "section": "Construct tree (model +ASC doesn’t work sometimes)",
+    "text": "Construct tree (model +ASC doesn’t work sometimes)\niqtree \\\n    -s pangenome/core_gene_alignment.snp.aln \\\n    -fconst FCONST_VALUE \\\n    -seed 12345 \\\n    -B 1000 \\\n    -m GTR+F \\\n    -nt 4 \\\n    -pre tree/iqtree",
+    "crumbs": [
+      "Materials",
+      "Day 2-3",
+      "Day 2-3"
+    ]
   },
   {
     "objectID": "materials/2-2-navigating-files.html",
@@ -121,6 +169,30 @@
     ]
   },
   {
+    "objectID": "materials/4-1-trimming.html",
+    "href": "materials/4-1-trimming.html",
+    "title": "4. Trimming to Retain High Quality Data",
+    "section": "",
+    "text": "TipLearning Objectives\n\n\n\n\nLearn bioinformatics tool to perform quality control on raw reads.\n\n\n\nIf you are continuing from the last session (Quality Control of Raw Reads), you are in qc environment, if not activate the environment first.\ntrimmomatic PE \\\n    S1_R1.fastq.gz S1_R2.fastq.gz \\\n    S1_trim_R1.fastq.gz S1_unpaired_R1.fastq.gz \\\n    S1_trim_R2.fastq.gz S1_unpaired_R2.fastq.gz \\\n    SLIDINGWINDOW:4:20 LEADING:3 TRAILING:3 HEADCROP:15 MINLEN:40\nNow run fastqc tool again on the trimmed files to understand the quality improvement.\nfastqc -t 4 S1_trim_R1.fastq.gz S1_trim_R2.fastq.gz\n\n\n\n\n\n\nNote\n\n\n\nHere we will learn how to organize files. Create two directories called raw_files, and qc_reports. Move raw_reads to raw_files directory. Move fastqc reports to qc_reports directory. Lastly remove all files named as unpaired files.\n\n\n\n\n\n\nCautionExercise: Reorganize files\n\n\n\n\n\nmkdir raw_files qc_reports\nmv S1_R*.fastq.gz raw_files\nmv *fastqc* qc_reports\nrm *unpaired*\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Materials",
+      "4. Trimming to Retain High Quality Data",
+      "4. Trimming to Retain High Quality Data"
+    ]
+  },
+  {
+    "objectID": "materials/qc_assembly.html",
+    "href": "materials/qc_assembly.html",
+    "title": "Quality Control of Assembly File",
+    "section": "",
+    "text": "If you are continuing from the last session (assembly), you are in assembly environment, if not activate the environment first.\nTo understand the #number of  contigs, N50, L50, GC%, and Total Length run bioinformatics tool quast\nquast -o quast -t 4 assembly/contigs.fasta\nto understand the completeness and contamination level run bioinformatics tool checkm2\ncheckm2 predict --threads 4 -x .fasta --input assembly/contigs.fasta --output-directory checkm2\nwhat do you see? can you compare the two results from quast and checkm2?\n\n\n\n\n\n\nTipQuestions\n\n\n\nTo publish the assembly file as acceptable formats in journals, the standard practice is to remove contigs smaller than 500bp.\n\n\nWe will use seqkit to remove such contigs\nseqkit seq -m 500 assembly/contigs.fasta &gt; assembly/contigs_filtered.fasta\n\n\n\n\n\n\nTipQuestions\n\n\n\nHow many contigs are now of smaller than 500bp.\n\n\n\n\n\n\nTipQuestions\n\n\n\nRun quast on contigs_filtered.fasta and compare the results from both quast run.\n\n\n\n\n\n\nCautionExercise: Run Quast on new assembly file\n\n\n\n\n\nquast -o quast -t 4 assembly/contigs_filtered.fasta\n\n\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Assembly File",
+      "Quality Control of Assembly File"
+    ]
+  },
+  {
     "objectID": "materials/1-2-know-your-bug.html",
     "href": "materials/1-2-know-your-bug.html",
     "title": "1.2 Know your bug",
@@ -142,6 +214,30 @@
       "Materials",
       "1. Pathogen of Interest",
       "1.2 Know your bug"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html",
+    "href": "materials/3-1-qc.html",
+    "title": "3. Quality Control of Raw Reads",
+    "section": "",
+    "text": "TipLearning Objectives\n\n\n\n\nRecognize the quality metrics of your data, particularly here raw reads.\nLearn bioinformatics tool to perform quality control.\nDecide necessary steps retain high quality reads.\n\n\n\nconda activate qc\nRun fastqc on sample S1\nfastqc -t 4 S1_R1.fastq.gz S1_R2.fastq.gz\nWhat do you see?\n\n\n\n Back to top",
+    "crumbs": [
+      "Materials",
+      "3. Quality Control of Raw Reads",
+      "3. Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html",
+    "href": "materials/taxonomy.html",
+    "title": "Taxonomy",
+    "section": "",
+    "text": "creat a directory named classify\nmkdir classify\nactivate classify environment\nconda activate classify\nrun kraken2 on contigs_filtered.fasta\nkraken2 --db ~/databases/kraken2db --threads 4 --report classify/S1.kraken2.report assembly/contigs_filtered.fasta\nrun krona plot\nkreport2krona.py -r classify/S1.kraken2.report -o classify/S1.krona\nktImportText -o classify/S1.krona.html classify/S1.krona\nif you want to visualize the interactive file download the S1.krona file\nin you local terminal\nscp xxxx/classify/S1.krona .\n\n\n\n Back to top",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
     ]
   },
   {
@@ -178,6 +274,18 @@
       "Materials",
       "2. Introduction to NGS",
       "2.1 Introduction to NGS"
+    ]
+  },
+  {
+    "objectID": "materials/assembly.html",
+    "href": "materials/assembly.html",
+    "title": "Assembly",
+    "section": "",
+    "text": "conda activate assembly\nspades.py -1 S1_trim_R1.fastq.gz -2 S1_trim_R2.fastq.gz -o assembly -t 4\n\n\n\n Back to top",
+    "crumbs": [
+      "Materials",
+      "Assembly",
+      "Assembly"
     ]
   },
   {
