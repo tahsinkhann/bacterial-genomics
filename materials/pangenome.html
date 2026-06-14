@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>De novo Assembly – Introduction to Bacterial Genomics</title>
+<title>Pangenome Analysis – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../materials/qc_assembly.html" rel="next">
-<link href="../materials/trimming.html" rel="prev">
+<link href="../materials/phylogenetics.html" rel="next">
+<link href="../materials/amr-vf-plasmid.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -111,10 +111,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="De novo Assembly – Introduction to Bacterial Genomics">
+<meta property="og:title" content="Pangenome Analysis – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
-<meta name="twitter:title" content="De novo Assembly – Introduction to Bacterial Genomics">
+<meta name="twitter:title" content="Pangenome Analysis – Introduction to Bacterial Genomics">
 <meta name="twitter:description" content="">
 <meta name="twitter:site" content="@tahsinkhann">
 <meta name="twitter:card" content="summary">
@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><em>De novo</em> Assembly</h1>
+          <h1 class="quarto-secondary-nav-title">Pangenome Analysis</h1>
         </a>     
     </div>
   </nav>
@@ -476,7 +476,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/assembly.html" class="sidebar-item-text sidebar-link active">
+  <a href="../materials/assembly.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><em>De novo</em> Assembly</span></a>
   </div>
 </li>
@@ -584,7 +584,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/pangenome.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/pangenome.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Pangenome Analysis</span></a>
   </div>
 </li>
@@ -619,26 +619,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#activate-the-assembly-environment" id="toc-activate-the-assembly-environment" class="nav-link" data-scroll-target="#activate-the-assembly-environment">Activate the assembly environment</a>
-  <ul class="collapse">
   <li><a href="#input-files" id="toc-input-files" class="nav-link" data-scroll-target="#input-files">Input files</a></li>
-  </ul></li>
-  <li><a href="#what-is-genome-assembly" id="toc-what-is-genome-assembly" class="nav-link" data-scroll-target="#what-is-genome-assembly">What is genome assembly?</a>
+  <li><a href="#activate-the-pangenome-environment" id="toc-activate-the-pangenome-environment" class="nav-link" data-scroll-target="#activate-the-pangenome-environment">Activate the pangenome environment</a>
   <ul class="collapse">
-  <li><a href="#create-an-assembly-output-folder" id="toc-create-an-assembly-output-folder" class="nav-link" data-scroll-target="#create-an-assembly-output-folder">Create an assembly output folder</a></li>
-  <li><a href="#run-spades" id="toc-run-spades" class="nav-link" data-scroll-target="#run-spades">Run <code>SPAdes</code></a></li>
-  <li><a href="#understanding-the-command" id="toc-understanding-the-command" class="nav-link" data-scroll-target="#understanding-the-command">Understanding the command</a></li>
-  <li><a href="#check-assembly-outputs" id="toc-check-assembly-outputs" class="nav-link" data-scroll-target="#check-assembly-outputs">Check assembly outputs</a></li>
-  <li><a href="#important-spades-output-files" id="toc-important-spades-output-files" class="nav-link" data-scroll-target="#important-spades-output-files">Important <code>SPAdes</code> output files</a></li>
-  <li><a href="#inspect-the-assembly-file" id="toc-inspect-the-assembly-file" class="nav-link" data-scroll-target="#inspect-the-assembly-file">Inspect the assembly file</a></li>
+  <li><a href="#run-panaroo" id="toc-run-panaroo" class="nav-link" data-scroll-target="#run-panaroo">Run Panaroo</a></li>
+  <li><a href="#understanding-the-panaroo-command" id="toc-understanding-the-panaroo-command" class="nav-link" data-scroll-target="#understanding-the-panaroo-command">Understanding the Panaroo command</a></li>
+  <li><a href="#check-panaroo-outputs" id="toc-check-panaroo-outputs" class="nav-link" data-scroll-target="#check-panaroo-outputs">Check Panaroo outputs</a></li>
+  <li><a href="#important-panaroo-output-files" id="toc-important-panaroo-output-files" class="nav-link" data-scroll-target="#important-panaroo-output-files">Important Panaroo output files</a></li>
+  <li><a href="#view-gene-presenceabsence-table" id="toc-view-gene-presenceabsence-table" class="nav-link" data-scroll-target="#view-gene-presenceabsence-table">View gene presence/absence table</a></li>
+  <li><a href="#check-core-gene-alignment" id="toc-check-core-gene-alignment" class="nav-link" data-scroll-target="#check-core-gene-alignment">Check core gene alignment</a></li>
+  <li><a href="#core-and-accessory-genome" id="toc-core-and-accessory-genome" class="nav-link" data-scroll-target="#core-and-accessory-genome">Core and accessory genome</a></li>
+  <li><a href="#optional-inspect-summary-statistics" id="toc-optional-inspect-summary-statistics" class="nav-link" data-scroll-target="#optional-inspect-summary-statistics">Optional: inspect summary statistics</a></li>
   </ul></li>
-  <li><a href="#count-the-number-of-contigs" id="toc-count-the-number-of-contigs" class="nav-link" data-scroll-target="#count-the-number-of-contigs">Count the number of contigs</a>
-  <ul class="collapse">
-  <li><a href="#copy-the-final-assembly-file" id="toc-copy-the-final-assembly-file" class="nav-link" data-scroll-target="#copy-the-final-assembly-file">Copy the final assembly file</a></li>
-  <li><a href="#download-assembly-file-from-the-server" id="toc-download-assembly-file-from-the-server" class="nav-link" data-scroll-target="#download-assembly-file-from-the-server">Download assembly file from the server</a></li>
-  </ul></li>
-  <li><a href="#organize-files" id="toc-organize-files" class="nav-link" data-scroll-target="#organize-files">Organize files</a></li>
+  <li><a href="#download-pangenome-outputs-from-the-server" id="toc-download-pangenome-outputs-from-the-server" class="nav-link" data-scroll-target="#download-pangenome-outputs-from-the-server">Download pangenome outputs from the server</a></li>
   <li><a href="#final-directory-structure" id="toc-final-directory-structure" class="nav-link" data-scroll-target="#final-directory-structure">Final directory structure</a></li>
+  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical exercise</a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
   <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
   </ul>
@@ -650,7 +645,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><em>De novo</em> Assembly</h1>
+<h1 class="title d-none d-lg-block">Pangenome Analysis</h1>
 </div>
 
 
@@ -669,39 +664,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>After trimming and quality checking sequencing reads, the next step is to reconstruct the bacterial genome from short sequencing reads. This process is called <strong>genome assembly</strong>.</p>
-<p>In this lesson, we will use trimmed paired-end reads to perform <strong>de novo genome assembly</strong>. De novo assembly means that we assemble the genome without using a reference genome.</p>
+<p>After annotating multiple bacterial genomes, we can compare their gene content using pangenome analysis.</p>
+<p>The <strong>pangenome</strong> represents the full set of genes found across a group of genomes. It includes:</p>
+<ul>
+<li><strong>core genes</strong>: genes shared by most or all samples</li>
+<li><strong>accessory genes</strong>: genes present in some samples</li>
+<li><strong>unique genes</strong>: genes found in only one sample</li>
+</ul>
+<p>In this lesson, we will use <code>Panaroo</code> to perform pangenome analysis using <code>.gff</code> files from eight samples.</p>
 </section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>By the end of this lesson, you should be able to:</p>
 <ul>
-<li>explain what genome assembly means</li>
-<li>understand the difference between raw reads and contigs</li>
-<li>run a bacterial genome assembly using <code>SPAdes</code></li>
-<li>identify the main assembly output files</li>
-<li>organize assembly outputs into a clean directory structure</li>
-<li>prepare assembly files for downstream quality control</li>
+<li>explain what a pangenome is</li>
+<li>distinguish between core and accessory genes</li>
+<li>activate the <code>pangenome</code> environment</li>
+<li>run <code>Panaroo</code> using multiple <code>.gff</code> files</li>
+<li>identify important Panaroo output files</li>
+<li>prepare the core gene alignment for phylogenetic analysis</li>
 </ul>
 </section>
-<section id="activate-the-assembly-environment" class="level2">
-<h2 class="anchored" data-anchor-id="activate-the-assembly-environment">Activate the assembly environment</h2>
-<p>If you are continuing from the previous trimming lesson, you may still be in the <code>qc</code> environment.</p>
-<p>For assembly, activate the assembly environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check that <code>spades.py</code> is available:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If the command works, you should see the installed <code>SPAdes</code> version.</p>
-<section id="input-files" class="level3">
-<h3 class="anchored" data-anchor-id="input-files">Input files</h3>
-<p>For genome assembly, we will use the <strong>paired trimmed reads</strong> generated in the previous lesson.</p>
-<pre class="text"><code>trimmed_reads/S1_trim_R1.fastq.gz
-trimmed_reads/S1_trim_R2.fastq.gz</code></pre>
+<section id="input-files" class="level2">
+<h2 class="anchored" data-anchor-id="input-files">Input files</h2>
+<p>In the previous lessons, we prepared annotation files for eight samples.</p>
+<p>The input files for Panaroo are:</p>
+<pre class="text"><code>annotation/S1.gff
+annotation/S2.gff
+annotation/S3.gff
+annotation/S4.gff
+annotation/S5.gff
+annotation/S6.gff
+annotation/S7.gff
+annotation/S8.gff</code></pre>
 <p>Check that the files are present:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> trimmed_reads</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<pre class="text"><code>S1_trim_R1.fastq.gz
-S1_trim_R2.fastq.gz</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation/<span class="pp">*</span>.gff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Count the number of GFF files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation/<span class="pp">*</span>.gff <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The expected number is:</p>
+<pre class="text"><code>8</code></pre>
 <div class="callout callout-style-default callout-note callout-titled" title="Important">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -712,37 +713,36 @@ S1_trim_R2.fastq.gz</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For paired-end assembly, use the paired trimmed reads:</p>
-<pre class="text"><code>S1_trim_R1.fastq.gz
-S1_trim_R2.fastq.gz</code></pre>
-<p>Do not use the <code>unpaired</code> files unless your instructor specifically asks you to include them.</p>
+<p>Panaroo uses <code>.gff</code> files as input.</p>
+<p>For this lesson, we will use:</p>
+<pre class="text"><code>annotation/*.gff</code></pre>
 </div>
 </div>
 </section>
+<section id="activate-the-pangenome-environment" class="level2">
+<h2 class="anchored" data-anchor-id="activate-the-pangenome-environment">Activate the pangenome environment</h2>
+<p>Activate the <code>pangenome</code> environment:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pangenome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check that <code>panaroo</code> is available:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">panaroo</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="run-panaroo" class="level3">
+<h3 class="anchored" data-anchor-id="run-panaroo">Run Panaroo</h3>
+<p>Run <code>Panaroo</code> using all <code>.gff</code> files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">panaroo</span> <span class="dt">\</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-t</span> 4 <span class="dt">\</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> pangenome <span class="dt">\</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-c</span> 0.95 <span class="dt">\</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">-a</span> core <span class="dt">\</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">--input</span> annotation/<span class="pp">*</span>.gff <span class="dt">\</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">--clean-mode</span> strict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="what-is-genome-assembly" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-genome-assembly">What is genome assembly?</h2>
-<p>Genome assembly is the process of joining sequencing reads together to create longer sequences.</p>
-<p>These longer sequences are called <strong>contigs</strong>.</p>
-<pre class="text"><code>Short reads  →  contigs  →  draft genome assembly</code></pre>
-<p>Because bacterial genomes are usually a few million base pairs long, short reads cannot cover the whole genome in one piece. Instead, the assembler reconstructs the genome as multiple contigs.</p>
-<section id="create-an-assembly-output-folder" class="level3">
-<h3 class="anchored" data-anchor-id="create-an-assembly-output-folder">Create an assembly output folder</h3>
-<p>Create a folder for assembly results:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="run-spades" class="level3">
-<h3 class="anchored" data-anchor-id="run-spades">Run <code>SPAdes</code></h3>
-<p>Run <code>SPAdes</code> using the trimmed paired-end reads:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="dt">\</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-1</span> trimmed_reads/S1_trim_R1.fastq.gz <span class="dt">\</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-2</span> trimmed_reads/S1_trim_R2.fastq.gz <span class="dt">\</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> assembly/S1_spades <span class="dt">\</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">-t</span> 4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="understanding-the-command" class="level3">
-<h3 class="anchored" data-anchor-id="understanding-the-command">Understanding the command</h3>
+<section id="understanding-the-panaroo-command" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-the-panaroo-command">Understanding the Panaroo command</h3>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Option</th>
@@ -751,57 +751,67 @@ S1_trim_R2.fastq.gz</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>spades.py</code></td>
-<td>Runs the <code>SPAdes</code> assembler</td>
+<td><code>panaroo</code></td>
+<td>Runs the Panaroo pangenome tool</td>
 </tr>
 <tr class="even">
-<td><code>-1</code></td>
-<td>Forward paired-end reads</td>
+<td><code>-t 4</code></td>
+<td>Uses 4 CPU threads</td>
 </tr>
 <tr class="odd">
-<td><code>-2</code></td>
-<td>Reverse paired-end reads</td>
-</tr>
-<tr class="even">
-<td><code>-o</code></td>
+<td><code>-o pangenome</code></td>
 <td>Output directory</td>
 </tr>
+<tr class="even">
+<td><code>-c 0.95</code></td>
+<td>Core gene threshold</td>
+</tr>
 <tr class="odd">
-<td><code>-t 4</code></td>
-<td>Use 4 CPU threads</td>
+<td><code>-a core</code></td>
+<td>Generates a core gene alignment</td>
+</tr>
+<tr class="even">
+<td><code>--input annotation/*.gff</code></td>
+<td>Uses all GFF files in the <code>annotation</code> folder</td>
+</tr>
+<tr class="odd">
+<td><code>--clean-mode strict</code></td>
+<td>Uses strict cleaning mode</td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-tip callout-titled" title="Tip">
+<div class="callout callout-style-default callout-note callout-titled" title="About the core threshold">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tip
+<span class="screen-reader-only">Note</span>About the core threshold
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If your computer or server has more available CPUs, you can increase the number after <code>-t</code>.</p>
+<p>The value of <code>-c</code> defines the core gene threshold.</p>
 <p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-t</span> 8</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="text"><code>-c 0.95</code></pre>
+<p>means genes present in at least 95% of genomes are considered core genes.</p>
+<p>You may choose a different value depending on the analysis goal.</p>
 </div>
 </div>
 </section>
-<section id="check-assembly-outputs" class="level3">
-<h3 class="anchored" data-anchor-id="check-assembly-outputs">Check assembly outputs</h3>
-<p>After <code>SPAdes</code> finishes, list the output directory:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assembly/S1_spades</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see files and folders such as:</p>
-<pre class="text"><code>contigs.fasta
-scaffolds.fasta
-assembly_graph.fastg
-spades.log</code></pre>
-<p>The most important output for this training is usually:</p>
-<pre class="text"><code>assembly/S1_spades/contigs.fasta</code></pre>
+<section id="check-panaroo-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="check-panaroo-outputs">Check Panaroo outputs</h3>
+<p>After Panaroo finishes, list the output directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> pangenome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see several output files.</p>
+<p>Important files may include:</p>
+<pre class="text"><code>gene_presence_absence.csv
+gene_presence_absence.Rtab
+core_gene_alignment.aln
+core_gene_alignment_filtered.aln
+summary_statistics.txt</code></pre>
 </section>
-<section id="important-spades-output-files" class="level3">
-<h3 class="anchored" data-anchor-id="important-spades-output-files">Important <code>SPAdes</code> output files</h3>
+<section id="important-panaroo-output-files" class="level3">
+<h3 class="anchored" data-anchor-id="important-panaroo-output-files">Important Panaroo output files</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -811,44 +821,41 @@ spades.log</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>contigs.fasta</code></td>
-<td>Main assembled contig file</td>
+<td><code>gene_presence_absence.csv</code></td>
+<td>Main gene presence/absence table</td>
 </tr>
 <tr class="even">
-<td><code>scaffolds.fasta</code></td>
-<td>Scaffolded assembly file</td>
+<td><code>gene_presence_absence.Rtab</code></td>
+<td>Gene presence/absence matrix</td>
 </tr>
 <tr class="odd">
-<td><code>spades.log</code></td>
-<td>Log file from the assembly run</td>
+<td><code>core_gene_alignment.aln</code></td>
+<td>Core gene alignment</td>
 </tr>
 <tr class="even">
-<td><code>assembly_graph.fastg</code></td>
-<td>Assembly graph file</td>
+<td><code>core_gene_alignment_filtered.aln</code></td>
+<td>Filtered core gene alignment</td>
+</tr>
+<tr class="odd">
+<td><code>summary_statistics.txt</code></td>
+<td>Summary of pangenome results, if produced</td>
 </tr>
 </tbody>
 </table>
-<p>For most downstream bacterial genome analysis in this course, we will use:</p>
-<pre class="text"><code>contigs.fasta</code></pre>
 </section>
-<section id="inspect-the-assembly-file" class="level3">
-<h3 class="anchored" data-anchor-id="inspect-the-assembly-file">Inspect the assembly file</h3>
-<p>A FASTA file contains sequence names and nucleotide sequences.</p>
-<p>View the first few lines of the assembly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> assembly/S1_spades/contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A FASTA file looks like this:</p>
-<pre class="text"><code>&gt;NODE_1_length_245678_cov_42.5
-ATGCGTACGATCGATCGATCGATCGATC...
-&gt;NODE_2_length_120345_cov_38.2
-ATGCGTACGATCGATCGATCGATCGATC...</code></pre>
-<p>Each sequence starts with a header line beginning with <code>&gt;</code>.</p>
+<section id="view-gene-presenceabsence-table" class="level3">
+<h3 class="anchored" data-anchor-id="view-gene-presenceabsence-table">View gene presence/absence table</h3>
+<p>Check the first few lines:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> pangenome/gene_presence_absence.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This file shows which genes are present or absent across the samples.</p>
 </section>
-</section>
-<section id="count-the-number-of-contigs" class="level2">
-<h2 class="anchored" data-anchor-id="count-the-number-of-contigs">Count the number of contigs</h2>
-<p>To count the number of contigs in the assembly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"^&gt;"</span> assembly/S1_spades/contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This counts the number of FASTA headers.</p>
+<section id="check-core-gene-alignment" class="level3">
+<h3 class="anchored" data-anchor-id="check-core-gene-alignment">Check core gene alignment</h3>
+<p>Check the core alignment files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> pangenome/<span class="pp">*</span>alignment<span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see files such as:</p>
+<pre class="text"><code>core_gene_alignment.aln
+core_gene_alignment_filtered.aln</code></pre>
 <div class="callout callout-style-default callout-note callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -859,8 +866,7 @@ ATGCGTACGATCGATCGATCGATCGATC...</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Count the number of contigs in <code>contigs.fasta</code>.</p>
-<p>Does your assembly contain one contig or multiple contigs?</p>
+<p>Which Panaroo output file will be used later for phylogenetic tree construction?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Answer">
@@ -875,112 +881,96 @@ ATGCGTACGATCGATCGATCGATCGATC...</code></pre>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Most short-read bacterial genome assemblies contain multiple contigs. A smaller number of contigs usually suggests a more continuous assembly, but quality should be checked using assembly QC tools.</p>
-</div>
-</div>
-</div>
-<section id="copy-the-final-assembly-file" class="level3">
-<h3 class="anchored" data-anchor-id="copy-the-final-assembly-file">Copy the final assembly file</h3>
-<p>To make downstream analysis easier, create a folder for final assemblies:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Copy the <code>SPAdes</code> contig file into this folder with a clear sample name:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> assembly/S1_spades/contigs.fasta assemblies/S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check the copied file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<pre class="text"><code>S1_contigs.fasta</code></pre>
-</section>
-<section id="download-assembly-file-from-the-server" class="level3">
-<h3 class="anchored" data-anchor-id="download-assembly-file-from-the-server">Download assembly file from the server</h3>
-<p>If you are working on a remote server, download the assembly file to your local computer using <code>scp</code>.</p>
-<p>From your <strong>local desktop terminal</strong>, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/assemblies/S1_contigs.fasta .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This downloads <code>S1_contigs.fasta</code> to your current local folder.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Open the downloaded file using a text editor such as Notepad++, VS Code, or another FASTA viewer.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The filtered core gene alignment will be used for phylogenetic analysis:</p>
+<pre class="text"><code>pangenome/core_gene_alignment_filtered.aln</code></pre>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section id="organize-files" class="level2">
-<h2 class="anchored" data-anchor-id="organize-files">Organize files</h2>
-<p>Now organize the assembly outputs.</p>
-<p>Create folders if they do not already exist:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> raw_reads trimmed_reads qc_reports assembly assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Your working directory should contain folders like:</p>
-<pre class="text"><code>raw_reads
-trimmed_reads
-qc_reports
-assembly
-assemblies</code></pre>
-<p>Check the folder structure:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check the final assembly file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Optional">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Optional
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The full <code>SPAdes</code> output folder can be large. You may compress it for storage.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-czvf</span> S1_spades_output.tar.gz assembly/S1_spades</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>To check the compressed file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> S1_spades_output.tar.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: organize assembly files">
+<section id="core-and-accessory-genome" class="level3">
+<h3 class="anchored" data-anchor-id="core-and-accessory-genome">Core and accessory genome</h3>
+<p>Panaroo helps identify genes shared across all or most genomes, as well as genes found in only some samples.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Gene category</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Core genes</td>
+<td>Present in most or all genomes</td>
+</tr>
+<tr class="even">
+<td>Accessory genes</td>
+<td>Present in some genomes</td>
+</tr>
+<tr class="odd">
+<td>Unique genes</td>
+<td>Present in only one genome</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Question">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Exercise: organize assembly files
+<span class="screen-reader-only">Note</span>Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Create a folder called <code>assemblies</code>.</p>
-<p>Copy the final <code>SPAdes</code> <code>contigs.fasta</code> file into this folder and rename it as:</p>
-<pre class="text"><code>S1_contigs.fasta</code></pre>
-<p>Then check that the file exists.</p>
+<p>Why are core genes useful for phylogenetic analysis?</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answer
+<span class="screen-reader-only">Tip</span>Suggested answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assemblies</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> assembly/S1_spades/contigs.fasta assemblies/S1_contigs.fasta</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Core genes are shared across samples, so they can be aligned and compared across all genomes. This makes them useful for estimating evolutionary relationships.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="optional-inspect-summary-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="optional-inspect-summary-statistics">Optional: inspect summary statistics</h3>
+<p>If Panaroo creates a summary statistics file, view it using:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> pangenome/summary_statistics.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If the file does not exist, check the available output files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> pangenome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="download-pangenome-outputs-from-the-server" class="level2">
+<h2 class="anchored" data-anchor-id="download-pangenome-outputs-from-the-server">Download pangenome outputs from the server</h2>
+<p>If you are working on a remote server, download the pangenome output folder to your local computer.</p>
+<p>From your <strong>local desktop terminal</strong>, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> genomevm@172.28.28.12:~/tanzim/pangenome .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This downloads the full <code>pangenome</code> directory.</p>
+<p>If you only want the main gene presence/absence table, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/pangenome/gene_presence_absence.csv .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Open <code>.csv</code> files using Excel, LibreOffice Calc, or VS Code.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> gene_presence_absence.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> gene_presence_absence.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -989,24 +979,77 @@ assemblies</code></pre>
 <h2 class="anchored" data-anchor-id="final-directory-structure">Final directory structure</h2>
 <p>At the end of this lesson, your directory should look like this:</p>
 <pre class="text"><code>.
-├── raw_reads
-│   ├── S1_R1.fastq.gz
-│   └── S1_R2.fastq.gz
-├── trimmed_reads
-│   ├── S1_trim_R1.fastq.gz
-│   └── S1_trim_R2.fastq.gz
-├── qc_reports
-│   ├── S1_trim_R1_fastqc.html
-│   ├── S1_trim_R1_fastqc.zip
-│   ├── S1_trim_R2_fastqc.html
-│   └── S1_trim_R2_fastqc.zip
-├── assembly
-│   └── S1_spades
-│       ├── contigs.fasta
-│       ├── scaffolds.fasta
-│       └── spades.log
-└── assemblies
-    └── S1_contigs.fasta</code></pre>
+├── annotation
+│   ├── S1.gff
+│   ├── S2.gff
+│   ├── S3.gff
+│   ├── S4.gff
+│   ├── S5.gff
+│   ├── S6.gff
+│   ├── S7.gff
+│   └── S8.gff
+└── pangenome
+    ├── gene_presence_absence.csv
+    ├── gene_presence_absence.Rtab
+    ├── core_gene_alignment.aln
+    ├── core_gene_alignment_filtered.aln
+    └── summary_statistics.txt</code></pre>
+</section>
+<section id="practical-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise">Practical exercise</h2>
+<p>Complete the following tasks:</p>
+<ol type="1">
+<li>Activate the <code>pangenome</code> environment.</li>
+<li>Confirm that eight <code>.gff</code> files are present in <code>annotation</code>.</li>
+<li>Run <code>Panaroo</code> using all <code>.gff</code> files.</li>
+<li>Open <code>gene_presence_absence.csv</code>.</li>
+<li>Identify the core gene alignment file.</li>
+<li>Record which file will be used for phylogenetic analysis.</li>
+</ol>
+<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: pangenome summary">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Exercise: pangenome summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a small table in your notes:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>File or value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of input GFF files</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Panaroo output directory</td>
+<td><code>pangenome</code></td>
+</tr>
+<tr class="odd">
+<td>Gene presence/absence table</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Core gene alignment</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Filtered core gene alignment</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Fill in the table using the files inside the <code>pangenome</code> directory.</p>
+</div>
+</div>
 </section>
 <section id="key-points" class="level2">
 <h2 class="anchored" data-anchor-id="key-points">Key points</h2>
@@ -1021,18 +1064,18 @@ assemblies</code></pre>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Genome assembly reconstructs longer genome sequences from short sequencing reads.</li>
-<li><code>SPAdes</code> is commonly used for bacterial de novo genome assembly.</li>
-<li>The main output file is usually <code>contigs.fasta</code>.</li>
-<li>Rename and copy the final contig file to a separate <code>assemblies</code> folder.</li>
-<li>The assembly file will be used in the next lesson for assembly quality control.</li>
+<li>Pangenome analysis compares gene content across multiple genomes.</li>
+<li>Panaroo uses <code>.gff</code> annotation files as input.</li>
+<li>Core genes are shared across most or all samples.</li>
+<li>Accessory genes are present in only some samples.</li>
+<li><code>core_gene_alignment_filtered.aln</code> will be used for phylogenetic tree construction.</li>
 </ul>
 </div>
 </div>
 </section>
 <section id="next-step" class="level2">
 <h2 class="anchored" data-anchor-id="next-step">Next step</h2>
-<p>In the next lesson, we will assess the quality of the assembled genome using assembly QC tools.</p>
+<p>In the next lesson, we will use the filtered core gene alignment to construct a phylogenetic tree.</p>
 
 
 </section>
@@ -1458,13 +1501,13 @@ assemblies</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../materials/trimming.html" class="pagination-link" aria-label="Trimming to Retain High Quality Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Trimming to Retain High Quality Data</span>
+      <a href="../materials/amr-vf-plasmid.html" class="pagination-link" aria-label="AMR and Virulence Factors">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">AMR and Virulence Factors</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../materials/qc_assembly.html" class="pagination-link" aria-label="Quality Control of Assembly File">
-        <span class="nav-page-text">Quality Control of Assembly File</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../materials/phylogenetics.html" class="pagination-link" aria-label="Phylogenetics">
+        <span class="nav-page-text">Phylogenetics</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

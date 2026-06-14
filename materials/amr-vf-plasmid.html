@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>De novo Assembly – Introduction to Bacterial Genomics</title>
+<title>AMR and Virulence Factors – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../materials/qc_assembly.html" rel="next">
-<link href="../materials/trimming.html" rel="prev">
+<link href="../materials/pangenome.html" rel="next">
+<link href="../materials/copy-day2-files.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -111,10 +111,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="De novo Assembly – Introduction to Bacterial Genomics">
+<meta property="og:title" content="AMR and Virulence Factors – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
-<meta name="twitter:title" content="De novo Assembly – Introduction to Bacterial Genomics">
+<meta name="twitter:title" content="AMR and Virulence Factors – Introduction to Bacterial Genomics">
 <meta name="twitter:description" content="">
 <meta name="twitter:site" content="@tahsinkhann">
 <meta name="twitter:card" content="summary">
@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><em>De novo</em> Assembly</h1>
+          <h1 class="quarto-secondary-nav-title">AMR and Virulence Factors</h1>
         </a>     
     </div>
   </nav>
@@ -476,7 +476,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/assembly.html" class="sidebar-item-text sidebar-link active">
+  <a href="../materials/assembly.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><em>De novo</em> Assembly</span></a>
   </div>
 </li>
@@ -567,7 +567,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/amr-vf-plasmid.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/amr-vf-plasmid.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">AMR and Virulence Factors</span></a>
   </div>
 </li>
@@ -619,26 +619,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#activate-the-assembly-environment" id="toc-activate-the-assembly-environment" class="nav-link" data-scroll-target="#activate-the-assembly-environment">Activate the assembly environment</a>
-  <ul class="collapse">
   <li><a href="#input-files" id="toc-input-files" class="nav-link" data-scroll-target="#input-files">Input files</a></li>
-  </ul></li>
-  <li><a href="#what-is-genome-assembly" id="toc-what-is-genome-assembly" class="nav-link" data-scroll-target="#what-is-genome-assembly">What is genome assembly?</a>
+  <li><a href="#activate-the-amr-environment" id="toc-activate-the-amr-environment" class="nav-link" data-scroll-target="#activate-the-amr-environment">Activate the AMR environment</a>
   <ul class="collapse">
-  <li><a href="#create-an-assembly-output-folder" id="toc-create-an-assembly-output-folder" class="nav-link" data-scroll-target="#create-an-assembly-output-folder">Create an assembly output folder</a></li>
-  <li><a href="#run-spades" id="toc-run-spades" class="nav-link" data-scroll-target="#run-spades">Run <code>SPAdes</code></a></li>
-  <li><a href="#understanding-the-command" id="toc-understanding-the-command" class="nav-link" data-scroll-target="#understanding-the-command">Understanding the command</a></li>
-  <li><a href="#check-assembly-outputs" id="toc-check-assembly-outputs" class="nav-link" data-scroll-target="#check-assembly-outputs">Check assembly outputs</a></li>
-  <li><a href="#important-spades-output-files" id="toc-important-spades-output-files" class="nav-link" data-scroll-target="#important-spades-output-files">Important <code>SPAdes</code> output files</a></li>
-  <li><a href="#inspect-the-assembly-file" id="toc-inspect-the-assembly-file" class="nav-link" data-scroll-target="#inspect-the-assembly-file">Inspect the assembly file</a></li>
+  <li><a href="#create-output-directory" id="toc-create-output-directory" class="nav-link" data-scroll-target="#create-output-directory">Create output directory</a></li>
+  <li><a href="#run-abricate-for-amr-genes" id="toc-run-abricate-for-amr-genes" class="nav-link" data-scroll-target="#run-abricate-for-amr-genes">Run ABRicate for AMR genes</a></li>
+  <li><a href="#understanding-the-amr-command" id="toc-understanding-the-amr-command" class="nav-link" data-scroll-target="#understanding-the-amr-command">Understanding the AMR command</a></li>
+  <li><a href="#check-amr-output" id="toc-check-amr-output" class="nav-link" data-scroll-target="#check-amr-output">Check AMR output</a></li>
+  <li><a href="#run-abricate-for-virulence-factors" id="toc-run-abricate-for-virulence-factors" class="nav-link" data-scroll-target="#run-abricate-for-virulence-factors">Run ABRicate for virulence factors</a></li>
+  <li><a href="#understanding-the-virulence-factor-command" id="toc-understanding-the-virulence-factor-command" class="nav-link" data-scroll-target="#understanding-the-virulence-factor-command">Understanding the virulence factor command</a></li>
   </ul></li>
-  <li><a href="#count-the-number-of-contigs" id="toc-count-the-number-of-contigs" class="nav-link" data-scroll-target="#count-the-number-of-contigs">Count the number of contigs</a>
+  <li><a href="#check-virulence-factor-output" id="toc-check-virulence-factor-output" class="nav-link" data-scroll-target="#check-virulence-factor-output">Check virulence factor output</a>
   <ul class="collapse">
-  <li><a href="#copy-the-final-assembly-file" id="toc-copy-the-final-assembly-file" class="nav-link" data-scroll-target="#copy-the-final-assembly-file">Copy the final assembly file</a></li>
-  <li><a href="#download-assembly-file-from-the-server" id="toc-download-assembly-file-from-the-server" class="nav-link" data-scroll-target="#download-assembly-file-from-the-server">Download assembly file from the server</a></li>
+  <li><a href="#understanding-abricate-output" id="toc-understanding-abricate-output" class="nav-link" data-scroll-target="#understanding-abricate-output">Understanding ABRicate output</a></li>
+  <li><a href="#summarise-amr-results" id="toc-summarise-amr-results" class="nav-link" data-scroll-target="#summarise-amr-results">Summarise AMR results</a></li>
+  <li><a href="#summarise-virulence-factor-results" id="toc-summarise-virulence-factor-results" class="nav-link" data-scroll-target="#summarise-virulence-factor-results">Summarise virulence factor results</a></li>
+  <li><a href="#check-all-abricate-outputs" id="toc-check-all-abricate-outputs" class="nav-link" data-scroll-target="#check-all-abricate-outputs">Check all ABRicate outputs</a></li>
+  <li><a href="#compare-amr-and-virulence-factor-results" id="toc-compare-amr-and-virulence-factor-results" class="nav-link" data-scroll-target="#compare-amr-and-virulence-factor-results">Compare AMR and virulence factor results</a></li>
   </ul></li>
-  <li><a href="#organize-files" id="toc-organize-files" class="nav-link" data-scroll-target="#organize-files">Organize files</a></li>
+  <li><a href="#download-abricate-results-from-the-server" id="toc-download-abricate-results-from-the-server" class="nav-link" data-scroll-target="#download-abricate-results-from-the-server">Download ABRicate results from the server</a></li>
   <li><a href="#final-directory-structure" id="toc-final-directory-structure" class="nav-link" data-scroll-target="#final-directory-structure">Final directory structure</a></li>
+  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical exercise</a></li>
+  <li><a href="#optional-plasmid-screening" id="toc-optional-plasmid-screening" class="nav-link" data-scroll-target="#optional-plasmid-screening">Optional: plasmid screening</a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
   <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
   </ul>
@@ -650,7 +652,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><em>De novo</em> Assembly</h1>
+<h1 class="title d-none d-lg-block">AMR and Virulence Factors</h1>
 </div>
 
 
@@ -669,39 +671,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>After trimming and quality checking sequencing reads, the next step is to reconstruct the bacterial genome from short sequencing reads. This process is called <strong>genome assembly</strong>.</p>
-<p>In this lesson, we will use trimmed paired-end reads to perform <strong>de novo genome assembly</strong>. De novo assembly means that we assemble the genome without using a reference genome.</p>
+<p>After preparing the eight assembly files, we can screen the genomes for antimicrobial resistance genes and virulence factors.</p>
+<p>In this lesson, we will use <code>ABRicate</code> to screen assembly FASTA files against two databases:</p>
+<ul>
+<li><code>ncbi</code> for antimicrobial resistance genes</li>
+<li><code>vfdb</code> for virulence factor genes</li>
+</ul>
 </section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>By the end of this lesson, you should be able to:</p>
 <ul>
-<li>explain what genome assembly means</li>
-<li>understand the difference between raw reads and contigs</li>
-<li>run a bacterial genome assembly using <code>SPAdes</code></li>
-<li>identify the main assembly output files</li>
-<li>organize assembly outputs into a clean directory structure</li>
-<li>prepare assembly files for downstream quality control</li>
+<li>activate the <code>amr</code> environment</li>
+<li>create an output directory for ABRicate results</li>
+<li>run <code>ABRicate</code> on multiple assembly files</li>
+<li>identify antimicrobial resistance genes</li>
+<li>identify virulence factor genes</li>
+<li>summarise ABRicate results across samples</li>
 </ul>
 </section>
-<section id="activate-the-assembly-environment" class="level2">
-<h2 class="anchored" data-anchor-id="activate-the-assembly-environment">Activate the assembly environment</h2>
-<p>If you are continuing from the previous trimming lesson, you may still be in the <code>qc</code> environment.</p>
-<p>For assembly, activate the assembly environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check that <code>spades.py</code> is available:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If the command works, you should see the installed <code>SPAdes</code> version.</p>
-<section id="input-files" class="level3">
-<h3 class="anchored" data-anchor-id="input-files">Input files</h3>
-<p>For genome assembly, we will use the <strong>paired trimmed reads</strong> generated in the previous lesson.</p>
-<pre class="text"><code>trimmed_reads/S1_trim_R1.fastq.gz
-trimmed_reads/S1_trim_R2.fastq.gz</code></pre>
+<section id="input-files" class="level2">
+<h2 class="anchored" data-anchor-id="input-files">Input files</h2>
+<p>In the previous lesson, we copied eight filtered assembly files into the <code>assemblies</code> directory.</p>
 <p>Check that the files are present:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> trimmed_reads</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<pre class="text"><code>S1_trim_R1.fastq.gz
-S1_trim_R2.fastq.gz</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see files such as:</p>
+<pre class="text"><code>S1_contigs_filtered.fasta
+S2_contigs_filtered.fasta
+S3_contigs_filtered.fasta
+S4_contigs_filtered.fasta
+S5_contigs_filtered.fasta
+S6_contigs_filtered.fasta
+S7_contigs_filtered.fasta
+S8_contigs_filtered.fasta</code></pre>
+<p>Count the number of assembly files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies/<span class="pp">*</span>_contigs_filtered.fasta <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The expected number is:</p>
+<pre class="text"><code>8</code></pre>
 <div class="callout callout-style-default callout-note callout-titled" title="Important">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -712,37 +718,45 @@ S1_trim_R2.fastq.gz</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For paired-end assembly, use the paired trimmed reads:</p>
-<pre class="text"><code>S1_trim_R1.fastq.gz
-S1_trim_R2.fastq.gz</code></pre>
-<p>Do not use the <code>unpaired</code> files unless your instructor specifically asks you to include them.</p>
+<p>For this lesson, we will screen all filtered assembly files:</p>
+<pre class="text"><code>assemblies/*_contigs_filtered.fasta</code></pre>
 </div>
 </div>
 </section>
+<section id="activate-the-amr-environment" class="level2">
+<h2 class="anchored" data-anchor-id="activate-the-amr-environment">Activate the AMR environment</h2>
+<p>Activate the <code>amr</code> environment:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate amr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check that <code>ABRicate</code> is available:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check available ABRicate databases:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="at">--list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see databases such as:</p>
+<pre class="text"><code>ncbi
+vfdb</code></pre>
+<section id="create-output-directory" class="level3">
+<h3 class="anchored" data-anchor-id="create-output-directory">Create output directory</h3>
+<p>Create a directory named <code>abricate</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> abricate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check that the directory was created:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="what-is-genome-assembly" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-genome-assembly">What is genome assembly?</h2>
-<p>Genome assembly is the process of joining sequencing reads together to create longer sequences.</p>
-<p>These longer sequences are called <strong>contigs</strong>.</p>
-<pre class="text"><code>Short reads  →  contigs  →  draft genome assembly</code></pre>
-<p>Because bacterial genomes are usually a few million base pairs long, short reads cannot cover the whole genome in one piece. Instead, the assembler reconstructs the genome as multiple contigs.</p>
-<section id="create-an-assembly-output-folder" class="level3">
-<h3 class="anchored" data-anchor-id="create-an-assembly-output-folder">Create an assembly output folder</h3>
-<p>Create a folder for assembly results:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="run-abricate-for-amr-genes" class="level3">
+<h3 class="anchored" data-anchor-id="run-abricate-for-amr-genes">Run ABRicate for AMR genes</h3>
+<p>Run <code>ABRicate</code> using the <code>ncbi</code> database:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="dt">\</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--db</span> ncbi <span class="dt">\</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--threads</span> 4 <span class="dt">\</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  assemblies/<span class="pp">*</span>_contigs_filtered.fasta <span class="dt">\</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">&gt;</span> abricate/amr.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="run-spades" class="level3">
-<h3 class="anchored" data-anchor-id="run-spades">Run <code>SPAdes</code></h3>
-<p>Run <code>SPAdes</code> using the trimmed paired-end reads:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="dt">\</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-1</span> trimmed_reads/S1_trim_R1.fastq.gz <span class="dt">\</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-2</span> trimmed_reads/S1_trim_R2.fastq.gz <span class="dt">\</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> assembly/S1_spades <span class="dt">\</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">-t</span> 4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="understanding-the-command" class="level3">
-<h3 class="anchored" data-anchor-id="understanding-the-command">Understanding the command</h3>
+<section id="understanding-the-amr-command" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-the-amr-command">Understanding the AMR command</h3>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Option</th>
@@ -751,104 +765,142 @@ S1_trim_R2.fastq.gz</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>spades.py</code></td>
-<td>Runs the <code>SPAdes</code> assembler</td>
+<td><code>abricate</code></td>
+<td>Runs ABRicate</td>
 </tr>
 <tr class="even">
-<td><code>-1</code></td>
-<td>Forward paired-end reads</td>
+<td><code>--db ncbi</code></td>
+<td>Uses the NCBI AMR database</td>
 </tr>
 <tr class="odd">
-<td><code>-2</code></td>
-<td>Reverse paired-end reads</td>
+<td><code>--threads 4</code></td>
+<td>Uses 4 CPU threads</td>
 </tr>
 <tr class="even">
-<td><code>-o</code></td>
-<td>Output directory</td>
+<td><code>assemblies/*_contigs_filtered.fasta</code></td>
+<td>Screens all filtered assembly files</td>
 </tr>
 <tr class="odd">
-<td><code>-t 4</code></td>
-<td>Use 4 CPU threads</td>
+<td><code>&gt;</code></td>
+<td>Redirects output to a file</td>
+</tr>
+<tr class="even">
+<td><code>abricate/amr.tsv</code></td>
+<td>AMR output table</td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-tip callout-titled" title="Tip">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If your computer or server has more available CPUs, you can increase the number after <code>-t</code>.</p>
-<p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-t</span> 8</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
 </section>
-<section id="check-assembly-outputs" class="level3">
-<h3 class="anchored" data-anchor-id="check-assembly-outputs">Check assembly outputs</h3>
-<p>After <code>SPAdes</code> finishes, list the output directory:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assembly/S1_spades</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see files and folders such as:</p>
-<pre class="text"><code>contigs.fasta
-scaffolds.fasta
-assembly_graph.fastg
-spades.log</code></pre>
-<p>The most important output for this training is usually:</p>
-<pre class="text"><code>assembly/S1_spades/contigs.fasta</code></pre>
+<section id="check-amr-output" class="level3">
+<h3 class="anchored" data-anchor-id="check-amr-output">Check AMR output</h3>
+<p>Check that the output file was created:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> abricate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>View the first few lines:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> abricate/amr.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="important-spades-output-files" class="level3">
-<h3 class="anchored" data-anchor-id="important-spades-output-files">Important <code>SPAdes</code> output files</h3>
+<section id="run-abricate-for-virulence-factors" class="level3">
+<h3 class="anchored" data-anchor-id="run-abricate-for-virulence-factors">Run ABRicate for virulence factors</h3>
+<p>Run <code>ABRicate</code> using the <code>vfdb</code> database:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="dt">\</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--db</span> vfdb <span class="dt">\</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--threads</span> 4 <span class="dt">\</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  assemblies/<span class="pp">*</span>_contigs_filtered.fasta <span class="dt">\</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">&gt;</span> abricate/vf.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="understanding-the-virulence-factor-command" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-the-virulence-factor-command">Understanding the virulence factor command</h3>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>File</th>
-<th>Description</th>
+<th>Option</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>contigs.fasta</code></td>
-<td>Main assembled contig file</td>
+<td><code>--db vfdb</code></td>
+<td>Uses the virulence factor database</td>
 </tr>
 <tr class="even">
-<td><code>scaffolds.fasta</code></td>
-<td>Scaffolded assembly file</td>
+<td><code>assemblies/*_contigs_filtered.fasta</code></td>
+<td>Screens all filtered assembly files</td>
 </tr>
 <tr class="odd">
-<td><code>spades.log</code></td>
-<td>Log file from the assembly run</td>
-</tr>
-<tr class="even">
-<td><code>assembly_graph.fastg</code></td>
-<td>Assembly graph file</td>
+<td><code>abricate/vf.tsv</code></td>
+<td>Virulence factor output table</td>
 </tr>
 </tbody>
 </table>
-<p>For most downstream bacterial genome analysis in this course, we will use:</p>
-<pre class="text"><code>contigs.fasta</code></pre>
-</section>
-<section id="inspect-the-assembly-file" class="level3">
-<h3 class="anchored" data-anchor-id="inspect-the-assembly-file">Inspect the assembly file</h3>
-<p>A FASTA file contains sequence names and nucleotide sequences.</p>
-<p>View the first few lines of the assembly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> assembly/S1_spades/contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A FASTA file looks like this:</p>
-<pre class="text"><code>&gt;NODE_1_length_245678_cov_42.5
-ATGCGTACGATCGATCGATCGATCGATC...
-&gt;NODE_2_length_120345_cov_38.2
-ATGCGTACGATCGATCGATCGATCGATC...</code></pre>
-<p>Each sequence starts with a header line beginning with <code>&gt;</code>.</p>
 </section>
 </section>
-<section id="count-the-number-of-contigs" class="level2">
-<h2 class="anchored" data-anchor-id="count-the-number-of-contigs">Count the number of contigs</h2>
-<p>To count the number of contigs in the assembly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"^&gt;"</span> assembly/S1_spades/contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This counts the number of FASTA headers.</p>
+<section id="check-virulence-factor-output" class="level2">
+<h2 class="anchored" data-anchor-id="check-virulence-factor-output">Check virulence factor output</h2>
+<p>View the first few lines:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> abricate/vf.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should now have:</p>
+<pre class="text"><code>abricate/amr.tsv
+abricate/vf.tsv</code></pre>
+<section id="understanding-abricate-output" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-abricate-output">Understanding ABRicate output</h3>
+<p>ABRicate output usually includes columns such as:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>FILE</code></td>
+<td>Input genome file</td>
+</tr>
+<tr class="even">
+<td><code>SEQUENCE</code></td>
+<td>Contig name</td>
+</tr>
+<tr class="odd">
+<td><code>START</code></td>
+<td>Start position of hit</td>
+</tr>
+<tr class="even">
+<td><code>END</code></td>
+<td>End position of hit</td>
+</tr>
+<tr class="odd">
+<td><code>GENE</code></td>
+<td>Detected gene</td>
+</tr>
+<tr class="even">
+<td><code>COVERAGE</code></td>
+<td>Query coverage</td>
+</tr>
+<tr class="odd">
+<td><code>COVERAGE_MAP</code></td>
+<td>Coverage pattern</td>
+</tr>
+<tr class="even">
+<td><code>GAPS</code></td>
+<td>Number of gaps</td>
+</tr>
+<tr class="odd">
+<td><code>%COVERAGE</code></td>
+<td>Percentage of gene covered</td>
+</tr>
+<tr class="even">
+<td><code>%IDENTITY</code></td>
+<td>Sequence identity</td>
+</tr>
+<tr class="odd">
+<td><code>DATABASE</code></td>
+<td>Database used</td>
+</tr>
+</tbody>
+</table>
 <div class="callout callout-style-default callout-note callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -859,12 +911,12 @@ ATGCGTACGATCGATCGATCGATCGATC...</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Count the number of contigs in <code>contigs.fasta</code>.</p>
-<p>Does your assembly contain one contig or multiple contigs?</p>
+<p>Open <code>abricate/amr.tsv</code>.</p>
+<p>Which AMR genes are detected in sample <code>S1</code>?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -873,114 +925,140 @@ ATGCGTACGATCGATCGATCGATCGATC...</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Most short-read bacterial genome assemblies contain multiple contigs. A smaller number of contigs usually suggests a more continuous assembly, but quality should be checked using assembly QC tools.</p>
-</div>
-</div>
-</div>
-<section id="copy-the-final-assembly-file" class="level3">
-<h3 class="anchored" data-anchor-id="copy-the-final-assembly-file">Copy the final assembly file</h3>
-<p>To make downstream analysis easier, create a folder for final assemblies:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Copy the <code>SPAdes</code> contig file into this folder with a clear sample name:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> assembly/S1_spades/contigs.fasta assemblies/S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check the copied file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<pre class="text"><code>S1_contigs.fasta</code></pre>
-</section>
-<section id="download-assembly-file-from-the-server" class="level3">
-<h3 class="anchored" data-anchor-id="download-assembly-file-from-the-server">Download assembly file from the server</h3>
-<p>If you are working on a remote server, download the assembly file to your local computer using <code>scp</code>.</p>
-<p>From your <strong>local desktop terminal</strong>, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/assemblies/S1_contigs.fasta .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This downloads <code>S1_contigs.fasta</code> to your current local folder.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Open the downloaded file using a text editor such as Notepad++, VS Code, or another FASTA viewer.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The answer depends on your dataset. Look for rows where the <code>FILE</code> column contains <code>S1_contigs_filtered.fasta</code>.</p>
 </div>
 </div>
 </div>
 </section>
+<section id="summarise-amr-results" class="level3">
+<h3 class="anchored" data-anchor-id="summarise-amr-results">Summarise AMR results</h3>
+<p>Create a summary table for AMR genes:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="at">--summary</span> abricate/amr.tsv <span class="op">&gt;</span> abricate/amr_summary.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>View the summary:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> abricate/amr_summary.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="organize-files" class="level2">
-<h2 class="anchored" data-anchor-id="organize-files">Organize files</h2>
-<p>Now organize the assembly outputs.</p>
-<p>Create folders if they do not already exist:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> raw_reads trimmed_reads qc_reports assembly assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Your working directory should contain folders like:</p>
-<pre class="text"><code>raw_reads
-trimmed_reads
-qc_reports
-assembly
-assemblies</code></pre>
-<p>Check the folder structure:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check the final assembly file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Optional">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Optional
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The full <code>SPAdes</code> output folder can be large. You may compress it for storage.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-czvf</span> S1_spades_output.tar.gz assembly/S1_spades</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>To check the compressed file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> S1_spades_output.tar.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: organize assembly files">
+<section id="summarise-virulence-factor-results" class="level3">
+<h3 class="anchored" data-anchor-id="summarise-virulence-factor-results">Summarise virulence factor results</h3>
+<p>Create a summary table for virulence factor genes:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="at">--summary</span> abricate/vf.tsv <span class="op">&gt;</span> abricate/vf_summary.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>View the summary:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> abricate/vf_summary.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="check-all-abricate-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="check-all-abricate-outputs">Check all ABRicate outputs</h3>
+<p>List the output directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> abricate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Expected files:</p>
+<pre class="text"><code>amr.tsv
+amr_summary.tsv
+vf.tsv
+vf_summary.tsv</code></pre>
+</section>
+<section id="compare-amr-and-virulence-factor-results" class="level3">
+<h3 class="anchored" data-anchor-id="compare-amr-and-virulence-factor-results">Compare AMR and virulence factor results</h3>
+<p>AMR and virulence factor screening answer different biological questions.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Analysis</th>
+<th>Database</th>
+<th>Output</th>
+<th>Question answered</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AMR screening</td>
+<td><code>ncbi</code></td>
+<td><code>amr.tsv</code></td>
+<td>Which resistance genes are present?</td>
+</tr>
+<tr class="even">
+<td>AMR summary</td>
+<td><code>ncbi</code></td>
+<td><code>amr_summary.tsv</code></td>
+<td>Which samples contain which AMR genes?</td>
+</tr>
+<tr class="odd">
+<td>Virulence factor screening</td>
+<td><code>vfdb</code></td>
+<td><code>vf.tsv</code></td>
+<td>Which virulence-associated genes are present?</td>
+</tr>
+<tr class="even">
+<td>Virulence summary</td>
+<td><code>vfdb</code></td>
+<td><code>vf_summary.tsv</code></td>
+<td>Which samples contain which virulence factors?</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Question">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Exercise: organize assembly files
+<span class="screen-reader-only">Note</span>Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Create a folder called <code>assemblies</code>.</p>
-<p>Copy the final <code>SPAdes</code> <code>contigs.fasta</code> file into this folder and rename it as:</p>
-<pre class="text"><code>S1_contigs.fasta</code></pre>
-<p>Then check that the file exists.</p>
+<p>Which sample has the highest number of AMR gene hits?</p>
+<p>Which sample has the highest number of virulence factor hits?</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answer
+<span class="screen-reader-only">Tip</span>Suggested answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assemblies</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> assembly/S1_spades/contigs.fasta assemblies/S1_contigs.fasta</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Use the summary files to compare samples:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> abricate/amr_summary.tsv</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> abricate/vf_summary.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The sample with the most gene columns marked as present has the highest number of detected hits.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="download-abricate-results-from-the-server" class="level2">
+<h2 class="anchored" data-anchor-id="download-abricate-results-from-the-server">Download ABRicate results from the server</h2>
+<p>If you are working on a remote server, download the ABRicate results to your local computer.</p>
+<p>From your <strong>local desktop terminal</strong>, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> genomevm@172.28.28.12:~/tanzim/abricate .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This downloads the full <code>abricate</code> directory to your current local folder.</p>
+<p>If you only want the summary files, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/abricate/<span class="pp">*</span>summary.tsv .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Open <code>.tsv</code> files using Excel, Notepad++, or VS Code.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> abricate/amr_summary.tsv</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> abricate/vf_summary.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> abricate/amr_summary.tsv</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> abricate/vf_summary.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -989,24 +1067,137 @@ assemblies</code></pre>
 <h2 class="anchored" data-anchor-id="final-directory-structure">Final directory structure</h2>
 <p>At the end of this lesson, your directory should look like this:</p>
 <pre class="text"><code>.
-├── raw_reads
-│   ├── S1_R1.fastq.gz
-│   └── S1_R2.fastq.gz
-├── trimmed_reads
-│   ├── S1_trim_R1.fastq.gz
-│   └── S1_trim_R2.fastq.gz
-├── qc_reports
-│   ├── S1_trim_R1_fastqc.html
-│   ├── S1_trim_R1_fastqc.zip
-│   ├── S1_trim_R2_fastqc.html
-│   └── S1_trim_R2_fastqc.zip
-├── assembly
-│   └── S1_spades
-│       ├── contigs.fasta
-│       ├── scaffolds.fasta
-│       └── spades.log
-└── assemblies
-    └── S1_contigs.fasta</code></pre>
+├── assemblies
+│   ├── S1_contigs_filtered.fasta
+│   ├── S2_contigs_filtered.fasta
+│   ├── S3_contigs_filtered.fasta
+│   ├── S4_contigs_filtered.fasta
+│   ├── S5_contigs_filtered.fasta
+│   ├── S6_contigs_filtered.fasta
+│   ├── S7_contigs_filtered.fasta
+│   └── S8_contigs_filtered.fasta
+└── abricate
+    ├── amr.tsv
+    ├── amr_summary.tsv
+    ├── vf.tsv
+    └── vf_summary.tsv</code></pre>
+</section>
+<section id="practical-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise">Practical exercise</h2>
+<p>Complete the following tasks:</p>
+<ol type="1">
+<li>Activate the <code>amr</code> environment.</li>
+<li>Run ABRicate using the <code>ncbi</code> database.</li>
+<li>Save the output as <code>abricate/amr.tsv</code>.</li>
+<li>Run ABRicate using the <code>vfdb</code> database.</li>
+<li>Save the output as <code>abricate/vf.tsv</code>.</li>
+<li>Create summary files for both results.</li>
+<li>Compare AMR and virulence factor profiles across the eight samples.</li>
+</ol>
+<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: AMR and virulence summary">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Exercise: AMR and virulence summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a small table in your notes:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sample</th>
+<th>AMR genes detected</th>
+<th>Virulence factors detected</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>S2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>S3</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>S4</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>S5</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>S6</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>S7</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>S8</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Use:</p>
+<pre class="text"><code>abricate/amr_summary.tsv
+abricate/vf_summary.tsv</code></pre>
+<p>to fill in the table.</p>
+</div>
+</div>
+</section>
+<section id="optional-plasmid-screening" class="level2">
+<h2 class="anchored" data-anchor-id="optional-plasmid-screening">Optional: plasmid screening</h2>
+<p>If a plasmid database is available in your ABRicate installation, you can also screen for plasmid-associated sequences.</p>
+<p>First, check available databases:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="at">--list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If <code>plasmidfinder</code> is available, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="dt">\</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--db</span> plasmidfinder <span class="dt">\</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--threads</span> 4 <span class="dt">\</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  assemblies/<span class="pp">*</span>_contigs_filtered.fasta <span class="dt">\</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">&gt;</span> abricate/plasmid.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Create a summary:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="at">--summary</span> abricate/plasmid.tsv <span class="op">&gt;</span> abricate/plasmid_summary.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Note">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Only run plasmid screening if the required database is installed and available in <code>abricate --list</code>.</p>
+</div>
+</div>
 </section>
 <section id="key-points" class="level2">
 <h2 class="anchored" data-anchor-id="key-points">Key points</h2>
@@ -1021,18 +1212,18 @@ assemblies</code></pre>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Genome assembly reconstructs longer genome sequences from short sequencing reads.</li>
-<li><code>SPAdes</code> is commonly used for bacterial de novo genome assembly.</li>
-<li>The main output file is usually <code>contigs.fasta</code>.</li>
-<li>Rename and copy the final contig file to a separate <code>assemblies</code> folder.</li>
-<li>The assembly file will be used in the next lesson for assembly quality control.</li>
+<li><code>ABRicate</code> screens genome assemblies against gene databases.</li>
+<li>The <code>ncbi</code> database can be used for AMR gene screening.</li>
+<li>The <code>vfdb</code> database can be used for virulence factor screening.</li>
+<li>Summary files make it easier to compare results across multiple samples.</li>
+<li>The output files are stored in the <code>abricate</code> directory.</li>
 </ul>
 </div>
 </div>
 </section>
 <section id="next-step" class="level2">
 <h2 class="anchored" data-anchor-id="next-step">Next step</h2>
-<p>In the next lesson, we will assess the quality of the assembled genome using assembly QC tools.</p>
+<p>In the next lesson, we will use annotation files to perform pangenome analysis.</p>
 
 
 </section>
@@ -1458,13 +1649,13 @@ assemblies</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../materials/trimming.html" class="pagination-link" aria-label="Trimming to Retain High Quality Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Trimming to Retain High Quality Data</span>
+      <a href="../materials/copy-day2-files.html" class="pagination-link" aria-label="Copy Day 2 Files">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Copy Day 2 Files</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../materials/qc_assembly.html" class="pagination-link" aria-label="Quality Control of Assembly File">
-        <span class="nav-page-text">Quality Control of Assembly File</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../materials/pangenome.html" class="pagination-link" aria-label="Pangenome Analysis">
+        <span class="nav-page-text">Pangenome Analysis</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

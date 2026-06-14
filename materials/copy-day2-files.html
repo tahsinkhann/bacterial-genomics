@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>De novo Assembly – Introduction to Bacterial Genomics</title>
+<title>Copy Day 2 Files – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../materials/qc_assembly.html" rel="next">
-<link href="../materials/trimming.html" rel="prev">
+<link href="../materials/amr-vf-plasmid.html" rel="next">
+<link href="../materials/annotation.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -111,10 +111,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="De novo Assembly – Introduction to Bacterial Genomics">
+<meta property="og:title" content="Copy Day 2 Files – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
-<meta name="twitter:title" content="De novo Assembly – Introduction to Bacterial Genomics">
+<meta name="twitter:title" content="Copy Day 2 Files – Introduction to Bacterial Genomics">
 <meta name="twitter:description" content="">
 <meta name="twitter:site" content="@tahsinkhann">
 <meta name="twitter:card" content="summary">
@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><em>De novo</em> Assembly</h1>
+          <h1 class="quarto-secondary-nav-title">Copy Day 2 Files</h1>
         </a>     
     </div>
   </nav>
@@ -476,7 +476,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/assembly.html" class="sidebar-item-text sidebar-link active">
+  <a href="../materials/assembly.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><em>De novo</em> Assembly</span></a>
   </div>
 </li>
@@ -550,7 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/copy-day2-files.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/copy-day2-files.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Copy Day 2 Files</span></a>
   </div>
 </li>
@@ -619,26 +619,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#activate-the-assembly-environment" id="toc-activate-the-assembly-environment" class="nav-link" data-scroll-target="#activate-the-assembly-environment">Activate the assembly environment</a>
-  <ul class="collapse">
-  <li><a href="#input-files" id="toc-input-files" class="nav-link" data-scroll-target="#input-files">Input files</a></li>
-  </ul></li>
-  <li><a href="#what-is-genome-assembly" id="toc-what-is-genome-assembly" class="nav-link" data-scroll-target="#what-is-genome-assembly">What is genome assembly?</a>
-  <ul class="collapse">
-  <li><a href="#create-an-assembly-output-folder" id="toc-create-an-assembly-output-folder" class="nav-link" data-scroll-target="#create-an-assembly-output-folder">Create an assembly output folder</a></li>
-  <li><a href="#run-spades" id="toc-run-spades" class="nav-link" data-scroll-target="#run-spades">Run <code>SPAdes</code></a></li>
-  <li><a href="#understanding-the-command" id="toc-understanding-the-command" class="nav-link" data-scroll-target="#understanding-the-command">Understanding the command</a></li>
-  <li><a href="#check-assembly-outputs" id="toc-check-assembly-outputs" class="nav-link" data-scroll-target="#check-assembly-outputs">Check assembly outputs</a></li>
-  <li><a href="#important-spades-output-files" id="toc-important-spades-output-files" class="nav-link" data-scroll-target="#important-spades-output-files">Important <code>SPAdes</code> output files</a></li>
-  <li><a href="#inspect-the-assembly-file" id="toc-inspect-the-assembly-file" class="nav-link" data-scroll-target="#inspect-the-assembly-file">Inspect the assembly file</a></li>
-  </ul></li>
-  <li><a href="#count-the-number-of-contigs" id="toc-count-the-number-of-contigs" class="nav-link" data-scroll-target="#count-the-number-of-contigs">Count the number of contigs</a>
-  <ul class="collapse">
-  <li><a href="#copy-the-final-assembly-file" id="toc-copy-the-final-assembly-file" class="nav-link" data-scroll-target="#copy-the-final-assembly-file">Copy the final assembly file</a></li>
-  <li><a href="#download-assembly-file-from-the-server" id="toc-download-assembly-file-from-the-server" class="nav-link" data-scroll-target="#download-assembly-file-from-the-server">Download assembly file from the server</a></li>
-  </ul></li>
-  <li><a href="#organize-files" id="toc-organize-files" class="nav-link" data-scroll-target="#organize-files">Organize files</a></li>
+  <li><a href="#expected-files" id="toc-expected-files" class="nav-link" data-scroll-target="#expected-files">Expected files</a></li>
+  <li><a href="#check-the-script" id="toc-check-the-script" class="nav-link" data-scroll-target="#check-the-script">Check the script</a></li>
+  <li><a href="#make-the-script-executable" id="toc-make-the-script-executable" class="nav-link" data-scroll-target="#make-the-script-executable">Make the script executable</a></li>
+  <li><a href="#run-the-script" id="toc-run-the-script" class="nav-link" data-scroll-target="#run-the-script">Run the script</a></li>
+  <li><a href="#check-assembly-files" id="toc-check-assembly-files" class="nav-link" data-scroll-target="#check-assembly-files">Check assembly files</a></li>
+  <li><a href="#check-annotation-files" id="toc-check-annotation-files" class="nav-link" data-scroll-target="#check-annotation-files">Check annotation files</a></li>
+  <li><a href="#check-both-directories-together" id="toc-check-both-directories-together" class="nav-link" data-scroll-target="#check-both-directories-together">Check both directories together</a></li>
   <li><a href="#final-directory-structure" id="toc-final-directory-structure" class="nav-link" data-scroll-target="#final-directory-structure">Final directory structure</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
+  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical exercise</a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
   <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
   </ul>
@@ -650,7 +640,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><em>De novo</em> Assembly</h1>
+<h1 class="title d-none d-lg-block">Copy Day 2 Files</h1>
 </div>
 
 
@@ -669,39 +659,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>After trimming and quality checking sequencing reads, the next step is to reconstruct the bacterial genome from short sequencing reads. This process is called <strong>genome assembly</strong>.</p>
-<p>In this lesson, we will use trimmed paired-end reads to perform <strong>de novo genome assembly</strong>. De novo assembly means that we assemble the genome without using a reference genome.</p>
+<p>In the previous lessons, we completed analysis for sample <code>S1</code>.</p>
+<p>For the next parts of the course, we will work with <strong>eight samples</strong>. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:</p>
+<pre class="text"><code>copy_day2_files.sh</code></pre>
+<p>This script will copy:</p>
+<ul>
+<li>filtered assembly files into the <code>assemblies</code> directory</li>
+<li>annotation files into the <code>annotation</code> directory</li>
+</ul>
 </section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>By the end of this lesson, you should be able to:</p>
 <ul>
-<li>explain what genome assembly means</li>
-<li>understand the difference between raw reads and contigs</li>
-<li>run a bacterial genome assembly using <code>SPAdes</code></li>
-<li>identify the main assembly output files</li>
-<li>organize assembly outputs into a clean directory structure</li>
-<li>prepare assembly files for downstream quality control</li>
+<li>run an in-house bash script</li>
+<li>copy prepared files for eight samples</li>
+<li>check that assembly FASTA files are present</li>
+<li>check that annotation GFF files are present</li>
+<li>prepare input files for AMR, pangenome, and phylogenetic analysis</li>
 </ul>
 </section>
-<section id="activate-the-assembly-environment" class="level2">
-<h2 class="anchored" data-anchor-id="activate-the-assembly-environment">Activate the assembly environment</h2>
-<p>If you are continuing from the previous trimming lesson, you may still be in the <code>qc</code> environment.</p>
-<p>For assembly, activate the assembly environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check that <code>spades.py</code> is available:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If the command works, you should see the installed <code>SPAdes</code> version.</p>
-<section id="input-files" class="level3">
-<h3 class="anchored" data-anchor-id="input-files">Input files</h3>
-<p>For genome assembly, we will use the <strong>paired trimmed reads</strong> generated in the previous lesson.</p>
-<pre class="text"><code>trimmed_reads/S1_trim_R1.fastq.gz
-trimmed_reads/S1_trim_R2.fastq.gz</code></pre>
-<p>Check that the files are present:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> trimmed_reads</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<pre class="text"><code>S1_trim_R1.fastq.gz
-S1_trim_R2.fastq.gz</code></pre>
+<section id="expected-files" class="level2">
+<h2 class="anchored" data-anchor-id="expected-files">Expected files</h2>
+<p>After running the script, the <code>assemblies</code> directory should contain filtered assembly FASTA files:</p>
+<pre class="text"><code>S1_contigs_filtered.fasta
+S2_contigs_filtered.fasta
+S3_contigs_filtered.fasta
+S4_contigs_filtered.fasta
+S5_contigs_filtered.fasta
+S6_contigs_filtered.fasta
+S7_contigs_filtered.fasta
+S8_contigs_filtered.fasta</code></pre>
+<p>The <code>annotation</code> directory should contain GFF annotation files:</p>
+<pre class="text"><code>S1.gff
+S2.gff
+S3.gff
+S4.gff
+S5.gff
+S6.gff
+S7.gff
+S8.gff</code></pre>
 <div class="callout callout-style-default callout-note callout-titled" title="Important">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -712,66 +709,28 @@ S1_trim_R2.fastq.gz</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For paired-end assembly, use the paired trimmed reads:</p>
-<pre class="text"><code>S1_trim_R1.fastq.gz
-S1_trim_R2.fastq.gz</code></pre>
-<p>Do not use the <code>unpaired</code> files unless your instructor specifically asks you to include them.</p>
+<p>The assembly files will be used for AMR, virulence factor, plasmid, and other genome-level analyses.</p>
+<p>The GFF files will be used for pangenome analysis.</p>
 </div>
 </div>
 </section>
+<section id="check-the-script" class="level2">
+<h2 class="anchored" data-anchor-id="check-the-script">Check the script</h2>
+<p>First, check that the script is available:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<pre class="text"><code>copy_day2_files.sh</code></pre>
+<p>If the script is not in your current directory, ask the instructor or check the course data folder.</p>
 </section>
-<section id="what-is-genome-assembly" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-genome-assembly">What is genome assembly?</h2>
-<p>Genome assembly is the process of joining sequencing reads together to create longer sequences.</p>
-<p>These longer sequences are called <strong>contigs</strong>.</p>
-<pre class="text"><code>Short reads  →  contigs  →  draft genome assembly</code></pre>
-<p>Because bacterial genomes are usually a few million base pairs long, short reads cannot cover the whole genome in one piece. Instead, the assembler reconstructs the genome as multiple contigs.</p>
-<section id="create-an-assembly-output-folder" class="level3">
-<h3 class="anchored" data-anchor-id="create-an-assembly-output-folder">Create an assembly output folder</h3>
-<p>Create a folder for assembly results:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="make-the-script-executable" class="level2">
+<h2 class="anchored" data-anchor-id="make-the-script-executable">Make the script executable</h2>
+<p>Before running the script, make it executable:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x copy_day2_files.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="run-spades" class="level3">
-<h3 class="anchored" data-anchor-id="run-spades">Run <code>SPAdes</code></h3>
-<p>Run <code>SPAdes</code> using the trimmed paired-end reads:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="dt">\</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-1</span> trimmed_reads/S1_trim_R1.fastq.gz <span class="dt">\</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-2</span> trimmed_reads/S1_trim_R2.fastq.gz <span class="dt">\</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> assembly/S1_spades <span class="dt">\</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">-t</span> 4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="understanding-the-command" class="level3">
-<h3 class="anchored" data-anchor-id="understanding-the-command">Understanding the command</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Option</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>spades.py</code></td>
-<td>Runs the <code>SPAdes</code> assembler</td>
-</tr>
-<tr class="even">
-<td><code>-1</code></td>
-<td>Forward paired-end reads</td>
-</tr>
-<tr class="odd">
-<td><code>-2</code></td>
-<td>Reverse paired-end reads</td>
-</tr>
-<tr class="even">
-<td><code>-o</code></td>
-<td>Output directory</td>
-</tr>
-<tr class="odd">
-<td><code>-t 4</code></td>
-<td>Use 4 CPU threads</td>
-</tr>
-</tbody>
-</table>
+<section id="run-the-script" class="level2">
+<h2 class="anchored" data-anchor-id="run-the-script">Run the script</h2>
+<p>Run the in-house bash script:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./copy_day2_files.sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Tip">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -782,85 +741,141 @@ S1_trim_R2.fastq.gz</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If your computer or server has more available CPUs, you can increase the number after <code>-t</code>.</p>
-<p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-t</span> 8</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>./</code> means “run the script from the current directory”.</p>
 </div>
 </div>
 </section>
-<section id="check-assembly-outputs" class="level3">
-<h3 class="anchored" data-anchor-id="check-assembly-outputs">Check assembly outputs</h3>
-<p>After <code>SPAdes</code> finishes, list the output directory:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assembly/S1_spades</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see files and folders such as:</p>
-<pre class="text"><code>contigs.fasta
-scaffolds.fasta
-assembly_graph.fastg
-spades.log</code></pre>
-<p>The most important output for this training is usually:</p>
-<pre class="text"><code>assembly/S1_spades/contigs.fasta</code></pre>
+<section id="check-assembly-files" class="level2">
+<h2 class="anchored" data-anchor-id="check-assembly-files">Check assembly files</h2>
+<p>After the script finishes, check the <code>assemblies</code> directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<pre class="text"><code>S1_contigs_filtered.fasta
+S2_contigs_filtered.fasta
+S3_contigs_filtered.fasta
+S4_contigs_filtered.fasta
+S5_contigs_filtered.fasta
+S6_contigs_filtered.fasta
+S7_contigs_filtered.fasta
+S8_contigs_filtered.fasta</code></pre>
+<p>Count the number of FASTA files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies/<span class="pp">*</span>_contigs_filtered.fasta <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The expected number is:</p>
+<pre class="text"><code>8</code></pre>
 </section>
-<section id="important-spades-output-files" class="level3">
-<h3 class="anchored" data-anchor-id="important-spades-output-files">Important <code>SPAdes</code> output files</h3>
+<section id="check-annotation-files" class="level2">
+<h2 class="anchored" data-anchor-id="check-annotation-files">Check annotation files</h2>
+<p>Check the <code>annotation</code> directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<pre class="text"><code>S1.gff
+S2.gff
+S3.gff
+S4.gff
+S5.gff
+S6.gff
+S7.gff
+S8.gff</code></pre>
+<p>Count the number of GFF files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation/<span class="pp">*</span>.gff <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The expected number is:</p>
+<pre class="text"><code>8</code></pre>
+</section>
+<section id="check-both-directories-together" class="level2">
+<h2 class="anchored" data-anchor-id="check-both-directories-together">Check both directories together</h2>
+<p>Use the following commands to check both folders:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Assembly files:"</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies/<span class="pp">*</span>_contigs_filtered.fasta</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Annotation files:"</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation/<span class="pp">*</span>.gff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="final-directory-structure" class="level2">
+<h2 class="anchored" data-anchor-id="final-directory-structure">Final directory structure</h2>
+<p>After running the script, your directory should look like this:</p>
+<pre class="text"><code>.
+├── assemblies
+│   ├── S1_contigs_filtered.fasta
+│   ├── S2_contigs_filtered.fasta
+│   ├── S3_contigs_filtered.fasta
+│   ├── S4_contigs_filtered.fasta
+│   ├── S5_contigs_filtered.fasta
+│   ├── S6_contigs_filtered.fasta
+│   ├── S7_contigs_filtered.fasta
+│   └── S8_contigs_filtered.fasta
+└── annotation
+    ├── S1.gff
+    ├── S2.gff
+    ├── S3.gff
+    ├── S4.gff
+    ├── S5.gff
+    ├── S6.gff
+    ├── S7.gff
+    └── S8.gff</code></pre>
+</section>
+<section id="troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>File</th>
-<th>Description</th>
+<th>Problem</th>
+<th>Possible reason</th>
+<th>Solution</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>contigs.fasta</code></td>
-<td>Main assembled contig file</td>
+<td><code>Permission denied</code></td>
+<td>Script is not executable</td>
+<td>Run <code>chmod +x copy_day2_files.sh</code></td>
 </tr>
 <tr class="even">
-<td><code>scaffolds.fasta</code></td>
-<td>Scaffolded assembly file</td>
+<td><code>No such file or directory</code></td>
+<td>Script is not in current folder</td>
+<td>Check location using <code>ls</code></td>
 </tr>
 <tr class="odd">
-<td><code>spades.log</code></td>
-<td>Log file from the assembly run</td>
+<td>Fewer than 8 FASTA files</td>
+<td>Copy failed or source files missing</td>
+<td>Re-run script or ask instructor</td>
 </tr>
 <tr class="even">
-<td><code>assembly_graph.fastg</code></td>
-<td>Assembly graph file</td>
+<td>Fewer than 8 GFF files</td>
+<td>Copy failed or source files missing</td>
+<td>Re-run script or ask instructor</td>
+</tr>
+<tr class="odd">
+<td>Wrong folder name</td>
+<td>Script expects specific directory names</td>
+<td>Check with instructor</td>
 </tr>
 </tbody>
 </table>
-<p>For most downstream bacterial genome analysis in this course, we will use:</p>
-<pre class="text"><code>contigs.fasta</code></pre>
 </section>
-<section id="inspect-the-assembly-file" class="level3">
-<h3 class="anchored" data-anchor-id="inspect-the-assembly-file">Inspect the assembly file</h3>
-<p>A FASTA file contains sequence names and nucleotide sequences.</p>
-<p>View the first few lines of the assembly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> assembly/S1_spades/contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A FASTA file looks like this:</p>
-<pre class="text"><code>&gt;NODE_1_length_245678_cov_42.5
-ATGCGTACGATCGATCGATCGATCGATC...
-&gt;NODE_2_length_120345_cov_38.2
-ATGCGTACGATCGATCGATCGATCGATC...</code></pre>
-<p>Each sequence starts with a header line beginning with <code>&gt;</code>.</p>
-</section>
-</section>
-<section id="count-the-number-of-contigs" class="level2">
-<h2 class="anchored" data-anchor-id="count-the-number-of-contigs">Count the number of contigs</h2>
-<p>To count the number of contigs in the assembly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"^&gt;"</span> assembly/S1_spades/contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This counts the number of FASTA headers.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Exercise">
+<section id="practical-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise">Practical exercise</h2>
+<p>Run the script and confirm that all eight samples were copied.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: check copied files">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise
+<span class="screen-reader-only">Caution</span>Exercise: check copied files
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Count the number of contigs in <code>contigs.fasta</code>.</p>
-<p>Does your assembly contain one contig or multiple contigs?</p>
+<p>After running <code>copy_day2_files.sh</code>, answer the following:</p>
+<ol type="1">
+<li>How many filtered FASTA files are in <code>assemblies</code>?</li>
+<li>How many GFF files are in <code>annotation</code>?</li>
+<li>Are sample IDs <code>S1</code> to <code>S8</code> present in both folders?</li>
+</ol>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Answer">
@@ -875,138 +890,17 @@ ATGCGTACGATCGATCGATCGATCGATC...</code></pre>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Most short-read bacterial genome assemblies contain multiple contigs. A smaller number of contigs usually suggests a more continuous assembly, but quality should be checked using assembly QC tools.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies/<span class="pp">*</span>_contigs_filtered.fasta <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation/<span class="pp">*</span>.gff <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Expected result:</p>
+<pre class="text"><code>8 assembly FASTA files
+8 annotation GFF files</code></pre>
 </div>
 </div>
 </div>
-<section id="copy-the-final-assembly-file" class="level3">
-<h3 class="anchored" data-anchor-id="copy-the-final-assembly-file">Copy the final assembly file</h3>
-<p>To make downstream analysis easier, create a folder for final assemblies:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Copy the <code>SPAdes</code> contig file into this folder with a clear sample name:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> assembly/S1_spades/contigs.fasta assemblies/S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check the copied file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<pre class="text"><code>S1_contigs.fasta</code></pre>
-</section>
-<section id="download-assembly-file-from-the-server" class="level3">
-<h3 class="anchored" data-anchor-id="download-assembly-file-from-the-server">Download assembly file from the server</h3>
-<p>If you are working on a remote server, download the assembly file to your local computer using <code>scp</code>.</p>
-<p>From your <strong>local desktop terminal</strong>, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/assemblies/S1_contigs.fasta .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This downloads <code>S1_contigs.fasta</code> to your current local folder.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Open the downloaded file using a text editor such as Notepad++, VS Code, or another FASTA viewer.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="organize-files" class="level2">
-<h2 class="anchored" data-anchor-id="organize-files">Organize files</h2>
-<p>Now organize the assembly outputs.</p>
-<p>Create folders if they do not already exist:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> raw_reads trimmed_reads qc_reports assembly assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Your working directory should contain folders like:</p>
-<pre class="text"><code>raw_reads
-trimmed_reads
-qc_reports
-assembly
-assemblies</code></pre>
-<p>Check the folder structure:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check the final assembly file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Optional">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Optional
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The full <code>SPAdes</code> output folder can be large. You may compress it for storage.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-czvf</span> S1_spades_output.tar.gz assembly/S1_spades</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>To check the compressed file:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> S1_spades_output.tar.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: organize assembly files">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Exercise: organize assembly files
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Create a folder called <code>assemblies</code>.</p>
-<p>Copy the final <code>SPAdes</code> <code>contigs.fasta</code> file into this folder and rename it as:</p>
-<pre class="text"><code>S1_contigs.fasta</code></pre>
-<p>Then check that the file exists.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assemblies</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> assembly/S1_spades/contigs.fasta assemblies/S1_contigs.fasta</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</section>
-<section id="final-directory-structure" class="level2">
-<h2 class="anchored" data-anchor-id="final-directory-structure">Final directory structure</h2>
-<p>At the end of this lesson, your directory should look like this:</p>
-<pre class="text"><code>.
-├── raw_reads
-│   ├── S1_R1.fastq.gz
-│   └── S1_R2.fastq.gz
-├── trimmed_reads
-│   ├── S1_trim_R1.fastq.gz
-│   └── S1_trim_R2.fastq.gz
-├── qc_reports
-│   ├── S1_trim_R1_fastqc.html
-│   ├── S1_trim_R1_fastqc.zip
-│   ├── S1_trim_R2_fastqc.html
-│   └── S1_trim_R2_fastqc.zip
-├── assembly
-│   └── S1_spades
-│       ├── contigs.fasta
-│       ├── scaffolds.fasta
-│       └── spades.log
-└── assemblies
-    └── S1_contigs.fasta</code></pre>
 </section>
 <section id="key-points" class="level2">
 <h2 class="anchored" data-anchor-id="key-points">Key points</h2>
@@ -1021,18 +915,17 @@ assemblies</code></pre>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Genome assembly reconstructs longer genome sequences from short sequencing reads.</li>
-<li><code>SPAdes</code> is commonly used for bacterial de novo genome assembly.</li>
-<li>The main output file is usually <code>contigs.fasta</code>.</li>
-<li>Rename and copy the final contig file to a separate <code>assemblies</code> folder.</li>
-<li>The assembly file will be used in the next lesson for assembly quality control.</li>
+<li><code>copy_day2_files.sh</code> is an in-house script for preparing Day 2 files.</li>
+<li>It copies eight filtered assembly files into <code>assemblies</code>.</li>
+<li>It copies eight annotation files into <code>annotation</code>.</li>
+<li>These files are required for AMR, pangenome, and phylogenetic analysis.</li>
 </ul>
 </div>
 </div>
 </section>
 <section id="next-step" class="level2">
 <h2 class="anchored" data-anchor-id="next-step">Next step</h2>
-<p>In the next lesson, we will assess the quality of the assembled genome using assembly QC tools.</p>
+<p>In the next lesson, we will screen the assemblies for AMR genes, virulence factors, and plasmid-associated sequences.</p>
 
 
 </section>
@@ -1458,13 +1351,13 @@ assemblies</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../materials/trimming.html" class="pagination-link" aria-label="Trimming to Retain High Quality Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Trimming to Retain High Quality Data</span>
+      <a href="../materials/annotation.html" class="pagination-link" aria-label="Genome Annotation with Prokka">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Genome Annotation with Prokka</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../materials/qc_assembly.html" class="pagination-link" aria-label="Quality Control of Assembly File">
-        <span class="nav-page-text">Quality Control of Assembly File</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../materials/amr-vf-plasmid.html" class="pagination-link" aria-label="AMR and Virulence Factors">
+        <span class="nav-page-text">AMR and Virulence Factors</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

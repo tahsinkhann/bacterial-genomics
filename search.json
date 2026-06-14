@@ -87,52 +87,344 @@
     "text": "Acknowledgements\n\nThis course has been designed following the training materials published by the University of Cambridge Bioinformatics Facility2‘3’4 and other open access training materials.\n\nReferences\n\n\n1. Khan, T., Rahman, T. & Ahmed, T. Introduction to bacterial genomics. (2025).\n\n\n2. Salehe, B. et al. Bioinfomartics for AWD-related pathogens. (2023).\n\n\n3. Asare, P. & Tonder, A. van. Introduction to bacterial genomics. (2023).\n\n\n4. Tonder, A. van, Tavares, H. & Salehe, B. Working with bacterial genomes. (2024)."
   },
   {
+    "objectID": "materials/copy-day2-files.html",
+    "href": "materials/copy-day2-files.html",
+    "title": "Copy Day 2 Files",
+    "section": "",
+    "text": "In the previous lessons, we completed analysis for sample S1.\nFor the next parts of the course, we will work with eight samples. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:\ncopy_day2_files.sh\nThis script will copy:\n\nfiltered assembly files into the assemblies directory\nannotation files into the annotation directory",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#overview",
+    "href": "materials/copy-day2-files.html#overview",
+    "title": "Copy Day 2 Files",
+    "section": "",
+    "text": "In the previous lessons, we completed analysis for sample S1.\nFor the next parts of the course, we will work with eight samples. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:\ncopy_day2_files.sh\nThis script will copy:\n\nfiltered assembly files into the assemblies directory\nannotation files into the annotation directory",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#learning-objectives",
+    "href": "materials/copy-day2-files.html#learning-objectives",
+    "title": "Copy Day 2 Files",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nrun an in-house bash script\ncopy prepared files for eight samples\ncheck that assembly FASTA files are present\ncheck that annotation GFF files are present\nprepare input files for AMR, pangenome, and phylogenetic analysis",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#expected-files",
+    "href": "materials/copy-day2-files.html#expected-files",
+    "title": "Copy Day 2 Files",
+    "section": "Expected files",
+    "text": "Expected files\nAfter running the script, the assemblies directory should contain filtered assembly FASTA files:\nS1_contigs_filtered.fasta\nS2_contigs_filtered.fasta\nS3_contigs_filtered.fasta\nS4_contigs_filtered.fasta\nS5_contigs_filtered.fasta\nS6_contigs_filtered.fasta\nS7_contigs_filtered.fasta\nS8_contigs_filtered.fasta\nThe annotation directory should contain GFF annotation files:\nS1.gff\nS2.gff\nS3.gff\nS4.gff\nS5.gff\nS6.gff\nS7.gff\nS8.gff\n\n\n\n\n\n\nNoteImportant\n\n\n\nThe assembly files will be used for AMR, virulence factor, plasmid, and other genome-level analyses.\nThe GFF files will be used for pangenome analysis.",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#check-the-script",
+    "href": "materials/copy-day2-files.html#check-the-script",
+    "title": "Copy Day 2 Files",
+    "section": "Check the script",
+    "text": "Check the script\nFirst, check that the script is available:\nls\nYou should see:\ncopy_day2_files.sh\nIf the script is not in your current directory, ask the instructor or check the course data folder.",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#make-the-script-executable",
+    "href": "materials/copy-day2-files.html#make-the-script-executable",
+    "title": "Copy Day 2 Files",
+    "section": "Make the script executable",
+    "text": "Make the script executable\nBefore running the script, make it executable:\nchmod +x copy_day2_files.sh",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#run-the-script",
+    "href": "materials/copy-day2-files.html#run-the-script",
+    "title": "Copy Day 2 Files",
+    "section": "Run the script",
+    "text": "Run the script\nRun the in-house bash script:\n./copy_day2_files.sh\n\n\n\n\n\n\nTipTip\n\n\n\nThe ./ means “run the script from the current directory”.",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#check-assembly-files",
+    "href": "materials/copy-day2-files.html#check-assembly-files",
+    "title": "Copy Day 2 Files",
+    "section": "Check assembly files",
+    "text": "Check assembly files\nAfter the script finishes, check the assemblies directory:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\nS2_contigs_filtered.fasta\nS3_contigs_filtered.fasta\nS4_contigs_filtered.fasta\nS5_contigs_filtered.fasta\nS6_contigs_filtered.fasta\nS7_contigs_filtered.fasta\nS8_contigs_filtered.fasta\nCount the number of FASTA files:\nls assemblies/*_contigs_filtered.fasta | wc -l\nThe expected number is:\n8",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#check-annotation-files",
+    "href": "materials/copy-day2-files.html#check-annotation-files",
+    "title": "Copy Day 2 Files",
+    "section": "Check annotation files",
+    "text": "Check annotation files\nCheck the annotation directory:\nls annotation\nYou should see:\nS1.gff\nS2.gff\nS3.gff\nS4.gff\nS5.gff\nS6.gff\nS7.gff\nS8.gff\nCount the number of GFF files:\nls annotation/*.gff | wc -l\nThe expected number is:\n8",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#check-both-directories-together",
+    "href": "materials/copy-day2-files.html#check-both-directories-together",
+    "title": "Copy Day 2 Files",
+    "section": "Check both directories together",
+    "text": "Check both directories together\nUse the following commands to check both folders:\necho \"Assembly files:\"\nls assemblies/*_contigs_filtered.fasta\n\necho \"Annotation files:\"\nls annotation/*.gff",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#final-directory-structure",
+    "href": "materials/copy-day2-files.html#final-directory-structure",
+    "title": "Copy Day 2 Files",
+    "section": "Final directory structure",
+    "text": "Final directory structure\nAfter running the script, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs_filtered.fasta\n│   ├── S2_contigs_filtered.fasta\n│   ├── S3_contigs_filtered.fasta\n│   ├── S4_contigs_filtered.fasta\n│   ├── S5_contigs_filtered.fasta\n│   ├── S6_contigs_filtered.fasta\n│   ├── S7_contigs_filtered.fasta\n│   └── S8_contigs_filtered.fasta\n└── annotation\n    ├── S1.gff\n    ├── S2.gff\n    ├── S3.gff\n    ├── S4.gff\n    ├── S5.gff\n    ├── S6.gff\n    ├── S7.gff\n    └── S8.gff",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#troubleshooting",
+    "href": "materials/copy-day2-files.html#troubleshooting",
+    "title": "Copy Day 2 Files",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\n\n\n\n\n\n\n\n\nProblem\nPossible reason\nSolution\n\n\n\n\nPermission denied\nScript is not executable\nRun chmod +x copy_day2_files.sh\n\n\nNo such file or directory\nScript is not in current folder\nCheck location using ls\n\n\nFewer than 8 FASTA files\nCopy failed or source files missing\nRe-run script or ask instructor\n\n\nFewer than 8 GFF files\nCopy failed or source files missing\nRe-run script or ask instructor\n\n\nWrong folder name\nScript expects specific directory names\nCheck with instructor",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#practical-exercise",
+    "href": "materials/copy-day2-files.html#practical-exercise",
+    "title": "Copy Day 2 Files",
+    "section": "Practical exercise",
+    "text": "Practical exercise\nRun the script and confirm that all eight samples were copied.\n\n\n\n\n\n\nCautionExercise: check copied files\n\n\n\nAfter running copy_day2_files.sh, answer the following:\n\nHow many filtered FASTA files are in assemblies?\nHow many GFF files are in annotation?\nAre sample IDs S1 to S8 present in both folders?\n\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nls assemblies/*_contigs_filtered.fasta | wc -l\nls annotation/*.gff | wc -l\n\nls assemblies\nls annotation\nExpected result:\n8 assembly FASTA files\n8 annotation GFF files",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#key-points",
+    "href": "materials/copy-day2-files.html#key-points",
+    "title": "Copy Day 2 Files",
+    "section": "Key points",
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\ncopy_day2_files.sh is an in-house script for preparing Day 2 files.\nIt copies eight filtered assembly files into assemblies.\nIt copies eight annotation files into annotation.\nThese files are required for AMR, pangenome, and phylogenetic analysis.",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/copy-day2-files.html#next-step",
+    "href": "materials/copy-day2-files.html#next-step",
+    "title": "Copy Day 2 Files",
+    "section": "Next step",
+    "text": "Next step\nIn the next lesson, we will screen the assemblies for AMR genes, virulence factors, and plasmid-associated sequences.",
+    "crumbs": [
+      "Materials",
+      "Day 2 Files",
+      "Copy Day 2 Files"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html",
+    "href": "materials/annotation.html",
+    "title": "Genome Annotation with Prokka",
+    "section": "",
+    "text": "After taxonomy and MLST, the next step is to annotate the assembled genome.\nGenome annotation is the process of identifying genes and other genomic features in an assembly. These features may include protein-coding genes, rRNA genes, tRNA genes, and other functional elements.\nIn this lesson, we will use Prokka to annotate the filtered assembly file.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html#overview",
+    "href": "materials/annotation.html#overview",
+    "title": "Genome Annotation with Prokka",
+    "section": "",
+    "text": "After taxonomy and MLST, the next step is to annotate the assembled genome.\nGenome annotation is the process of identifying genes and other genomic features in an assembly. These features may include protein-coding genes, rRNA genes, tRNA genes, and other functional elements.\nIn this lesson, we will use Prokka to annotate the filtered assembly file.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html#learning-objectives",
+    "href": "materials/annotation.html#learning-objectives",
+    "title": "Genome Annotation with Prokka",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nexplain what genome annotation means\nactivate the annotation environment\nrun Prokka on a filtered assembly file\nidentify important Prokka output files\nunderstand why .gff files are needed for pangenome analysis\ndownload annotation files from the server",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html#input-file",
+    "href": "materials/annotation.html#input-file",
+    "title": "Genome Annotation with Prokka",
+    "section": "Input file",
+    "text": "Input file\nIn the previous lessons, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html#activate-the-annotation-environment",
+    "href": "materials/annotation.html#activate-the-annotation-environment",
+    "title": "Genome Annotation with Prokka",
+    "section": "Activate the annotation environment",
+    "text": "Activate the annotation environment\nActivate the annotation environment:\nconda activate annotation\nCheck that Prokka is available:\nprokka --version\n\nRun Prokka\nRun Prokka on the filtered assembly:\nprokka \\\n  --outdir annotation \\\n  --force \\\n  --cpus 4 \\\n  --prefix S1 \\\n  --locustag S1 \\\n  assemblies/S1_contigs_filtered.fasta\n\n\nUnderstanding the Prokka command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nprokka\nRuns the Prokka annotation tool\n\n\n--outdir annotation\nOutput directory\n\n\n--force\nOverwrite the output directory if it already exists\n\n\n--cpus 4\nUse 4 CPU threads\n\n\n--prefix S1\nPrefix for output file names\n\n\n--locustag S1\nPrefix for gene locus tags\n\n\nassemblies/S1_contigs_filtered.fasta\nInput filtered assembly file\n\n\n\n\n\n\n\n\n\nWarningNote\n\n\n\nThe option --force allows Prokka to overwrite the existing annotation folder.\nUse it carefully if you already have files in the annotation directory.\n\n\n\n\nCheck Prokka outputs\nList the annotation directory:\nls annotation\nYou should see files such as:\nS1.err\nS1.faa\nS1.ffn\nS1.fna\nS1.fsa\nS1.gbk\nS1.gff\nS1.log\nS1.sqn\nS1.tbl\nS1.tsv\nS1.txt\n\n\nImportant Prokka output files\n\n\n\nFile\nDescription\n\n\n\n\nS1.gff\nMain annotation file; used later for pangenome analysis\n\n\nS1.gbk\nGenBank format annotation\n\n\nS1.faa\nProtein sequences\n\n\nS1.ffn\nNucleotide sequences of predicted coding genes\n\n\nS1.fna\nContig sequences\n\n\nS1.tsv\nTab-separated annotation table\n\n\nS1.txt\nAnnotation summary\n\n\nS1.log\nProkka log file\n\n\n\n\n\nView annotation summary\nView the summary report:\ncat annotation/S1.txt\nThis report usually includes information such as:\n\nnumber of contigs\nnumber of bases\nnumber of coding sequences\nnumber of rRNA genes\nnumber of tRNA genes\n\n\n\nInspect the GFF file\nThe .gff file is one of the most important Prokka outputs.\nView the first few lines:\nhead annotation/S1.gff\nA GFF file contains information about genomic features, including their location and annotation.\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen the Prokka summary file.\nHow many coding sequences were predicted?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Check the coding sequence count in:\nannotation/S1.txt\n\n\n\n\n\nWhy is the GFF file important?\nThe .gff file combines genome sequence information with gene annotation information.\nIn this course, the .gff file will be used later for pangenome analysis.\nS1.gff  →  pangenome analysis\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich Prokka output file will be used for pangenome analysis?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe file used for pangenome analysis is:\nannotation/S1.gff",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html#download-annotation-files-from-the-server",
+    "href": "materials/annotation.html#download-annotation-files-from-the-server",
+    "title": "Genome Annotation with Prokka",
+    "section": "Download annotation files from the server",
+    "text": "Download annotation files from the server\nIf you are working on a remote server, download the annotation folder to your local computer.\nFrom your local desktop terminal, run:\nscp -r genomevm@172.28.28.12:~/tanzim/annotation .\nThis downloads the full annotation directory to your current local folder.\nIf you only want the GFF file, run:\nscp genomevm@172.28.28.12:~/tanzim/annotation/S1.gff .\n\nWindowsmacOSLinux\n\n\nOpen S1.gff using Notepad++, VS Code, or another text editor.\n\n\nUse:\nopen S1.gff\n\n\nUse:\nxdg-open S1.gff",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html#compare-annotation-with-previous-results",
+    "href": "materials/annotation.html#compare-annotation-with-previous-results",
+    "title": "Genome Annotation with Prokka",
+    "section": "Compare annotation with previous results",
+    "text": "Compare annotation with previous results\nAt this stage, you have several outputs for sample S1.\n\n\n\n\n\n\n\n\nAnalysis\nOutput file\nPurpose\n\n\n\n\nTaxonomy\nclassify/S1.kraken2.report\nTaxonomic identity\n\n\nMLST\nclassify/S1_mlst.txt\nSequence type\n\n\nAnnotation\nannotation/S1.gff\nGene annotation\n\n\nAnnotation summary\nannotation/S1.txt\nSummary of predicted features\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nDo the taxonomy, MLST, and annotation results look consistent for sample S1?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nThe results should be interpreted together. Kraken2 gives the likely organism, MLST gives the sequence type if the species has a supported scheme, and Prokka provides predicted genes and functional annotation.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html#final-directory-structure",
+    "href": "materials/annotation.html#final-directory-structure",
+    "title": "Genome Annotation with Prokka",
+    "section": "Final directory structure",
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n├── classify\n│   ├── S1.kraken2.output\n│   ├── S1.kraken2.report\n│   ├── S1.krona\n│   ├── S1.krona.html\n│   └── S1_mlst.txt\n└── annotation\n    ├── S1.faa\n    ├── S1.ffn\n    ├── S1.fna\n    ├── S1.gbk\n    ├── S1.gff\n    ├── S1.tsv\n    └── S1.txt",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html#practical-exercise",
+    "href": "materials/annotation.html#practical-exercise",
+    "title": "Genome Annotation with Prokka",
+    "section": "Practical exercise",
+    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the annotation environment.\nRun Prokka on S1_contigs_filtered.fasta.\nCheck the files inside the annotation directory.\nOpen annotation/S1.txt.\nRecord the number of predicted coding sequences.\nOpen annotation/S1.gff.\nIdentify why the .gff file is important for the next analysis.\n\n\n\n\n\n\n\nCautionExercise: annotation summary\n\n\n\nCreate a small table in your notes:\n\n\n\n\n\n\n\n\n\n\n\nSample\nNumber of contigs\nNumber of CDS\nrRNA genes\ntRNA genes\nGFF file\n\n\n\n\nS1\n\n\n\n\nannotation/S1.gff\n\n\n\nFill in the values using:\nannotation/S1.txt",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html#key-points",
+    "href": "materials/annotation.html#key-points",
+    "title": "Genome Annotation with Prokka",
+    "section": "Key points",
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nGenome annotation identifies genes and other genomic features.\nProkka is commonly used for bacterial genome annotation.\nThe main output file for downstream pangenome analysis is annotation/S1.gff.\nThe S1.txt file contains a useful annotation summary.\nAnnotation results should be interpreted together with taxonomy and MLST results.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
+    "objectID": "materials/annotation.html#next-step",
+    "href": "materials/annotation.html#next-step",
+    "title": "Genome Annotation with Prokka",
+    "section": "Next step",
+    "text": "Next step\nIn the next lesson, we will copy prepared files for multiple samples and use them for AMR, virulence factor, pangenome, and phylogenetic analysis.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
+  },
+  {
     "objectID": "materials/day-2.html",
     "href": "materials/day-2.html",
     "title": "Day 2-3",
     "section": "",
-    "text": "conda activate mlst\nmlst assembly/contigs_filtered.fasta &gt; classify/S1_mlst.txt",
-    "crumbs": [
-      "Materials",
-      "Day 2-3",
-      "Day 2-3"
-    ]
+    "text": "conda activate mlst\nmlst assembly/contigs_filtered.fasta &gt; classify/S1_mlst.txt"
   },
   {
     "objectID": "materials/day-2.html#extract-variable-sites",
     "href": "materials/day-2.html#extract-variable-sites",
     "title": "Day 2-3",
     "section": "Extract variable sites",
-    "text": "Extract variable sites\nsnp-sites -o pangenome/core_gene_alignment.snp.aln pangenome/core_gene_alignment_filtered.aln",
-    "crumbs": [
-      "Materials",
-      "Day 2-3",
-      "Day 2-3"
-    ]
+    "text": "Extract variable sites\nsnp-sites -o pangenome/core_gene_alignment.snp.aln pangenome/core_gene_alignment_filtered.aln"
   },
   {
     "objectID": "materials/day-2.html#get-constant-sites",
     "href": "materials/day-2.html#get-constant-sites",
     "title": "Day 2-3",
     "section": "Get constant sites",
-    "text": "Get constant sites\nsnp-sites -C -o pangenome/core_gene_alignment_countconstant pangenome/core_gene_alignment_filtered.aln\ncat pangenome/core_gene_alignment_countconstant",
-    "crumbs": [
-      "Materials",
-      "Day 2-3",
-      "Day 2-3"
-    ]
+    "text": "Get constant sites\nsnp-sites -C -o pangenome/core_gene_alignment_countconstant pangenome/core_gene_alignment_filtered.aln\ncat pangenome/core_gene_alignment_countconstant"
   },
   {
     "objectID": "materials/day-2.html#construct-tree-model-asc-doesnt-work-sometimes",
     "href": "materials/day-2.html#construct-tree-model-asc-doesnt-work-sometimes",
     "title": "Day 2-3",
     "section": "Construct tree (model +ASC doesn’t work sometimes)",
-    "text": "Construct tree (model +ASC doesn’t work sometimes)\niqtree \\\n    -s pangenome/core_gene_alignment.snp.aln \\\n    -fconst FCONST_VALUE \\\n    -seed 12345 \\\n    -B 1000 \\\n    -m GTR+F \\\n    -nt 4 \\\n    -pre tree/iqtree",
-    "crumbs": [
-      "Materials",
-      "Day 2-3",
-      "Day 2-3"
-    ]
+    "text": "Construct tree (model +ASC doesn’t work sometimes)\niqtree \\\n    -s pangenome/core_gene_alignment.snp.aln \\\n    -fconst FCONST_VALUE \\\n    -seed 12345 \\\n    -B 1000 \\\n    -m GTR+F \\\n    -nt 4 \\\n    -pre tree/iqtree"
   },
   {
     "objectID": "materials/2-2-navigating-files.html",
@@ -240,6 +532,378 @@
       "Materials",
       "Quality Control of Raw Reads",
       "Trimming to Retain High Quality Data"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html",
+    "href": "materials/taxonomy.html",
+    "title": "Taxonomy",
+    "section": "",
+    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#overview",
+    "href": "materials/taxonomy.html#overview",
+    "title": "Taxonomy",
+    "section": "",
+    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#learning-objectives",
+    "href": "materials/taxonomy.html#learning-objectives",
+    "title": "Taxonomy",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ncreate a folder for taxonomic classification results\nactivate the classify environment\nrun Kraken2 on an assembled genome\ngenerate a Kraken2 taxonomic report\nconvert the Kraken2 report into Krona format\ncreate and download an interactive Krona HTML plot",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#input-file",
+    "href": "materials/taxonomy.html#input-file",
+    "title": "Taxonomy",
+    "section": "Input file",
+    "text": "Input file\nIn the previous assembly QC lesson, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\n\n\n\nCreate a classification directory\nCreate a directory named classify:\nmkdir -p classify\nCheck that the directory was created:\nls\n\n\nActivate the classify environment\nActivate the classify environment:\nconda activate classify\nCheck that kraken2 is available:\nkraken2 --version\nCheck that the Krona tools are available:\nktImportText\nIf the command prints help text or usage information, Krona is available.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#run-kraken2",
+    "href": "materials/taxonomy.html#run-kraken2",
+    "title": "Taxonomy",
+    "section": "Run Kraken2",
+    "text": "Run Kraken2\nRun Kraken2 on the filtered assembly:\nkraken2 \\\n  --db ~/databases/kraken2db \\\n  --threads 4 \\\n  --report classify/S1.kraken2.report \\\n  --output classify/S1.kraken2.output \\\n  assemblies/S1_contigs_filtered.fasta\n\nUnderstanding the Kraken2 command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nkraken2\nRuns Kraken2\n\n\n--db ~/databases/kraken2db\nPath to the Kraken2 database\n\n\n--threads 4\nUse 4 CPU threads\n\n\n--report classify/S1.kraken2.report\nSummary taxonomic report\n\n\n--output classify/S1.kraken2.output\nDetailed classification output\n\n\nassemblies/S1_contigs_filtered.fasta\nInput assembly file\n\n\n\n\n\nCheck Kraken2 outputs\nList the classify directory:\nls classify\nYou should see:\nS1.kraken2.output\nS1.kraken2.report\nView the first few lines of the report:\nhead classify/S1.kraken2.report\nThe Kraken2 report contains taxonomic classification information, including the percentage of sequences assigned to different taxa.\n\n\nKraken2 report columns\nA Kraken2 report usually contains columns similar to:\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\nPercentage\nPercentage of sequences assigned to the taxon\n\n\nClade reads\nReads/sequences assigned to the taxon and its descendants\n\n\nTaxon reads\nReads/sequences assigned directly to the taxon\n\n\nRank code\nTaxonomic rank\n\n\nNCBI taxonomic ID\nTaxonomy ID\n\n\nScientific name\nTaxon name\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen the Kraken2 report and identify the main taxonomic classification of sample S1.\nWhich genus or species has the highest assignment?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Look for the taxon with the highest percentage assignment in classify/S1.kraken2.report.\n\n\n\n\n\nCreate Krona input file\nTo visualize the Kraken2 report interactively, first convert it into Krona-compatible format.\nkreport2krona.py \\\n  -r classify/S1.kraken2.report \\\n  -o classify/S1.krona\nCheck that the Krona input file was created:\nls classify\nYou should see:\nS1.krona\n\n\nCreate Krona HTML plot\nNow create an interactive Krona HTML plot:\nktImportText \\\n  -o classify/S1.krona.html \\\n  classify/S1.krona\nCheck that the HTML file was created:\nls classify\nYou should see:\nS1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#download-krona-plot-from-the-server",
+    "href": "materials/taxonomy.html#download-krona-plot-from-the-server",
+    "title": "Taxonomy",
+    "section": "Download Krona plot from the server",
+    "text": "Download Krona plot from the server\nIf you want to visualize the interactive Krona file, download the S1.krona.html file to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/classify/S1.krona.html .\nThis downloads the interactive Krona HTML file to your current local folder.\n\nWindowsmacOSLinux\n\n\nOpen S1.krona.html manually from File Explorer using a web browser.\n\n\nUse:\nopen S1.krona.html\n\n\nUse:\nxdg-open S1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#optional-download-all-classification-outputs",
+    "href": "materials/taxonomy.html#optional-download-all-classification-outputs",
+    "title": "Taxonomy",
+    "section": "Optional: download all classification outputs",
+    "text": "Optional: download all classification outputs\nTo download the full classification folder, run this from your local desktop terminal:\nscp -r genomevm@172.28.28.12:~/tanzim/classify .\nThis will download the full classify directory.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#compare-kraken2-report-and-krona-plot",
+    "href": "materials/taxonomy.html#compare-kraken2-report-and-krona-plot",
+    "title": "Taxonomy",
+    "section": "Compare Kraken2 report and Krona plot",
+    "text": "Compare Kraken2 report and Krona plot\nThe Kraken2 report is useful for checking exact taxonomic assignments in text format.\nThe Krona plot is useful for interactively exploring the taxonomic hierarchy.\n\n\n\nOutput\nUse\n\n\n\n\nS1.kraken2.report\nText summary of taxonomic classification\n\n\nS1.kraken2.output\nDetailed sequence-level classification output\n\n\nS1.krona\nIntermediate Krona input file\n\n\nS1.krona.html\nInteractive Krona visualization\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nCompare the Kraken2 report and Krona plot.\nDo they suggest the same main organism?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nBoth outputs should point to the same main organism if the classification is consistent. The Kraken2 report gives the detailed text summary, while Krona provides an interactive visualization of the same taxonomic information.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#organize-classification-results",
+    "href": "materials/taxonomy.html#organize-classification-results",
+    "title": "Taxonomy",
+    "section": "Organize classification results",
+    "text": "Organize classification results\nYour working directory should now contain:\nclassify\nCheck the folder:\nls classify\nExpected files:\nS1.kraken2.output\nS1.kraken2.report\nS1.krona\nS1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#final-directory-structure",
+    "href": "materials/taxonomy.html#final-directory-structure",
+    "title": "Taxonomy",
+    "section": "Final directory structure",
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n└── classify\n    ├── S1.kraken2.output\n    ├── S1.kraken2.report\n    ├── S1.krona\n    └── S1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#practical-exercise",
+    "href": "materials/taxonomy.html#practical-exercise",
+    "title": "Taxonomy",
+    "section": "Practical exercise",
+    "text": "Practical exercise\nComplete the following tasks:\n\nCreate the classify directory.\nActivate the classify environment.\nRun Kraken2 on S1_contigs_filtered.fasta.\nOpen the Kraken2 report.\nConvert the Kraken2 report to Krona format.\nCreate a Krona HTML plot.\nDownload the Krona HTML file to your local computer.\nOpen the Krona plot in a browser.\n\n\n\n\n\n\n\nCautionExercise: taxonomy summary\n\n\n\nCreate a small table in your notes:\n\n\n\n\n\n\n\n\n\nSample\nMain taxonomic assignment\nEvidence from Kraken2\nEvidence from Krona\n\n\n\n\nS1\n\n\n\n\n\n\nFill in the table using S1.kraken2.report and S1.krona.html.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#key-points",
+    "href": "materials/taxonomy.html#key-points",
+    "title": "Taxonomy",
+    "section": "Key points",
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nKraken2 can classify sequences using a reference taxonomy database.\nThe input for this lesson is the filtered assembly file.\nThe Kraken2 report gives a text summary of taxonomic classification.\nKrona creates an interactive HTML visualization.\nDownload the .html Krona file to visualize it on your local computer.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#next-step",
+    "href": "materials/taxonomy.html#next-step",
+    "title": "Taxonomy",
+    "section": "Next step",
+    "text": "Next step\nIn the next lesson, we will continue downstream analysis using the filtered assembly file.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html",
+    "href": "materials/3-1-qc.html",
+    "title": "Quality Control of Raw Reads",
+    "section": "",
+    "text": "Read quality control is the first checkpoint in bacterial whole-genome sequencing analysis. Before genome assembly or downstream analysis, we need to check whether the raw sequencing reads are suitable for analysis.\nIn this lesson, we will inspect FASTQ files, run quality-control checks, summarise QC reports, and decide whether the reads need trimming.",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html#overview",
+    "href": "materials/3-1-qc.html#overview",
+    "title": "Quality Control of Raw Reads",
+    "section": "",
+    "text": "Read quality control is the first checkpoint in bacterial whole-genome sequencing analysis. Before genome assembly or downstream analysis, we need to check whether the raw sequencing reads are suitable for analysis.\nIn this lesson, we will inspect FASTQ files, run quality-control checks, summarise QC reports, and decide whether the reads need trimming.",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html#learning-objectives",
+    "href": "materials/3-1-qc.html#learning-objectives",
+    "title": "Quality Control of Raw Reads",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ndescribe the structure of a FASTQ file\nexplain why read quality control is important\nrun FastQC on raw sequencing reads\nsummarise multiple QC reports using MultiQC\ninterpret common QC metrics\ndecide whether trimming is needed before assembly",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html#why-do-we-perform-read-quality-control",
+    "href": "materials/3-1-qc.html#why-do-we-perform-read-quality-control",
+    "title": "Quality Control of Raw Reads",
+    "section": "Why do we perform read quality control?",
+    "text": "Why do we perform read quality control?\nRaw sequencing reads may contain technical problems such as:\n\nlow-quality bases\nadapter contamination\nunusually short reads\nbiased base composition\nunexpected GC content\noverrepresented sequences\npossible contamination\n\nIf poor-quality reads are used directly, they can affect genome assembly, species identification, antimicrobial resistance gene detection, and phylogenetic analysis.\n\n\n\n\n\n\nNoteKey idea\n\n\n\nQuality control helps us decide whether the sequencing data are good enough for downstream analysis.",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html#fastq-file-structure",
+    "href": "materials/3-1-qc.html#fastq-file-structure",
+    "title": "Quality Control of Raw Reads",
+    "section": "FASTQ file structure",
+    "text": "FASTQ file structure\nShort-read sequencing data are usually stored in FASTQ format. A FASTQ record has four lines:\n@read_id\nACGTACGTACGTACGT\n+\nFFFFFFFFFFFFFFFF\n\n\n\nLine\nDescription\n\n\n\n\nLine 1\nRead identifier\n\n\nLine 2\nDNA sequence\n\n\nLine 3\nSeparator\n\n\nLine 4\nQuality score\n\n\n\nThe fourth line contains quality scores. These scores represent confidence in each base call.",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html#paired-end-sequencing-files",
+    "href": "materials/3-1-qc.html#paired-end-sequencing-files",
+    "title": "Quality Control of Raw Reads",
+    "section": "Paired-end sequencing files",
+    "text": "Paired-end sequencing files\nFor paired-end Illumina data, each sample usually has two FASTQ files:\nS1_R1.fastq.gz\nS1_R2.fastq.gz\n\n\n\nFile\nMeaning\n\n\n\n\nR1\nForward reads\n\n\nR2\nReverse reads\n\n\n.gz\nCompressed file\n\n\n\nFor example:\nERR123456_R1.fastq.gz\nERR123456_R2.fastq.gz\n\n\nInspect a FASTQ file\nBecause FASTQ files are often compressed, use zcat to view them.\nzcat S1_R1.fastq.gz | head\nTo view the first 12 lines:\nzcat S1_R1.fastq.gz | head -n 12\nThis should show the first three FASTQ records.\n\n\n\n\n\n\nNoteExercise\n\n\n\nInspect the first 8 lines of a FASTQ file. How many sequencing reads are shown?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nA FASTQ record contains 4 lines. Therefore, 8 lines show 2 sequencing reads.\n\n\n\nFor example, if the file has 400000 lines, then the number of reads is:\n400000 / 4 = 100000 reads\nYou can calculate this directly:\necho $(( $(zcat S1_R1.fastq.gz | wc -l) / 4 ))\n\n\n\n\n\n\nWarningNote\n\n\n\nThis command works for standard FASTQ files where every read has exactly four lines.\n\n\n\n\nRun FastQC\nWe need to activate the qc environment\nconda activate qc\nNow will run fastqc on sample S1\nfastqc -t 4 S1_R1.fastq.gz S1_R2.fastq.gz\nType ls to see the file lists\nls\n\n\n\nOpen FastQC report\nWe need to download the report file as we cannot visualize from servers.\nFrom local desktop terminal (note that you need to replace tanzim by your name), run:\nscp genomevm@172.28.28.12:~/tanzim/*.html .\n\nWindowsmacOSLinux\n\n\nOn Windows, open the file manually from the file explorer.\n\n\nIf you are working on your own computer, open the .html file in a browser. On macOS:\nopen S1_R1_fastqc.html\n\n\nOn Linux:\nxdg-open S1_R1_fastqc.html\n\n\n\nIn a similar way, open the S1_R2_fastqc.html",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/1-2-know-your-bug.html",
+    "href": "materials/1-2-know-your-bug.html",
+    "title": "Know your bug",
+    "section": "",
+    "text": "TipLearning Objectives\n\n\n\n\nRecognise that there are different ways to approach your analyses depending on which species you’re analysing.\nList the three main questions that should be asked about the organism you are working with, which will determine downstream analyses steps.\nDescribe, at a high-level, the main analyses steps involved in each case.\nBefore starting your analysis, it’s important to understand the characteristics of the species you’re working with as this will determine how best to proceed.\nIn particular, you need to understand how much genetic diversity or plasticity is present in your bug and whether or not it recombines. For instance the approach you take to build a phylogenetic tree of Mycobacterium tuberculosis genomes will differ from the methods you’d use to build a tree with Escherichia coli. To help with making your decision, we’ve provided a flowchart which outlines the best approach to take depending on what your dataset is composed of:\nThis week, we’re going to work with three different bacterial species that each require a different analysis path through the diagram above.",
+    "crumbs": [
+      "Materials",
+      "Pathogen of Interest",
+      "Know your bug"
+    ]
+  },
+  {
+    "objectID": "materials/1-2-know-your-bug.html#summary",
+    "href": "materials/1-2-know-your-bug.html#summary",
+    "title": "Know your bug",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\nTipKey Points\n\n\n\n\nThree main things should be considered when choosing an analysis workflow for bacterial sequencing data:\n\nHow diverse is the species? Monoclonal species usually have lower diversity in the population.\nDo your isolates likely come from multiple lineages?\nIs bacterial recombination common in your species (transformation, transduction, conjugation)?\n\nDepending on the answer to these questions, your analyses workflow may involve:\n\nMapping to a reference genome or using a pan-genome approach.\nIncluding a recombination removal step.\n\nThe end goal of most bacterial genomics projects is the generation of a phylogenetic tree representing the relationships and diversity of your isolates.",
+    "crumbs": [
+      "Materials",
+      "Pathogen of Interest",
+      "Know your bug"
+    ]
+  },
+  {
+    "objectID": "materials/pangenome.html",
+    "href": "materials/pangenome.html",
+    "title": "Pangenome Analysis",
+    "section": "",
+    "text": "After annotating multiple bacterial genomes, we can compare their gene content using pangenome analysis.\nThe pangenome represents the full set of genes found across a group of genomes. It includes:\n\ncore genes: genes shared by most or all samples\naccessory genes: genes present in some samples\nunique genes: genes found in only one sample\n\nIn this lesson, we will use Panaroo to perform pangenome analysis using .gff files from eight samples.",
+    "crumbs": [
+      "Materials",
+      "Pangenome",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/pangenome.html#overview",
+    "href": "materials/pangenome.html#overview",
+    "title": "Pangenome Analysis",
+    "section": "",
+    "text": "After annotating multiple bacterial genomes, we can compare their gene content using pangenome analysis.\nThe pangenome represents the full set of genes found across a group of genomes. It includes:\n\ncore genes: genes shared by most or all samples\naccessory genes: genes present in some samples\nunique genes: genes found in only one sample\n\nIn this lesson, we will use Panaroo to perform pangenome analysis using .gff files from eight samples.",
+    "crumbs": [
+      "Materials",
+      "Pangenome",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/pangenome.html#learning-objectives",
+    "href": "materials/pangenome.html#learning-objectives",
+    "title": "Pangenome Analysis",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nexplain what a pangenome is\ndistinguish between core and accessory genes\nactivate the pangenome environment\nrun Panaroo using multiple .gff files\nidentify important Panaroo output files\nprepare the core gene alignment for phylogenetic analysis",
+    "crumbs": [
+      "Materials",
+      "Pangenome",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/pangenome.html#input-files",
+    "href": "materials/pangenome.html#input-files",
+    "title": "Pangenome Analysis",
+    "section": "Input files",
+    "text": "Input files\nIn the previous lessons, we prepared annotation files for eight samples.\nThe input files for Panaroo are:\nannotation/S1.gff\nannotation/S2.gff\nannotation/S3.gff\nannotation/S4.gff\nannotation/S5.gff\nannotation/S6.gff\nannotation/S7.gff\nannotation/S8.gff\nCheck that the files are present:\nls annotation/*.gff\nCount the number of GFF files:\nls annotation/*.gff | wc -l\nThe expected number is:\n8\n\n\n\n\n\n\nNoteImportant\n\n\n\nPanaroo uses .gff files as input.\nFor this lesson, we will use:\nannotation/*.gff",
+    "crumbs": [
+      "Materials",
+      "Pangenome",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/pangenome.html#activate-the-pangenome-environment",
+    "href": "materials/pangenome.html#activate-the-pangenome-environment",
+    "title": "Pangenome Analysis",
+    "section": "Activate the pangenome environment",
+    "text": "Activate the pangenome environment\nActivate the pangenome environment:\nconda activate pangenome\nCheck that panaroo is available:\npanaroo --version\n\nRun Panaroo\nRun Panaroo using all .gff files:\npanaroo \\\n  -t 4 \\\n  -o pangenome \\\n  -c 0.95 \\\n  -a core \\\n  --input annotation/*.gff \\\n  --clean-mode strict\n\n\nUnderstanding the Panaroo command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\npanaroo\nRuns the Panaroo pangenome tool\n\n\n-t 4\nUses 4 CPU threads\n\n\n-o pangenome\nOutput directory\n\n\n-c 0.95\nCore gene threshold\n\n\n-a core\nGenerates a core gene alignment\n\n\n--input annotation/*.gff\nUses all GFF files in the annotation folder\n\n\n--clean-mode strict\nUses strict cleaning mode\n\n\n\n\n\n\n\n\n\nNoteAbout the core threshold\n\n\n\nThe value of -c defines the core gene threshold.\nFor example:\n-c 0.95\nmeans genes present in at least 95% of genomes are considered core genes.\nYou may choose a different value depending on the analysis goal.\n\n\n\n\nCheck Panaroo outputs\nAfter Panaroo finishes, list the output directory:\nls pangenome\nYou should see several output files.\nImportant files may include:\ngene_presence_absence.csv\ngene_presence_absence.Rtab\ncore_gene_alignment.aln\ncore_gene_alignment_filtered.aln\nsummary_statistics.txt\n\n\nImportant Panaroo output files\n\n\n\nFile\nDescription\n\n\n\n\ngene_presence_absence.csv\nMain gene presence/absence table\n\n\ngene_presence_absence.Rtab\nGene presence/absence matrix\n\n\ncore_gene_alignment.aln\nCore gene alignment\n\n\ncore_gene_alignment_filtered.aln\nFiltered core gene alignment\n\n\nsummary_statistics.txt\nSummary of pangenome results, if produced\n\n\n\n\n\nView gene presence/absence table\nCheck the first few lines:\nhead pangenome/gene_presence_absence.csv\nThis file shows which genes are present or absent across the samples.\n\n\nCheck core gene alignment\nCheck the core alignment files:\nls -lh pangenome/*alignment*\nYou should see files such as:\ncore_gene_alignment.aln\ncore_gene_alignment_filtered.aln\n\n\n\n\n\n\nNoteExercise\n\n\n\nWhich Panaroo output file will be used later for phylogenetic tree construction?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe filtered core gene alignment will be used for phylogenetic analysis:\npangenome/core_gene_alignment_filtered.aln\n\n\n\n\n\nCore and accessory genome\nPanaroo helps identify genes shared across all or most genomes, as well as genes found in only some samples.\n\n\n\nGene category\nMeaning\n\n\n\n\nCore genes\nPresent in most or all genomes\n\n\nAccessory genes\nPresent in some genomes\n\n\nUnique genes\nPresent in only one genome\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhy are core genes useful for phylogenetic analysis?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nCore genes are shared across samples, so they can be aligned and compared across all genomes. This makes them useful for estimating evolutionary relationships.\n\n\n\n\n\nOptional: inspect summary statistics\nIf Panaroo creates a summary statistics file, view it using:\ncat pangenome/summary_statistics.txt\nIf the file does not exist, check the available output files:\nls pangenome",
+    "crumbs": [
+      "Materials",
+      "Pangenome",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/pangenome.html#download-pangenome-outputs-from-the-server",
+    "href": "materials/pangenome.html#download-pangenome-outputs-from-the-server",
+    "title": "Pangenome Analysis",
+    "section": "Download pangenome outputs from the server",
+    "text": "Download pangenome outputs from the server\nIf you are working on a remote server, download the pangenome output folder to your local computer.\nFrom your local desktop terminal, run:\nscp -r genomevm@172.28.28.12:~/tanzim/pangenome .\nThis downloads the full pangenome directory.\nIf you only want the main gene presence/absence table, run:\nscp genomevm@172.28.28.12:~/tanzim/pangenome/gene_presence_absence.csv .\n\nWindowsmacOSLinux\n\n\nOpen .csv files using Excel, LibreOffice Calc, or VS Code.\n\n\nUse:\nopen gene_presence_absence.csv\n\n\nUse:\nxdg-open gene_presence_absence.csv",
+    "crumbs": [
+      "Materials",
+      "Pangenome",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/pangenome.html#final-directory-structure",
+    "href": "materials/pangenome.html#final-directory-structure",
+    "title": "Pangenome Analysis",
+    "section": "Final directory structure",
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── annotation\n│   ├── S1.gff\n│   ├── S2.gff\n│   ├── S3.gff\n│   ├── S4.gff\n│   ├── S5.gff\n│   ├── S6.gff\n│   ├── S7.gff\n│   └── S8.gff\n└── pangenome\n    ├── gene_presence_absence.csv\n    ├── gene_presence_absence.Rtab\n    ├── core_gene_alignment.aln\n    ├── core_gene_alignment_filtered.aln\n    └── summary_statistics.txt",
+    "crumbs": [
+      "Materials",
+      "Pangenome",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/pangenome.html#practical-exercise",
+    "href": "materials/pangenome.html#practical-exercise",
+    "title": "Pangenome Analysis",
+    "section": "Practical exercise",
+    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the pangenome environment.\nConfirm that eight .gff files are present in annotation.\nRun Panaroo using all .gff files.\nOpen gene_presence_absence.csv.\nIdentify the core gene alignment file.\nRecord which file will be used for phylogenetic analysis.\n\n\n\n\n\n\n\nCautionExercise: pangenome summary\n\n\n\nCreate a small table in your notes:\n\n\n\nItem\nFile or value\n\n\n\n\nNumber of input GFF files\n\n\n\nPanaroo output directory\npangenome\n\n\nGene presence/absence table\n\n\n\nCore gene alignment\n\n\n\nFiltered core gene alignment\n\n\n\n\nFill in the table using the files inside the pangenome directory.",
+    "crumbs": [
+      "Materials",
+      "Pangenome",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/pangenome.html#key-points",
+    "href": "materials/pangenome.html#key-points",
+    "title": "Pangenome Analysis",
+    "section": "Key points",
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nPangenome analysis compares gene content across multiple genomes.\nPanaroo uses .gff annotation files as input.\nCore genes are shared across most or all samples.\nAccessory genes are present in only some samples.\ncore_gene_alignment_filtered.aln will be used for phylogenetic tree construction.",
+    "crumbs": [
+      "Materials",
+      "Pangenome",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/pangenome.html#next-step",
+    "href": "materials/pangenome.html#next-step",
+    "title": "Pangenome Analysis",
+    "section": "Next step",
+    "text": "Next step\nIn the next lesson, we will use the filtered core gene alignment to construct a phylogenetic tree.",
+    "crumbs": [
+      "Materials",
+      "Pangenome",
+      "Pangenome Analysis"
     ]
   },
   {
@@ -579,255 +1243,147 @@
     ]
   },
   {
-    "objectID": "materials/1-2-know-your-bug.html",
-    "href": "materials/1-2-know-your-bug.html",
-    "title": "Know your bug",
+    "objectID": "materials/amr-vf-plasmid.html",
+    "href": "materials/amr-vf-plasmid.html",
+    "title": "AMR and Virulence Factors",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\n\nRecognise that there are different ways to approach your analyses depending on which species you’re analysing.\nList the three main questions that should be asked about the organism you are working with, which will determine downstream analyses steps.\nDescribe, at a high-level, the main analyses steps involved in each case.\nBefore starting your analysis, it’s important to understand the characteristics of the species you’re working with as this will determine how best to proceed.\nIn particular, you need to understand how much genetic diversity or plasticity is present in your bug and whether or not it recombines. For instance the approach you take to build a phylogenetic tree of Mycobacterium tuberculosis genomes will differ from the methods you’d use to build a tree with Escherichia coli. To help with making your decision, we’ve provided a flowchart which outlines the best approach to take depending on what your dataset is composed of:\nThis week, we’re going to work with three different bacterial species that each require a different analysis path through the diagram above.",
+    "text": "After preparing the eight assembly files, we can screen the genomes for antimicrobial resistance genes and virulence factors.\nIn this lesson, we will use ABRicate to screen assembly FASTA files against two databases:\n\nncbi for antimicrobial resistance genes\nvfdb for virulence factor genes",
     "crumbs": [
       "Materials",
-      "Pathogen of Interest",
-      "Know your bug"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
-    "objectID": "materials/1-2-know-your-bug.html#summary",
-    "href": "materials/1-2-know-your-bug.html#summary",
-    "title": "Know your bug",
-    "section": "Summary",
-    "text": "Summary\n\n\n\n\n\n\nTipKey Points\n\n\n\n\nThree main things should be considered when choosing an analysis workflow for bacterial sequencing data:\n\nHow diverse is the species? Monoclonal species usually have lower diversity in the population.\nDo your isolates likely come from multiple lineages?\nIs bacterial recombination common in your species (transformation, transduction, conjugation)?\n\nDepending on the answer to these questions, your analyses workflow may involve:\n\nMapping to a reference genome or using a pan-genome approach.\nIncluding a recombination removal step.\n\nThe end goal of most bacterial genomics projects is the generation of a phylogenetic tree representing the relationships and diversity of your isolates.",
-    "crumbs": [
-      "Materials",
-      "Pathogen of Interest",
-      "Know your bug"
-    ]
-  },
-  {
-    "objectID": "materials/3-1-qc.html",
-    "href": "materials/3-1-qc.html",
-    "title": "Quality Control of Raw Reads",
+    "objectID": "materials/amr-vf-plasmid.html#overview",
+    "href": "materials/amr-vf-plasmid.html#overview",
+    "title": "AMR and Virulence Factors",
     "section": "",
-    "text": "Read quality control is the first checkpoint in bacterial whole-genome sequencing analysis. Before genome assembly or downstream analysis, we need to check whether the raw sequencing reads are suitable for analysis.\nIn this lesson, we will inspect FASTQ files, run quality-control checks, summarise QC reports, and decide whether the reads need trimming.",
+    "text": "After preparing the eight assembly files, we can screen the genomes for antimicrobial resistance genes and virulence factors.\nIn this lesson, we will use ABRicate to screen assembly FASTA files against two databases:\n\nncbi for antimicrobial resistance genes\nvfdb for virulence factor genes",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
-    "objectID": "materials/3-1-qc.html#overview",
-    "href": "materials/3-1-qc.html#overview",
-    "title": "Quality Control of Raw Reads",
-    "section": "",
-    "text": "Read quality control is the first checkpoint in bacterial whole-genome sequencing analysis. Before genome assembly or downstream analysis, we need to check whether the raw sequencing reads are suitable for analysis.\nIn this lesson, we will inspect FASTQ files, run quality-control checks, summarise QC reports, and decide whether the reads need trimming.",
-    "crumbs": [
-      "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
-    ]
-  },
-  {
-    "objectID": "materials/3-1-qc.html#learning-objectives",
-    "href": "materials/3-1-qc.html#learning-objectives",
-    "title": "Quality Control of Raw Reads",
+    "objectID": "materials/amr-vf-plasmid.html#learning-objectives",
+    "href": "materials/amr-vf-plasmid.html#learning-objectives",
+    "title": "AMR and Virulence Factors",
     "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ndescribe the structure of a FASTQ file\nexplain why read quality control is important\nrun FastQC on raw sequencing reads\nsummarise multiple QC reports using MultiQC\ninterpret common QC metrics\ndecide whether trimming is needed before assembly",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nactivate the amr environment\ncreate an output directory for ABRicate results\nrun ABRicate on multiple assembly files\nidentify antimicrobial resistance genes\nidentify virulence factor genes\nsummarise ABRicate results across samples",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
-    "objectID": "materials/3-1-qc.html#why-do-we-perform-read-quality-control",
-    "href": "materials/3-1-qc.html#why-do-we-perform-read-quality-control",
-    "title": "Quality Control of Raw Reads",
-    "section": "Why do we perform read quality control?",
-    "text": "Why do we perform read quality control?\nRaw sequencing reads may contain technical problems such as:\n\nlow-quality bases\nadapter contamination\nunusually short reads\nbiased base composition\nunexpected GC content\noverrepresented sequences\npossible contamination\n\nIf poor-quality reads are used directly, they can affect genome assembly, species identification, antimicrobial resistance gene detection, and phylogenetic analysis.\n\n\n\n\n\n\nNoteKey idea\n\n\n\nQuality control helps us decide whether the sequencing data are good enough for downstream analysis.",
+    "objectID": "materials/amr-vf-plasmid.html#input-files",
+    "href": "materials/amr-vf-plasmid.html#input-files",
+    "title": "AMR and Virulence Factors",
+    "section": "Input files",
+    "text": "Input files\nIn the previous lesson, we copied eight filtered assembly files into the assemblies directory.\nCheck that the files are present:\nls assemblies\nYou should see files such as:\nS1_contigs_filtered.fasta\nS2_contigs_filtered.fasta\nS3_contigs_filtered.fasta\nS4_contigs_filtered.fasta\nS5_contigs_filtered.fasta\nS6_contigs_filtered.fasta\nS7_contigs_filtered.fasta\nS8_contigs_filtered.fasta\nCount the number of assembly files:\nls assemblies/*_contigs_filtered.fasta | wc -l\nThe expected number is:\n8\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will screen all filtered assembly files:\nassemblies/*_contigs_filtered.fasta",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
-    "objectID": "materials/3-1-qc.html#fastq-file-structure",
-    "href": "materials/3-1-qc.html#fastq-file-structure",
-    "title": "Quality Control of Raw Reads",
-    "section": "FASTQ file structure",
-    "text": "FASTQ file structure\nShort-read sequencing data are usually stored in FASTQ format. A FASTQ record has four lines:\nread_id? ACGTACGTACGTACGT + FFFFFFFFFFFFFFFF\n\n\n\nLine\nDescription\n\n\n\n\nLine 1\nRead identifier\n\n\nLine 2\nDNA sequence\n\n\nLine 3\nSeparator\n\n\nLine 4\nQuality score\n\n\n\nThe fourth line contains quality scores. These scores represent confidence in each base call.",
+    "objectID": "materials/amr-vf-plasmid.html#activate-the-amr-environment",
+    "href": "materials/amr-vf-plasmid.html#activate-the-amr-environment",
+    "title": "AMR and Virulence Factors",
+    "section": "Activate the AMR environment",
+    "text": "Activate the AMR environment\nActivate the amr environment:\nconda activate amr\nCheck that ABRicate is available:\nabricate --version\nCheck available ABRicate databases:\nabricate --list\nYou should see databases such as:\nncbi\nvfdb\n\nCreate output directory\nCreate a directory named abricate:\nmkdir -p abricate\nCheck that the directory was created:\nls\n\n\nRun ABRicate for AMR genes\nRun ABRicate using the ncbi database:\nabricate \\\n  --db ncbi \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/amr.tsv\n\n\nUnderstanding the AMR command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nabricate\nRuns ABRicate\n\n\n--db ncbi\nUses the NCBI AMR database\n\n\n--threads 4\nUses 4 CPU threads\n\n\nassemblies/*_contigs_filtered.fasta\nScreens all filtered assembly files\n\n\n&gt;\nRedirects output to a file\n\n\nabricate/amr.tsv\nAMR output table\n\n\n\n\n\nCheck AMR output\nCheck that the output file was created:\nls abricate\nView the first few lines:\nhead abricate/amr.tsv\n\n\nRun ABRicate for virulence factors\nRun ABRicate using the vfdb database:\nabricate \\\n  --db vfdb \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/vf.tsv\n\n\nUnderstanding the virulence factor command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\n--db vfdb\nUses the virulence factor database\n\n\nassemblies/*_contigs_filtered.fasta\nScreens all filtered assembly files\n\n\nabricate/vf.tsv\nVirulence factor output table",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
-    "objectID": "materials/3-1-qc.html#paired-end-sequencing-files",
-    "href": "materials/3-1-qc.html#paired-end-sequencing-files",
-    "title": "Quality Control of Raw Reads",
-    "section": "Paired-end sequencing files",
-    "text": "Paired-end sequencing files\nFor paired-end Illumina data, each sample usually has two FASTQ files:\nS1_R1.fastq.gz\nS1_R2.fastq.gz\n\n\n\nFile\nMeaning\n\n\n\n\nR1\nForward reads\n\n\nR2\nReverse reads\n\n\n.gz\nCompressed file\n\n\n\nFor example:\nERR123456_R1.fastq.gz\nERR123456_R2.fastq.gz\n\n\nInspect a FASTQ file\nBecause FASTQ files are often compressed, use zcat to view them.\nzcat S1_R1.fastq.gz | head\nTo view the first 12 lines:\nzcat S1_R1.fastq.gz | head -n 12\nThis should show the first three FASTQ records.\n\n\n\n\n\n\nNoteExercise\n\n\n\nInspect the first 8 lines of a FASTQ file. How many sequencing reads are shown?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nA FASTQ record contains 4 lines. Therefore, 8 lines show 2 sequencing reads.\n\n\n\nFor example, if the file has 400000 lines, then the number of reads is:\n400000 / 4 = 100000 reads\nYou can calculate this directly:\necho $(( $(zcat S1_R1.fastq.gz | wc -l) / 4 ))\n\n\n\n\n\n\nWarningNote\n\n\n\nThis command works for standard FASTQ files where every read has exactly four lines.\n\n\n\n\nRun FastQC\nWe need to activate the qc environment\nconda activate qc\nNow will run fastqc on sample S1\nfastqc -t 4 S1_R1.fastq.gz S1_R2.fastq.gz\nType ls to see the file lists\nls\n\n\n\nOpen FastQC report\nWe need to download the report file as we cannot visualize from servers.\nFrom local desktop terminal (note that you need to replace tanzim by your name), run:\nscp genomevm@172.28.28.12:~/tanzim/*.html .\n\nWindowsmacOSLinux\n\n\nOn Windows, open the file manually from the file explorer.\n\n\nIf you are working on your own computer, open the .html file in a browser. On macOS:\nopen S1_R1_fastqc.html\n\n\nOn Linux:\nxdg-open S1_R1_fastqc.html\n\n\n\nIn a similar way, open the S1_R2_fastqc.html",
+    "objectID": "materials/amr-vf-plasmid.html#check-virulence-factor-output",
+    "href": "materials/amr-vf-plasmid.html#check-virulence-factor-output",
+    "title": "AMR and Virulence Factors",
+    "section": "Check virulence factor output",
+    "text": "Check virulence factor output\nView the first few lines:\nhead abricate/vf.tsv\nYou should now have:\nabricate/amr.tsv\nabricate/vf.tsv\n\nUnderstanding ABRicate output\nABRicate output usually includes columns such as:\n\n\n\nColumn\nMeaning\n\n\n\n\nFILE\nInput genome file\n\n\nSEQUENCE\nContig name\n\n\nSTART\nStart position of hit\n\n\nEND\nEnd position of hit\n\n\nGENE\nDetected gene\n\n\nCOVERAGE\nQuery coverage\n\n\nCOVERAGE_MAP\nCoverage pattern\n\n\nGAPS\nNumber of gaps\n\n\n%COVERAGE\nPercentage of gene covered\n\n\n%IDENTITY\nSequence identity\n\n\nDATABASE\nDatabase used\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen abricate/amr.tsv.\nWhich AMR genes are detected in sample S1?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Look for rows where the FILE column contains S1_contigs_filtered.fasta.\n\n\n\n\n\nSummarise AMR results\nCreate a summary table for AMR genes:\nabricate --summary abricate/amr.tsv &gt; abricate/amr_summary.tsv\nView the summary:\ncat abricate/amr_summary.tsv\n\n\nSummarise virulence factor results\nCreate a summary table for virulence factor genes:\nabricate --summary abricate/vf.tsv &gt; abricate/vf_summary.tsv\nView the summary:\ncat abricate/vf_summary.tsv\n\n\nCheck all ABRicate outputs\nList the output directory:\nls abricate\nExpected files:\namr.tsv\namr_summary.tsv\nvf.tsv\nvf_summary.tsv\n\n\nCompare AMR and virulence factor results\nAMR and virulence factor screening answer different biological questions.\n\n\n\n\n\n\n\n\n\nAnalysis\nDatabase\nOutput\nQuestion answered\n\n\n\n\nAMR screening\nncbi\namr.tsv\nWhich resistance genes are present?\n\n\nAMR summary\nncbi\namr_summary.tsv\nWhich samples contain which AMR genes?\n\n\nVirulence factor screening\nvfdb\nvf.tsv\nWhich virulence-associated genes are present?\n\n\nVirulence summary\nvfdb\nvf_summary.tsv\nWhich samples contain which virulence factors?\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich sample has the highest number of AMR gene hits?\nWhich sample has the highest number of virulence factor hits?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nUse the summary files to compare samples:\ncat abricate/amr_summary.tsv\ncat abricate/vf_summary.tsv\nThe sample with the most gene columns marked as present has the highest number of detected hits.",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
-    "objectID": "materials/taxonomy.html",
-    "href": "materials/taxonomy.html",
-    "title": "Taxonomy",
-    "section": "",
-    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
+    "objectID": "materials/amr-vf-plasmid.html#download-abricate-results-from-the-server",
+    "href": "materials/amr-vf-plasmid.html#download-abricate-results-from-the-server",
+    "title": "AMR and Virulence Factors",
+    "section": "Download ABRicate results from the server",
+    "text": "Download ABRicate results from the server\nIf you are working on a remote server, download the ABRicate results to your local computer.\nFrom your local desktop terminal, run:\nscp -r genomevm@172.28.28.12:~/tanzim/abricate .\nThis downloads the full abricate directory to your current local folder.\nIf you only want the summary files, run:\nscp genomevm@172.28.28.12:~/tanzim/abricate/*summary.tsv .\n\nWindowsmacOSLinux\n\n\nOpen .tsv files using Excel, Notepad++, or VS Code.\n\n\nUse:\nopen abricate/amr_summary.tsv\nopen abricate/vf_summary.tsv\n\n\nUse:\nxdg-open abricate/amr_summary.tsv\nxdg-open abricate/vf_summary.tsv",
     "crumbs": [
       "Materials",
-      "Taxnomy",
-      "Taxonomy"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
-    "objectID": "materials/taxonomy.html#overview",
-    "href": "materials/taxonomy.html#overview",
-    "title": "Taxonomy",
-    "section": "",
-    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
-    "crumbs": [
-      "Materials",
-      "Taxnomy",
-      "Taxonomy"
-    ]
-  },
-  {
-    "objectID": "materials/taxonomy.html#learning-objectives",
-    "href": "materials/taxonomy.html#learning-objectives",
-    "title": "Taxonomy",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ncreate a folder for taxonomic classification results\nactivate the classify environment\nrun Kraken2 on an assembled genome\ngenerate a Kraken2 taxonomic report\nconvert the Kraken2 report into Krona format\ncreate and download an interactive Krona HTML plot",
-    "crumbs": [
-      "Materials",
-      "Taxnomy",
-      "Taxonomy"
-    ]
-  },
-  {
-    "objectID": "materials/taxonomy.html#input-file",
-    "href": "materials/taxonomy.html#input-file",
-    "title": "Taxonomy",
-    "section": "Input file",
-    "text": "Input file\nIn the previous assembly QC lesson, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\n\n\n\nCreate a classification directory\nCreate a directory named classify:\nmkdir -p classify\nCheck that the directory was created:\nls\n\n\nActivate the classify environment\nActivate the classify environment:\nconda activate classify\nCheck that kraken2 is available:\nkraken2 --version\nCheck that the Krona tools are available:\nktImportText\nIf the command prints help text or usage information, Krona is available.",
-    "crumbs": [
-      "Materials",
-      "Taxnomy",
-      "Taxonomy"
-    ]
-  },
-  {
-    "objectID": "materials/taxonomy.html#run-kraken2",
-    "href": "materials/taxonomy.html#run-kraken2",
-    "title": "Taxonomy",
-    "section": "Run Kraken2",
-    "text": "Run Kraken2\nRun Kraken2 on the filtered assembly:\nkraken2 \\\n  --db ~/databases/kraken2db \\\n  --threads 4 \\\n  --report classify/S1.kraken2.report \\\n  --output classify/S1.kraken2.output \\\n  assemblies/S1_contigs_filtered.fasta\n\nUnderstanding the Kraken2 command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nkraken2\nRuns Kraken2\n\n\n--db ~/databases/kraken2db\nPath to the Kraken2 database\n\n\n--threads 4\nUse 4 CPU threads\n\n\n--report classify/S1.kraken2.report\nSummary taxonomic report\n\n\n--output classify/S1.kraken2.output\nDetailed classification output\n\n\nassemblies/S1_contigs_filtered.fasta\nInput assembly file\n\n\n\n\n\nCheck Kraken2 outputs\nList the classify directory:\nls classify\nYou should see:\nS1.kraken2.output\nS1.kraken2.report\nView the first few lines of the report:\nhead classify/S1.kraken2.report\nThe Kraken2 report contains taxonomic classification information, including the percentage of sequences assigned to different taxa.\n\n\nKraken2 report columns\nA Kraken2 report usually contains columns similar to:\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\nPercentage\nPercentage of sequences assigned to the taxon\n\n\nClade reads\nReads/sequences assigned to the taxon and its descendants\n\n\nTaxon reads\nReads/sequences assigned directly to the taxon\n\n\nRank code\nTaxonomic rank\n\n\nNCBI taxonomic ID\nTaxonomy ID\n\n\nScientific name\nTaxon name\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen the Kraken2 report and identify the main taxonomic classification of sample S1.\nWhich genus or species has the highest assignment?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Look for the taxon with the highest percentage assignment in classify/S1.kraken2.report.\n\n\n\n\n\nCreate Krona input file\nTo visualize the Kraken2 report interactively, first convert it into Krona-compatible format.\nkreport2krona.py \\\n  -r classify/S1.kraken2.report \\\n  -o classify/S1.krona\nCheck that the Krona input file was created:\nls classify\nYou should see:\nS1.krona\n\n\nCreate Krona HTML plot\nNow create an interactive Krona HTML plot:\nktImportText \\\n  -o classify/S1.krona.html \\\n  classify/S1.krona\nCheck that the HTML file was created:\nls classify\nYou should see:\nS1.krona.html",
-    "crumbs": [
-      "Materials",
-      "Taxnomy",
-      "Taxonomy"
-    ]
-  },
-  {
-    "objectID": "materials/taxonomy.html#download-krona-plot-from-the-server",
-    "href": "materials/taxonomy.html#download-krona-plot-from-the-server",
-    "title": "Taxonomy",
-    "section": "Download Krona plot from the server",
-    "text": "Download Krona plot from the server\nIf you want to visualize the interactive Krona file, download the S1.krona.html file to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/classify/S1.krona.html .\nThis downloads the interactive Krona HTML file to your current local folder.\n\nWindowsmacOSLinux\n\n\nOpen S1.krona.html manually from File Explorer using a web browser.\n\n\nUse:\nopen S1.krona.html\n\n\nUse:\nxdg-open S1.krona.html",
-    "crumbs": [
-      "Materials",
-      "Taxnomy",
-      "Taxonomy"
-    ]
-  },
-  {
-    "objectID": "materials/taxonomy.html#optional-download-all-classification-outputs",
-    "href": "materials/taxonomy.html#optional-download-all-classification-outputs",
-    "title": "Taxonomy",
-    "section": "Optional: download all classification outputs",
-    "text": "Optional: download all classification outputs\nTo download the full classification folder, run this from your local desktop terminal:\nscp -r genomevm@172.28.28.12:~/tanzim/classify .\nThis will download the full classify directory.",
-    "crumbs": [
-      "Materials",
-      "Taxnomy",
-      "Taxonomy"
-    ]
-  },
-  {
-    "objectID": "materials/taxonomy.html#compare-kraken2-report-and-krona-plot",
-    "href": "materials/taxonomy.html#compare-kraken2-report-and-krona-plot",
-    "title": "Taxonomy",
-    "section": "Compare Kraken2 report and Krona plot",
-    "text": "Compare Kraken2 report and Krona plot\nThe Kraken2 report is useful for checking exact taxonomic assignments in text format.\nThe Krona plot is useful for interactively exploring the taxonomic hierarchy.\n\n\n\nOutput\nUse\n\n\n\n\nS1.kraken2.report\nText summary of taxonomic classification\n\n\nS1.kraken2.output\nDetailed sequence-level classification output\n\n\nS1.krona\nIntermediate Krona input file\n\n\nS1.krona.html\nInteractive Krona visualization\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nCompare the Kraken2 report and Krona plot.\nDo they suggest the same main organism?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nBoth outputs should point to the same main organism if the classification is consistent. The Kraken2 report gives the detailed text summary, while Krona provides an interactive visualization of the same taxonomic information.",
-    "crumbs": [
-      "Materials",
-      "Taxnomy",
-      "Taxonomy"
-    ]
-  },
-  {
-    "objectID": "materials/taxonomy.html#organize-classification-results",
-    "href": "materials/taxonomy.html#organize-classification-results",
-    "title": "Taxonomy",
-    "section": "Organize classification results",
-    "text": "Organize classification results\nYour working directory should now contain:\nclassify\nCheck the folder:\nls classify\nExpected files:\nS1.kraken2.output\nS1.kraken2.report\nS1.krona\nS1.krona.html",
-    "crumbs": [
-      "Materials",
-      "Taxnomy",
-      "Taxonomy"
-    ]
-  },
-  {
-    "objectID": "materials/taxonomy.html#final-directory-structure",
-    "href": "materials/taxonomy.html#final-directory-structure",
-    "title": "Taxonomy",
+    "objectID": "materials/amr-vf-plasmid.html#final-directory-structure",
+    "href": "materials/amr-vf-plasmid.html#final-directory-structure",
+    "title": "AMR and Virulence Factors",
     "section": "Final directory structure",
-    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n└── classify\n    ├── S1.kraken2.output\n    ├── S1.kraken2.report\n    ├── S1.krona\n    └── S1.krona.html",
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs_filtered.fasta\n│   ├── S2_contigs_filtered.fasta\n│   ├── S3_contigs_filtered.fasta\n│   ├── S4_contigs_filtered.fasta\n│   ├── S5_contigs_filtered.fasta\n│   ├── S6_contigs_filtered.fasta\n│   ├── S7_contigs_filtered.fasta\n│   └── S8_contigs_filtered.fasta\n└── abricate\n    ├── amr.tsv\n    ├── amr_summary.tsv\n    ├── vf.tsv\n    └── vf_summary.tsv",
     "crumbs": [
       "Materials",
-      "Taxnomy",
-      "Taxonomy"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
-    "objectID": "materials/taxonomy.html#practical-exercise",
-    "href": "materials/taxonomy.html#practical-exercise",
-    "title": "Taxonomy",
+    "objectID": "materials/amr-vf-plasmid.html#practical-exercise",
+    "href": "materials/amr-vf-plasmid.html#practical-exercise",
+    "title": "AMR and Virulence Factors",
     "section": "Practical exercise",
-    "text": "Practical exercise\nComplete the following tasks:\n\nCreate the classify directory.\nActivate the classify environment.\nRun Kraken2 on S1_contigs_filtered.fasta.\nOpen the Kraken2 report.\nConvert the Kraken2 report to Krona format.\nCreate a Krona HTML plot.\nDownload the Krona HTML file to your local computer.\nOpen the Krona plot in a browser.\n\n\n\n\n\n\n\nCautionExercise: taxonomy summary\n\n\n\nCreate a small table in your notes:\n\n\n\n\n\n\n\n\n\nSample\nMain taxonomic assignment\nEvidence from Kraken2\nEvidence from Krona\n\n\n\n\nS1\n\n\n\n\n\n\nFill in the table using S1.kraken2.report and S1.krona.html.",
+    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the amr environment.\nRun ABRicate using the ncbi database.\nSave the output as abricate/amr.tsv.\nRun ABRicate using the vfdb database.\nSave the output as abricate/vf.tsv.\nCreate summary files for both results.\nCompare AMR and virulence factor profiles across the eight samples.\n\n\n\n\n\n\n\nCautionExercise: AMR and virulence summary\n\n\n\nCreate a small table in your notes:\n\n\n\nSample\nAMR genes detected\nVirulence factors detected\nComment\n\n\n\n\nS1\n\n\n\n\n\nS2\n\n\n\n\n\nS3\n\n\n\n\n\nS4\n\n\n\n\n\nS5\n\n\n\n\n\nS6\n\n\n\n\n\nS7\n\n\n\n\n\nS8\n\n\n\n\n\n\nUse:\nabricate/amr_summary.tsv\nabricate/vf_summary.tsv\nto fill in the table.",
     "crumbs": [
       "Materials",
-      "Taxnomy",
-      "Taxonomy"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
-    "objectID": "materials/taxonomy.html#key-points",
-    "href": "materials/taxonomy.html#key-points",
-    "title": "Taxonomy",
+    "objectID": "materials/amr-vf-plasmid.html#optional-plasmid-screening",
+    "href": "materials/amr-vf-plasmid.html#optional-plasmid-screening",
+    "title": "AMR and Virulence Factors",
+    "section": "Optional: plasmid screening",
+    "text": "Optional: plasmid screening\nIf a plasmid database is available in your ABRicate installation, you can also screen for plasmid-associated sequences.\nFirst, check available databases:\nabricate --list\nIf plasmidfinder is available, run:\nabricate \\\n  --db plasmidfinder \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/plasmid.tsv\nCreate a summary:\nabricate --summary abricate/plasmid.tsv &gt; abricate/plasmid_summary.tsv\n\n\n\n\n\n\nWarningNote\n\n\n\nOnly run plasmid screening if the required database is installed and available in abricate --list.",
+    "crumbs": [
+      "Materials",
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
+    ]
+  },
+  {
+    "objectID": "materials/amr-vf-plasmid.html#key-points",
+    "href": "materials/amr-vf-plasmid.html#key-points",
+    "title": "AMR and Virulence Factors",
     "section": "Key points",
-    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nKraken2 can classify sequences using a reference taxonomy database.\nThe input for this lesson is the filtered assembly file.\nThe Kraken2 report gives a text summary of taxonomic classification.\nKrona creates an interactive HTML visualization.\nDownload the .html Krona file to visualize it on your local computer.",
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nABRicate screens genome assemblies against gene databases.\nThe ncbi database can be used for AMR gene screening.\nThe vfdb database can be used for virulence factor screening.\nSummary files make it easier to compare results across multiple samples.\nThe output files are stored in the abricate directory.",
     "crumbs": [
       "Materials",
-      "Taxnomy",
-      "Taxonomy"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
-    "objectID": "materials/taxonomy.html#next-step",
-    "href": "materials/taxonomy.html#next-step",
-    "title": "Taxonomy",
+    "objectID": "materials/amr-vf-plasmid.html#next-step",
+    "href": "materials/amr-vf-plasmid.html#next-step",
+    "title": "AMR and Virulence Factors",
     "section": "Next step",
-    "text": "Next step\nIn the next lesson, we will continue downstream analysis using the filtered assembly file.",
+    "text": "Next step\nIn the next lesson, we will use annotation files to perform pangenome analysis.",
     "crumbs": [
       "Materials",
-      "Taxnomy",
-      "Taxonomy"
+      "AMR and Virulence Factor",
+      "AMR and Virulence Factors"
     ]
   },
   {
@@ -984,6 +1540,318 @@
       "Materials",
       "Assembly",
       "*De novo* Assembly"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html",
+    "href": "materials/mlst.html",
+    "title": "MLST",
+    "section": "",
+    "text": "After taxonomic classification, we can identify the sequence type of a bacterial genome using MLST.\nMLST stands for multilocus sequence typing. It compares specific housekeeping genes against known allele databases and assigns a sequence type when a matching profile is found.\nIn this lesson, we will run mlst on the filtered assembly file and save the result inside the classify directory.",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#overview",
+    "href": "materials/mlst.html#overview",
+    "title": "MLST",
+    "section": "",
+    "text": "After taxonomic classification, we can identify the sequence type of a bacterial genome using MLST.\nMLST stands for multilocus sequence typing. It compares specific housekeeping genes against known allele databases and assigns a sequence type when a matching profile is found.\nIn this lesson, we will run mlst on the filtered assembly file and save the result inside the classify directory.",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#learning-objectives",
+    "href": "materials/mlst.html#learning-objectives",
+    "title": "MLST",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nexplain what MLST is\nactivate the mlst environment\nrun mlst on an assembled genome\nsave MLST results into the classify directory\ninterpret the basic MLST output",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#input-file",
+    "href": "materials/mlst.html#input-file",
+    "title": "MLST",
+    "section": "Input file",
+    "text": "Input file\nIn the previous lessons, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\n\n\n\nCreate output directory\nWe will save the MLST result inside the classify directory.\nmkdir -p classify\nCheck that the directory exists:\nls\n\n\nActivate the MLST environment\nActivate the mlst environment:\nconda activate mlst\nCheck that mlst is available:\nmlst --version",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#run-mlst",
+    "href": "materials/mlst.html#run-mlst",
+    "title": "MLST",
+    "section": "Run MLST",
+    "text": "Run MLST\nRun mlst on the filtered assembly:\nmlst assemblies/S1_contigs_filtered.fasta &gt; classify/S1_mlst.txt\n\nUnderstanding the MLST command\n\n\n\n\n\n\n\nPart\nMeaning\n\n\n\n\nmlst\nRuns the MLST tool\n\n\nassemblies/S1_contigs_filtered.fasta\nInput filtered assembly file\n\n\n&gt;\nRedirects the output to a file\n\n\nclassify/S1_mlst.txt\nOutput MLST result file",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#check-mlst-output",
+    "href": "materials/mlst.html#check-mlst-output",
+    "title": "MLST",
+    "section": "Check MLST output",
+    "text": "Check MLST output\nList the classify directory:\nls classify\nYou should see:\nS1_mlst.txt\nView the MLST result:\ncat classify/S1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#understanding-mlst-output",
+    "href": "materials/mlst.html#understanding-mlst-output",
+    "title": "MLST",
+    "section": "Understanding MLST output",
+    "text": "Understanding MLST output\nThe MLST output usually contains the following information:\n\n\n\nColumn\nMeaning\n\n\n\n\nFile name\nInput assembly file\n\n\nScheme\nMLST scheme used\n\n\nST\nSequence type\n\n\nAlleles\nAllele numbers for housekeeping genes\n\n\n\nAn example output may look like this:\nassemblies/S1_contigs_filtered.fasta  ecoli  131  adk(53) fumC(40) gyrB(47) icd(13) mdh(36) purA(28) recA(29)\nIn this example:\n\n\n\nItem\nMeaning\n\n\n\n\necoli\nMLST scheme\n\n\n131\nSequence type\n\n\nadk(53)\nAllele 53 for the adk gene\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nRun mlst on S1_contigs_filtered.fasta.\nWhat sequence type was assigned to sample S1?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Check the sequence type in:\nclassify/S1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#save-and-organize-results",
+    "href": "materials/mlst.html#save-and-organize-results",
+    "title": "MLST",
+    "section": "Save and organize results",
+    "text": "Save and organize results\nYour classification folder should now contain results from taxonomy and MLST.\nCheck the folder:\nls classify\nYou may see files such as:\nS1.kraken2.output\nS1.kraken2.report\nS1.krona\nS1.krona.html\nS1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#download-mlst-result-from-the-server",
+    "href": "materials/mlst.html#download-mlst-result-from-the-server",
+    "title": "MLST",
+    "section": "Download MLST result from the server",
+    "text": "Download MLST result from the server\nIf you are working on a remote server, download the MLST result to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/classify/S1_mlst.txt .\nThis downloads S1_mlst.txt to your current local folder.\n\nWindowsmacOSLinux\n\n\nOpen S1_mlst.txt manually using Notepad, Notepad++, Excel, or VS Code.\n\n\nUse:\nopen S1_mlst.txt\n\n\nUse:\nxdg-open S1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#compare-taxonomy-and-mlst",
+    "href": "materials/mlst.html#compare-taxonomy-and-mlst",
+    "title": "MLST",
+    "section": "Compare taxonomy and MLST",
+    "text": "Compare taxonomy and MLST\nTaxonomic classification and MLST provide different but complementary information.\n\n\n\nAnalysis\nTool\nMain output\n\n\n\n\nTaxonomic classification\nKraken2\nLikely organism identity\n\n\nInteractive taxonomy plot\nKrona\nVisual taxonomic hierarchy\n\n\nSequence typing\nMLST\nSequence type based on allele profile\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nDo your Kraken2 and MLST results agree?\nFor example, does the MLST scheme match the organism suggested by Kraken2?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nThe results should generally agree. For example, if Kraken2 suggests the sample is Escherichia coli, the MLST tool should ideally use an E. coli MLST scheme. If the scheme and taxonomy do not match, the sample identity or classification should be checked carefully.",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#final-directory-structure",
+    "href": "materials/mlst.html#final-directory-structure",
+    "title": "MLST",
+    "section": "Final directory structure",
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n└── classify\n    ├── S1.kraken2.output\n    ├── S1.kraken2.report\n    ├── S1.krona\n    ├── S1.krona.html\n    └── S1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#practical-exercise",
+    "href": "materials/mlst.html#practical-exercise",
+    "title": "MLST",
+    "section": "Practical exercise",
+    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the mlst environment.\nRun mlst on S1_contigs_filtered.fasta.\nSave the result as classify/S1_mlst.txt.\nOpen the MLST result.\nRecord the MLST scheme and sequence type.\nCompare the MLST result with the Kraken2 taxonomy result.\n\n\n\n\n\n\n\nCautionExercise: MLST summary\n\n\n\nCreate a small table in your notes:\n\n\n\nSample\nKraken2 main assignment\nMLST scheme\nSequence type\n\n\n\n\nS1\n\n\n\n\n\n\nFill in the table using:\nclassify/S1.kraken2.report\nclassify/S1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#key-points",
+    "href": "materials/mlst.html#key-points",
+    "title": "MLST",
+    "section": "Key points",
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nMLST assigns a sequence type using housekeeping gene allele profiles.\nThe input is the filtered assembly file.\nThe output is saved as classify/S1_mlst.txt.\nMLST results can be compared with Kraken2 taxonomy results.\nIf taxonomy and MLST disagree, the sample should be checked carefully.",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/mlst.html#next-step",
+    "href": "materials/mlst.html#next-step",
+    "title": "MLST",
+    "section": "Next step",
+    "text": "Next step\nIn the next lesson, we will annotate the filtered assembly file using Prokka.",
+    "crumbs": [
+      "Materials",
+      "MLST",
+      "MLST"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html",
+    "href": "materials/phylogenetics.html",
+    "title": "Phylogenetics",
+    "section": "",
+    "text": "After pangenome analysis, we can use the core gene alignment to construct a phylogenetic tree.\nPhylogenetic analysis helps us understand the evolutionary relationship between bacterial isolates. Closely related samples usually cluster together in the tree, while more distant samples appear farther apart.\nIn this lesson, we will use:\n\nsnp-sites to extract variable sites from the core gene alignment\nsnp-sites -C to count constant sites\nIQ-TREE to construct a phylogenetic tree",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#overview",
+    "href": "materials/phylogenetics.html#overview",
+    "title": "Phylogenetics",
+    "section": "",
+    "text": "After pangenome analysis, we can use the core gene alignment to construct a phylogenetic tree.\nPhylogenetic analysis helps us understand the evolutionary relationship between bacterial isolates. Closely related samples usually cluster together in the tree, while more distant samples appear farther apart.\nIn this lesson, we will use:\n\nsnp-sites to extract variable sites from the core gene alignment\nsnp-sites -C to count constant sites\nIQ-TREE to construct a phylogenetic tree",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#learning-objectives",
+    "href": "materials/phylogenetics.html#learning-objectives",
+    "title": "Phylogenetics",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nactivate the phylogeny environment\nidentify the core gene alignment file from Panaroo\nextract variable SNP sites from the alignment\ncount constant sites\nrun IQ-TREE to build a phylogenetic tree\nidentify important tree output files\ndownload the tree file for visualization",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#input-file",
+    "href": "materials/phylogenetics.html#input-file",
+    "title": "Phylogenetics",
+    "section": "Input file",
+    "text": "Input file\nIn the previous lesson, Panaroo produced a filtered core gene alignment:\npangenome/core_gene_alignment_filtered.aln\nCheck that the file exists:\nls pangenome\nYou should see:\ncore_gene_alignment_filtered.aln\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use:\npangenome/core_gene_alignment_filtered.aln\nas the input alignment.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#activate-the-phylogeny-environment",
+    "href": "materials/phylogenetics.html#activate-the-phylogeny-environment",
+    "title": "Phylogenetics",
+    "section": "Activate the phylogeny environment",
+    "text": "Activate the phylogeny environment\nActivate the phylogeny environment:\nconda activate phylogeny\nCheck that the required tools are available:\nsnp-sites --version\niqtree --version\n\nCreate tree output directory\nCreate a directory named tree:\nmkdir -p tree\nCheck that the directory was created:\nls\n\n\nExtract variable sites\nThe core gene alignment contains both variable and constant sites.\nVariable sites are positions that differ among samples. These positions are useful for building a phylogenetic tree.\nUse snp-sites to extract variable sites:\nsnp-sites \\\n  -o pangenome/core_gene_alignment.snp.aln \\\n  pangenome/core_gene_alignment_filtered.aln\n\n\nCheck SNP alignment\nCheck that the SNP alignment was created:\nls pangenome/*snp*\nYou should see:\npangenome/core_gene_alignment.snp.aln\nCheck the first few lines:\nhead pangenome/core_gene_alignment.snp.aln\n\n\n\n\n\n\nNoteExercise\n\n\n\nCreate the SNP-only alignment using snp-sites.\nWhat is the name of the SNP alignment file?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe SNP alignment file is:\npangenome/core_gene_alignment.snp.aln\n\n\n\n\n\nCount constant sites\nWhen building a tree from a SNP-only alignment, we need to tell IQ-TREE how many constant sites were removed.\nUse snp-sites -C to count constant sites:\nsnp-sites \\\n  -C \\\n  -o pangenome/core_gene_alignment_countconstant \\\n  pangenome/core_gene_alignment_filtered.aln\nView the constant site counts:\ncat pangenome/core_gene_alignment_countconstant\nThe output will be used in the -fconst option in IQ-TREE.\n\n\n\n\n\n\nWarningImportant\n\n\n\nCopy the value printed by:\ncat pangenome/core_gene_alignment_countconstant\nYou will use this value to replace FCONST_VALUE in the IQ-TREE command.\n\n\n\n\nConstruct the phylogenetic tree\nNow run IQ-TREE.\nReplace FCONST_VALUE with the value from:\npangenome/core_gene_alignment_countconstant\nThen run:\niqtree \\\n  -s pangenome/core_gene_alignment.snp.aln \\\n  -fconst FCONST_VALUE \\\n  -seed 12345 \\\n  -B 1000 \\\n  -m GTR+F \\\n  -nt 4 \\\n  -pre tree/iqtree\n\n\nUnderstanding the IQ-TREE command\n\n\n\nOption\nMeaning\n\n\n\n\niqtree\nRuns IQ-TREE\n\n\n-s pangenome/core_gene_alignment.snp.aln\nInput SNP alignment\n\n\n-fconst FCONST_VALUE\nConstant site counts\n\n\n-seed 12345\nRandom seed for reproducibility\n\n\n-B 1000\nUltrafast bootstrap replicates\n\n\n-m GTR+F\nSubstitution model\n\n\n-nt 4\nUse 4 CPU threads\n\n\n-pre tree/iqtree\nOutput prefix\n\n\n\n\n\n\n\n\n\nNoteAbout FCONST_VALUE\n\n\n\nFCONST_VALUE is not typed literally.\nReplace it with the constant site counts produced by:\ncat pangenome/core_gene_alignment_countconstant\n\n\n\n\n\n\n\n\nWarningModel note\n\n\n\nThe model with +ASC does not always work in this setup, so this lesson uses:\nGTR+F\n\n\n\n\nCheck IQ-TREE outputs\nList the tree directory:\nls tree\nYou should see files such as:\niqtree.treefile\niqtree.iqtree\niqtree.log\niqtree.contree\n\n\nImportant IQ-TREE output files\n\n\n\nFile\nDescription\n\n\n\n\niqtree.treefile\nMain phylogenetic tree file\n\n\niqtree.contree\nConsensus tree file\n\n\niqtree.iqtree\nDetailed IQ-TREE report\n\n\niqtree.log\nLog file\n\n\n\nThe main output file for tree visualization is:\ntree/iqtree.treefile\n\n\nView the tree file\nThe tree file is stored in Newick format.\nView it using:\ncat tree/iqtree.treefile\nA Newick tree looks like this:\n((S1:0.01,S2:0.01):0.02,(S3:0.03,S4:0.03):0.02);\n\n\n\n\n\n\nNoteExercise\n\n\n\nRun IQ-TREE and identify the main tree output file.\nWhich file will you use for tree visualization?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe main tree output file is:\ntree/iqtree.treefile",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#download-tree-file-from-the-server",
+    "href": "materials/phylogenetics.html#download-tree-file-from-the-server",
+    "title": "Phylogenetics",
+    "section": "Download tree file from the server",
+    "text": "Download tree file from the server\nIf you are working on a remote server, download the tree file to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/tree/iqtree.treefile .\nThis downloads iqtree.treefile to your current local folder.\nIf you want to download all tree outputs:\nscp -r genomevm@172.28.28.12:~/tanzim/tree .\n\nWindowsmacOSLinux\n\n\nOpen iqtree.treefile using a text editor or upload it to an online tree viewer such as iTOL.\n\n\nUse:\nopen iqtree.treefile\n\n\nUse:\nxdg-open iqtree.treefile",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#check-tree-support-values",
+    "href": "materials/phylogenetics.html#check-tree-support-values",
+    "title": "Phylogenetics",
+    "section": "Check tree support values",
+    "text": "Check tree support values\nIf bootstrap analysis completed successfully, support values may be included in the tree.\nYou can inspect the IQ-TREE report:\ncat tree/iqtree.iqtree\nThe report includes information about:\n\ninput alignment\nsubstitution model\nlikelihood values\nbootstrap settings\ntree search summary",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#compare-tree-with-metadata",
+    "href": "materials/phylogenetics.html#compare-tree-with-metadata",
+    "title": "Phylogenetics",
+    "section": "Compare tree with metadata",
+    "text": "Compare tree with metadata\nAfter constructing the tree, compare the clustering pattern with sample metadata.\nPossible metadata variables include:\n\nsample ID\nlocation\ncollection date\nsource\nsequence type\nAMR profile\nvirulence factor profile\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nDo samples with similar MLST or AMR profiles cluster together in the tree?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nClosely related samples may cluster together and may share similar MLST, AMR, or virulence profiles. However, clustering should be interpreted carefully together with metadata and quality-control results.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#final-directory-structure",
+    "href": "materials/phylogenetics.html#final-directory-structure",
+    "title": "Phylogenetics",
+    "section": "Final directory structure",
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── pangenome\n│   ├── core_gene_alignment_filtered.aln\n│   ├── core_gene_alignment.snp.aln\n│   └── core_gene_alignment_countconstant\n└── tree\n    ├── iqtree.treefile\n    ├── iqtree.contree\n    ├── iqtree.iqtree\n    └── iqtree.log",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#practical-exercise",
+    "href": "materials/phylogenetics.html#practical-exercise",
+    "title": "Phylogenetics",
+    "section": "Practical exercise",
+    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the phylogeny environment.\nCheck that core_gene_alignment_filtered.aln exists.\nExtract variable sites using snp-sites.\nCount constant sites using snp-sites -C.\nReplace FCONST_VALUE in the IQ-TREE command.\nRun IQ-TREE.\nIdentify the main tree file.\nDownload the tree file to your local computer.\n\n\n\n\n\n\n\nCautionExercise: phylogeny summary\n\n\n\nCreate a small table in your notes:\n\n\n\nItem\nFile or value\n\n\n\n\nInput alignment\npangenome/core_gene_alignment_filtered.aln\n\n\nSNP alignment\n\n\n\nConstant site value\n\n\n\nIQ-TREE output folder\n\n\n\nMain tree file\n\n\n\n\nFill in the table using the files created during this lesson.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#key-points",
+    "href": "materials/phylogenetics.html#key-points",
+    "title": "Phylogenetics",
+    "section": "Key points",
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nPhylogenetic analysis shows relationships among bacterial isolates.\nThe input is the filtered core gene alignment from Panaroo.\nsnp-sites extracts variable sites from the alignment.\nConstant site counts are needed when building a tree from SNP-only alignments.\nIQ-TREE constructs the phylogenetic tree.\nThe main tree file is tree/iqtree.treefile.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "materials/phylogenetics.html#next-step",
+    "href": "materials/phylogenetics.html#next-step",
+    "title": "Phylogenetics",
+    "section": "Next step",
+    "text": "Next step\nIn the next lesson, we will visualize and interpret the phylogenetic tree.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Phylogenetics"
     ]
   },
   {
