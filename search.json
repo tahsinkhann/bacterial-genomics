@@ -50,7 +50,7 @@
     "href": "materials.html",
     "title": "Materials",
     "section": "",
-    "text": "hello peps, here we will learn basic terminologies and commands used on a daily basis of computational works, e.g., pwd, ls, cp and so on.\n\n\nBefore jumping to our work, let’s first clarify if all our tools or software installed properly. If not, go to Conda setup section.\n\n\n\nhello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2. In another work regarding West Nile Virus Khan et al. said3 next gen vaccine is excellent.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).\n\n\n3. Khan, M. T. et al. Immunoinformatics and molecular dynamics approaches: Next generation vaccine design against west nile virus. Plos one 16, e0253393 (2021).",
+    "text": "hello peps, here we will learn basic terminologies and commands used on a daily basis of computational works, e.g., pwd, ls, cp and so on.\n\n\nBefore jumping to our work, let’s first clarify if all our tools or software installed properly. If not, go to Conda setup section.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.",
     "crumbs": [
       "Materials"
     ]
@@ -60,17 +60,7 @@
     "href": "materials.html#toolspipeline-ready",
     "title": "Materials",
     "section": "",
-    "text": "Before jumping to our work, let’s first clarify if all our tools or software installed properly. If not, go to Conda setup section.",
-    "crumbs": [
-      "Materials"
-    ]
-  },
-  {
-    "objectID": "materials.html#this-second-title",
-    "href": "materials.html#this-second-title",
-    "title": "Materials",
-    "section": "",
-    "text": "hello peps two. There are two types of bacterial staining, gram +ve and -ve1, Khan et. al says2. In another work regarding West Nile Virus Khan et al. said3 next gen vaccine is excellent.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.\n\n\n\n\n\n\n1. Khan, T. et al. Emergence of the novel sixth Candida auris clade VI in bangladesh. Microbiology Spectrum 12, e03540–23 (2024).\n\n\n2. Khan, M. T. et al. Proteome exploration of Legionella pneumophila to identify novel therapeutics: A hierarchical subtractive genomics and reverse vaccinology approach. Microbiology Spectrum 10, e0037322 (2022).\n\n\n3. Khan, M. T. et al. Immunoinformatics and molecular dynamics approaches: Next generation vaccine design against west nile virus. Plos one 16, e0253393 (2021).",
+    "text": "Before jumping to our work, let’s first clarify if all our tools or software installed properly. If not, go to Conda setup section.\nDetailed course materials live in the sidebar on the left. If you’re self-learning, start with the Setup page.\n\n\n\n\n\n\nNoteLocation of materials and sub-material\n\n\n\nUse the left sidebar for modules and the right “On this page” TOC for section anchors.",
     "crumbs": [
       "Materials"
     ]
@@ -689,7 +679,151 @@
     "href": "materials/taxonomy.html",
     "title": "Taxonomy",
     "section": "",
-    "text": "creat a directory named classify\nmkdir classify\nactivate classify environment\nconda activate classify\nrun kraken2 on contigs_filtered.fasta\nkraken2 --db ~/databases/kraken2db --threads 4 --report classify/S1.kraken2.report assembly/contigs_filtered.fasta\nrun krona plot\nkreport2krona.py -r classify/S1.kraken2.report -o classify/S1.krona\nktImportText -o classify/S1.krona.html classify/S1.krona\nif you want to visualize the interactive file download the S1.krona file\nin you local terminal\nscp xxxx/classify/S1.krona .\n\n\n\n Back to top",
+    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#overview",
+    "href": "materials/taxonomy.html#overview",
+    "title": "Taxonomy",
+    "section": "",
+    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#learning-objectives",
+    "href": "materials/taxonomy.html#learning-objectives",
+    "title": "Taxonomy",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ncreate a folder for taxonomic classification results\nactivate the classify environment\nrun Kraken2 on an assembled genome\ngenerate a Kraken2 taxonomic report\nconvert the Kraken2 report into Krona format\ncreate and download an interactive Krona HTML plot",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#input-file",
+    "href": "materials/taxonomy.html#input-file",
+    "title": "Taxonomy",
+    "section": "Input file",
+    "text": "Input file\nIn the previous assembly QC lesson, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\n\n\n\nCreate a classification directory\nCreate a directory named classify:\nmkdir -p classify\nCheck that the directory was created:\nls\n\n\nActivate the classify environment\nActivate the classify environment:\nconda activate classify\nCheck that kraken2 is available:\nkraken2 --version\nCheck that the Krona tools are available:\nktImportText\nIf the command prints help text or usage information, Krona is available.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#run-kraken2",
+    "href": "materials/taxonomy.html#run-kraken2",
+    "title": "Taxonomy",
+    "section": "Run Kraken2",
+    "text": "Run Kraken2\nRun Kraken2 on the filtered assembly:\nkraken2 \\\n  --db ~/databases/kraken2db \\\n  --threads 4 \\\n  --report classify/S1.kraken2.report \\\n  --output classify/S1.kraken2.output \\\n  assemblies/S1_contigs_filtered.fasta\n\nUnderstanding the Kraken2 command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nkraken2\nRuns Kraken2\n\n\n--db ~/databases/kraken2db\nPath to the Kraken2 database\n\n\n--threads 4\nUse 4 CPU threads\n\n\n--report classify/S1.kraken2.report\nSummary taxonomic report\n\n\n--output classify/S1.kraken2.output\nDetailed classification output\n\n\nassemblies/S1_contigs_filtered.fasta\nInput assembly file\n\n\n\n\n\nCheck Kraken2 outputs\nList the classify directory:\nls classify\nYou should see:\nS1.kraken2.output\nS1.kraken2.report\nView the first few lines of the report:\nhead classify/S1.kraken2.report\nThe Kraken2 report contains taxonomic classification information, including the percentage of sequences assigned to different taxa.\n\n\nKraken2 report columns\nA Kraken2 report usually contains columns similar to:\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\nPercentage\nPercentage of sequences assigned to the taxon\n\n\nClade reads\nReads/sequences assigned to the taxon and its descendants\n\n\nTaxon reads\nReads/sequences assigned directly to the taxon\n\n\nRank code\nTaxonomic rank\n\n\nNCBI taxonomic ID\nTaxonomy ID\n\n\nScientific name\nTaxon name\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen the Kraken2 report and identify the main taxonomic classification of sample S1.\nWhich genus or species has the highest assignment?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Look for the taxon with the highest percentage assignment in classify/S1.kraken2.report.\n\n\n\n\n\nCreate Krona input file\nTo visualize the Kraken2 report interactively, first convert it into Krona-compatible format.\nkreport2krona.py \\\n  -r classify/S1.kraken2.report \\\n  -o classify/S1.krona\nCheck that the Krona input file was created:\nls classify\nYou should see:\nS1.krona\n\n\nCreate Krona HTML plot\nNow create an interactive Krona HTML plot:\nktImportText \\\n  -o classify/S1.krona.html \\\n  classify/S1.krona\nCheck that the HTML file was created:\nls classify\nYou should see:\nS1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#download-krona-plot-from-the-server",
+    "href": "materials/taxonomy.html#download-krona-plot-from-the-server",
+    "title": "Taxonomy",
+    "section": "Download Krona plot from the server",
+    "text": "Download Krona plot from the server\nIf you want to visualize the interactive Krona file, download the S1.krona.html file to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/classify/S1.krona.html .\nThis downloads the interactive Krona HTML file to your current local folder.\n\nWindowsmacOSLinux\n\n\nOpen S1.krona.html manually from File Explorer using a web browser.\n\n\nUse:\nopen S1.krona.html\n\n\nUse:\nxdg-open S1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#optional-download-all-classification-outputs",
+    "href": "materials/taxonomy.html#optional-download-all-classification-outputs",
+    "title": "Taxonomy",
+    "section": "Optional: download all classification outputs",
+    "text": "Optional: download all classification outputs\nTo download the full classification folder, run this from your local desktop terminal:\nscp -r genomevm@172.28.28.12:~/tanzim/classify .\nThis will download the full classify directory.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#compare-kraken2-report-and-krona-plot",
+    "href": "materials/taxonomy.html#compare-kraken2-report-and-krona-plot",
+    "title": "Taxonomy",
+    "section": "Compare Kraken2 report and Krona plot",
+    "text": "Compare Kraken2 report and Krona plot\nThe Kraken2 report is useful for checking exact taxonomic assignments in text format.\nThe Krona plot is useful for interactively exploring the taxonomic hierarchy.\n\n\n\nOutput\nUse\n\n\n\n\nS1.kraken2.report\nText summary of taxonomic classification\n\n\nS1.kraken2.output\nDetailed sequence-level classification output\n\n\nS1.krona\nIntermediate Krona input file\n\n\nS1.krona.html\nInteractive Krona visualization\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nCompare the Kraken2 report and Krona plot.\nDo they suggest the same main organism?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nBoth outputs should point to the same main organism if the classification is consistent. The Kraken2 report gives the detailed text summary, while Krona provides an interactive visualization of the same taxonomic information.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#organize-classification-results",
+    "href": "materials/taxonomy.html#organize-classification-results",
+    "title": "Taxonomy",
+    "section": "Organize classification results",
+    "text": "Organize classification results\nYour working directory should now contain:\nclassify\nCheck the folder:\nls classify\nExpected files:\nS1.kraken2.output\nS1.kraken2.report\nS1.krona\nS1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#final-directory-structure",
+    "href": "materials/taxonomy.html#final-directory-structure",
+    "title": "Taxonomy",
+    "section": "Final directory structure",
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n└── classify\n    ├── S1.kraken2.output\n    ├── S1.kraken2.report\n    ├── S1.krona\n    └── S1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#practical-exercise",
+    "href": "materials/taxonomy.html#practical-exercise",
+    "title": "Taxonomy",
+    "section": "Practical exercise",
+    "text": "Practical exercise\nComplete the following tasks:\n\nCreate the classify directory.\nActivate the classify environment.\nRun Kraken2 on S1_contigs_filtered.fasta.\nOpen the Kraken2 report.\nConvert the Kraken2 report to Krona format.\nCreate a Krona HTML plot.\nDownload the Krona HTML file to your local computer.\nOpen the Krona plot in a browser.\n\n\n\n\n\n\n\nCautionExercise: taxonomy summary\n\n\n\nCreate a small table in your notes:\n\n\n\n\n\n\n\n\n\nSample\nMain taxonomic assignment\nEvidence from Kraken2\nEvidence from Krona\n\n\n\n\nS1\n\n\n\n\n\n\nFill in the table using S1.kraken2.report and S1.krona.html.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#key-points",
+    "href": "materials/taxonomy.html#key-points",
+    "title": "Taxonomy",
+    "section": "Key points",
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nKraken2 can classify sequences using a reference taxonomy database.\nThe input for this lesson is the filtered assembly file.\nThe Kraken2 report gives a text summary of taxonomic classification.\nKrona creates an interactive HTML visualization.\nDownload the .html Krona file to visualize it on your local computer.",
+    "crumbs": [
+      "Materials",
+      "Taxnomy",
+      "Taxonomy"
+    ]
+  },
+  {
+    "objectID": "materials/taxonomy.html#next-step",
+    "href": "materials/taxonomy.html#next-step",
+    "title": "Taxonomy",
+    "section": "Next step",
+    "text": "Next step\nIn the next lesson, we will continue downstream analysis using the filtered assembly file.",
     "crumbs": [
       "Materials",
       "Taxnomy",

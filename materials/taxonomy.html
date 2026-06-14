@@ -527,8 +527,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#input-file" id="toc-input-file" class="nav-link" data-scroll-target="#input-file">Input file</a>
+  <ul class="collapse">
+  <li><a href="#create-a-classification-directory" id="toc-create-a-classification-directory" class="nav-link" data-scroll-target="#create-a-classification-directory">Create a classification directory</a></li>
+  <li><a href="#activate-the-classify-environment" id="toc-activate-the-classify-environment" class="nav-link" data-scroll-target="#activate-the-classify-environment">Activate the classify environment</a></li>
+  </ul></li>
+  <li><a href="#run-kraken2" id="toc-run-kraken2" class="nav-link" data-scroll-target="#run-kraken2">Run Kraken2</a>
+  <ul class="collapse">
+  <li><a href="#understanding-the-kraken2-command" id="toc-understanding-the-kraken2-command" class="nav-link" data-scroll-target="#understanding-the-kraken2-command">Understanding the Kraken2 command</a></li>
+  <li><a href="#check-kraken2-outputs" id="toc-check-kraken2-outputs" class="nav-link" data-scroll-target="#check-kraken2-outputs">Check Kraken2 outputs</a></li>
+  <li><a href="#kraken2-report-columns" id="toc-kraken2-report-columns" class="nav-link" data-scroll-target="#kraken2-report-columns">Kraken2 report columns</a></li>
+  <li><a href="#create-krona-input-file" id="toc-create-krona-input-file" class="nav-link" data-scroll-target="#create-krona-input-file">Create Krona input file</a></li>
+  <li><a href="#create-krona-html-plot" id="toc-create-krona-html-plot" class="nav-link" data-scroll-target="#create-krona-html-plot">Create Krona HTML plot</a></li>
+  </ul></li>
+  <li><a href="#download-krona-plot-from-the-server" id="toc-download-krona-plot-from-the-server" class="nav-link" data-scroll-target="#download-krona-plot-from-the-server">Download Krona plot from the server</a></li>
+  <li><a href="#optional-download-all-classification-outputs" id="toc-optional-download-all-classification-outputs" class="nav-link" data-scroll-target="#optional-download-all-classification-outputs">Optional: download all classification outputs</a></li>
+  <li><a href="#compare-kraken2-report-and-krona-plot" id="toc-compare-kraken2-report-and-krona-plot" class="nav-link" data-scroll-target="#compare-kraken2-report-and-krona-plot">Compare Kraken2 report and Krona plot</a></li>
+  <li><a href="#organize-classification-results" id="toc-organize-classification-results" class="nav-link" data-scroll-target="#organize-classification-results">Organize classification results</a></li>
+  <li><a href="#final-directory-structure" id="toc-final-directory-structure" class="nav-link" data-scroll-target="#final-directory-structure">Final directory structure</a></li>
+  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical exercise</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -553,20 +581,414 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>creat a directory named <code>classify</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>activate <code>classify</code> environment</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>run <code>kraken2</code> on <code>contigs_filtered.fasta</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kraken2</span> <span class="at">--db</span> ~/databases/kraken2db <span class="at">--threads</span> 4 <span class="at">--report</span> classify/S1.kraken2.report assembly/contigs_filtered.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>run <code>krona plot</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kreport2krona.py</span> <span class="at">-r</span> classify/S1.kraken2.report <span class="at">-o</span> classify/S1.krona</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ktImportText</span> <span class="at">-o</span> classify/S1.krona.html classify/S1.krona</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>if you want to visualize the interactive file download the <code>S1.krona</code> file</p>
-<p>in you local terminal</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> xxxx/classify/S1.krona .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.</p>
+<p>In this lesson, we will use <code>Kraken2</code> to classify the filtered assembly file and <code>Krona</code> to create an interactive taxonomic visualization.</p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this lesson, you should be able to:</p>
+<ul>
+<li>create a folder for taxonomic classification results</li>
+<li>activate the <code>classify</code> environment</li>
+<li>run <code>Kraken2</code> on an assembled genome</li>
+<li>generate a Kraken2 taxonomic report</li>
+<li>convert the Kraken2 report into Krona format</li>
+<li>create and download an interactive Krona HTML plot</li>
+</ul>
+</section>
+<section id="input-file" class="level2">
+<h2 class="anchored" data-anchor-id="input-file">Input file</h2>
+<p>In the previous assembly QC lesson, we created a filtered assembly file:</p>
+<pre class="text"><code>assemblies/S1_contigs_filtered.fasta</code></pre>
+<p>Check that the file exists:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<pre class="text"><code>S1_contigs_filtered.fasta</code></pre>
+<div class="callout callout-style-default callout-note callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For this lesson, we will use the filtered assembly file:</p>
+<pre class="text"><code>assemblies/S1_contigs_filtered.fasta</code></pre>
+</div>
+</div>
+<section id="create-a-classification-directory" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-classification-directory">Create a classification directory</h3>
+<p>Create a directory named <code>classify</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check that the directory was created:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="activate-the-classify-environment" class="level3">
+<h3 class="anchored" data-anchor-id="activate-the-classify-environment">Activate the classify environment</h3>
+<p>Activate the <code>classify</code> environment:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check that <code>kraken2</code> is available:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kraken2</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check that the Krona tools are available:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ktImportText</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If the command prints help text or usage information, Krona is available.</p>
+</section>
+</section>
+<section id="run-kraken2" class="level2">
+<h2 class="anchored" data-anchor-id="run-kraken2">Run Kraken2</h2>
+<p>Run <code>Kraken2</code> on the filtered assembly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kraken2</span> <span class="dt">\</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--db</span> ~/databases/kraken2db <span class="dt">\</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--threads</span> 4 <span class="dt">\</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--report</span> classify/S1.kraken2.report <span class="dt">\</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--output</span> classify/S1.kraken2.output <span class="dt">\</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  assemblies/S1_contigs_filtered.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="understanding-the-kraken2-command" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-the-kraken2-command">Understanding the Kraken2 command</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>kraken2</code></td>
+<td>Runs Kraken2</td>
+</tr>
+<tr class="even">
+<td><code>--db ~/databases/kraken2db</code></td>
+<td>Path to the Kraken2 database</td>
+</tr>
+<tr class="odd">
+<td><code>--threads 4</code></td>
+<td>Use 4 CPU threads</td>
+</tr>
+<tr class="even">
+<td><code>--report classify/S1.kraken2.report</code></td>
+<td>Summary taxonomic report</td>
+</tr>
+<tr class="odd">
+<td><code>--output classify/S1.kraken2.output</code></td>
+<td>Detailed classification output</td>
+</tr>
+<tr class="even">
+<td><code>assemblies/S1_contigs_filtered.fasta</code></td>
+<td>Input assembly file</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="check-kraken2-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="check-kraken2-outputs">Check Kraken2 outputs</h3>
+<p>List the <code>classify</code> directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<pre class="text"><code>S1.kraken2.output
+S1.kraken2.report</code></pre>
+<p>View the first few lines of the report:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> classify/S1.kraken2.report</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The Kraken2 report contains taxonomic classification information, including the percentage of sequences assigned to different taxa.</p>
+</section>
+<section id="kraken2-report-columns" class="level3">
+<h3 class="anchored" data-anchor-id="kraken2-report-columns">Kraken2 report columns</h3>
+<p>A Kraken2 report usually contains columns similar to:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Percentage</td>
+<td>Percentage of sequences assigned to the taxon</td>
+</tr>
+<tr class="even">
+<td>Clade reads</td>
+<td>Reads/sequences assigned to the taxon and its descendants</td>
+</tr>
+<tr class="odd">
+<td>Taxon reads</td>
+<td>Reads/sequences assigned directly to the taxon</td>
+</tr>
+<tr class="even">
+<td>Rank code</td>
+<td>Taxonomic rank</td>
+</tr>
+<tr class="odd">
+<td>NCBI taxonomic ID</td>
+<td>Taxonomy ID</td>
+</tr>
+<tr class="even">
+<td>Scientific name</td>
+<td>Taxon name</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open the Kraken2 report and identify the main taxonomic classification of sample <code>S1</code>.</p>
+<p>Which genus or species has the highest assignment?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The answer depends on your dataset. Look for the taxon with the highest percentage assignment in <code>classify/S1.kraken2.report</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="create-krona-input-file" class="level3">
+<h3 class="anchored" data-anchor-id="create-krona-input-file">Create Krona input file</h3>
+<p>To visualize the Kraken2 report interactively, first convert it into Krona-compatible format.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kreport2krona.py</span> <span class="dt">\</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-r</span> classify/S1.kraken2.report <span class="dt">\</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> classify/S1.krona</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check that the Krona input file was created:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<pre class="text"><code>S1.krona</code></pre>
+</section>
+<section id="create-krona-html-plot" class="level3">
+<h3 class="anchored" data-anchor-id="create-krona-html-plot">Create Krona HTML plot</h3>
+<p>Now create an interactive Krona HTML plot:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ktImportText</span> <span class="dt">\</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> classify/S1.krona.html <span class="dt">\</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  classify/S1.krona</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check that the HTML file was created:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<pre class="text"><code>S1.krona.html</code></pre>
+</section>
+</section>
+<section id="download-krona-plot-from-the-server" class="level2">
+<h2 class="anchored" data-anchor-id="download-krona-plot-from-the-server">Download Krona plot from the server</h2>
+<p>If you want to visualize the interactive Krona file, download the <code>S1.krona.html</code> file to your local computer.</p>
+<p>From your <strong>local desktop terminal</strong>, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/classify/S1.krona.html .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This downloads the interactive Krona HTML file to your current local folder.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Open <code>S1.krona.html</code> manually from File Explorer using a web browser.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1.krona.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1.krona.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optional-download-all-classification-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="optional-download-all-classification-outputs">Optional: download all classification outputs</h2>
+<p>To download the full classification folder, run this from your local desktop terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> genomevm@172.28.28.12:~/tanzim/classify .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will download the full <code>classify</code> directory.</p>
+</section>
+<section id="compare-kraken2-report-and-krona-plot" class="level2">
+<h2 class="anchored" data-anchor-id="compare-kraken2-report-and-krona-plot">Compare Kraken2 report and Krona plot</h2>
+<p>The Kraken2 report is useful for checking exact taxonomic assignments in text format.</p>
+<p>The Krona plot is useful for interactively exploring the taxonomic hierarchy.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Output</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>S1.kraken2.report</code></td>
+<td>Text summary of taxonomic classification</td>
+</tr>
+<tr class="even">
+<td><code>S1.kraken2.output</code></td>
+<td>Detailed sequence-level classification output</td>
+</tr>
+<tr class="odd">
+<td><code>S1.krona</code></td>
+<td>Intermediate Krona input file</td>
+</tr>
+<tr class="even">
+<td><code>S1.krona.html</code></td>
+<td>Interactive Krona visualization</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Question">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Compare the Kraken2 report and Krona plot.</p>
+<p>Do they suggest the same main organism?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Suggested answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Both outputs should point to the same main organism if the classification is consistent. The Kraken2 report gives the detailed text summary, while Krona provides an interactive visualization of the same taxonomic information.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="organize-classification-results" class="level2">
+<h2 class="anchored" data-anchor-id="organize-classification-results">Organize classification results</h2>
+<p>Your working directory should now contain:</p>
+<pre class="text"><code>classify</code></pre>
+<p>Check the folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Expected files:</p>
+<pre class="text"><code>S1.kraken2.output
+S1.kraken2.report
+S1.krona
+S1.krona.html</code></pre>
+</section>
+<section id="final-directory-structure" class="level2">
+<h2 class="anchored" data-anchor-id="final-directory-structure">Final directory structure</h2>
+<p>At the end of this lesson, your directory should look like this:</p>
+<pre class="text"><code>.
+├── assemblies
+│   ├── S1_contigs.fasta
+│   └── S1_contigs_filtered.fasta
+└── classify
+    ├── S1.kraken2.output
+    ├── S1.kraken2.report
+    ├── S1.krona
+    └── S1.krona.html</code></pre>
+</section>
+<section id="practical-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise">Practical exercise</h2>
+<p>Complete the following tasks:</p>
+<ol type="1">
+<li>Create the <code>classify</code> directory.</li>
+<li>Activate the <code>classify</code> environment.</li>
+<li>Run <code>Kraken2</code> on <code>S1_contigs_filtered.fasta</code>.</li>
+<li>Open the Kraken2 report.</li>
+<li>Convert the Kraken2 report to Krona format.</li>
+<li>Create a Krona HTML plot.</li>
+<li>Download the Krona HTML file to your local computer.</li>
+<li>Open the Krona plot in a browser.</li>
+</ol>
+<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: taxonomy summary">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Exercise: taxonomy summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a small table in your notes:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sample</th>
+<th>Main taxonomic assignment</th>
+<th>Evidence from Kraken2</th>
+<th>Evidence from Krona</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Fill in the table using <code>S1.kraken2.report</code> and <code>S1.krona.html</code>.</p>
+</div>
+</div>
+</section>
+<section id="key-points" class="level2">
+<h2 class="anchored" data-anchor-id="key-points">Key points</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>Kraken2</code> can classify sequences using a reference taxonomy database.</li>
+<li>The input for this lesson is the filtered assembly file.</li>
+<li>The Kraken2 report gives a text summary of taxonomic classification.</li>
+<li>Krona creates an interactive HTML visualization.</li>
+<li>Download the <code>.html</code> Krona file to visualize it on your local computer.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="next-step" class="level2">
+<h2 class="anchored" data-anchor-id="next-step">Next step</h2>
+<p>In the next lesson, we will continue downstream analysis using the filtered assembly file.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
