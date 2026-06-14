@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 2-3 – Introduction to Bacterial Genomics</title>
+<title>Trimming to Retain High Quality Data – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../materials/taxonomy.html" rel="prev">
+<link href="../materials/assembly.html" rel="next">
+<link href="../materials/3-1-qc.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -110,10 +111,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Day 2-3 – Introduction to Bacterial Genomics">
+<meta property="og:title" content="Trimming to Retain High Quality Data – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
-<meta name="twitter:title" content="Day 2-3 – Introduction to Bacterial Genomics">
+<meta name="twitter:title" content="Trimming to Retain High Quality Data – Introduction to Bacterial Genomics">
 <meta name="twitter:description" content="">
 <meta name="twitter:site" content="@tahsinkhann">
 <meta name="twitter:card" content="summary">
@@ -374,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Day 2-3</h1>
+          <h1 class="quarto-secondary-nav-title">Trimming to Retain High Quality Data</h1>
         </a>     
     </div>
   </nav>
@@ -469,7 +470,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/trimming.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/trimming.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Trimming to Retain High Quality Data</span></a>
   </div>
 </li>
@@ -537,7 +538,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/day-2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../materials/day-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 2-3</span></a>
   </div>
 </li>
@@ -553,17 +554,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-5-mlst" id="toc-part-5-mlst" class="nav-link active" data-scroll-target="#part-5-mlst">Part 5: MLST</a></li>
-  <li><a href="#part-6-annotation" id="toc-part-6-annotation" class="nav-link" data-scroll-target="#part-6-annotation">Part 6: Annotation</a></li>
-  <li><a href="#part-7-copy-all-eight-samples-will-copy-s1-s8.fasta-to-assembly-and-s1-s8.gff-to-annotation" id="toc-part-7-copy-all-eight-samples-will-copy-s1-s8.fasta-to-assembly-and-s1-s8.gff-to-annotation" class="nav-link" data-scroll-target="#part-7-copy-all-eight-samples-will-copy-s1-s8.fasta-to-assembly-and-s1-s8.gff-to-annotation">Part 7: Copy all eight samples (will copy S1-S8.fasta to assembly and S1-S8.gff to annotation)</a></li>
-  <li><a href="#part-8-amr-vf-plasmid-optional" id="toc-part-8-amr-vf-plasmid-optional" class="nav-link" data-scroll-target="#part-8-amr-vf-plasmid-optional">Part 8: AMR, VF, Plasmid (OPTIONAL)</a></li>
-  <li><a href="#part-9-pangenome-you-can-choose-if--c-0.95-or-some-other-value" id="toc-part-9-pangenome-you-can-choose-if--c-0.95-or-some-other-value" class="nav-link" data-scroll-target="#part-9-pangenome-you-can-choose-if--c-0.95-or-some-other-value">Part 9: Pangenome (you can choose if -c = 0.95 or some other value)</a></li>
-  <li><a href="#part-10-phylogenetics" id="toc-part-10-phylogenetics" class="nav-link" data-scroll-target="#part-10-phylogenetics">Part 10: Phylogenetics</a>
-  <ul class="collapse">
-  <li><a href="#extract-variable-sites" id="toc-extract-variable-sites" class="nav-link" data-scroll-target="#extract-variable-sites">Extract variable sites</a></li>
-  <li><a href="#get-constant-sites" id="toc-get-constant-sites" class="nav-link" data-scroll-target="#get-constant-sites">Get constant sites</a></li>
-  <li><a href="#construct-tree-model-asc-doesnt-work-sometimes" id="toc-construct-tree-model-asc-doesnt-work-sometimes" class="nav-link" data-scroll-target="#construct-tree-model-asc-doesnt-work-sometimes">Construct tree (model +ASC doesn’t work sometimes)</a></li>
-  </ul></li>
+  <li><a href="#trimmomatic" id="toc-trimmomatic" class="nav-link active" data-scroll-target="#trimmomatic">Trimmomatic</a></li>
+  <li><a href="#fastqc-on-trimmed-reads" id="toc-fastqc-on-trimmed-reads" class="nav-link" data-scroll-target="#fastqc-on-trimmed-reads">FastQC on trimmed reads</a></li>
   </ul>
 </nav>
     </div>
@@ -573,7 +565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Day 2-3</h1>
+<h1 class="title d-none d-lg-block">Trimming to Retain High Quality Data</h1>
 </div>
 
 
@@ -590,58 +582,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="part-5-mlst" class="level1">
-<h1>Part 5: MLST</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate mlst</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mlst</span> assembly/contigs_filtered.fasta <span class="op">&gt;</span> classify/S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you are continuing from the last session (Quality Control of Raw Reads), you are in <code>qc</code> environment, if not activate the environment first.</p>
+<section id="trimmomatic" class="level2">
+<h2 class="anchored" data-anchor-id="trimmomatic">Trimmomatic</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">trimmomatic</span> PE <span class="dt">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    S1_R1.fastq.gz S1_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    S1_trim_R1.fastq.gz S1_unpaired_R1.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    S1_trim_R2.fastq.gz S1_unpaired_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    SLIDINGWINDOW:4:20 LEADING:3 TRAILING:3 HEADCROP:15 MINLEN:40</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now run <code>fastqc</code> tool again on the trimmed files to understand the quality improvement.</p>
 </section>
-<section id="part-6-annotation" class="level1">
-<h1>Part 6: Annotation</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate annotation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">prokka</span> <span class="at">--outdir</span> annotation <span class="at">--force</span> <span class="at">--cpus</span> 4 <span class="at">--prefix</span> S1 <span class="at">--locustag</span> S1 assembly/contigs_filtered.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="part-7-copy-all-eight-samples-will-copy-s1-s8.fasta-to-assembly-and-s1-s8.gff-to-annotation" class="level1">
-<h1>Part 7: Copy all eight samples (will copy S1-S8.fasta to assembly and S1-S8.gff to annotation)</h1>
-<p>copy_day2_files</p>
-</section>
-<section id="part-8-amr-vf-plasmid-optional" class="level1">
-<h1>Part 8: AMR, VF, Plasmid (OPTIONAL)</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate amr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> abricate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="at">--db</span> ncbi <span class="at">--threads</span> 4 assembly/<span class="pp">*</span>.fasta <span class="op">&gt;</span> abricate/amr.tsv</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">abricate</span> <span class="at">--db</span> vfdb <span class="at">--threads</span> 4 assembly/<span class="pp">*</span>.fasta <span class="op">&gt;</span> abricate/vf.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="part-9-pangenome-you-can-choose-if--c-0.95-or-some-other-value" class="level1">
-<h1>Part 9: Pangenome (you can choose if -c = 0.95 or some other value)</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pangenome</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">panaroo</span> <span class="at">-t</span> 4 <span class="at">-o</span> pangenome <span class="at">-c</span> 0.95 <span class="at">-a</span> core <span class="at">--input</span> annotation/<span class="pp">*</span>.gff <span class="at">--clean-mode</span> strict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="part-10-phylogenetics" class="level1">
-<h1>Part 10: Phylogenetics</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate phylogeny</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> tree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="extract-variable-sites" class="level2">
-<h2 class="anchored" data-anchor-id="extract-variable-sites">Extract variable sites</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">snp-sites</span> <span class="at">-o</span> pangenome/core_gene_alignment.snp.aln pangenome/core_gene_alignment_filtered.aln</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="get-constant-sites" class="level2">
-<h2 class="anchored" data-anchor-id="get-constant-sites">Get constant sites</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">snp-sites</span> <span class="at">-C</span> <span class="at">-o</span> pangenome/core_gene_alignment_countconstant pangenome/core_gene_alignment_filtered.aln</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> pangenome/core_gene_alignment_countconstant</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="construct-tree-model-asc-doesnt-work-sometimes" class="level2">
-<h2 class="anchored" data-anchor-id="construct-tree-model-asc-doesnt-work-sometimes">Construct tree (model +ASC doesn’t work sometimes)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iqtree</span> <span class="dt">\</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">-s</span> pangenome/core_gene_alignment.snp.aln <span class="dt">\</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">-fconst</span> FCONST_VALUE <span class="dt">\</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">-seed</span> 12345 <span class="dt">\</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">-B</span> 1000 <span class="dt">\</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">-m</span> GTR+F <span class="dt">\</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">-nt</span> 4 <span class="dt">\</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">-pre</span> tree/iqtree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="fastqc-on-trimmed-reads" class="level2">
+<h2 class="anchored" data-anchor-id="fastqc-on-trimmed-reads">FastQC on trimmed reads</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">-t</span> 4 S1_trim_R1.fastq.gz S1_trim_R2.fastq.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Excercise: reorganise directory">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Excercise: reorganise directory
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here we will learn how to organize files. Create two directories called <code>raw_files</code>, and <code>qc_reports</code>. Move <code>raw_reads</code> to <code>raw_files directory</code>. Move fastqc reports to <code>qc_reports directory</code>. Lastly remove all files named as unpaired files.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> raw_files qc_reports</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> S1_R<span class="pp">*</span>.fastq.gz raw_files</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="pp">*</span>unpaired<span class="pp">*</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="pp">*</span>fastqc<span class="pp">*</span> qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1065,11 +1052,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../materials/taxonomy.html" class="pagination-link" aria-label="Taxonomy">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Taxonomy</span>
+      <a href="../materials/3-1-qc.html" class="pagination-link" aria-label="Quality Control of Raw Reads">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Quality Control of Raw Reads</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../materials/assembly.html" class="pagination-link" aria-label="Assembly">
+        <span class="nav-page-text">Assembly</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
