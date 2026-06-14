@@ -173,7 +173,7 @@
     "href": "materials/trimming.html",
     "title": "Trimming to Retain High Quality Data",
     "section": "",
-    "text": "If you are continuing from the last session (Quality Control of Raw Reads), you are in qc environment, if not activate the environment first.",
+    "text": "After checking raw read quality with FastQC, we may need to trim reads to remove low-quality bases or unwanted sequence at the beginning or end of reads.\nIn this lesson, we will use Trimmomatic to trim paired-end reads and then run FastQC again to check whether read quality has improved.",
     "crumbs": [
       "Materials",
       "Trimming to Retain High Quality Data",
@@ -181,11 +181,11 @@
     ]
   },
   {
-    "objectID": "materials/trimming.html#trimmomatic",
-    "href": "materials/trimming.html#trimmomatic",
+    "objectID": "materials/trimming.html#overview",
+    "href": "materials/trimming.html#overview",
     "title": "Trimming to Retain High Quality Data",
-    "section": "Trimmomatic",
-    "text": "Trimmomatic\ntrimmomatic PE \\\n    S1_R1.fastq.gz S1_R2.fastq.gz \\\n    S1_trim_R1.fastq.gz S1_unpaired_R1.fastq.gz \\\n    S1_trim_R2.fastq.gz S1_unpaired_R2.fastq.gz \\\n    SLIDINGWINDOW:4:20 LEADING:3 TRAILING:3 HEADCROP:15 MINLEN:40\nNow run fastqc tool again on the trimmed files to understand the quality improvement.",
+    "section": "",
+    "text": "After checking raw read quality with FastQC, we may need to trim reads to remove low-quality bases or unwanted sequence at the beginning or end of reads.\nIn this lesson, we will use Trimmomatic to trim paired-end reads and then run FastQC again to check whether read quality has improved.",
     "crumbs": [
       "Materials",
       "Trimming to Retain High Quality Data",
@@ -193,11 +193,59 @@
     ]
   },
   {
-    "objectID": "materials/trimming.html#fastqc-on-trimmed-reads",
-    "href": "materials/trimming.html#fastqc-on-trimmed-reads",
+    "objectID": "materials/trimming.html#learning-objectives",
+    "href": "materials/trimming.html#learning-objectives",
     "title": "Trimming to Retain High Quality Data",
-    "section": "FastQC on trimmed reads",
-    "text": "FastQC on trimmed reads\nfastqc -t 4 S1_trim_R1.fastq.gz S1_trim_R2.fastq.gz\n\n\n\n\n\n\nCautionExcercise: reorganise directory\n\n\n\nHere we will learn how to organize files. Create two directories called raw_files, and qc_reports. Move raw_reads to raw_files directory. Move fastqc reports to qc_reports directory. Lastly remove all files named as unpaired files.\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nmkdir raw_files qc_reports\nmv S1_R*.fastq.gz raw_files\nrm *unpaired*\nmv *fastqc* qc_reports",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nexplain why read trimming may be required\nrun Trimmomatic on paired-end FASTQ files\nidentify paired and unpaired trimming outputs\nrun FastQC on trimmed reads\norganize raw reads, trimmed reads, and QC reports into folders",
+    "crumbs": [
+      "Materials",
+      "Trimming to Retain High Quality Data",
+      "Trimming to Retain High Quality Data"
+    ]
+  },
+  {
+    "objectID": "materials/trimming.html#activate-the-qc-environment",
+    "href": "materials/trimming.html#activate-the-qc-environment",
+    "title": "Trimming to Retain High Quality Data",
+    "section": "Activate the QC environment",
+    "text": "Activate the QC environment\nIf you are continuing from the previous lesson, you may already be inside the qc environment.\nIf not, activate it first:\nconda activate qc\nCheck that trimmomatic is available:\ntrimmomatic -version\nCheck that fastqc is also available:\nfastqc --version\n\nInput files\nFor this lesson, we will use paired-end FASTQ files from sample S1.\nS1_R1.fastq.gz\nS1_R2.fastq.gz\nCheck that the files are present:\nls\n\n\nCreate output folders\nBefore running trimming, create separate folders for trimmed reads and QC reports.\nmkdir -p trimmed_reads\nmkdir -p qc_reports\n\n\nRun Trimmomatic\nRun Trimmomatic in paired-end mode:\ntrimmomatic PE \\\n  S1_R1.fastq.gz S1_R2.fastq.gz \\\n  trimmed_reads/S1_trim_R1.fastq.gz trimmed_reads/S1_unpaired_R1.fastq.gz \\\n  trimmed_reads/S1_trim_R2.fastq.gz trimmed_reads/S1_unpaired_R2.fastq.gz \\\n  SLIDINGWINDOW:4:20 LEADING:3 TRAILING:3 HEADCROP:15 MINLEN:40\n\n\nUnderstanding the command\n\n\n\n\n\n\n\nPart\nMeaning\n\n\n\n\nPE\nPaired-end mode\n\n\nS1_R1.fastq.gz\nInput forward reads\n\n\nS1_R2.fastq.gz\nInput reverse reads\n\n\nS1_trim_R1.fastq.gz\nTrimmed paired forward reads\n\n\nS1_unpaired_R1.fastq.gz\nForward reads whose pair was removed\n\n\nS1_trim_R2.fastq.gz\nTrimmed paired reverse reads\n\n\nS1_unpaired_R2.fastq.gz\nReverse reads whose pair was removed\n\n\nSLIDINGWINDOW:4:20\nScan with a 4-base window and cut when average quality falls below 20\n\n\nLEADING:3\nRemove low-quality bases from the beginning\n\n\nTRAILING:3\nRemove low-quality bases from the end\n\n\nHEADCROP:15\nRemove the first 15 bases from each read\n\n\nMINLEN:40\nRemove reads shorter than 40 bases after trimming\n\n\n\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor downstream paired-end genome assembly, we usually use the paired trimmed files:\ntrimmed_reads/S1_trim_R1.fastq.gz\ntrimmed_reads/S1_trim_R2.fastq.gz\n\n\nThe unpaired files can be kept or removed depending on the analysis plan.",
+    "crumbs": [
+      "Materials",
+      "Trimming to Retain High Quality Data",
+      "Trimming to Retain High Quality Data"
+    ]
+  },
+  {
+    "objectID": "materials/trimming.html#check-trimming-outputs",
+    "href": "materials/trimming.html#check-trimming-outputs",
+    "title": "Trimming to Retain High Quality Data",
+    "section": "Check trimming outputs",
+    "text": "Check trimming outputs\nList the trimmed read files:\nls trimmed_reads\nYou should see:\nS1_trim_R1.fastq.gz\nS1_trim_R2.fastq.gz\nS1_unpaired_R1.fastq.gz\nS1_unpaired_R2.fastq.gz\n\nRun FastQC on trimmed reads\nNow run FastQC again on the trimmed paired reads:\nfastqc -t 4 \\\n  trimmed_reads/S1_trim_R1.fastq.gz \\\n  trimmed_reads/S1_trim_R2.fastq.gz \\\n  -o qc_reports\nCheck the output:\nls qc_reports\nYou should see new FastQC reports for the trimmed reads:\nS1_trim_R1_fastqc.html\nS1_trim_R1_fastqc.zip\nS1_trim_R2_fastqc.html\nS1_trim_R2_fastqc.zip\n\n\nDownload FastQC reports from the server\nWe cannot directly visualize the .html reports on the server. Download them to your local computer using scp.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/qc_reports/*.html .\nThen open the downloaded HTML reports in your browser.\n\nWindowsmacOSLinux\n\n\nOpen the downloaded .html files manually from File Explorer.\n\n\nUse:\nopen S1_trim_R1_fastqc.html\nopen S1_trim_R2_fastqc.html\n\n\nUse:\nxdg-open S1_trim_R1_fastqc.html\nxdg-open S1_trim_R2_fastqc.html",
+    "crumbs": [
+      "Materials",
+      "Trimming to Retain High Quality Data",
+      "Trimming to Retain High Quality Data"
+    ]
+  },
+  {
+    "objectID": "materials/trimming.html#compare-raw-and-trimmed-reads",
+    "href": "materials/trimming.html#compare-raw-and-trimmed-reads",
+    "title": "Trimming to Retain High Quality Data",
+    "section": "Compare raw and trimmed reads",
+    "text": "Compare raw and trimmed reads\nCompare the original FastQC reports with the trimmed FastQC reports. Focus on: - per base sequence quality - adapter content - per sequence quality scores - overrepresented sequences - sequence length distribution\n\n\n\n\n\n\nNoteExercise\n\n\n\nCompare S1_R1_fastqc.html with S1_trim_R1_fastqc.html. What changed after trimming?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nAfter trimming, low-quality bases at the ends may be reduced. Adapter contamination may also decrease. The read length distribution may change because some reads are shortened or removed.",
+    "crumbs": [
+      "Materials",
+      "Trimming to Retain High Quality Data",
+      "Trimming to Retain High Quality Data"
+    ]
+  },
+  {
+    "objectID": "materials/trimming.html#organize-files",
+    "href": "materials/trimming.html#organize-files",
+    "title": "Trimming to Retain High Quality Data",
+    "section": "Organize files",
+    "text": "Organize files\nNow we will organize the working directory. Create three folders:\nmkdir -p raw_reads trimmed_reads qc_reports\nMove the original raw reads into raw_reads:\nmv S1_R1.fastq.gz S1_R2.fastq.gz raw_reads/\nIf any FastQC reports were created in the current directory, move them to qc_reports:\nmv *fastqc* qc_reports/\nThe trimmed reads should already be inside trimmed_reads.\nCheck your folder structure:\nls\nExpected folders:\nraw_reads\ntrimmed_reads\nqc_reports\nCheck inside each folder:\nls raw_reads\nls trimmed_reads\nls qc_reports\n\n\n\n\n\n\nTipOptional: remove unpaired reads\n\n\n\n\n\nIf your instructor tells you that unpaired reads are not needed, remove them:\nrm trimmed_reads/*unpaired*\n\n\n\n\n\n\n\n\n\nCautionExercise: reorganise the directory\n\n\n\nCreate three directories: raw_reads trimmed_reads qc_reports Then organize the files as follows: move raw FASTQ files into raw_reads keep trimmed FASTQ files inside trimmed_reads move FastQC reports into qc_reports remove unpaired read files if they are not needed\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nmkdir -p raw_reads trimmed_reads qc_reports\nmv S1_R1.fastq.gz S1_R2.fastq.gz raw_reads/\nmv *fastqc.html *fastqc.zip qc_reports/\nrm trimmed_reads/*unpaired*\n\n\n\nFinal directory structure At the end of this lesson, your directory should look like this:\n.\n├── raw_reads\n│   ├── S1_R1.fastq.gz\n│   └── S1_R2.fastq.gz\n├── trimmed_reads\n│   ├── S1_trim_R1.fastq.gz\n│   └── S1_trim_R2.fastq.gz\n└── qc_reports\n    ├── S1_trim_R1_fastqc.html\n    ├── S1_trim_R1_fastqc.zip\n    ├── S1_trim_R2_fastqc.html\n    └── S1_trim_R2_fastqc.zip\n\n\n\n\n\n\nNoteImportant\n\n\n\nTrimming removes low-quality bases and unwanted sequence. Trimmomatic PE is used for paired-end read trimming. Paired trimmed files are usually used for genome assembly. Run FastQC again after trimming. Keep raw reads, trimmed reads, and QC reports in separate folders.",
     "crumbs": [
       "Materials",
       "Trimming to Retain High Quality Data",
@@ -245,7 +293,67 @@
     "href": "materials/3-1-qc.html",
     "title": "Quality Control of Raw Reads",
     "section": "",
-    "text": "TipLearning Objectives\n\n\n\n\nRecognize the quality metrics of your data, particularly here raw reads.\nLearn bioinformatics tool to perform quality control.\nDecide necessary steps retain high quality reads.\n\n\n\nconda activate qc\nRun fastqc on sample S1\nfastqc -t 4 S1_R1.fastq.gz S1_R2.fastq.gz\nWhat do you see?\n\n\n\n Back to top",
+    "text": "Read quality control is the first checkpoint in bacterial whole-genome sequencing analysis. Before genome assembly or downstream analysis, we need to check whether the raw sequencing reads are suitable for analysis.\nIn this lesson, we will inspect FASTQ files, run quality-control checks, summarise QC reports, and decide whether the reads need trimming.",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html#overview",
+    "href": "materials/3-1-qc.html#overview",
+    "title": "Quality Control of Raw Reads",
+    "section": "",
+    "text": "Read quality control is the first checkpoint in bacterial whole-genome sequencing analysis. Before genome assembly or downstream analysis, we need to check whether the raw sequencing reads are suitable for analysis.\nIn this lesson, we will inspect FASTQ files, run quality-control checks, summarise QC reports, and decide whether the reads need trimming.",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html#learning-objectives",
+    "href": "materials/3-1-qc.html#learning-objectives",
+    "title": "Quality Control of Raw Reads",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ndescribe the structure of a FASTQ file\nexplain why read quality control is important\nrun FastQC on raw sequencing reads\nsummarise multiple QC reports using MultiQC\ninterpret common QC metrics\ndecide whether trimming is needed before assembly",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html#why-do-we-perform-read-quality-control",
+    "href": "materials/3-1-qc.html#why-do-we-perform-read-quality-control",
+    "title": "Quality Control of Raw Reads",
+    "section": "Why do we perform read quality control?",
+    "text": "Why do we perform read quality control?\nRaw sequencing reads may contain technical problems such as:\n\nlow-quality bases\nadapter contamination\nunusually short reads\nbiased base composition\nunexpected GC content\noverrepresented sequences\npossible contamination\n\nIf poor-quality reads are used directly, they can affect genome assembly, species identification, antimicrobial resistance gene detection, and phylogenetic analysis.\n\n\n\n\n\n\nNoteKey idea\n\n\n\nQuality control helps us decide whether the sequencing data are good enough for downstream analysis.",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html#fastq-file-structure",
+    "href": "materials/3-1-qc.html#fastq-file-structure",
+    "title": "Quality Control of Raw Reads",
+    "section": "FASTQ file structure",
+    "text": "FASTQ file structure\nShort-read sequencing data are usually stored in FASTQ format. A FASTQ record has four lines:\nread_id? ACGTACGTACGTACGT + FFFFFFFFFFFFFFFF\n\n\n\nLine\nDescription\n\n\n\n\nLine 1\nRead identifier\n\n\nLine 2\nDNA sequence\n\n\nLine 3\nSeparator\n\n\nLine 4\nQuality score\n\n\n\nThe fourth line contains quality scores. These scores represent confidence in each base call.",
+    "crumbs": [
+      "Materials",
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
+    ]
+  },
+  {
+    "objectID": "materials/3-1-qc.html#paired-end-sequencing-files",
+    "href": "materials/3-1-qc.html#paired-end-sequencing-files",
+    "title": "Quality Control of Raw Reads",
+    "section": "Paired-end sequencing files",
+    "text": "Paired-end sequencing files\nFor paired-end Illumina data, each sample usually has two FASTQ files:\nS1_R1.fastq.gz\nS1_R2.fastq.gz\n\n\n\nFile\nMeaning\n\n\n\n\nR1\nForward reads\n\n\nR2\nReverse reads\n\n\n.gz\nCompressed file\n\n\n\nFor example:\nERR123456_R1.fastq.gz\nERR123456_R2.fastq.gz\n\n\nInspect a FASTQ file\nBecause FASTQ files are often compressed, use zcat to view them.\nzcat S1_R1.fastq.gz | head\nTo view the first 12 lines:\nzcat S1_R1.fastq.gz | head -n 12\nThis should show the first three FASTQ records.\n\n\n\n\n\n\nNoteExercise\n\n\n\nInspect the first 8 lines of a FASTQ file. How many sequencing reads are shown?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nA FASTQ record contains 4 lines. Therefore, 8 lines show 2 sequencing reads.\n\n\n\nFor example, if the file has 400000 lines, then the number of reads is:\n400000 / 4 = 100000 reads\nYou can calculate this directly:\necho $(( $(zcat S1_R1.fastq.gz | wc -l) / 4 ))\n\n\n\n\n\n\nWarningNote\n\n\n\nThis command works for standard FASTQ files where every read has exactly four lines.\n\n\n\n\nRun FastQC\nWe need to activate the qc environment\nconda activate qc\nNow will run fastqc on sample S1\nfastqc -t 4 S1_R1.fastq.gz S1_R2.fastq.gz\nType ls to see the file lists\nls\n\n\n\nOpen FastQC report\nWe need to download the report file as we cannot visualize from servers.\nFrom local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/*.html .\n\nWindowsmacOSLinux\n\n\nOn Windows, open the file manually from the file explorer.\n\n\nIf you are working on your own computer, open the .html file in a browser. On macOS:\nopen S1_R1_fastqc.html\n\n\nOn Linux:\nxdg-open S1_R1_fastqc.html\n\n\n\nIn a similar way, open the S1_R2_fastqc.html",
     "crumbs": [
       "Materials",
       "Quality Control of Raw Reads",

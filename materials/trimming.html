@@ -554,8 +554,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#trimmomatic" id="toc-trimmomatic" class="nav-link active" data-scroll-target="#trimmomatic">Trimmomatic</a></li>
-  <li><a href="#fastqc-on-trimmed-reads" id="toc-fastqc-on-trimmed-reads" class="nav-link" data-scroll-target="#fastqc-on-trimmed-reads">FastQC on trimmed reads</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#activate-the-qc-environment" id="toc-activate-the-qc-environment" class="nav-link" data-scroll-target="#activate-the-qc-environment">Activate the QC environment</a>
+  <ul class="collapse">
+  <li><a href="#input-files" id="toc-input-files" class="nav-link" data-scroll-target="#input-files">Input files</a></li>
+  <li><a href="#create-output-folders" id="toc-create-output-folders" class="nav-link" data-scroll-target="#create-output-folders">Create output folders</a></li>
+  <li><a href="#run-trimmomatic" id="toc-run-trimmomatic" class="nav-link" data-scroll-target="#run-trimmomatic">Run Trimmomatic</a></li>
+  <li><a href="#understanding-the-command" id="toc-understanding-the-command" class="nav-link" data-scroll-target="#understanding-the-command">Understanding the command</a></li>
+  </ul></li>
+  <li><a href="#check-trimming-outputs" id="toc-check-trimming-outputs" class="nav-link" data-scroll-target="#check-trimming-outputs">Check trimming outputs</a>
+  <ul class="collapse">
+  <li><a href="#run-fastqc-on-trimmed-reads" id="toc-run-fastqc-on-trimmed-reads" class="nav-link" data-scroll-target="#run-fastqc-on-trimmed-reads">Run FastQC on trimmed reads</a></li>
+  <li><a href="#download-fastqc-reports-from-the-server" id="toc-download-fastqc-reports-from-the-server" class="nav-link" data-scroll-target="#download-fastqc-reports-from-the-server">Download FastQC reports from the server</a></li>
+  </ul></li>
+  <li><a href="#compare-raw-and-trimmed-reads" id="toc-compare-raw-and-trimmed-reads" class="nav-link" data-scroll-target="#compare-raw-and-trimmed-reads">Compare raw and trimmed reads</a></li>
+  <li><a href="#organize-files" id="toc-organize-files" class="nav-link" data-scroll-target="#organize-files">Organize files</a></li>
   </ul>
 </nav>
     </div>
@@ -582,34 +596,270 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>If you are continuing from the last session (Quality Control of Raw Reads), you are in <code>qc</code> environment, if not activate the environment first.</p>
-<section id="trimmomatic" class="level2">
-<h2 class="anchored" data-anchor-id="trimmomatic">Trimmomatic</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">trimmomatic</span> PE <span class="dt">\</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    S1_R1.fastq.gz S1_R2.fastq.gz <span class="dt">\</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    S1_trim_R1.fastq.gz S1_unpaired_R1.fastq.gz <span class="dt">\</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    S1_trim_R2.fastq.gz S1_unpaired_R2.fastq.gz <span class="dt">\</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    SLIDINGWINDOW:4:20 LEADING:3 TRAILING:3 HEADCROP:15 MINLEN:40</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Now run <code>fastqc</code> tool again on the trimmed files to understand the quality improvement.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>After checking raw read quality with <code>FastQC</code>, we may need to trim reads to remove low-quality bases or unwanted sequence at the beginning or end of reads.</p>
+<p>In this lesson, we will use <code>Trimmomatic</code> to trim paired-end reads and then run <code>FastQC</code> again to check whether read quality has improved.</p>
 </section>
-<section id="fastqc-on-trimmed-reads" class="level2">
-<h2 class="anchored" data-anchor-id="fastqc-on-trimmed-reads">FastQC on trimmed reads</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">-t</span> 4 S1_trim_R1.fastq.gz S1_trim_R2.fastq.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-caution callout-titled" title="Excercise: reorganise directory">
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this lesson, you should be able to:</p>
+<ul>
+<li>explain why read trimming may be required</li>
+<li>run <code>Trimmomatic</code> on paired-end FASTQ files</li>
+<li>identify paired and unpaired trimming outputs</li>
+<li>run <code>FastQC</code> on trimmed reads</li>
+<li>organize raw reads, trimmed reads, and QC reports into folders</li>
+</ul>
+</section>
+<section id="activate-the-qc-environment" class="level2">
+<h2 class="anchored" data-anchor-id="activate-the-qc-environment">Activate the QC environment</h2>
+<p>If you are continuing from the previous lesson, you may already be inside the <code>qc</code> environment.</p>
+<p>If not, activate it first:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate qc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check that <code>trimmomatic</code> is available:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">trimmomatic</span> <span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check that <code>fastqc</code> is also available:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="input-files" class="level3">
+<h3 class="anchored" data-anchor-id="input-files">Input files</h3>
+<p>For this lesson, we will use paired-end FASTQ files from sample <code>S1</code>.</p>
+<pre class="text"><code>S1_R1.fastq.gz
+S1_R2.fastq.gz</code></pre>
+<p>Check that the files are present:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="create-output-folders" class="level3">
+<h3 class="anchored" data-anchor-id="create-output-folders">Create output folders</h3>
+<p>Before running trimming, create separate folders for trimmed reads and QC reports.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> trimmed_reads</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="run-trimmomatic" class="level3">
+<h3 class="anchored" data-anchor-id="run-trimmomatic">Run Trimmomatic</h3>
+<p>Run <code>Trimmomatic</code> in paired-end mode:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">trimmomatic</span> PE <span class="dt">\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  S1_R1.fastq.gz S1_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  trimmed_reads/S1_trim_R1.fastq.gz trimmed_reads/S1_unpaired_R1.fastq.gz <span class="dt">\</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  trimmed_reads/S1_trim_R2.fastq.gz trimmed_reads/S1_unpaired_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  SLIDINGWINDOW:4:20 LEADING:3 TRAILING:3 HEADCROP:15 MINLEN:40</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="understanding-the-command" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-the-command">Understanding the command</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>PE</code></td>
+<td>Paired-end mode</td>
+</tr>
+<tr class="even">
+<td><code>S1_R1.fastq.gz</code></td>
+<td>Input forward reads</td>
+</tr>
+<tr class="odd">
+<td><code>S1_R2.fastq.gz</code></td>
+<td>Input reverse reads</td>
+</tr>
+<tr class="even">
+<td><code>S1_trim_R1.fastq.gz</code></td>
+<td>Trimmed paired forward reads</td>
+</tr>
+<tr class="odd">
+<td><code>S1_unpaired_R1.fastq.gz</code></td>
+<td>Forward reads whose pair was removed</td>
+</tr>
+<tr class="even">
+<td><code>S1_trim_R2.fastq.gz</code></td>
+<td>Trimmed paired reverse reads</td>
+</tr>
+<tr class="odd">
+<td><code>S1_unpaired_R2.fastq.gz</code></td>
+<td>Reverse reads whose pair was removed</td>
+</tr>
+<tr class="even">
+<td><code>SLIDINGWINDOW:4:20</code></td>
+<td>Scan with a 4-base window and cut when average quality falls below 20</td>
+</tr>
+<tr class="odd">
+<td><code>LEADING:3</code></td>
+<td>Remove low-quality bases from the beginning</td>
+</tr>
+<tr class="even">
+<td><code>TRAILING:3</code></td>
+<td>Remove low-quality bases from the end</td>
+</tr>
+<tr class="odd">
+<td><code>HEADCROP:15</code></td>
+<td>Remove the first 15 bases from each read</td>
+</tr>
+<tr class="even">
+<td><code>MINLEN:40</code></td>
+<td>Remove reads shorter than 40 bases after trimming</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Important">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Excercise: reorganise directory
+<span class="screen-reader-only">Note</span>Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Here we will learn how to organize files. Create two directories called <code>raw_files</code>, and <code>qc_reports</code>. Move <code>raw_reads</code> to <code>raw_files directory</code>. Move fastqc reports to <code>qc_reports directory</code>. Lastly remove all files named as unpaired files.</p>
+<p>For downstream paired-end genome assembly, we usually use the paired trimmed files:</p>
+<pre class="text"><code>trimmed_reads/S1_trim_R1.fastq.gz
+trimmed_reads/S1_trim_R2.fastq.gz</code></pre>
+</div>
+</div>
+<p>The unpaired files can be kept or removed depending on the analysis plan.</p>
+</section>
+</section>
+<section id="check-trimming-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="check-trimming-outputs">Check trimming outputs</h2>
+<p>List the trimmed read files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> trimmed_reads</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<pre class="text"><code>S1_trim_R1.fastq.gz
+S1_trim_R2.fastq.gz
+S1_unpaired_R1.fastq.gz
+S1_unpaired_R2.fastq.gz</code></pre>
+<section id="run-fastqc-on-trimmed-reads" class="level3">
+<h3 class="anchored" data-anchor-id="run-fastqc-on-trimmed-reads">Run FastQC on trimmed reads</h3>
+<p>Now run FastQC again on the trimmed paired reads:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">-t</span> 4 <span class="dt">\</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  trimmed_reads/S1_trim_R1.fastq.gz <span class="dt">\</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  trimmed_reads/S1_trim_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check the output:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see new FastQC reports for the trimmed reads:</p>
+<pre class="text"><code>S1_trim_R1_fastqc.html
+S1_trim_R1_fastqc.zip
+S1_trim_R2_fastqc.html
+S1_trim_R2_fastqc.zip</code></pre>
+</section>
+<section id="download-fastqc-reports-from-the-server" class="level3">
+<h3 class="anchored" data-anchor-id="download-fastqc-reports-from-the-server">Download FastQC reports from the server</h3>
+<p>We cannot directly visualize the <code>.html</code> reports on the server. Download them to your local computer using <code>scp</code>.</p>
+<p>From your local desktop terminal, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/qc_reports/<span class="pp">*</span>.html .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then open the downloaded HTML reports in your browser.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Open the downloaded .html files manually from File Explorer.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_trim_R1_fastqc.html</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_trim_R2_fastqc.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_trim_R1_fastqc.html</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_trim_R2_fastqc.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="compare-raw-and-trimmed-reads" class="level2">
+<h2 class="anchored" data-anchor-id="compare-raw-and-trimmed-reads">Compare raw and trimmed reads</h2>
+<p>Compare the original <code>FastQC</code> reports with the trimmed <code>FastQC</code> reports. Focus on: - per base sequence quality - adapter content - per sequence quality scores - overrepresented sequences - sequence length distribution</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Compare <code>S1_R1_fastqc.html</code> with <code>S1_trim_R1_fastqc.html</code>. What changed after trimming?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Suggested answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>After trimming, low-quality bases at the ends may be reduced. Adapter contamination may also decrease. The read length distribution may change because some reads are shortened or removed.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="organize-files" class="level2">
+<h2 class="anchored" data-anchor-id="organize-files">Organize files</h2>
+<p>Now we will organize the working directory. Create three folders:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> raw_reads trimmed_reads qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Move the original raw reads into <code>raw_reads</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> S1_R1.fastq.gz S1_R2.fastq.gz raw_reads/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If any <code>FastQC</code> reports were created in the current directory, move them to <code>qc_reports</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="pp">*</span>fastqc<span class="pp">*</span> qc_reports/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The trimmed reads should already be inside <code>trimmed_reads</code>.</p>
+<p>Check your folder structure:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Expected folders:</p>
+<pre class="text"><code>raw_reads
+trimmed_reads
+qc_reports</code></pre>
+<p>Check inside each folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> raw_reads</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> trimmed_reads</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Optional: remove unpaired reads">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Optional: remove unpaired reads
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If your instructor tells you that unpaired reads are not needed, remove them:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> trimmed_reads/<span class="pp">*</span>unpaired<span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: reorganise the directory">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Exercise: reorganise the directory
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create three directories: raw_reads trimmed_reads qc_reports Then organize the files as follows: move raw FASTQ files into raw_reads keep trimmed FASTQ files inside trimmed_reads move FastQC reports into qc_reports remove unpaired read files if they are not needed</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -618,15 +868,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> raw_files qc_reports</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> S1_R<span class="pp">*</span>.fastq.gz raw_files</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="pp">*</span>unpaired<span class="pp">*</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="pp">*</span>fastqc<span class="pp">*</span> qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> raw_reads trimmed_reads qc_reports</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> S1_R1.fastq.gz S1_R2.fastq.gz raw_reads/</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="pp">*</span>fastqc.html <span class="pp">*</span>fastqc.zip qc_reports/</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> trimmed_reads/<span class="pp">*</span>unpaired<span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
+<p>Final directory structure At the end of this lesson, your directory should look like this:</p>
+<pre class="text"><code>.
+├── raw_reads
+│   ├── S1_R1.fastq.gz
+│   └── S1_R2.fastq.gz
+├── trimmed_reads
+│   ├── S1_trim_R1.fastq.gz
+│   └── S1_trim_R2.fastq.gz
+└── qc_reports
+    ├── S1_trim_R1_fastqc.html
+    ├── S1_trim_R1_fastqc.zip
+    ├── S1_trim_R2_fastqc.html
+    └── S1_trim_R2_fastqc.zip</code></pre>
+<div class="callout callout-style-default callout-note callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Trimming removes low-quality bases and unwanted sequence. <code>Trimmomatic PE</code> is used for paired-end read trimming. Paired trimmed files are usually used for genome assembly. Run <code>FastQC</code> again after trimming. Keep raw reads, trimmed reads, and QC reports in separate folders.</p>
+</div>
+</div>
+<!--
+If you are continuing from the last session (Quality Control of Raw Reads), you are in `qc` environment, if not activate the environment first.
+
+
+## Trimmomatic
+``` bash
+trimmomatic PE \
+    S1_R1.fastq.gz S1_R2.fastq.gz \
+    S1_trim_R1.fastq.gz S1_unpaired_R1.fastq.gz \
+    S1_trim_R2.fastq.gz S1_unpaired_R2.fastq.gz \
+    SLIDINGWINDOW:4:20 LEADING:3 TRAILING:3 HEADCROP:15 MINLEN:40
+```
+Now run `fastqc` tool again on the trimmed files to understand the quality improvement.
+
+## FastQC on trimmed reads
+
+``` bash
+fastqc -t 4 S1_trim_R1.fastq.gz S1_trim_R2.fastq.gz
+```
+
+
+
+::: {.callout-caution title="Excercise: reorganise directory"}
+Here we will learn how to organize files. Create two directories called `raw_files`, and `qc_reports`. Move `raw_reads` to `raw_files directory`. Move fastqc reports to `qc_reports directory`. Lastly remove all files named as unpaired files.
+
+:::
+::: {.callout-tip title="Answer" collapse="true"}
+
+``` bash
+mkdir raw_files qc_reports
+mv S1_R*.fastq.gz raw_files
+rm *unpaired*
+mv *fastqc* qc_reports
+```
+
+:::
+-->
 
 
 </section>
