@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MLST – Introduction to Bacterial Genomics</title>
+<title>Trimming to Retain High Quality Data – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../materials/annotation.html" rel="next">
-<link href="../materials/taxonomy.html" rel="prev">
+<link href="../materials/6_assembly.html" rel="next">
+<link href="../materials/4_qc.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -111,13 +111,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="MLST – Introduction to Bacterial Genomics">
+<meta property="og:title" content="Trimming to Retain High Quality Data – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://tahsinkhann.github.io/bacterial-genomics/assets/trim_run.png">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
-<meta name="twitter:title" content="MLST – Introduction to Bacterial Genomics">
+<meta property="og:image:height" content="283">
+<meta property="og:image:width" content="1360">
+<meta name="twitter:title" content="Trimming to Retain High Quality Data – Introduction to Bacterial Genomics">
 <meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://tahsinkhann.github.io/bacterial-genomics/assets/trim_run.png">
 <meta name="twitter:site" content="@tahsinkhann">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="283">
+<meta name="twitter:image-width" content="1360">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -379,7 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">MLST</h1>
+          <h1 class="quarto-secondary-nav-title">Trimming to Retain High Quality Data</h1>
         </a>     
     </div>
   </nav>
@@ -411,14 +417,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/1-1-pathogen_genomic_surveillances.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/1_pathogen_genomic_surveillances.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pathogen genomic surveillances</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/1-2-know-your-bug.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Know your bug</span></a>
   </div>
 </li>
       </ul>
@@ -434,14 +434,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/2-1-into-ngs.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/2_into-ngs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to NGS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/2-2-navigating-files.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Navigating files</span></a>
+  <a href="../materials/3_navigating-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Server Connection and Navigating Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/conda_environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conda Environments</span></a>
   </div>
 </li>
       </ul>
@@ -457,13 +463,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/3-1-qc.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/4_qc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quality Control of Raw Reads</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/trimming.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/5_trimming.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Trimming to Retain High Quality Data</span></a>
   </div>
 </li>
@@ -472,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Assembly</span></a>
+ <span class="menu-text">Genome Assembly</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -480,100 +486,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/assembly.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/6_assembly.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><em>De novo</em> Assembly</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/qc_assembly.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/7_qc_assembly.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quality Control of Assembly File</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Taxnomy</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/taxonomy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taxonomy</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/mlst.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">MLST</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Annotation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/annotation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Genome Annotation with Prokka</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/copy-day2-files.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Copy Day 2 Files</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/amr-vf-plasmid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AMR and Virulence Factors</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Pangenome</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/pangenome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pangenome Analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Phylogenetics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/phylogenetics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Phylogenetics</span></a>
   </div>
 </li>
       </ul>
@@ -590,24 +510,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#input-file" id="toc-input-file" class="nav-link" data-scroll-target="#input-file">Input file</a>
+  <li><a href="#activate-the-qc-environment" id="toc-activate-the-qc-environment" class="nav-link" data-scroll-target="#activate-the-qc-environment">Activate the QC environment</a>
   <ul class="collapse">
-  <li><a href="#create-output-directory" id="toc-create-output-directory" class="nav-link" data-scroll-target="#create-output-directory">Create output directory</a></li>
-  <li><a href="#activate-the-mlst-environment" id="toc-activate-the-mlst-environment" class="nav-link" data-scroll-target="#activate-the-mlst-environment">Activate the MLST environment</a></li>
+  <li><a href="#input-files" id="toc-input-files" class="nav-link" data-scroll-target="#input-files">Input files</a></li>
+  <li><a href="#create-output-folders" id="toc-create-output-folders" class="nav-link" data-scroll-target="#create-output-folders">Create output folders</a></li>
+  <li><a href="#run-trimmomatic" id="toc-run-trimmomatic" class="nav-link" data-scroll-target="#run-trimmomatic">Run Trimmomatic</a></li>
+  <li><a href="#understanding-the-command" id="toc-understanding-the-command" class="nav-link" data-scroll-target="#understanding-the-command">Understanding the command</a></li>
   </ul></li>
-  <li><a href="#run-mlst" id="toc-run-mlst" class="nav-link" data-scroll-target="#run-mlst">Run MLST</a>
+  <li><a href="#check-trimming-outputs" id="toc-check-trimming-outputs" class="nav-link" data-scroll-target="#check-trimming-outputs">Check trimming outputs</a>
   <ul class="collapse">
-  <li><a href="#understanding-the-mlst-command" id="toc-understanding-the-mlst-command" class="nav-link" data-scroll-target="#understanding-the-mlst-command">Understanding the MLST command</a></li>
+  <li><a href="#run-fastqc-on-trimmed-reads" id="toc-run-fastqc-on-trimmed-reads" class="nav-link" data-scroll-target="#run-fastqc-on-trimmed-reads">Run FastQC on trimmed reads</a></li>
+  <li><a href="#download-fastqc-reports-from-the-server" id="toc-download-fastqc-reports-from-the-server" class="nav-link" data-scroll-target="#download-fastqc-reports-from-the-server">Download FastQC reports from the server</a></li>
   </ul></li>
-  <li><a href="#check-mlst-output" id="toc-check-mlst-output" class="nav-link" data-scroll-target="#check-mlst-output">Check MLST output</a></li>
-  <li><a href="#understanding-mlst-output" id="toc-understanding-mlst-output" class="nav-link" data-scroll-target="#understanding-mlst-output">Understanding MLST output</a></li>
-  <li><a href="#save-and-organize-results" id="toc-save-and-organize-results" class="nav-link" data-scroll-target="#save-and-organize-results">Save and organize results</a></li>
-  <li><a href="#download-mlst-result-from-the-server" id="toc-download-mlst-result-from-the-server" class="nav-link" data-scroll-target="#download-mlst-result-from-the-server">Download MLST result from the server</a></li>
-  <li><a href="#compare-taxonomy-and-mlst" id="toc-compare-taxonomy-and-mlst" class="nav-link" data-scroll-target="#compare-taxonomy-and-mlst">Compare taxonomy and MLST</a></li>
-  <li><a href="#final-directory-structure" id="toc-final-directory-structure" class="nav-link" data-scroll-target="#final-directory-structure">Final directory structure</a></li>
-  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical exercise</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
-  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
+  <li><a href="#compare-raw-and-trimmed-reads" id="toc-compare-raw-and-trimmed-reads" class="nav-link" data-scroll-target="#compare-raw-and-trimmed-reads">Compare raw and trimmed reads</a></li>
+  <li><a href="#organize-files" id="toc-organize-files" class="nav-link" data-scroll-target="#organize-files">Organize files</a></li>
   </ul>
 </nav>
     </div>
@@ -617,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">MLST</h1>
+<h1 class="title d-none d-lg-block">Trimming to Retain High Quality Data</h1>
 </div>
 
 
@@ -636,29 +552,134 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>After taxonomic classification, we can identify the <strong>sequence type</strong> of a bacterial genome using <strong>MLST</strong>.</p>
-<p>MLST stands for <strong>multilocus sequence typing</strong>. It compares specific housekeeping genes against known allele databases and assigns a sequence type when a matching profile is found.</p>
-<p>In this lesson, we will run <code>mlst</code> on the filtered assembly file and save the result inside the <code>classify</code> directory.</p>
+<p>After checking raw read quality with <code>FastQC</code>, we may need to trim reads to remove low-quality bases or unwanted sequence at the beginning or end of reads.</p>
+<p>In this lesson, we will use <code>Trimmomatic</code> to trim paired-end reads and then run <code>FastQC</code> again to check whether read quality has improved.</p>
 </section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>By the end of this lesson, you should be able to:</p>
 <ul>
-<li>explain what MLST is</li>
-<li>activate the <code>mlst</code> environment</li>
-<li>run <code>mlst</code> on an assembled genome</li>
-<li>save MLST results into the <code>classify</code> directory</li>
-<li>interpret the basic MLST output</li>
+<li>explain why read trimming may be required</li>
+<li>run <code>Trimmomatic</code> on paired-end FASTQ files</li>
+<li>identify paired and unpaired trimming outputs</li>
+<li>run <code>FastQC</code> on trimmed reads</li>
+<li>organize raw reads, trimmed reads, and QC reports into folders</li>
 </ul>
 </section>
-<section id="input-file" class="level2">
-<h2 class="anchored" data-anchor-id="input-file">Input file</h2>
-<p>In the previous lessons, we created a filtered assembly file:</p>
-<pre class="text"><code>assemblies/S1_contigs_filtered.fasta</code></pre>
-<p>Check that the file exists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<pre class="text"><code>S1_contigs_filtered.fasta</code></pre>
+<section id="activate-the-qc-environment" class="level2">
+<h2 class="anchored" data-anchor-id="activate-the-qc-environment">Activate the QC environment</h2>
+<p>If you are continuing from the previous lesson, you may already be inside the <code>qc</code> environment.</p>
+<p>If not, activate it first:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate qc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The terminal will appear as</p>
+<pre class="text"><code>(qc) genomevm@genome-clone-vm2:~tanzim$</code></pre>
+<p>Check that <code>trimmomatic</code> is available:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">trimmomatic</span> <span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The terminal will appear as</p>
+<pre class="text"><code>(qc) genomevm@genome-clone-vm2:~tanzim$ 
+0.40</code></pre>
+<p>Check that <code>fastqc</code> is also available:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The terminal will appear as</p>
+<pre class="text"><code>(qc) genomevm@genome-clone-vm2:~tanzim$
+Fastqc v0.12.1</code></pre>
+<section id="input-files" class="level3">
+<h3 class="anchored" data-anchor-id="input-files">Input files</h3>
+<p>For this lesson, we will use paired-end FASTQ files from sample <code>S1</code>.</p>
+<pre class="text"><code>S1_R1.fastq.gz
+S1_R2.fastq.gz</code></pre>
+<p>Check that the files are present:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="create-output-folders" class="level3">
+<h3 class="anchored" data-anchor-id="create-output-folders">Create output folders</h3>
+<p>Before running trimming, create separate folders for trimmed reads and QC reports.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> trimmed_reads</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="run-trimmomatic" class="level3">
+<h3 class="anchored" data-anchor-id="run-trimmomatic">Run Trimmomatic</h3>
+<p>Run <code>Trimmomatic</code> in paired-end mode:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">trimmomatic</span> PE <span class="dt">\</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  S1_R1.fastq.gz S1_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  trimmed_reads/S1_trim_R1.fastq.gz trimmed_reads/S1_unpaired_R1.fastq.gz <span class="dt">\</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  trimmed_reads/S1_trim_R2.fastq.gz trimmed_reads/S1_unpaired_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  SLIDINGWINDOW:4:20 LEADING:3 TRAILING:3 HEADCROP:15 MINLEN:40</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="understanding-the-command" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-the-command">Understanding the command</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>PE</code></td>
+<td>Paired-end mode</td>
+</tr>
+<tr class="even">
+<td><code>S1_R1.fastq.gz</code></td>
+<td>Input forward reads</td>
+</tr>
+<tr class="odd">
+<td><code>S1_R2.fastq.gz</code></td>
+<td>Input reverse reads</td>
+</tr>
+<tr class="even">
+<td><code>S1_trim_R1.fastq.gz</code></td>
+<td>Trimmed paired forward reads</td>
+</tr>
+<tr class="odd">
+<td><code>S1_unpaired_R1.fastq.gz</code></td>
+<td>Forward reads whose pair was removed</td>
+</tr>
+<tr class="even">
+<td><code>S1_trim_R2.fastq.gz</code></td>
+<td>Trimmed paired reverse reads</td>
+</tr>
+<tr class="odd">
+<td><code>S1_unpaired_R2.fastq.gz</code></td>
+<td>Reverse reads whose pair was removed</td>
+</tr>
+<tr class="even">
+<td><code>SLIDINGWINDOW:4:20</code></td>
+<td>Scan with a 4-base window and cut when average quality falls below 20</td>
+</tr>
+<tr class="odd">
+<td><code>LEADING:3</code></td>
+<td>Remove low-quality bases from the beginning</td>
+</tr>
+<tr class="even">
+<td><code>TRAILING:3</code></td>
+<td>Remove low-quality bases from the end</td>
+</tr>
+<tr class="odd">
+<td><code>HEADCROP:15</code></td>
+<td>Remove the first 15 bases from each read</td>
+</tr>
+<tr class="even">
+<td><code>MINLEN:40</code></td>
+<td>Remove reads shorter than 40 bases after trimming</td>
+</tr>
+</tbody>
+</table>
+<div id="fig-trim_run" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-trim_run-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/trim_run.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trim_run-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Trimmomatic run
+</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-note callout-titled" title="Important">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -669,126 +690,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For this lesson, we will use the filtered assembly file:</p>
-<pre class="text"><code>assemblies/S1_contigs_filtered.fasta</code></pre>
+<p>For downstream paired-end genome assembly, we usually use the paired trimmed files:</p>
+<pre class="text"><code>trimmed_reads/S1_trim_R1.fastq.gz
+trimmed_reads/S1_trim_R2.fastq.gz</code></pre>
 </div>
 </div>
-<section id="create-output-directory" class="level3">
-<h3 class="anchored" data-anchor-id="create-output-directory">Create output directory</h3>
-<p>We will save the MLST result inside the <code>classify</code> directory.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check that the directory exists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="activate-the-mlst-environment" class="level3">
-<h3 class="anchored" data-anchor-id="activate-the-mlst-environment">Activate the MLST environment</h3>
-<p>Activate the <code>mlst</code> environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate mlst</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check that <code>mlst</code> is available:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mlst</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The unpaired files can be kept or removed depending on the analysis plan.</p>
 </section>
 </section>
-<section id="run-mlst" class="level2">
-<h2 class="anchored" data-anchor-id="run-mlst">Run MLST</h2>
-<p>Run <code>mlst</code> on the filtered assembly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mlst</span> assemblies/S1_contigs_filtered.fasta <span class="op">&gt;</span> classify/S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="understanding-the-mlst-command" class="level3">
-<h3 class="anchored" data-anchor-id="understanding-the-mlst-command">Understanding the MLST command</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Part</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>mlst</code></td>
-<td>Runs the MLST tool</td>
-</tr>
-<tr class="even">
-<td><code>assemblies/S1_contigs_filtered.fasta</code></td>
-<td>Input filtered assembly file</td>
-</tr>
-<tr class="odd">
-<td><code>&gt;</code></td>
-<td>Redirects the output to a file</td>
-</tr>
-<tr class="even">
-<td><code>classify/S1_mlst.txt</code></td>
-<td>Output MLST result file</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="check-mlst-output" class="level2">
-<h2 class="anchored" data-anchor-id="check-mlst-output">Check MLST output</h2>
-<p>List the <code>classify</code> directory:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="check-trimming-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="check-trimming-outputs">Check trimming outputs</h2>
+<p>List the trimmed read files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> trimmed_reads</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see:</p>
-<pre class="text"><code>S1_mlst.txt</code></pre>
-<p>View the MLST result:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> classify/S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="text"><code>S1_trim_R1.fastq.gz
+S1_trim_R2.fastq.gz
+S1_unpaired_R1.fastq.gz
+S1_unpaired_R2.fastq.gz</code></pre>
+<section id="run-fastqc-on-trimmed-reads" class="level3">
+<h3 class="anchored" data-anchor-id="run-fastqc-on-trimmed-reads">Run FastQC on trimmed reads</h3>
+<p>Now run FastQC again on the trimmed paired reads:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fastqc</span> <span class="at">-t</span> 4 <span class="dt">\</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  trimmed_reads/S1_trim_R1.fastq.gz <span class="dt">\</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  trimmed_reads/S1_trim_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check the output:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see new FastQC reports for the trimmed reads:</p>
+<pre class="text"><code>S1_trim_R1_fastqc.html
+S1_trim_R1_fastqc.zip
+S1_trim_R2_fastqc.html
+S1_trim_R2_fastqc.zip</code></pre>
 </section>
-<section id="understanding-mlst-output" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-mlst-output">Understanding MLST output</h2>
-<p>The MLST output usually contains the following information:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Column</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>File name</td>
-<td>Input assembly file</td>
-</tr>
-<tr class="even">
-<td>Scheme</td>
-<td>MLST scheme used</td>
-</tr>
-<tr class="odd">
-<td>ST</td>
-<td>Sequence type</td>
-</tr>
-<tr class="even">
-<td>Alleles</td>
-<td>Allele numbers for housekeeping genes</td>
-</tr>
-</tbody>
-</table>
-<p>An example output may look like this:</p>
-<pre class="text"><code>assemblies/S1_contigs_filtered.fasta  ecoli  131  adk(53) fumC(40) gyrB(47) icd(13) mdh(36) purA(28) recA(29)</code></pre>
-<p>In this example:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>ecoli</code></td>
-<td>MLST scheme</td>
-</tr>
-<tr class="even">
-<td><code>131</code></td>
-<td>Sequence type</td>
-</tr>
-<tr class="odd">
-<td><code>adk(53)</code></td>
-<td>Allele 53 for the <code>adk</code> gene</td>
-</tr>
-</tbody>
-</table>
+<section id="download-fastqc-reports-from-the-server" class="level3">
+<h3 class="anchored" data-anchor-id="download-fastqc-reports-from-the-server">Download FastQC reports from the server</h3>
+<p>We cannot directly visualize the <code>.html</code> reports on the server. Download them to your local computer using <code>scp</code>.</p>
+<p>From your local desktop terminal, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/qc_reports/<span class="pp">*</span>.html .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then open the downloaded HTML reports in your browser.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Open the downloaded .html files manually from File Explorer.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_trim_R1_fastqc.html</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_trim_R2_fastqc.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_trim_R1_fastqc.html</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_trim_R2_fastqc.html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="compare-raw-and-trimmed-reads" class="level2">
+<h2 class="anchored" data-anchor-id="compare-raw-and-trimmed-reads">Compare raw and trimmed reads</h2>
+<p>Compare the original <code>FastQC</code> reports with the trimmed <code>FastQC</code> reports. Focus on:</p>
+<ul>
+<li>summary statistics</li>
+<li>per base sequence quality</li>
+<li>per sequence quality scores</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -799,185 +766,182 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Run <code>mlst</code> on <code>S1_contigs_filtered.fasta</code>.</p>
-<p>What sequence type was assigned to sample <code>S1</code>?</p>
+<p>Compare <code>S1_R1_fastqc.html</code> with <code>S1_trim_R1_fastqc.html</code>. What changed after trimming?</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answer">
+<div id="fig-pre-post-qc" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pre-post-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pre-post-qc" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-prestatistics" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-prestatistics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/basic_statistics_pretrim.png" class="img-fluid figure-img" data-ref-parent="fig-pre-post-qc">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-prestatistics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Summary statistics before trimming
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pre-post-qc" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-poststatistics" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-poststatistics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/post_statistics.png" class="img-fluid figure-img" data-ref-parent="fig-pre-post-qc">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-poststatistics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Summary statistics after trimming
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pre-post-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Summary statistics before and after trimming bases
+</figcaption>
+</figure>
+</div>
+<div id="fig-pre-post-qc" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pre-post-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pre-post-qc" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-prequality" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-prequality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/base_quality_pretrim.png" class="img-fluid figure-img" data-ref-parent="fig-pre-post-qc">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-prequality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Per base sequence quality before trimming trimming
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pre-post-qc" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-postquality" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-postquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/post_quality.png" class="img-fluid figure-img" data-ref-parent="fig-pre-post-qc">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-postquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Per base sequence quality trimming after trimming
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pre-post-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Per base sequence quality before and after trimming bases
+</figcaption>
+</figure>
+</div>
+<div id="fig-pre-post-qc" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pre-post-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pre-post-qc" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-precontent" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-precontent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/base_content_pretrim.png" class="img-fluid figure-img" data-ref-parent="fig-pre-post-qc">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-precontent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Per base sequence content before trimming trimming
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pre-post-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: <img src="../assets/post_content.png" id="fig-postcontent" class="img-fluid figure-img" alt="Per base sequence content after trimming trimming"> Per base sequence quality before and after trimming bases
+</figcaption>
+</figure>
+</div>
+<!--
+::: {.callout-tip title="Suggested answer" collapse="true"}
+After trimming, low-quality bases at the ends may be reduced. Adapter contamination may also decrease. The read length distribution may change because some reads are shortened or removed.
+:::
+-->
+</section>
+<section id="organize-files" class="level2">
+<h2 class="anchored" data-anchor-id="organize-files">Organize files</h2>
+<p>Now we will organize the working directory. Create three folders:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> raw_reads trimmed_reads qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Move the original raw reads into <code>raw_reads</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> S1_R1.fastq.gz S1_R2.fastq.gz raw_reads/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If any <code>FastQC</code> reports were created in the current directory, move them to <code>qc_reports</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="pp">*</span>fastqc<span class="pp">*</span> qc_reports/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The trimmed reads should already be inside <code>trimmed_reads</code>.</p>
+<p>Check your folder structure:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Expected folders:</p>
+<pre class="text"><code>raw_reads
+trimmed_reads
+qc_reports</code></pre>
+<p>Check inside each folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> raw_reads</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> trimmed_reads</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> qc_reports</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Optional: remove unpaired reads">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answer
+<span class="screen-reader-only">Tip</span>Optional: remove unpaired reads
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The answer depends on your dataset. Check the sequence type in:</p>
-<pre class="text"><code>classify/S1_mlst.txt</code></pre>
+<p>If your instructor tells you that unpaired reads are not needed, remove them:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> trimmed_reads/<span class="pp">*</span>unpaired<span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-</section>
-<section id="save-and-organize-results" class="level2">
-<h2 class="anchored" data-anchor-id="save-and-organize-results">Save and organize results</h2>
-<p>Your classification folder should now contain results from taxonomy and MLST.</p>
-<p>Check the folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You may see files such as:</p>
-<pre class="text"><code>S1.kraken2.output
-S1.kraken2.report
-S1.krona
-S1.krona.html
-S1_mlst.txt</code></pre>
-</section>
-<section id="download-mlst-result-from-the-server" class="level2">
-<h2 class="anchored" data-anchor-id="download-mlst-result-from-the-server">Download MLST result from the server</h2>
-<p>If you are working on a remote server, download the MLST result to your local computer.</p>
-<p>From your <strong>local desktop terminal</strong>, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/classify/S1_mlst.txt .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This downloads <code>S1_mlst.txt</code> to your current local folder.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Open <code>S1_mlst.txt</code> manually using Notepad, Notepad++, Excel, or VS Code.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</section>
-<section id="compare-taxonomy-and-mlst" class="level2">
-<h2 class="anchored" data-anchor-id="compare-taxonomy-and-mlst">Compare taxonomy and MLST</h2>
-<p>Taxonomic classification and MLST provide different but complementary information.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Analysis</th>
-<th>Tool</th>
-<th>Main output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Taxonomic classification</td>
-<td>Kraken2</td>
-<td>Likely organism identity</td>
-</tr>
-<tr class="even">
-<td>Interactive taxonomy plot</td>
-<td>Krona</td>
-<td>Visual taxonomic hierarchy</td>
-</tr>
-<tr class="odd">
-<td>Sequence typing</td>
-<td>MLST</td>
-<td>Sequence type based on allele profile</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note callout-titled" title="Question">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Question
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Do your Kraken2 and MLST results agree?</p>
-<p>For example, does the MLST scheme match the organism suggested by Kraken2?</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Suggested answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Suggested answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The results should generally agree. For example, if Kraken2 suggests the sample is <em>Escherichia coli</em>, the MLST tool should ideally use an <em>E. coli</em> MLST scheme. If the scheme and taxonomy do not match, the sample identity or classification should be checked carefully.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="final-directory-structure" class="level2">
-<h2 class="anchored" data-anchor-id="final-directory-structure">Final directory structure</h2>
-<p>At the end of this lesson, your directory should look like this:</p>
+<!--
+::: {.callout-caution title="Exercise: reorganise the directory"}
+Create three directories:
+raw_reads
+trimmed_reads
+qc_reports
+Then organize the files as follows:
+move raw FASTQ files into raw_reads
+keep trimmed FASTQ files inside trimmed_reads
+move FastQC reports into qc_reports
+remove unpaired read files if they are not needed
+:::
+
+::: {.callout-tip title="Answer" collapse="true"}
+``` bash
+mkdir -p raw_reads trimmed_reads qc_reports
+mv S1_R1.fastq.gz S1_R2.fastq.gz raw_reads/
+mv *fastqc.html *fastqc.zip qc_reports/
+rm trimmed_reads/*unpaired*
+```
+
+:::
+-->
+<p>Final directory structure At the end of this lesson, your directory should look like this:</p>
 <pre class="text"><code>.
-├── assemblies
-│   ├── S1_contigs.fasta
-│   └── S1_contigs_filtered.fasta
-└── classify
-    ├── S1.kraken2.output
-    ├── S1.kraken2.report
-    ├── S1.krona
-    ├── S1.krona.html
-    └── S1_mlst.txt</code></pre>
-</section>
-<section id="practical-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="practical-exercise">Practical exercise</h2>
-<p>Complete the following tasks:</p>
-<ol type="1">
-<li>Activate the <code>mlst</code> environment.</li>
-<li>Run <code>mlst</code> on <code>S1_contigs_filtered.fasta</code>.</li>
-<li>Save the result as <code>classify/S1_mlst.txt</code>.</li>
-<li>Open the MLST result.</li>
-<li>Record the MLST scheme and sequence type.</li>
-<li>Compare the MLST result with the Kraken2 taxonomy result.</li>
-</ol>
-<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: MLST summary">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Exercise: MLST summary
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Create a small table in your notes:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Sample</th>
-<th>Kraken2 main assignment</th>
-<th>MLST scheme</th>
-<th>Sequence type</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>S1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Fill in the table using:</p>
-<pre class="text"><code>classify/S1.kraken2.report
-classify/S1_mlst.txt</code></pre>
-</div>
-</div>
-</section>
-<section id="key-points" class="level2">
-<h2 class="anchored" data-anchor-id="key-points">Key points</h2>
+├── raw_reads
+│   ├── S1_R1.fastq.gz
+│   └── S1_R2.fastq.gz
+├── trimmed_reads
+│   ├── S1_trim_R1.fastq.gz
+│   └── S1_trim_R2.fastq.gz
+└── qc_reports
+    ├── S1_trim_R1_fastqc.html
+    ├── S1_trim_R1_fastqc.zip
+    ├── S1_trim_R2_fastqc.html
+    └── S1_trim_R2_fastqc.zip</code></pre>
 <div class="callout callout-style-default callout-note callout-titled" title="Important">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -988,19 +952,9 @@ classify/S1_mlst.txt</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>MLST assigns a sequence type using housekeeping gene allele profiles.</li>
-<li>The input is the filtered assembly file.</li>
-<li>The output is saved as <code>classify/S1_mlst.txt</code>.</li>
-<li>MLST results can be compared with Kraken2 taxonomy results.</li>
-<li>If taxonomy and MLST disagree, the sample should be checked carefully.</li>
-</ul>
+<p>Trimming removes low-quality bases and unwanted sequence. <code>Trimmomatic PE</code> is used for paired-end read trimming. Paired trimmed files are usually used for genome assembly. Run <code>FastQC</code> again after trimming. Keep raw reads, trimmed reads, and QC reports in separate folders.</p>
 </div>
 </div>
-</section>
-<section id="next-step" class="level2">
-<h2 class="anchored" data-anchor-id="next-step">Next step</h2>
-<p>In the next lesson, we will annotate the filtered assembly file using <code>Prokka</code>.</p>
 
 
 </section>
@@ -1426,13 +1380,13 @@ classify/S1_mlst.txt</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../materials/taxonomy.html" class="pagination-link" aria-label="Taxonomy">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Taxonomy</span>
+      <a href="../materials/4_qc.html" class="pagination-link" aria-label="Quality Control of Raw Reads">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Quality Control of Raw Reads</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../materials/annotation.html" class="pagination-link" aria-label="Genome Annotation with Prokka">
-        <span class="nav-page-text">Genome Annotation with Prokka</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../materials/6_assembly.html" class="pagination-link" aria-label="*De novo* Assembly">
+        <span class="nav-page-text"><em>De novo</em> Assembly</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

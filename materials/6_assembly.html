@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MLST – Introduction to Bacterial Genomics</title>
+<title>De novo Assembly – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../materials/annotation.html" rel="next">
-<link href="../materials/taxonomy.html" rel="prev">
+<link href="../materials/7_qc_assembly.html" rel="next">
+<link href="../materials/5_trimming.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -111,10 +111,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="MLST – Introduction to Bacterial Genomics">
+<meta property="og:title" content="De novo Assembly – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
-<meta name="twitter:title" content="MLST – Introduction to Bacterial Genomics">
+<meta name="twitter:title" content="De novo Assembly – Introduction to Bacterial Genomics">
 <meta name="twitter:description" content="">
 <meta name="twitter:site" content="@tahsinkhann">
 <meta name="twitter:card" content="summary">
@@ -379,7 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">MLST</h1>
+          <h1 class="quarto-secondary-nav-title"><em>De novo</em> Assembly</h1>
         </a>     
     </div>
   </nav>
@@ -411,14 +411,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/1-1-pathogen_genomic_surveillances.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/1_pathogen_genomic_surveillances.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pathogen genomic surveillances</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/1-2-know-your-bug.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Know your bug</span></a>
   </div>
 </li>
       </ul>
@@ -434,14 +428,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/2-1-into-ngs.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/2_into-ngs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to NGS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/2-2-navigating-files.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Navigating files</span></a>
+  <a href="../materials/3_navigating-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Server Connection and Navigating Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/conda_environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conda Environments</span></a>
   </div>
 </li>
       </ul>
@@ -457,13 +457,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/3-1-qc.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/4_qc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quality Control of Raw Reads</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/trimming.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/5_trimming.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Trimming to Retain High Quality Data</span></a>
   </div>
 </li>
@@ -472,7 +472,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Assembly</span></a>
+ <span class="menu-text">Genome Assembly</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -480,100 +480,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/assembly.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/6_assembly.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><em>De novo</em> Assembly</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/qc_assembly.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/7_qc_assembly.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quality Control of Assembly File</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Taxnomy</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/taxonomy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taxonomy</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/mlst.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">MLST</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Annotation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/annotation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Genome Annotation with Prokka</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/copy-day2-files.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Copy Day 2 Files</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/amr-vf-plasmid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AMR and Virulence Factors</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Pangenome</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/pangenome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pangenome Analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Phylogenetics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/phylogenetics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Phylogenetics</span></a>
   </div>
 </li>
       </ul>
@@ -590,22 +504,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#input-file" id="toc-input-file" class="nav-link" data-scroll-target="#input-file">Input file</a>
+  <li><a href="#activate-the-assembly-environment" id="toc-activate-the-assembly-environment" class="nav-link" data-scroll-target="#activate-the-assembly-environment">Activate the assembly environment</a>
   <ul class="collapse">
-  <li><a href="#create-output-directory" id="toc-create-output-directory" class="nav-link" data-scroll-target="#create-output-directory">Create output directory</a></li>
-  <li><a href="#activate-the-mlst-environment" id="toc-activate-the-mlst-environment" class="nav-link" data-scroll-target="#activate-the-mlst-environment">Activate the MLST environment</a></li>
+  <li><a href="#input-files" id="toc-input-files" class="nav-link" data-scroll-target="#input-files">Input files</a></li>
   </ul></li>
-  <li><a href="#run-mlst" id="toc-run-mlst" class="nav-link" data-scroll-target="#run-mlst">Run MLST</a>
+  <li><a href="#what-is-genome-assembly" id="toc-what-is-genome-assembly" class="nav-link" data-scroll-target="#what-is-genome-assembly">What is genome assembly?</a>
   <ul class="collapse">
-  <li><a href="#understanding-the-mlst-command" id="toc-understanding-the-mlst-command" class="nav-link" data-scroll-target="#understanding-the-mlst-command">Understanding the MLST command</a></li>
+  <li><a href="#create-an-assembly-output-folder" id="toc-create-an-assembly-output-folder" class="nav-link" data-scroll-target="#create-an-assembly-output-folder">Create an assembly output folder</a></li>
+  <li><a href="#run-spades" id="toc-run-spades" class="nav-link" data-scroll-target="#run-spades">Run <code>SPAdes</code></a></li>
+  <li><a href="#understanding-the-command" id="toc-understanding-the-command" class="nav-link" data-scroll-target="#understanding-the-command">Understanding the command</a></li>
+  <li><a href="#check-assembly-outputs" id="toc-check-assembly-outputs" class="nav-link" data-scroll-target="#check-assembly-outputs">Check assembly outputs</a></li>
+  <li><a href="#important-spades-output-files" id="toc-important-spades-output-files" class="nav-link" data-scroll-target="#important-spades-output-files">Important <code>SPAdes</code> output files</a></li>
+  <li><a href="#inspect-the-assembly-file" id="toc-inspect-the-assembly-file" class="nav-link" data-scroll-target="#inspect-the-assembly-file">Inspect the assembly file</a></li>
   </ul></li>
-  <li><a href="#check-mlst-output" id="toc-check-mlst-output" class="nav-link" data-scroll-target="#check-mlst-output">Check MLST output</a></li>
-  <li><a href="#understanding-mlst-output" id="toc-understanding-mlst-output" class="nav-link" data-scroll-target="#understanding-mlst-output">Understanding MLST output</a></li>
-  <li><a href="#save-and-organize-results" id="toc-save-and-organize-results" class="nav-link" data-scroll-target="#save-and-organize-results">Save and organize results</a></li>
-  <li><a href="#download-mlst-result-from-the-server" id="toc-download-mlst-result-from-the-server" class="nav-link" data-scroll-target="#download-mlst-result-from-the-server">Download MLST result from the server</a></li>
-  <li><a href="#compare-taxonomy-and-mlst" id="toc-compare-taxonomy-and-mlst" class="nav-link" data-scroll-target="#compare-taxonomy-and-mlst">Compare taxonomy and MLST</a></li>
+  <li><a href="#count-the-number-of-contigs" id="toc-count-the-number-of-contigs" class="nav-link" data-scroll-target="#count-the-number-of-contigs">Count the number of contigs</a>
+  <ul class="collapse">
+  <li><a href="#copy-the-final-assembly-file" id="toc-copy-the-final-assembly-file" class="nav-link" data-scroll-target="#copy-the-final-assembly-file">Copy the final assembly file</a></li>
+  <li><a href="#download-assembly-file-from-the-server" id="toc-download-assembly-file-from-the-server" class="nav-link" data-scroll-target="#download-assembly-file-from-the-server">Download assembly file from the server</a></li>
+  </ul></li>
   <li><a href="#final-directory-structure" id="toc-final-directory-structure" class="nav-link" data-scroll-target="#final-directory-structure">Final directory structure</a></li>
-  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical exercise</a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
   <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
   </ul>
@@ -617,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">MLST</h1>
+<h1 class="title d-none d-lg-block"><em>De novo</em> Assembly</h1>
 </div>
 
 
@@ -636,29 +553,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>After taxonomic classification, we can identify the <strong>sequence type</strong> of a bacterial genome using <strong>MLST</strong>.</p>
-<p>MLST stands for <strong>multilocus sequence typing</strong>. It compares specific housekeeping genes against known allele databases and assigns a sequence type when a matching profile is found.</p>
-<p>In this lesson, we will run <code>mlst</code> on the filtered assembly file and save the result inside the <code>classify</code> directory.</p>
+<p>After trimming and quality checking sequencing reads, the next step is to reconstruct the bacterial genome from short sequencing reads. This process is called <strong>genome assembly</strong>.</p>
+<p>In this lesson, we will use trimmed paired-end reads to perform <strong>de novo genome assembly</strong>. De novo assembly means that we assemble the genome without using a reference genome.</p>
 </section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>By the end of this lesson, you should be able to:</p>
 <ul>
-<li>explain what MLST is</li>
-<li>activate the <code>mlst</code> environment</li>
-<li>run <code>mlst</code> on an assembled genome</li>
-<li>save MLST results into the <code>classify</code> directory</li>
-<li>interpret the basic MLST output</li>
+<li>explain what genome assembly means</li>
+<li>understand the difference between raw reads and contigs</li>
+<li>run a bacterial genome assembly using <code>SPAdes</code></li>
+<li>identify the main assembly output files</li>
+<li>organize assembly outputs into a clean directory structure</li>
+<li>prepare assembly files for downstream quality control</li>
 </ul>
 </section>
-<section id="input-file" class="level2">
-<h2 class="anchored" data-anchor-id="input-file">Input file</h2>
-<p>In the previous lessons, we created a filtered assembly file:</p>
-<pre class="text"><code>assemblies/S1_contigs_filtered.fasta</code></pre>
-<p>Check that the file exists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="activate-the-assembly-environment" class="level2">
+<h2 class="anchored" data-anchor-id="activate-the-assembly-environment">Activate the assembly environment</h2>
+<p>If you are continuing from the previous trimming lesson, you may still be in the <code>qc</code> environment. For assembly, we need a different environment named ’<code>assembly</code>. First we will deactivate <code>qc</code> environment to safely exit.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It will return to <code>base</code> environment</p>
+<pre class="text"><code>(base) genomevm@genome-clone-vm2:~tanzim$ </code></pre>
+<p>Now activate <code>assembly</code> environment:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="text"><code>(assembly) genomevm@genome-clone-vm2:~tanzim$ </code></pre>
+<p>Check that <code>spades.py</code> is available:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="text"><code>(assembly) genomevm@genome-clone-vm2:~tanzim$ 
+SPAdes genome assembler v4.2.0</code></pre>
+<p>If the command works, you should see the installed <code>SPAdes</code> version.</p>
+<p>Let’s check for manuals quickly.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="input-files" class="level3">
+<h3 class="anchored" data-anchor-id="input-files">Input files</h3>
+<p>For genome assembly, we will use the <strong>paired trimmed reads</strong> generated in the previous lesson.</p>
+<pre class="text"><code>trimmed_reads/S1_trim_R1.fastq.gz
+trimmed_reads/S1_trim_R2.fastq.gz</code></pre>
+<p>Check that the files are present:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> trimmed_reads</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see:</p>
-<pre class="text"><code>S1_contigs_filtered.fasta</code></pre>
+<pre class="text"><code>S1_trim_R1.fastq.gz
+S1_trim_R2.fastq.gz</code></pre>
 <div class="callout callout-style-default callout-note callout-titled" title="Important">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -669,126 +604,159 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For this lesson, we will use the filtered assembly file:</p>
-<pre class="text"><code>assemblies/S1_contigs_filtered.fasta</code></pre>
+<p>For paired-end assembly, use the paired trimmed reads:</p>
+<pre class="text"><code>S1_trim_R1.fastq.gz
+S1_trim_R2.fastq.gz</code></pre>
+<p>Do not use the <code>unpaired</code> files unless your instructor specifically asks you to include them.</p>
 </div>
 </div>
-<section id="create-output-directory" class="level3">
-<h3 class="anchored" data-anchor-id="create-output-directory">Create output directory</h3>
-<p>We will save the MLST result inside the <code>classify</code> directory.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check that the directory exists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="activate-the-mlst-environment" class="level3">
-<h3 class="anchored" data-anchor-id="activate-the-mlst-environment">Activate the MLST environment</h3>
-<p>Activate the <code>mlst</code> environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate mlst</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check that <code>mlst</code> is available:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mlst</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="run-mlst" class="level2">
-<h2 class="anchored" data-anchor-id="run-mlst">Run MLST</h2>
-<p>Run <code>mlst</code> on the filtered assembly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mlst</span> assemblies/S1_contigs_filtered.fasta <span class="op">&gt;</span> classify/S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="understanding-the-mlst-command" class="level3">
-<h3 class="anchored" data-anchor-id="understanding-the-mlst-command">Understanding the MLST command</h3>
+<section id="what-is-genome-assembly" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-genome-assembly">What is genome assembly?</h2>
+<p>Genome assembly is the process of joining sequencing reads together to create longer sequences.</p>
+<p>These longer sequences are called <strong>contigs</strong>.</p>
+<pre class="text"><code>Short reads  →  contigs  →  draft genome assembly</code></pre>
+<p>Because bacterial genomes are usually a few million base pairs long, short reads cannot cover the whole genome in one piece. Instead, the assembler reconstructs the genome as multiple contigs.</p>
+<section id="create-an-assembly-output-folder" class="level3">
+<h3 class="anchored" data-anchor-id="create-an-assembly-output-folder">Create an assembly output folder</h3>
+<p>Create a folder for assembly results:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assembly</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="run-spades" class="level3">
+<h3 class="anchored" data-anchor-id="run-spades">Run <code>SPAdes</code></h3>
+<p>Run <code>SPAdes</code> using the trimmed paired-end reads:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spades.py</span> <span class="dt">\</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-1</span> trimmed_reads/S1_trim_R1.fastq.gz <span class="dt">\</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-2</span> trimmed_reads/S1_trim_R2.fastq.gz <span class="dt">\</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> assembly/S1_spades <span class="dt">\</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">-t</span> 4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="understanding-the-command" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-the-command">Understanding the command</h3>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Part</th>
+<th>Option</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>mlst</code></td>
-<td>Runs the MLST tool</td>
+<td><code>spades.py</code></td>
+<td>Runs the <code>SPAdes</code> assembler</td>
 </tr>
 <tr class="even">
-<td><code>assemblies/S1_contigs_filtered.fasta</code></td>
-<td>Input filtered assembly file</td>
+<td><code>-1</code></td>
+<td>Forward paired-end reads</td>
 </tr>
 <tr class="odd">
-<td><code>&gt;</code></td>
-<td>Redirects the output to a file</td>
+<td><code>-2</code></td>
+<td>Reverse paired-end reads</td>
 </tr>
 <tr class="even">
-<td><code>classify/S1_mlst.txt</code></td>
-<td>Output MLST result file</td>
+<td><code>-o</code></td>
+<td>Output directory</td>
+</tr>
+<tr class="odd">
+<td><code>-t 4</code></td>
+<td>Use 4 CPU threads</td>
 </tr>
 </tbody>
 </table>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If your computer or server has more available CPUs, you can increase the number after <code>-t</code>.</p>
+<p>For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-t</span> 8</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
 </section>
+<section id="check-assembly-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="check-assembly-outputs">Check assembly outputs</h3>
+<p>After <code>SPAdes</code> finishes, list the output directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assembly/S1_spades</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see files and folders such as:</p>
+<pre class="text"><code>contigs.fasta
+scaffolds.fasta
+assembly_graph.fastg
+spades.log</code></pre>
+<p>The most important output for this training is usually:</p>
+<pre class="text"><code>assembly/S1_spades/contigs.fasta</code></pre>
 </section>
-<section id="check-mlst-output" class="level2">
-<h2 class="anchored" data-anchor-id="check-mlst-output">Check MLST output</h2>
-<p>List the <code>classify</code> directory:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<pre class="text"><code>S1_mlst.txt</code></pre>
-<p>View the MLST result:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> classify/S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="understanding-mlst-output" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-mlst-output">Understanding MLST output</h2>
-<p>The MLST output usually contains the following information:</p>
+<section id="important-spades-output-files" class="level3">
+<h3 class="anchored" data-anchor-id="important-spades-output-files">Important <code>SPAdes</code> output files</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Column</th>
-<th>Meaning</th>
+<th>File</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>File name</td>
-<td>Input assembly file</td>
+<td><code>contigs.fasta</code></td>
+<td>Main assembled contig file</td>
 </tr>
 <tr class="even">
-<td>Scheme</td>
-<td>MLST scheme used</td>
+<td><code>scaffolds.fasta</code></td>
+<td>Scaffolded assembly file</td>
 </tr>
 <tr class="odd">
-<td>ST</td>
-<td>Sequence type</td>
+<td><code>spades.log</code></td>
+<td>Log file from the assembly run</td>
 </tr>
 <tr class="even">
-<td>Alleles</td>
-<td>Allele numbers for housekeeping genes</td>
+<td><code>assembly_graph.fastg</code></td>
+<td>Assembly graph file</td>
 </tr>
 </tbody>
 </table>
-<p>An example output may look like this:</p>
-<pre class="text"><code>assemblies/S1_contigs_filtered.fasta  ecoli  131  adk(53) fumC(40) gyrB(47) icd(13) mdh(36) purA(28) recA(29)</code></pre>
-<p>In this example:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>ecoli</code></td>
-<td>MLST scheme</td>
-</tr>
-<tr class="even">
-<td><code>131</code></td>
-<td>Sequence type</td>
-</tr>
-<tr class="odd">
-<td><code>adk(53)</code></td>
-<td>Allele 53 for the <code>adk</code> gene</td>
-</tr>
-</tbody>
-</table>
+<p>For most downstream bacterial genome analysis in this course, we will use:</p>
+<pre class="text"><code>contigs.fasta</code></pre>
+</section>
+<section id="inspect-the-assembly-file" class="level3">
+<h3 class="anchored" data-anchor-id="inspect-the-assembly-file">Inspect the assembly file</h3>
+<p>A FASTA file contains sequence names and nucleotide sequences.</p>
+<p>View the first few lines of the assembly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> assembly/S1_spades/contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A FASTA file looks like this:</p>
+<pre class="text"><code>&gt;NODE_1_length_355368_cov_93.924892
+TATGAGGTGATGATATCACCTCTAACTAAGTGACC....
+&gt;NODE_2_length_343701_cov_97.093919
+GATTCCATCCCGAACTCAGAAGTGAAACGAAACAG....</code></pre>
+<p>Each sequence starts with a header line beginning with <code>&gt;</code>.</p>
+</section>
+</section>
+<section id="count-the-number-of-contigs" class="level2">
+<h2 class="anchored" data-anchor-id="count-the-number-of-contigs">Count the number of contigs</h2>
+<p>To count the number of contigs in the assembly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"^&gt;"</span> assembly/S1_spades/contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This counts the number of FASTA headers.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre class="text"><code>270</code></pre>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -799,12 +767,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Run <code>mlst</code> on <code>S1_contigs_filtered.fasta</code>.</p>
-<p>What sequence type was assigned to sample <code>S1</code>?</p>
+<p>Does your assembly contain one contig or multiple contigs?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -813,168 +780,139 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The answer depends on your dataset. Check the sequence type in:</p>
-<pre class="text"><code>classify/S1_mlst.txt</code></pre>
+<p>Most short-read bacterial genome assemblies contain multiple contigs. A smaller number of contigs usually suggests a more continuous assembly, but quality should be checked using assembly QC tools.</p>
 </div>
 </div>
 </div>
+<section id="copy-the-final-assembly-file" class="level3">
+<h3 class="anchored" data-anchor-id="copy-the-final-assembly-file">Copy the final assembly file</h3>
+<p>To make downstream analysis easier, create a folder for final assemblies:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Copy the <code>SPAdes</code> contig file into this folder with a clear sample name:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> assembly/S1_spades/contigs.fasta assemblies/S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check the copied file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<pre class="text"><code>S1_contigs.fasta</code></pre>
 </section>
-<section id="save-and-organize-results" class="level2">
-<h2 class="anchored" data-anchor-id="save-and-organize-results">Save and organize results</h2>
-<p>Your classification folder should now contain results from taxonomy and MLST.</p>
-<p>Check the folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You may see files such as:</p>
-<pre class="text"><code>S1.kraken2.output
-S1.kraken2.report
-S1.krona
-S1.krona.html
-S1_mlst.txt</code></pre>
-</section>
-<section id="download-mlst-result-from-the-server" class="level2">
-<h2 class="anchored" data-anchor-id="download-mlst-result-from-the-server">Download MLST result from the server</h2>
-<p>If you are working on a remote server, download the MLST result to your local computer.</p>
+<section id="download-assembly-file-from-the-server" class="level3">
+<h3 class="anchored" data-anchor-id="download-assembly-file-from-the-server">Download assembly file from the server</h3>
+<p>If you are working on a remote server, download the assembly file to your local computer using <code>scp</code>.</p>
 <p>From your <strong>local desktop terminal</strong>, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/classify/S1_mlst.txt .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This downloads <code>S1_mlst.txt</code> to your current local folder.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/assemblies/S1_contigs.fasta .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This downloads <code>S1_contigs.fasta</code> to your current local folder.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Open <code>S1_mlst.txt</code> manually using Notepad, Notepad++, Excel, or VS Code.</p>
+<p>Open the downloaded file using a text editor such as Notepad++, VS Code, or another FASTA viewer.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_contigs.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
+<!--
+## Organize files
+
+Now organize the assembly outputs.
+
+Create folders if they do not already exist:
+
+```bash
+mkdir -p raw_reads trimmed_reads qc_reports assembly assemblies
+```
+
+Your working directory should contain folders like:
+
+```text
+raw_reads
+trimmed_reads
+qc_reports
+assembly
+assemblies
+```
+
+Check the folder structure:
+
+```bash
+ls
+```
+
+Check the final assembly file:
+
+```bash
+ls assemblies
+```
+
+::: {.callout-tip title="Optional" collapse=true}
+
+The full `SPAdes` output folder can be large. You may compress it for storage.
+
+```bash
+tar -czvf S1_spades_output.tar.gz assembly/S1_spades
+```
+
+To check the compressed file:
+
+```bash
+ls -lh S1_spades_output.tar.gz
+```
+:::
+
+::: {.callout-caution title="Exercise: organize assembly files"}
+Create a folder called `assemblies`.
+
+Copy the final `SPAdes` `contigs.fasta` file into this folder and rename it as:
+
+```text
+S1_contigs.fasta
+```
+
+Then check that the file exists.
+:::
+
+::: {.callout-tip title="Answer" collapse="true"}
+```bash
+mkdir -p assemblies
+
+cp assembly/S1_spades/contigs.fasta assemblies/S1_contigs.fasta
+
+ls assemblies
+```
+:::
+-->
 </section>
-<section id="compare-taxonomy-and-mlst" class="level2">
-<h2 class="anchored" data-anchor-id="compare-taxonomy-and-mlst">Compare taxonomy and MLST</h2>
-<p>Taxonomic classification and MLST provide different but complementary information.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Analysis</th>
-<th>Tool</th>
-<th>Main output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Taxonomic classification</td>
-<td>Kraken2</td>
-<td>Likely organism identity</td>
-</tr>
-<tr class="even">
-<td>Interactive taxonomy plot</td>
-<td>Krona</td>
-<td>Visual taxonomic hierarchy</td>
-</tr>
-<tr class="odd">
-<td>Sequence typing</td>
-<td>MLST</td>
-<td>Sequence type based on allele profile</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note callout-titled" title="Question">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Question
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Do your Kraken2 and MLST results agree?</p>
-<p>For example, does the MLST scheme match the organism suggested by Kraken2?</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Suggested answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Suggested answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The results should generally agree. For example, if Kraken2 suggests the sample is <em>Escherichia coli</em>, the MLST tool should ideally use an <em>E. coli</em> MLST scheme. If the scheme and taxonomy do not match, the sample identity or classification should be checked carefully.</p>
-</div>
-</div>
-</div>
 </section>
 <section id="final-directory-structure" class="level2">
 <h2 class="anchored" data-anchor-id="final-directory-structure">Final directory structure</h2>
 <p>At the end of this lesson, your directory should look like this:</p>
 <pre class="text"><code>.
-├── assemblies
-│   ├── S1_contigs.fasta
-│   └── S1_contigs_filtered.fasta
-└── classify
-    ├── S1.kraken2.output
-    ├── S1.kraken2.report
-    ├── S1.krona
-    ├── S1.krona.html
-    └── S1_mlst.txt</code></pre>
-</section>
-<section id="practical-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="practical-exercise">Practical exercise</h2>
-<p>Complete the following tasks:</p>
-<ol type="1">
-<li>Activate the <code>mlst</code> environment.</li>
-<li>Run <code>mlst</code> on <code>S1_contigs_filtered.fasta</code>.</li>
-<li>Save the result as <code>classify/S1_mlst.txt</code>.</li>
-<li>Open the MLST result.</li>
-<li>Record the MLST scheme and sequence type.</li>
-<li>Compare the MLST result with the Kraken2 taxonomy result.</li>
-</ol>
-<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: MLST summary">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Exercise: MLST summary
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Create a small table in your notes:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Sample</th>
-<th>Kraken2 main assignment</th>
-<th>MLST scheme</th>
-<th>Sequence type</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>S1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Fill in the table using:</p>
-<pre class="text"><code>classify/S1.kraken2.report
-classify/S1_mlst.txt</code></pre>
-</div>
-</div>
+├── raw_reads
+│   ├── S1_R1.fastq.gz
+│   └── S1_R2.fastq.gz
+├── trimmed_reads
+│   ├── S1_trim_R1.fastq.gz
+│   └── S1_trim_R2.fastq.gz
+├── qc_reports
+│   ├── S1_trim_R1_fastqc.html
+│   ├── S1_trim_R1_fastqc.zip
+│   ├── S1_trim_R2_fastqc.html
+│   └── S1_trim_R2_fastqc.zip
+├── assembly
+│   └── S1_spades
+│       ├── contigs.fasta
+│       ├── scaffolds.fasta
+│       └── spades.log
+└── assemblies
+    └── S1_contigs.fasta</code></pre>
 </section>
 <section id="key-points" class="level2">
 <h2 class="anchored" data-anchor-id="key-points">Key points</h2>
@@ -989,18 +927,18 @@ classify/S1_mlst.txt</code></pre>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>MLST assigns a sequence type using housekeeping gene allele profiles.</li>
-<li>The input is the filtered assembly file.</li>
-<li>The output is saved as <code>classify/S1_mlst.txt</code>.</li>
-<li>MLST results can be compared with Kraken2 taxonomy results.</li>
-<li>If taxonomy and MLST disagree, the sample should be checked carefully.</li>
+<li>Genome assembly reconstructs longer genome sequences from short sequencing reads.</li>
+<li><code>SPAdes</code> is commonly used for bacterial de novo genome assembly.</li>
+<li>The main output file is usually <code>contigs.fasta</code>.</li>
+<li>Rename and copy the final contig file to a separate <code>assemblies</code> folder.</li>
+<li>The assembly file will be used in the next lesson for assembly quality control.</li>
 </ul>
 </div>
 </div>
 </section>
 <section id="next-step" class="level2">
 <h2 class="anchored" data-anchor-id="next-step">Next step</h2>
-<p>In the next lesson, we will annotate the filtered assembly file using <code>Prokka</code>.</p>
+<p>In the next lesson, we will assess the quality of the assembled genome using assembly QC tools.</p>
 
 
 </section>
@@ -1426,13 +1364,13 @@ classify/S1_mlst.txt</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../materials/taxonomy.html" class="pagination-link" aria-label="Taxonomy">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Taxonomy</span>
+      <a href="../materials/5_trimming.html" class="pagination-link" aria-label="Trimming to Retain High Quality Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Trimming to Retain High Quality Data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../materials/annotation.html" class="pagination-link" aria-label="Genome Annotation with Prokka">
-        <span class="nav-page-text">Genome Annotation with Prokka</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../materials/7_qc_assembly.html" class="pagination-link" aria-label="Quality Control of Assembly File">
+        <span class="nav-page-text">Quality Control of Assembly File</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

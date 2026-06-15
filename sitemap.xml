@@ -25,68 +25,72 @@
     <lastmod>2026-06-11T16:41:32.712Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/copy-day2-files.html</loc>
-    <lastmod>2026-06-14T07:09:46.097Z</lastmod>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/15_know-your-bug.html</loc>
+    <lastmod>2026-06-14T03:10:10.282Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/annotation.html</loc>
-    <lastmod>2026-06-14T07:03:20.682Z</lastmod>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/3_navigating-files.html</loc>
+    <lastmod>2026-06-15T11:05:20.206Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/12_amr-vf-plasmid.html</loc>
+    <lastmod>2026-06-14T07:14:21.516Z</lastmod>
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/day-2.html</loc>
     <lastmod>2026-06-13T18:33:25.295Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/2-2-navigating-files.html</loc>
-    <lastmod>2026-06-14T03:09:54.442Z</lastmod>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/7_qc_assembly.html</loc>
+    <lastmod>2026-06-15T16:35:28.178Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/trimming.html</loc>
-    <lastmod>2026-06-14T05:03:48.485Z</lastmod>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/6_assembly.html</loc>
+    <lastmod>2026-06-15T16:33:01.932Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/taxonomy.html</loc>
-    <lastmod>2026-06-14T05:43:20.282Z</lastmod>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/5_trimming.html</loc>
+    <lastmod>2026-06-15T14:53:59.611Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/3-1-qc.html</loc>
-    <lastmod>2026-06-14T06:33:03.490Z</lastmod>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/4_qc.html</loc>
+    <lastmod>2026-06-15T14:22:19.791Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/1-2-know-your-bug.html</loc>
-    <lastmod>2026-06-14T03:10:10.282Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/pangenome.html</loc>
-    <lastmod>2026-06-14T07:16:06.742Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/qc_assembly.html</loc>
-    <lastmod>2026-06-14T05:31:56.883Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/amr-vf-plasmid.html</loc>
-    <lastmod>2026-06-14T07:14:21.516Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/2-1-into-ngs.html</loc>
-    <lastmod>2026-06-14T03:09:58.423Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/assembly.html</loc>
-    <lastmod>2026-06-14T05:35:45.167Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/mlst.html</loc>
-    <lastmod>2026-06-14T06:58:15.544Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/phylogenetics.html</loc>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/14_phylogenetics.html</loc>
     <lastmod>2026-06-14T07:18:55.134Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/1-1-pathogen_genomic_surveillances.html</loc>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/8_taxonomy.html</loc>
+    <lastmod>2026-06-14T05:43:20.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/9_mlst.html</loc>
+    <lastmod>2026-06-14T06:58:15.544Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/2_into-ngs.html</loc>
+    <lastmod>2026-06-14T03:09:58.423Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/conda_environments.html</loc>
+    <lastmod>2026-06-15T16:54:33.720Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/13_pangenome.html</loc>
+    <lastmod>2026-06-14T07:16:06.742Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/11_copy-day2-files.html</loc>
+    <lastmod>2026-06-14T07:09:46.097Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/1_pathogen_genomic_surveillances.html</loc>
     <lastmod>2026-06-14T03:10:14.010Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/10_annotation.html</loc>
+    <lastmod>2026-06-14T07:03:20.682Z</lastmod>
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/about.html</loc>

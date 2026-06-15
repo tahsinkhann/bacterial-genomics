@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MLST – Introduction to Bacterial Genomics</title>
+<title>Pathogen genomic surveillances – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +29,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../materials/annotation.html" rel="next">
-<link href="../materials/taxonomy.html" rel="prev">
+<link href="../materials/2_into-ngs.html" rel="next">
+<link href="../materials.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -111,13 +76,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="MLST – Introduction to Bacterial Genomics">
+<meta property="og:title" content="Pathogen genomic surveillances – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://tahsinkhann.github.io/bacterial-genomics/assets/genomic-surveillance.jpg">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
-<meta name="twitter:title" content="MLST – Introduction to Bacterial Genomics">
+<meta name="twitter:title" content="Pathogen genomic surveillances – Introduction to Bacterial Genomics">
 <meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://tahsinkhann.github.io/bacterial-genomics/assets/genomic-surveillance.jpg">
 <meta name="twitter:site" content="@tahsinkhann">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -379,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">MLST</h1>
+          <h1 class="quarto-secondary-nav-title">Pathogen genomic surveillances</h1>
         </a>     
     </div>
   </nav>
@@ -411,14 +378,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/1-1-pathogen_genomic_surveillances.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/1_pathogen_genomic_surveillances.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Pathogen genomic surveillances</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/1-2-know-your-bug.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Know your bug</span></a>
   </div>
 </li>
       </ul>
@@ -434,14 +395,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/2-1-into-ngs.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/2_into-ngs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to NGS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/2-2-navigating-files.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Navigating files</span></a>
+  <a href="../materials/3_navigating-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Server Connection and Navigating Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/conda_environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conda Environments</span></a>
   </div>
 </li>
       </ul>
@@ -457,13 +424,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/3-1-qc.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/4_qc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quality Control of Raw Reads</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/trimming.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/5_trimming.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Trimming to Retain High Quality Data</span></a>
   </div>
 </li>
@@ -472,7 +439,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Assembly</span></a>
+ <span class="menu-text">Genome Assembly</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -480,100 +447,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/assembly.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/6_assembly.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><em>De novo</em> Assembly</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../materials/qc_assembly.html" class="sidebar-item-text sidebar-link">
+  <a href="../materials/7_qc_assembly.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quality Control of Assembly File</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Taxnomy</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/taxonomy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taxonomy</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/mlst.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">MLST</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Annotation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/annotation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Genome Annotation with Prokka</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/copy-day2-files.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Copy Day 2 Files</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/amr-vf-plasmid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AMR and Virulence Factors</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Pangenome</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/pangenome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pangenome Analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Phylogenetics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../materials/phylogenetics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Phylogenetics</span></a>
   </div>
 </li>
       </ul>
@@ -588,26 +469,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#input-file" id="toc-input-file" class="nav-link" data-scroll-target="#input-file">Input file</a>
+  <li><a href="#genomic-sequencing-for-pathogen-surveillance" id="toc-genomic-sequencing-for-pathogen-surveillance" class="nav-link active" data-scroll-target="#genomic-sequencing-for-pathogen-surveillance">Genomic sequencing for pathogen surveillance</a></li>
+  <li><a href="#acute-watery-diarrhoea-awd" id="toc-acute-watery-diarrhoea-awd" class="nav-link" data-scroll-target="#acute-watery-diarrhoea-awd">Acute Watery Diarrhoea (AWD)</a>
   <ul class="collapse">
-  <li><a href="#create-output-directory" id="toc-create-output-directory" class="nav-link" data-scroll-target="#create-output-directory">Create output directory</a></li>
-  <li><a href="#activate-the-mlst-environment" id="toc-activate-the-mlst-environment" class="nav-link" data-scroll-target="#activate-the-mlst-environment">Activate the MLST environment</a></li>
+  <li><a href="#vibrio-cholerae" id="toc-vibrio-cholerae" class="nav-link" data-scroll-target="#vibrio-cholerae"><em>Vibrio cholerae</em></a></li>
   </ul></li>
-  <li><a href="#run-mlst" id="toc-run-mlst" class="nav-link" data-scroll-target="#run-mlst">Run MLST</a>
-  <ul class="collapse">
-  <li><a href="#understanding-the-mlst-command" id="toc-understanding-the-mlst-command" class="nav-link" data-scroll-target="#understanding-the-mlst-command">Understanding the MLST command</a></li>
-  </ul></li>
-  <li><a href="#check-mlst-output" id="toc-check-mlst-output" class="nav-link" data-scroll-target="#check-mlst-output">Check MLST output</a></li>
-  <li><a href="#understanding-mlst-output" id="toc-understanding-mlst-output" class="nav-link" data-scroll-target="#understanding-mlst-output">Understanding MLST output</a></li>
-  <li><a href="#save-and-organize-results" id="toc-save-and-organize-results" class="nav-link" data-scroll-target="#save-and-organize-results">Save and organize results</a></li>
-  <li><a href="#download-mlst-result-from-the-server" id="toc-download-mlst-result-from-the-server" class="nav-link" data-scroll-target="#download-mlst-result-from-the-server">Download MLST result from the server</a></li>
-  <li><a href="#compare-taxonomy-and-mlst" id="toc-compare-taxonomy-and-mlst" class="nav-link" data-scroll-target="#compare-taxonomy-and-mlst">Compare taxonomy and MLST</a></li>
-  <li><a href="#final-directory-structure" id="toc-final-directory-structure" class="nav-link" data-scroll-target="#final-directory-structure">Final directory structure</a></li>
-  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical exercise</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
-  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
+  <li><a href="#key-genomic-surveillance-questions" id="toc-key-genomic-surveillance-questions" class="nav-link" data-scroll-target="#key-genomic-surveillance-questions">Key genomic surveillance questions</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -617,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">MLST</h1>
+<h1 class="title d-none d-lg-block">Pathogen genomic surveillances</h1>
 </div>
 
 
@@ -634,373 +502,133 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>After taxonomic classification, we can identify the <strong>sequence type</strong> of a bacterial genome using <strong>MLST</strong>.</p>
-<p>MLST stands for <strong>multilocus sequence typing</strong>. It compares specific housekeeping genes against known allele databases and assigns a sequence type when a matching profile is found.</p>
-<p>In this lesson, we will run <code>mlst</code> on the filtered assembly file and save the result inside the <code>classify</code> directory.</p>
-</section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of this lesson, you should be able to:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After this section you should be able to:</p>
 <ul>
-<li>explain what MLST is</li>
-<li>activate the <code>mlst</code> environment</li>
-<li>run <code>mlst</code> on an assembled genome</li>
-<li>save MLST results into the <code>classify</code> directory</li>
-<li>interpret the basic MLST output</li>
+<li>Recognise the role of genomic surveillance in pathogen surveillance.</li>
+<li>Summarise the main methods and steps involved in genomic sequencing analysis.</li>
+<li>Describe the etiology of acute watery diarrhoea (AWD) and how it relates to the <em>Vibrio cholerae</em> bacterium.</li>
+<li>Outline the main features of the <em>Vibrio cholerae</em> genome and its strains.</li>
+<li>List the key questions addressed by pathogen genomic surveilance.</li>
 </ul>
+</div>
+</div>
+<p>Genomics helps track infectious diseases by sequencing the genomes of bacteria, parasites, and viruses. According to the World Health Organisation (WHO), genomic surveillance involves continuously monitoring pathogens and analyzing their genetic similarities and differences. The WHO has developed a 10-year global strategy for genomic surveillance of potentially pandemic and epidemic pathogens, which you can access <a href="https://www.who.int/publications/i/item/9789240046979">here</a>.</p>
+<p>Genomic surveillance aims to offer insights into pathogen evolution and understand genetic changes that may affect transmission or resistance to interventions.</p>
+<div id="fig-genomic-surveillance" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-genomic-surveillance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/genomic-surveillance.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-genomic-surveillance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Overview of genomic surveillance. Source: <a href="https://www.who.int/initiatives/genomic-surveillance-strategy">WHO</a>
+</figcaption>
+</figure>
+</div>
+<section id="genomic-sequencing-for-pathogen-surveillance" class="level2">
+<h2 class="anchored" data-anchor-id="genomic-sequencing-for-pathogen-surveillance">Genomic sequencing for pathogen surveillance</h2>
+<p>In genomic surveillance, one crucial technique is <strong>genome sequencing</strong>. It involves examining the DNA (or RNA) of pathogens to understand their spread in communities, their role in illnesses, and their development of resistance to medications and vaccines.</p>
+<p>Within pathogen genomic surveillance, a key method is <strong>whole genome sequencing (WGS)</strong>. Here, the aim is to reveal the complete order of the bases in the pathogen’s genome. Today, WGS has become the standard approach for quickly detecting and investigating outbreaks. Public health labs primarily use it to promptly identify outbreak sources and assess antimicrobial resistance.</p>
+<p>Broadly speaking, genome sequencing involves DNA extraction, library preparation, sequencing and bioinformatic analysis. Typically, WGS produces millions of DNA fragments, termed sequence reads, using sequencing technologies such as Illumina, Oxford Nanopore, or PacBio.</p>
+<div id="fig-genome-sequencing" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-genome-sequencing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/Genome-Sequencing.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-genome-sequencing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Overview of whole genome sequencing applied to outbreak detection. Source: <a href="https://www.cdc.gov/">US CDC</a>
+</figcaption>
+</figure>
+</div>
+<p>Following WGS, the subsequent step involves <strong>bioinformatic and downstream analysis</strong>, encompassing:</p>
+<ul>
+<li>Checking and filtering sequence read quality</li>
+<li>Genome assembly</li>
+<li>Evaluating genome assembly quality</li>
+<li>Identifying strain types and their resistance to antimicrobial agents.</li>
+</ul>
+<p>Detailed discussions of these analytical steps are presented in the following sections.</p>
 </section>
-<section id="input-file" class="level2">
-<h2 class="anchored" data-anchor-id="input-file">Input file</h2>
-<p>In the previous lessons, we created a filtered assembly file:</p>
-<pre class="text"><code>assemblies/S1_contigs_filtered.fasta</code></pre>
-<p>Check that the file exists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<pre class="text"><code>S1_contigs_filtered.fasta</code></pre>
-<div class="callout callout-style-default callout-note callout-titled" title="Important">
+<section id="acute-watery-diarrhoea-awd" class="level2">
+<h2 class="anchored" data-anchor-id="acute-watery-diarrhoea-awd">Acute Watery Diarrhoea (AWD)</h2>
+<p>Acute Watery Diarrhea (AWD) is a rapid-onset gastrointestinal condition characterized by frequent and loose, watery stools. It typically lasts for a short duration and is often caused by bacterial, viral, or parasitic infections, leading to dehydration if left untreated. <a href="https://www.emro.who.int/health-topics/cholera-outbreak/index.html"><strong>Cholera</strong></a>, a specific type of AWD, is primarily caused by the bacterium <strong><em>Vibrio cholerae</em></strong>. It can manifest as severe diarrhea and vomiting and can swiftly lead to dehydration and electrolyte imbalances. <a href="https://www.emro.who.int/health-topics/cholera-outbreak/latest-updates.html">Cholera outbreaks</a> are of particular concern due to their potential to spread rapidly, especially in areas with limited access to clean water and sanitation facilities. Effective treatment involves rehydration therapy and, in severe cases, antibiotics. Controlling cholera outbreaks often requires a combination of public health measures, including improved hygiene and sanitation practices, as well as vaccination campaigns in some instances.</p>
+<p>The ability to detect if a spike in AWD cases is caused by a pathogenic strain of <em>Vibrio cholerae</em> is therefore critical for public health action. Genomic surveillance can help in addressing if the patient infected with a pathogenic strain of <em>Vibrio cholerae</em> and whether it is resistant to antimicrobial agents.</p>
+<section id="vibrio-cholerae" class="level3">
+<h3 class="anchored" data-anchor-id="vibrio-cholerae"><em>Vibrio cholerae</em></h3>
+<p><strong><em>Vibrio cholerae</em></strong> is a gram-negative bacterium primarily found in water, making it highly susceptible to waterborne transmission, particularly through contaminated water sources and food. This bacterium exhibits notable genomic plasticity, characterized by the acquisition of various genetic elements that contribute to its pathogenicity. The history of <em>V. cholerae</em>’s evolution involves the integration of these elements, resulting in the emergence of different pathogenic strains (<a href="#fig-vibrio-strains" class="quarto-xref">Figure&nbsp;3</a>).</p>
+<p><strong>Strains</strong> of <em>V. cholerae</em> are typically classified through serotyping. The most prevalent serogroup, O1, includes many pathogenic strains. Further subdivisions occur based on serotypes, determined by the methylation status of the terminal lipopolysaccharide in the O-antigen. Additionally, <em>V. cholerae</em> is categorized into biotypes, with El Tor 7PET strains being one example.</p>
+<p><em>V. cholerae</em> has been associated with several pandemic outbreaks, each featuring distinct prevalent strains that evolved through the acquisition of diverse genetic components. Notably, this evolutionary process often involves the incorporation of genetic elements such as the Vibrio pathogenicity island-1 and <strong>cholera toxin phage</strong> (CTX). There are multiple versions of this phage, with the current one being the <strong>El Tor</strong> phage. In summary, <em>V. cholerae</em> possesses a dynamic genome shaped by the acquisition of new genetic elements through horizontal gene transfer mechanisms like conjugation and phage infection, which has implications for understanding antimicrobial resistance (AMR).</p>
+<div id="fig-vibrio-strains" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vibrio-strains-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://www.frontiersin.org/files/Articles/1155751/fmed-10-1155751-HTML/image_m/fmed-10-1155751-g001.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vibrio-strains-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Strain classification of <em>Vibrio cholerae</em> and its associated evolution. Source: Fig. 1 in <a href="https://doi.org/10.3389/fmed.2023.1155751">Montero et al.&nbsp;2023</a>
+</figcaption>
+</figure>
+</div>
+<p>In addition to serotyping, extensive <strong>genomic analysis</strong> of numerous <em>Vibrio</em> genomes offers a more refined approach to clustering strains into lineages, enhancing our comprehension of the origins of local outbreaks and transmission pathways. These comprehensive genomic investigations unveil the species’ remarkable diversity, with local strains frequently harboring distinct variants of the cholera toxin and displaying specific transmission dynamics (<a href="https://doi.org/10.1126/science.aad5901">Weill et al.&nbsp;2017</a>, <a href="https://doi.org/10.1038/s41586-018-0818-3">Weill et al.&nbsp;2019</a>, <a href="https://doi.org/10.1126/science.aao2136">Domman et al.&nbsp;2017</a>).</p>
+<p>The <strong><em>Vibrio cholerae</em></strong> <strong>genome</strong> consists of two chromosomes, for a total of aproximately 4 Mb (million basepairs) (<a href="#fig-vibrio-genome" class="quarto-xref">Figure&nbsp;4</a>). Besides encoding various genes responsible for the bacterium’s structure and metabolism, its genome may also contain additional elements such as plasmids, phages, and pathogenicity islands that contribute to its ability to cause disease.</p>
+<div id="fig-vibrio-genome" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vibrio-genome-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://www.pnas.org/cms/10.1073/pnas.2006283117/asset/6a67690d-8cbb-4760-94a1-975c45466058/assets/images/large/pnas.2006283117fig01.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vibrio-genome-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Schematic representation of the <em>V. cholerae</em> genome. Source: Fig. 1 in <a href="https://doi.org/10.1073/pnas.2006283117">Pant et al.&nbsp;2020</a>
+</figcaption>
+</figure>
+</div>
+<p>For an excellent overview of cholera global epidemiology and the role of genomics in this area, we recommend the following lecture by Prof.&nbsp;Nick Thomson:</p>
+<p align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4Z_M8J8RfTs?si=d4vDZNjmVqcYMjfC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+</iframe>
+</p>
+</section>
+</section>
+<section id="key-genomic-surveillance-questions" class="level2">
+<h2 class="anchored" data-anchor-id="key-genomic-surveillance-questions">Key genomic surveillance questions</h2>
+<p>During genomic surveillance of outbreaks, especially when investigating cases of acute watery diarrhoea (AWD), several critical public health questions arise:</p>
+<ul>
+<li>Can <em>Vibrio cholerae</em> be detected in the collected and sequenced samples?</li>
+<li>If so, is it a recognized pathogenic strain or an unknown variant?</li>
+<li>If it’s a known strain, then is it likely to be resistant to any antibiotics?</li>
+<li>If resistance is suspected, then which resistance genes have been detected and which antibiotics are predicted to be affected?</li>
+</ul>
+<p>Consequently, one of the primary goals of these materials is to understand how genomic sequencing can be applied to reconstruct the genome of <em>Vibrio cholerae</em> samples collected from patients exhibiting cholera symptoms, including AWD, to address these questions.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For this lesson, we will use the filtered assembly file:</p>
-<pre class="text"><code>assemblies/S1_contigs_filtered.fasta</code></pre>
-</div>
-</div>
-<section id="create-output-directory" class="level3">
-<h3 class="anchored" data-anchor-id="create-output-directory">Create output directory</h3>
-<p>We will save the MLST result inside the <code>classify</code> directory.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check that the directory exists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="activate-the-mlst-environment" class="level3">
-<h3 class="anchored" data-anchor-id="activate-the-mlst-environment">Activate the MLST environment</h3>
-<p>Activate the <code>mlst</code> environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate mlst</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check that <code>mlst</code> is available:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mlst</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="run-mlst" class="level2">
-<h2 class="anchored" data-anchor-id="run-mlst">Run MLST</h2>
-<p>Run <code>mlst</code> on the filtered assembly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mlst</span> assemblies/S1_contigs_filtered.fasta <span class="op">&gt;</span> classify/S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="understanding-the-mlst-command" class="level3">
-<h3 class="anchored" data-anchor-id="understanding-the-mlst-command">Understanding the MLST command</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Part</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>mlst</code></td>
-<td>Runs the MLST tool</td>
-</tr>
-<tr class="even">
-<td><code>assemblies/S1_contigs_filtered.fasta</code></td>
-<td>Input filtered assembly file</td>
-</tr>
-<tr class="odd">
-<td><code>&gt;</code></td>
-<td>Redirects the output to a file</td>
-</tr>
-<tr class="even">
-<td><code>classify/S1_mlst.txt</code></td>
-<td>Output MLST result file</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="check-mlst-output" class="level2">
-<h2 class="anchored" data-anchor-id="check-mlst-output">Check MLST output</h2>
-<p>List the <code>classify</code> directory:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see:</p>
-<pre class="text"><code>S1_mlst.txt</code></pre>
-<p>View the MLST result:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> classify/S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="understanding-mlst-output" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-mlst-output">Understanding MLST output</h2>
-<p>The MLST output usually contains the following information:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Column</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>File name</td>
-<td>Input assembly file</td>
-</tr>
-<tr class="even">
-<td>Scheme</td>
-<td>MLST scheme used</td>
-</tr>
-<tr class="odd">
-<td>ST</td>
-<td>Sequence type</td>
-</tr>
-<tr class="even">
-<td>Alleles</td>
-<td>Allele numbers for housekeeping genes</td>
-</tr>
-</tbody>
-</table>
-<p>An example output may look like this:</p>
-<pre class="text"><code>assemblies/S1_contigs_filtered.fasta  ecoli  131  adk(53) fumC(40) gyrB(47) icd(13) mdh(36) purA(28) recA(29)</code></pre>
-<p>In this example:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>ecoli</code></td>
-<td>MLST scheme</td>
-</tr>
-<tr class="even">
-<td><code>131</code></td>
-<td>Sequence type</td>
-</tr>
-<tr class="odd">
-<td><code>adk(53)</code></td>
-<td>Allele 53 for the <code>adk</code> gene</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Run <code>mlst</code> on <code>S1_contigs_filtered.fasta</code>.</p>
-<p>What sequence type was assigned to sample <code>S1</code>?</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The answer depends on your dataset. Check the sequence type in:</p>
-<pre class="text"><code>classify/S1_mlst.txt</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="save-and-organize-results" class="level2">
-<h2 class="anchored" data-anchor-id="save-and-organize-results">Save and organize results</h2>
-<p>Your classification folder should now contain results from taxonomy and MLST.</p>
-<p>Check the folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> classify</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You may see files such as:</p>
-<pre class="text"><code>S1.kraken2.output
-S1.kraken2.report
-S1.krona
-S1.krona.html
-S1_mlst.txt</code></pre>
-</section>
-<section id="download-mlst-result-from-the-server" class="level2">
-<h2 class="anchored" data-anchor-id="download-mlst-result-from-the-server">Download MLST result from the server</h2>
-<p>If you are working on a remote server, download the MLST result to your local computer.</p>
-<p>From your <strong>local desktop terminal</strong>, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> genomevm@172.28.28.12:~/tanzim/classify/S1_mlst.txt .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This downloads <code>S1_mlst.txt</code> to your current local folder.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Linux</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Open <code>S1_mlst.txt</code> manually using Notepad, Notepad++, Excel, or VS Code.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xdg-open</span> S1_mlst.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</section>
-<section id="compare-taxonomy-and-mlst" class="level2">
-<h2 class="anchored" data-anchor-id="compare-taxonomy-and-mlst">Compare taxonomy and MLST</h2>
-<p>Taxonomic classification and MLST provide different but complementary information.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Analysis</th>
-<th>Tool</th>
-<th>Main output</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Taxonomic classification</td>
-<td>Kraken2</td>
-<td>Likely organism identity</td>
-</tr>
-<tr class="even">
-<td>Interactive taxonomy plot</td>
-<td>Krona</td>
-<td>Visual taxonomic hierarchy</td>
-</tr>
-<tr class="odd">
-<td>Sequence typing</td>
-<td>MLST</td>
-<td>Sequence type based on allele profile</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note callout-titled" title="Question">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Question
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Do your Kraken2 and MLST results agree?</p>
-<p>For example, does the MLST scheme match the organism suggested by Kraken2?</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Suggested answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Suggested answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The results should generally agree. For example, if Kraken2 suggests the sample is <em>Escherichia coli</em>, the MLST tool should ideally use an <em>E. coli</em> MLST scheme. If the scheme and taxonomy do not match, the sample identity or classification should be checked carefully.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="final-directory-structure" class="level2">
-<h2 class="anchored" data-anchor-id="final-directory-structure">Final directory structure</h2>
-<p>At the end of this lesson, your directory should look like this:</p>
-<pre class="text"><code>.
-├── assemblies
-│   ├── S1_contigs.fasta
-│   └── S1_contigs_filtered.fasta
-└── classify
-    ├── S1.kraken2.output
-    ├── S1.kraken2.report
-    ├── S1.krona
-    ├── S1.krona.html
-    └── S1_mlst.txt</code></pre>
-</section>
-<section id="practical-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="practical-exercise">Practical exercise</h2>
-<p>Complete the following tasks:</p>
-<ol type="1">
-<li>Activate the <code>mlst</code> environment.</li>
-<li>Run <code>mlst</code> on <code>S1_contigs_filtered.fasta</code>.</li>
-<li>Save the result as <code>classify/S1_mlst.txt</code>.</li>
-<li>Open the MLST result.</li>
-<li>Record the MLST scheme and sequence type.</li>
-<li>Compare the MLST result with the Kraken2 taxonomy result.</li>
-</ol>
-<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: MLST summary">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Exercise: MLST summary
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Create a small table in your notes:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Sample</th>
-<th>Kraken2 main assignment</th>
-<th>MLST scheme</th>
-<th>Sequence type</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>S1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Fill in the table using:</p>
-<pre class="text"><code>classify/S1.kraken2.report
-classify/S1_mlst.txt</code></pre>
-</div>
-</div>
-</section>
-<section id="key-points" class="level2">
-<h2 class="anchored" data-anchor-id="key-points">Key points</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Important">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Important
+<span class="screen-reader-only">Tip</span>Key Points
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>MLST assigns a sequence type using housekeeping gene allele profiles.</li>
-<li>The input is the filtered assembly file.</li>
-<li>The output is saved as <code>classify/S1_mlst.txt</code>.</li>
-<li>MLST results can be compared with Kraken2 taxonomy results.</li>
-<li>If taxonomy and MLST disagree, the sample should be checked carefully.</li>
+<li>Genomic surveillance is a crucial tool in tracking and monitoring the spread of pathogens. It helps identify disease outbreaks, track transmission routes, and understand the genetic diversity of pathogens.</li>
+<li>Genomic sequencing involves determining the complete genetic code of an organism. Steps include DNA extraction, library preparation, sequencing, and bioinformatics analysis.</li>
+<li>AWD is characterized by sudden-onset diarrhea and is often caused by infections. <em>Vibrio cholerae</em> is a bacterium responsible for cholera, a severe form of AWD.</li>
+<li>The <em>Vibrio cholerae</em> genome is composed of two circular chromosomes. It encodes various genes related to structure, metabolism, and pathogenicity.</li>
+<li>Different strains of <em>Vibrio cholerea</em> may carry variations in virulence and antibiotic resistance genes.</li>
+<li>Pathogen genomic surveillance aims to answer questions like the presence of pathogens, strain identification, antibiotic resistance, and transmission dynamics during outbreaks.</li>
 </ul>
 </div>
 </div>
-</section>
-<section id="next-step" class="level2">
-<h2 class="anchored" data-anchor-id="next-step">Next step</h2>
-<p>In the next lesson, we will annotate the filtered assembly file using <code>Prokka</code>.</p>
 
 
 </section>
@@ -1426,13 +1054,13 @@ classify/S1_mlst.txt</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../materials/taxonomy.html" class="pagination-link" aria-label="Taxonomy">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Taxonomy</span>
+      <a href="../materials.html" class="pagination-link" aria-label="Materials">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Materials</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../materials/annotation.html" class="pagination-link" aria-label="Genome Annotation with Prokka">
-        <span class="nav-page-text">Genome Annotation with Prokka</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../materials/2_into-ngs.html" class="pagination-link" aria-label="Introduction to NGS">
+        <span class="nav-page-text">Introduction to NGS</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
