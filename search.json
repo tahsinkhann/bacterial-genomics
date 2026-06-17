@@ -179,126 +179,192 @@
     "href": "materials/12_amr-vf-plasmid.html",
     "title": "AMR and Virulence Factors",
     "section": "",
-    "text": "After preparing the eight assembly files, we can screen the genomes for antimicrobial resistance genes and virulence factors.\nIn this lesson, we will use ABRicate to screen assembly FASTA files against two databases:\n\nncbi for antimicrobial resistance genes\nvfdb for virulence factor genes"
+    "text": "After preparing the eight assembly files, we can screen the genomes for antimicrobial resistance genes and virulence factors.\nIn this lesson, we will use ABRicate to screen assembly FASTA files against two databases:\n\nncbi for antimicrobial resistance genes\nvfdb for virulence factor genes",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#overview",
     "href": "materials/12_amr-vf-plasmid.html#overview",
     "title": "AMR and Virulence Factors",
     "section": "",
-    "text": "After preparing the eight assembly files, we can screen the genomes for antimicrobial resistance genes and virulence factors.\nIn this lesson, we will use ABRicate to screen assembly FASTA files against two databases:\n\nncbi for antimicrobial resistance genes\nvfdb for virulence factor genes"
+    "text": "After preparing the eight assembly files, we can screen the genomes for antimicrobial resistance genes and virulence factors.\nIn this lesson, we will use ABRicate to screen assembly FASTA files against two databases:\n\nncbi for antimicrobial resistance genes\nvfdb for virulence factor genes",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#learning-objectives",
     "href": "materials/12_amr-vf-plasmid.html#learning-objectives",
     "title": "AMR and Virulence Factors",
     "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nactivate the amr environment\ncreate an output directory for ABRicate results\nrun ABRicate on multiple assembly files\nidentify antimicrobial resistance genes\nidentify virulence factor genes\nsummarise ABRicate results across samples"
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nactivate the amr environment\ncreate an output directory for ABRicate results\nrun ABRicate on multiple assembly files\nidentify antimicrobial resistance genes\nidentify virulence factor genes\nsummarise ABRicate results across samples",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#input-files",
     "href": "materials/12_amr-vf-plasmid.html#input-files",
     "title": "AMR and Virulence Factors",
     "section": "Input files",
-    "text": "Input files\nIn the previous lesson, we copied eight filtered assembly files into the assemblies directory.\nCheck that the files are present:\nls assemblies\nYou should see files such as:\nS1_contigs_filtered.fasta\nS2_contigs_filtered.fasta\nS3_contigs_filtered.fasta\nS4_contigs_filtered.fasta\nS5_contigs_filtered.fasta\nS6_contigs_filtered.fasta\nS7_contigs_filtered.fasta\nS8_contigs_filtered.fasta\nCount the number of assembly files:\nls assemblies/*_contigs_filtered.fasta | wc -l\nThe expected number is:\n8\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will screen all filtered assembly files:\nassemblies/*_contigs_filtered.fasta"
+    "text": "Input files\nIn the previous lesson, we copied eight filtered assembly files into the assemblies directory.\nCheck that the files are present:\nls assemblies\nYou should see files such as:\nS1_contigs_filtered.fasta\nS2_contigs_filtered.fasta\nS3_contigs_filtered.fasta\nS4_contigs_filtered.fasta\nS5_contigs_filtered.fasta\nS6_contigs_filtered.fasta\nS7_contigs_filtered.fasta\nS8_contigs_filtered.fasta\nCount the number of assembly files:\nls assemblies/*_contigs_filtered.fasta | wc -l\nThe expected number is:\n8\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will screen all filtered assembly files:\nassemblies/*_contigs_filtered.fasta",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#activate-the-amr-environment",
     "href": "materials/12_amr-vf-plasmid.html#activate-the-amr-environment",
     "title": "AMR and Virulence Factors",
     "section": "Activate the AMR environment",
-    "text": "Activate the AMR environment\nActivate the amr environment:\nconda activate amr\nCheck that ABRicate is available:\nabricate --version\nYou will see:\nabricate 1.4.0\nCheck available ABRicate databases:\nabricate --list"
+    "text": "Activate the AMR environment\nActivate the amr environment:\nconda activate amr\nCheck that ABRicate is available:\nabricate --version\nYou will see:\nabricate 1.4.0\nCheck available ABRicate databases:\nabricate --list",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#example-abricate-database-list",
     "href": "materials/12_amr-vf-plasmid.html#example-abricate-database-list",
     "title": "AMR and Virulence Factors",
     "section": "Example ABRicate database list",
-    "text": "Example ABRicate database list\nAfter running:\nabricate --list\nyou may see output like this:\nDATABASE        SEQUENCES  DBTYPE  DATE\necoli_vf        2701       nucl    2026-Apr-3\nncbi            8232       nucl    2026-Apr-3\nvfdb            4592       nucl    2026-Apr-3\nargannot        2224       nucl    2026-Apr-3\nupec_expec_vf   77         nucl    2026-Apr-3\nresfinder       3206       nucl    2026-Apr-3\ncard            6052       nucl    2026-Apr-3\nplasmidfinder   488        nucl    2026-Apr-3\nbacmet2         746        prot    2026-Apr-3\necoh            597        nucl    2026-Apr-3\nvictors         4545       nucl    2026-Apr-3\nmegares         6635       nucl    2026-Apr-3"
+    "text": "Example ABRicate database list\nAfter running:\nabricate --list\nyou may see output like this:\nDATABASE        SEQUENCES  DBTYPE  DATE\necoli_vf        2701       nucl    2026-Apr-3\nncbi            8232       nucl    2026-Apr-3\nvfdb            4592       nucl    2026-Apr-3\nargannot        2224       nucl    2026-Apr-3\nupec_expec_vf   77         nucl    2026-Apr-3\nresfinder       3206       nucl    2026-Apr-3\ncard            6052       nucl    2026-Apr-3\nplasmidfinder   488        nucl    2026-Apr-3\nbacmet2         746        prot    2026-Apr-3\necoh            597        nucl    2026-Apr-3\nvictors         4545       nucl    2026-Apr-3\nmegares         6635       nucl    2026-Apr-3",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#interpreting-the-database-list",
     "href": "materials/12_amr-vf-plasmid.html#interpreting-the-database-list",
     "title": "AMR and Virulence Factors",
     "section": "Interpreting the database list",
-    "text": "Interpreting the database list\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\nDATABASE\nName of the ABRicate database\n\n\nSEQUENCES\nNumber of sequences in the database\n\n\nDBTYPE\nDatabase type, usually nucleotide (nucl) or protein (prot)\n\n\nDATE\nDate when the database was last updated\n\n\n\nFor this lesson, we will mainly use:\n\n\n\nAnalysis\nDatabase\n\n\n\n\nAMR gene screening\nncbi\n\n\nVirulence factor screening\nvfdb\n\n\nPlasmid screening\nplasmidfinder\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich ABRicate database will we use for AMR gene screening?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nWe will use:\nncbi\nfor AMR gene screening.\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich ABRicate database will we use for virulence factor screening?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nWe will use:\nvfdb\nfor virulence factor screening.\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich database can be used for plasmid screening?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nWe can use:\nplasmidfinder\nfor plasmid screening.\n\n\n\n\nCreate output directory\nCreate a directory named abricate:\nmkdir -p abricate\nCheck that the directory was created:\nls\nyou will see:\nabricate  \nannotation  \nassemblies  \nclassify\n\n\nRun ABRicate for AMR genes\nRun ABRicate using the ncbi database:\nabricate \\\n  --db ncbi \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/amr.tsv\n\n\nUnderstanding the AMR command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nabricate\nRuns ABRicate\n\n\n--db ncbi\nUses the NCBI AMR database\n\n\n--threads 4\nUses 4 CPU threads\n\n\nassemblies/*_contigs_filtered.fasta\nScreens all filtered assembly files\n\n\n&gt;\nRedirects output to a file\n\n\nabricate/amr.tsv\nAMR output table\n\n\n\n\n\nCheck AMR output\nCheck that the output file was created:\nls abricate\nOutput:\namr.tsv\nView the first few lines:\nhead abricate/amr.tsv\n\n\nRun ABRicate for virulence factors\nRun ABRicate using the vfdb database:\nabricate \\\n  --db vfdb \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/vf.tsv\n\n\nUnderstanding the virulence factor command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\n--db vfdb\nUses the virulence factor database\n\n\nassemblies/*_contigs_filtered.fasta\nScreens all filtered assembly files\n\n\nabricate/vf.tsv\nVirulence factor output table"
-  },
-  {
-    "objectID": "materials/12_amr-vf-plasmid.html#check-virulence-factor-output",
-    "href": "materials/12_amr-vf-plasmid.html#check-virulence-factor-output",
-    "title": "AMR and Virulence Factors",
-    "section": "Check virulence factor output",
-    "text": "Check virulence factor output\nView the first few lines:\nls abricate\nYou should now have:\namr.tsv\nvf.tsv\nView the first few lines:\nhead abricate/vf.tsv\n\nUnderstanding ABRicate output\nABRicate output usually includes columns such as:\n\n\n\nColumn\nMeaning\n\n\n\n\nFILE\nInput genome file\n\n\nSEQUENCE\nContig name\n\n\nSTART\nStart position of hit\n\n\nEND\nEnd position of hit\n\n\nGENE\nDetected gene\n\n\nCOVERAGE\nQuery coverage\n\n\nCOVERAGE_MAP\nCoverage pattern\n\n\nGAPS\nNumber of gaps\n\n\n%COVERAGE\nPercentage of gene covered\n\n\n%IDENTITY\nSequence identity\n\n\nDATABASE\nDatabase used\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen abricate/amr.tsv.\nWhich AMR genes are detected in sample S1?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Look for rows where the FILE column contains S1_contigs_filtered.fasta.\n\n\n\n\n\nSummarise AMR results\nCreate a summary table for AMR genes:\nabricate --summary abricate/amr.tsv &gt; abricate/amr_summary.tsv\nls abricate\nOutput:\namr.tsv  amr_summary.tsv  vf.tsv\nView the summary:\ncat abricate/amr_summary.tsv"
-  },
-  {
-    "objectID": "materials/12_amr-vf-plasmid.html#example-amr-summary-result",
-    "href": "materials/12_amr-vf-plasmid.html#example-amr-summary-result",
-    "title": "AMR and Virulence Factors",
-    "section": "Example AMR summary result",
-    "text": "Example AMR summary result\nAfter running:\ncat abricate/amr_summary.tsv\nyou may see output like this:\n#FILE                                   NUM_FOUND  almE    almF    almG    catB9   dfrA1   dfrA31  qnrVC5  varG\nassemblies/S1_contigs_filtered.fasta    5          100.00  100.00  100.00  100.00  .       .       .       100.00\nassemblies/S2_contigs_filtered.fasta    5          100.00  100.00  100.00  .       .       100.00  100.00  .\nassemblies/S3_contigs_filtered.fasta    6          100.00  100.00  100.00  100.00  100.00  .       .       100.00\nassemblies/S4_contigs_filtered.fasta    5          100.00  100.00  100.00  100.00  .       .       .       100.00\nassemblies/S5_contigs_filtered.fasta    3          100.00  100.00  100.00  .       .       .       .       .\nassemblies/S6_contigs_filtered.fasta    4          100.00  100.00  100.00  .       .       .       .       100.00\nassemblies/S7_contigs_filtered.fasta    4          100.00  100.00  100.00  .       .       .       .       100.00\nassemblies/S8_contigs_filtered.fasta    5          100.00  100.00  100.00  100.00  .       .       .       100.00"
-  },
-  {
-    "objectID": "materials/12_amr-vf-plasmid.html#interpreting-the-amr-summary",
-    "href": "materials/12_amr-vf-plasmid.html#interpreting-the-amr-summary",
-    "title": "AMR and Virulence Factors",
-    "section": "Interpreting the AMR summary",
-    "text": "Interpreting the AMR summary\nEach row represents one genome assembly.\nEach column after NUM_FOUND represents an AMR-associated gene detected by ABRicate.\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\n#FILE\nInput assembly file\n\n\nNUM_FOUND\nNumber of AMR genes detected in that assembly\n\n\nGene columns\nPercentage identity or coverage reported for each detected gene\n\n\n.\nGene was not detected in that assembly\n\n\n\nIn this example, all samples contain:\nalmE\nalmF\nalmG\nThese genes were detected at 100.00 in all eight assemblies."
+    "text": "Interpreting the database list\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\nDATABASE\nName of the ABRicate database\n\n\nSEQUENCES\nNumber of sequences in the database\n\n\nDBTYPE\nDatabase type, usually nucleotide (nucl) or protein (prot)\n\n\nDATE\nDate when the database was last updated\n\n\n\nFor this lesson, we will mainly use:\n\n\n\nAnalysis\nDatabase\n\n\n\n\nAMR gene screening\nncbi\n\n\nVirulence factor screening\nvfdb\n\n\nPlasmid screening\nplasmidfinder\n\n\n\n\n\nCreate output directory\nCreate a directory named abricate:\nmkdir -p abricate\nCheck that the directory was created:\nls\nyou will see:\nabricate  \nannotation  \nassemblies  \nclassify\n\n\nRun ABRicate for AMR genes\nRun ABRicate using the ncbi database:\nabricate \\\n  --db ncbi \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/amr.tsv\n\n\nUnderstanding the AMR command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nabricate\nRuns ABRicate\n\n\n--db ncbi\nUses the NCBI AMR database\n\n\n--threads 4\nUses 4 CPU threads\n\n\nassemblies/*_contigs_filtered.fasta\nScreens all filtered assembly files\n\n\n&gt;\nRedirects output to a file\n\n\nabricate/amr.tsv\nAMR output table\n\n\n\n\n\nCheck AMR output\nCheck that the output file was created:\nls abricate\nOutput:\namr.tsv\nView the first few lines:\nhead abricate/amr.tsv\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen abricate/amr.tsv.\nWhich AMR genes are detected in sample S1?\n\n\n\n\nSummarise AMR results\nCreate a summary table for AMR genes:\nabricate --summary abricate/amr.tsv &gt; abricate/amr_summary.tsv\nls abricate\nOutput:\namr.tsv  amr_summary.tsv\nView the summary:\ncat abricate/amr_summary.tsv\nyou may see output like this:\n#FILE                                   NUM_FOUND  almE    almF    almG    catB9   dfrA1   dfrA31  qnrVC5  varG\nassemblies/S1_contigs_filtered.fasta    5          100.00  100.00  100.00  100.00  .       .       .       100.00\nassemblies/S2_contigs_filtered.fasta    5          100.00  100.00  100.00  .       .       100.00  100.00  .\nassemblies/S3_contigs_filtered.fasta    6          100.00  100.00  100.00  100.00  100.00  .       .       100.00\nassemblies/S4_contigs_filtered.fasta    5          100.00  100.00  100.00  100.00  .       .       .       100.00\nassemblies/S5_contigs_filtered.fasta    3          100.00  100.00  100.00  .       .       .       .       .\nassemblies/S6_contigs_filtered.fasta    4          100.00  100.00  100.00  .       .       .       .       100.00\nassemblies/S7_contigs_filtered.fasta    4          100.00  100.00  100.00  .       .       .       .       100.00\nassemblies/S8_contigs_filtered.fasta    5          100.00  100.00  100.00  100.00  .       .       .       100.00\n\n\nInterpreting the AMR summary\nEach row represents one genome assembly.\nEach column after NUM_FOUND represents an AMR-associated gene detected by ABRicate.\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\n#FILE\nInput assembly file\n\n\nNUM_FOUND\nNumber of AMR genes detected in that assembly\n\n\nGene columns\nPercentage identity or coverage reported for each detected gene\n\n\n.\nGene was not detected in that assembly\n\n\n\nIn this example, all samples contain:\nalmE\nalmF\nalmG\nThese genes were detected at 100.00 in all eight assemblies.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#summary-of-amr-gene-presence",
     "href": "materials/12_amr-vf-plasmid.html#summary-of-amr-gene-presence",
     "title": "AMR and Virulence Factors",
     "section": "Summary of AMR gene presence",
-    "text": "Summary of AMR gene presence\n\n\n\nSample\nNumber of genes detected\nGenes detected\n\n\n\n\nS1\n5\nalmE, almF, almG, catB9, varG\n\n\nS2\n5\nalmE, almF, almG, dfrA31, qnrVC5\n\n\nS3\n6\nalmE, almF, almG, catB9, dfrA1, varG\n\n\nS4\n5\nalmE, almF, almG, catB9, varG\n\n\nS5\n3\nalmE, almF, almG\n\n\nS6\n4\nalmE, almF, almG, varG\n\n\nS7\n4\nalmE, almF, almG, varG\n\n\nS8\n5\nalmE, almF, almG, catB9, varG"
+    "text": "Summary of AMR gene presence\n\n\n\nSample\nNumber of genes detected\nGenes detected\n\n\n\n\nS1\n5\nalmE, almF, almG, catB9, varG\n\n\nS2\n5\nalmE, almF, almG, dfrA31, qnrVC5\n\n\nS3\n6\nalmE, almF, almG, catB9, dfrA1, varG\n\n\nS4\n5\nalmE, almF, almG, catB9, varG\n\n\nS5\n3\nalmE, almF, almG\n\n\nS6\n4\nalmE, almF, almG, varG\n\n\nS7\n4\nalmE, almF, almG, varG\n\n\nS8\n5\nalmE, almF, almG, catB9, varG\n\n\n\n\nQuestions\n\n\n\n\n\n\nNoteQuestion 1\n\n\n\nWhich sample has the highest number of AMR genes detected?\n\n\n\nWe can also visualize the amr_summary.tsv in a heatmap using a custop python/R script.\n\n\n\n\n\n\nNote\n\n\n\nWe will share the script with you later this training session so you can understand how to visualize an AMR dataset\n\n\n\n\n\n\n\n\nFigure 1: AMR gene heatmap for all 8 samples\n\n\n\n\n\n\n\n\n\nNoteQuestion 2\n\n\n\nWhich AMR genes are found in all eight samples?\n\n\n\n\n\n\n\n\n\nNoteQuestion 3\n\n\n\nWhich sample contains qnrVC5?\n\n\n\n\n\n\n\n\n\nNoteQuestion 4\n\n\n\nWhich samples contain catB9?",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
-    "objectID": "materials/12_amr-vf-plasmid.html#questions",
-    "href": "materials/12_amr-vf-plasmid.html#questions",
+    "objectID": "materials/12_amr-vf-plasmid.html#run-abricate-for-virulence-factors",
+    "href": "materials/12_amr-vf-plasmid.html#run-abricate-for-virulence-factors",
     "title": "AMR and Virulence Factors",
-    "section": "Questions",
-    "text": "Questions\n\n\n\n\n\n\nNoteQuestion 1\n\n\n\nWhich sample has the highest number of AMR genes detected?\n\n\n\n\n\n\n\n\n\nNoteQuestion 2\n\n\n\nWhich AMR genes are found in all eight samples?\n\n\n\n\n\n\n\n\n\nNoteQuestion 3\n\n\n\nWhich sample contains qnrVC5?\n\n\n\n\n\n\n\n\n\nNoteQuestion 4\n\n\n\nWhich samples contain catB9?\n\n\n\n\nSummarise virulence factor results\nCreate a summary table for virulence factor genes:\nabricate --summary abricate/vf.tsv &gt; abricate/vf_summary.tsv\nView the summary:\ncat abricate/vf_summary.tsv\n\n\nCheck all ABRicate outputs\nList the output directory:\nls abricate\nExpected files:\namr.tsv\namr_summary.tsv\nvf.tsv\nvf_summary.tsv\n\n\nCompare AMR and virulence factor results\nAMR and virulence factor screening answer different biological questions.\n\n\n\n\n\n\n\n\n\nAnalysis\nDatabase\nOutput\nQuestion answered\n\n\n\n\nAMR screening\nncbi\namr.tsv\nWhich resistance genes are present?\n\n\nAMR summary\nncbi\namr_summary.tsv\nWhich samples contain which AMR genes?\n\n\nVirulence factor screening\nvfdb\nvf.tsv\nWhich virulence-associated genes are present?\n\n\nVirulence summary\nvfdb\nvf_summary.tsv\nWhich samples contain which virulence factors?\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich sample has the highest number of AMR gene hits?\nWhich sample has the highest number of virulence factor hits?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nUse the summary files to compare samples:\ncat abricate/amr_summary.tsv\ncat abricate/vf_summary.tsv\nThe sample with the most gene columns marked as present has the highest number of detected hits."
+    "section": "Run ABRicate for virulence factors",
+    "text": "Run ABRicate for virulence factors\nRun ABRicate using the vfdb database:\nabricate \\\n  --db vfdb \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/vf.tsv\n\nUnderstanding the virulence factor command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\n--db vfdb\nUses the virulence factor database\n\n\nassemblies/*_contigs_filtered.fasta\nScreens all filtered assembly files\n\n\nabricate/vf.tsv\nVirulence factor output table",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
+  },
+  {
+    "objectID": "materials/12_amr-vf-plasmid.html#check-virulence-factor-output",
+    "href": "materials/12_amr-vf-plasmid.html#check-virulence-factor-output",
+    "title": "AMR and Virulence Factors",
+    "section": "Check virulence factor output",
+    "text": "Check virulence factor output\nView the first few lines:\nls abricate\nYou should now have:\namr.tsv\namr_summary.tsv\nvf.tsv\nView the first few lines:\nhead abricate/vf.tsv\nyou may see output like this:\n#FILE   SEQUENCE    START   END STRAND  GENE    COVERAGE    COVERAGE_MAP    GAPS    %COVERAGE   %IDENTITY   DATABASE    ACCESSION   PRODUCT RESISTANCE\nassemblies/S1_contigs_filtered.fasta    NODE_15_length_78481_cov_84.780315  182 556 -   ctxB    1-375/375   =============== 0/0 100.00  99.47   vfdb    WP_000593522    (ctxB) cholera enterotoxin B subunit [CT (VF0128) - Exotoxin (VFC0235)] [Vibrio cholerae O1 biovar El Tor str. N16961]  \nassemblies/S1_contigs_filtered.fasta    NODE_15_length_78481_cov_84.780315  553 1329    -   ctxA    1-777/777   =============== 0/0 100.00  100.00  vfdb    WP_001881225    (ctxA) cholera enterotoxin A subunit [CT (VF0128) - Exotoxin (VFC0235)] [Vibrio cholerae O1 biovar El Tor str. N16961]  \nassemblies/S1_contigs_filtered.fasta    NODE_15_length_78481_cov_84.780315  1428    2627    -   zot 1-1200/1200 =============== 0/0 100.00  100.00  vfdb    WP_000021616    (zot) zona occludens toxin [Zot (VF0129) - Exotoxin (VFC0235)] [Vibrio cholerae O1 biovar El Tor str. N16961]   \nassemblies/S1_contigs_filtered.fasta    NODE_15_length_78481_cov_84.780315  2624    2917    -   ace 1-294/294   =============== 0/0 100.00  100.00  vfdb    WP_000979342    (ace) accessory cholera enterotoxin [Ace (VF0130) - Exotoxin (VFC0235)] [Vibrio cholerae O1 biovar El Tor str. N16961]  \nassemblies/S1_contigs_filtered.fasta    NODE_15_length_78481_cov_84.780315  56878   58047   +   cqsA    1-1170/1170 =============== 0/0 100.00  99.92   vfdb    WP_001039912    (cqsA) CAI-1 autoinducer synthase [CAI-1 (VF0405) - Biofilm (VFC0271)] [Vibrio cholerae O1 biovar El Tor str. N16961]   \nassemblies/S1_contigs_filtered.fasta    NODE_17_length_73937_cov_105.952587 16160   18172   +   mshH    1-2013/2013 ========/====== 2/2 99.95   99.85   vfdb    WP_164923315    (mshH) MSHA biogenesis protein MshH [MSHA pili (VF0515) - Adherence (VFC0001)] [Vibrio cholerae O1 biovar El Tor str. N16961]   \nassemblies/S1_contigs_filtered.fasta    NODE_17_length_73937_cov_105.952587 18185   19624   +   mshI    1-1440/1440 =============== 0/0 100.00  100.00  vfdb    WP_000743253    (mshI) MSHA biogenesis protein MshI [MSHA pili (VF0515) - Adherence (VFC0001)] [Vibrio cholerae O1 biovar El Tor str. N16961]   \nassemblies/S1_contigs_filtered.fasta    NODE_17_length_73937_cov_105.952587 19621   20271   +   mshJ    1-651/651   =============== 0/0 100.00  100.00  vfdb    WP_000835144    (mshJ) MSHA biogenesis protein MshJ [MSHA pili (VF0515) - Adherence (VFC0001)] [Vibrio cholerae O1 biovar El Tor str. N16961]   \nassemblies/S1_contigs_filtered.fasta    NODE_17_length_73937_cov_105.952587 20264   20581   +   mshK    1-318/318   =============== 0/0 100.00  100.00  vfdb    WP_000252812    (mshK) MSHA biogenesis protein MshK [MSHA pili (VF0515) - Adherence (VFC0001)] [Vibrio cholerae O1 biovar El Tor str. N16961]   \n\nInterpreting the virulence factor result\nEach row represents one virulence factor hit detected in the assembly.\n\n\n\nColumn\nMeaning\n\n\n\n\n#FILE\nInput assembly file\n\n\nSEQUENCE\nContig where the virulence gene was detected\n\n\nSTART\nStart position of the hit on the contig\n\n\nEND\nEnd position of the hit on the contig\n\n\nSTRAND\nDNA strand of the hit, either + or -\n\n\nGENE\nVirulence-associated gene detected\n\n\n%COVERAGE\nPercentage of the reference gene covered by the hit\n\n\n%IDENTITY\nPercentage identity between query and reference\n\n\nDATABASE\nDatabase used for screening\n\n\nPRODUCT\nDescription of the detected virulence factor\n\n\n\n\n\nKey virulence genes detected in this example\n\n\n\nGene\nProduct or role\n\n\n\n\nctxB\nCholera enterotoxin B subunit\n\n\nctxA\nCholera enterotoxin A subunit\n\n\nzot\nZona occludens toxin\n\n\nace\nAccessory cholera enterotoxin\n\n\ncqsA\nCAI-1 autoinducer synthase\n\n\nmshH\nMSHA biogenesis protein MshH\n\n\nmshI\nMSHA biogenesis protein MshI\n\n\nmshJ\nMSHA biogenesis protein MshJ\n\n\nmshK\nMSHA biogenesis protein MshK\n\n\n\n\n\nInterpretation\nIn this example, sample S1 contains several important virulence-associated genes.\nThe genes:\nctxA\nctxB\nzot\nace\nare located on the same contig:\nNODE_15_length_78481_cov_84.780315\nThese genes are associated with cholera toxin and related toxin elements.\nThe genes:\nmshH\nmshI\nmshJ\nmshK\nare located on another contig:\nNODE_17_length_73937_cov_105.952587\nThese genes are associated with MSHA pili, which are involved in adherence.\n\n\n\n\n\n\nNoteQuestion 1\n\n\n\nWhich cholera toxin genes are detected in this example?\n\n\n\n\n\n\n\n\n\nNoteQuestion 2\n\n\n\nWhich genes are found on NODE_15_length_78481_cov_84.780315?\n\n\n\n\n\n\n\n\n\nNoteQuestion 3\n\n\n\nWhich virulence genes are associated with MSHA pili in this example?\n\n\n\n\n\n\n\n\n\nNoteQuestion 4\n\n\n\nWhich database was used for this virulence factor screening?\n\n\n\n\n\nSummarise virulence factor results\nCreate a summary table for virulence factor genes:\nabricate --summary abricate/vf.tsv &gt; abricate/vf_summary.tsv\nView the summary:\nhead abricate/vf_summary.tsv\n\n\n\n\n\n\nNote\n\n\n\nWe will not understand by simply viewing the file using head command in terminal since the file is very large. So will download –&gt; filter –&gt; organize –&gt; visualize.\n\n\n\n\n\n\n\n\nFigure 2: VF gene heatmap for all 8 samples\n\n\n\nNow we will deactivate the environment\nconda deactivate",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#download-abricate-results-from-the-server",
     "href": "materials/12_amr-vf-plasmid.html#download-abricate-results-from-the-server",
     "title": "AMR and Virulence Factors",
     "section": "Download ABRicate results from the server",
-    "text": "Download ABRicate results from the server\nIf you are working on a remote server, download the ABRicate results to your local computer.\nFrom your local desktop terminal, run:\nscp -r genomevm@172.28.28.12:~/tanzim/abricate .\nThis downloads the full abricate directory to your current local folder.\nIf you only want the summary files, run:\nscp genomevm@172.28.28.12:~/tanzim/abricate/*summary.tsv .\n\nWindowsmacOSLinux\n\n\nOpen .tsv files using Excel, Notepad++, or VS Code.\n\n\nUse:\nopen abricate/amr_summary.tsv\nopen abricate/vf_summary.tsv\n\n\nUse:\nxdg-open abricate/amr_summary.tsv\nxdg-open abricate/vf_summary.tsv"
+    "text": "Download ABRicate results from the server\nIf you are working on a remote server, download the annotation folder to your local computer.\nFrom your local desktop terminal, run:\n\nWindows/Linux OSMacOS\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/abricate .\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/`abricate` .\n\n\n\nIf you are working on a remote server, download the ABRicate results to your local computer.\nFrom your local desktop terminal, run:\n\nWindows/Linux OSMacOS\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/abricate/*summary.tsv .\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/abricate/`*summary.tsv` .",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#final-directory-structure",
     "href": "materials/12_amr-vf-plasmid.html#final-directory-structure",
     "title": "AMR and Virulence Factors",
     "section": "Final directory structure",
-    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs_filtered.fasta\n│   ├── S2_contigs_filtered.fasta\n│   ├── S3_contigs_filtered.fasta\n│   ├── S4_contigs_filtered.fasta\n│   ├── S5_contigs_filtered.fasta\n│   ├── S6_contigs_filtered.fasta\n│   ├── S7_contigs_filtered.fasta\n│   └── S8_contigs_filtered.fasta\n└── abricate\n    ├── amr.tsv\n    ├── amr_summary.tsv\n    ├── vf.tsv\n    └── vf_summary.tsv"
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs_filtered.fasta\n│   ├── S2_contigs_filtered.fasta\n│   ├── S3_contigs_filtered.fasta\n│   ├── S4_contigs_filtered.fasta\n│   ├── S5_contigs_filtered.fasta\n│   ├── S6_contigs_filtered.fasta\n│   ├── S7_contigs_filtered.fasta\n│   └── S8_contigs_filtered.fasta\n└── abricate\n    ├── amr.tsv\n    ├── amr_summary.tsv\n    ├── vf.tsv\n    └── vf_summary.tsv",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#practical-exercise",
     "href": "materials/12_amr-vf-plasmid.html#practical-exercise",
     "title": "AMR and Virulence Factors",
     "section": "Practical exercise",
-    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the amr environment.\nRun ABRicate using the ncbi database.\nSave the output as abricate/amr.tsv.\nRun ABRicate using the vfdb database.\nSave the output as abricate/vf.tsv.\nCreate summary files for both results.\nCompare AMR and virulence factor profiles across the eight samples.\n\n\n\n\n\n\n\nCautionExercise: AMR and virulence summary\n\n\n\nCreate a small table in your notes:\n\n\n\nSample\nAMR genes detected\nVirulence factors detected\nComment\n\n\n\n\nS1\n\n\n\n\n\nS2\n\n\n\n\n\nS3\n\n\n\n\n\nS4\n\n\n\n\n\nS5\n\n\n\n\n\nS6\n\n\n\n\n\nS7\n\n\n\n\n\nS8\n\n\n\n\n\n\nUse:\nabricate/amr_summary.tsv\nabricate/vf_summary.tsv\nto fill in the table."
+    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the amr environment.\nRun ABRicate using the ncbi database.\nSave the output as abricate/amr.tsv.\nRun ABRicate using the vfdb database.\nSave the output as abricate/vf.tsv.\nCreate summary files for both results.\nCompare AMR and virulence factor profiles across the eight samples.\n\n\n\n\n\n\n\nCautionExercise: AMR and virulence summary\n\n\n\nCreate a small table in your notes:\n\n\n\nSample\nAMR genes detected\nVirulence factors detected\nComment\n\n\n\n\nS1\n\n\n\n\n\nS2\n\n\n\n\n\nS3\n\n\n\n\n\nS4\n\n\n\n\n\nS5\n\n\n\n\n\nS6\n\n\n\n\n\nS7\n\n\n\n\n\nS8\n\n\n\n\n\n\nUse:\nabricate/amr_summary.tsv\nabricate/vf_summary.tsv\nto fill in the table.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#optional-plasmid-screening",
     "href": "materials/12_amr-vf-plasmid.html#optional-plasmid-screening",
     "title": "AMR and Virulence Factors",
     "section": "Optional: plasmid screening",
-    "text": "Optional: plasmid screening\nIf a plasmid database is available in your ABRicate installation, you can also screen for plasmid-associated sequences.\nFirst, check available databases:\nabricate --list\nIf plasmidfinder is available, run:\nabricate \\\n  --db plasmidfinder \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/plasmid.tsv\nCreate a summary:\nabricate --summary abricate/plasmid.tsv &gt; abricate/plasmid_summary.tsv\n\n\n\n\n\n\nWarningNote\n\n\n\nOnly run plasmid screening if the required database is installed and available in abricate --list."
+    "text": "Optional: plasmid screening\nIf a plasmid database is available in your ABRicate installation, you can also screen for plasmid-associated sequences.\nFirst, check available databases:\nabricate --list\nIf plasmidfinder is available, run:\nabricate \\\n  --db plasmidfinder \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/plasmid.tsv\nCreate a summary:\nabricate --summary abricate/plasmid.tsv &gt; abricate/plasmid_summary.tsv\n\n\n\n\n\n\nWarningNote\n\n\n\nOnly run plasmid screening if the required database is installed and available in abricate --list.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#key-points",
     "href": "materials/12_amr-vf-plasmid.html#key-points",
     "title": "AMR and Virulence Factors",
     "section": "Key points",
-    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nABRicate screens genome assemblies against gene databases.\nThe ncbi database can be used for AMR gene screening.\nThe vfdb database can be used for virulence factor screening.\nSummary files make it easier to compare results across multiple samples.\nThe output files are stored in the abricate directory."
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nABRicate screens genome assemblies against gene databases.\nThe ncbi database can be used for AMR gene screening.\nThe vfdb database can be used for virulence factor screening.\nSummary files make it easier to compare results across multiple samples.\nThe output files are stored in the abricate directory.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#next-step",
     "href": "materials/12_amr-vf-plasmid.html#next-step",
     "title": "AMR and Virulence Factors",
     "section": "Next step",
-    "text": "Next step\nIn the next lesson, we will use annotation files to perform pangenome analysis."
+    "text": "Next step\nIn the next lesson, we will use annotation files to perform pangenome analysis.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "AMR and Virulence Factors"
+    ]
   },
   {
     "objectID": "materials/day-2.html",
@@ -1483,91 +1549,156 @@
     "href": "materials/11_copy-day2-files.html",
     "title": "Copy Day 2 Files",
     "section": "",
-    "text": "In the previous lessons, we completed analysis for sample S1.\nFor the next parts of the course, we will work with eight samples. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:\ncopy_day2_files\nThis script will copy:\n\nfiltered assembly files into the assemblies directory\nannotation files into the annotation directory"
+    "text": "In the previous lessons, we completed analysis for sample S1.\nFor the next parts of the course, we will work with eight samples. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:\ncopy_day2_files\nThis script will copy:\n\nfiltered assembly files into the assemblies directory\nannotation files into the annotation directory",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#overview",
     "href": "materials/11_copy-day2-files.html#overview",
     "title": "Copy Day 2 Files",
     "section": "",
-    "text": "In the previous lessons, we completed analysis for sample S1.\nFor the next parts of the course, we will work with eight samples. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:\ncopy_day2_files\nThis script will copy:\n\nfiltered assembly files into the assemblies directory\nannotation files into the annotation directory"
+    "text": "In the previous lessons, we completed analysis for sample S1.\nFor the next parts of the course, we will work with eight samples. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:\ncopy_day2_files\nThis script will copy:\n\nfiltered assembly files into the assemblies directory\nannotation files into the annotation directory",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#learning-objectives",
     "href": "materials/11_copy-day2-files.html#learning-objectives",
     "title": "Copy Day 2 Files",
     "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nrun an in-house bash script\ncopy prepared files for eight samples\ncheck that assembly FASTA files are present\ncheck that annotation GFF files are present\nprepare input files for AMR, pangenome, and phylogenetic analysis"
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nrun an in-house bash script\ncopy prepared files for eight samples\ncheck that assembly FASTA files are present\ncheck that annotation GFF files are present\nprepare input files for AMR, pangenome, and phylogenetic analysis",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#expected-files",
     "href": "materials/11_copy-day2-files.html#expected-files",
     "title": "Copy Day 2 Files",
     "section": "Expected files",
-    "text": "Expected files\nAfter running the script, the assemblies directory should contain filtered assembly FASTA files:\nS1_contigs_filtered.fasta\nS2_contigs_filtered.fasta\nS3_contigs_filtered.fasta\nS4_contigs_filtered.fasta\nS5_contigs_filtered.fasta\nS6_contigs_filtered.fasta\nS7_contigs_filtered.fasta\nS8_contigs_filtered.fasta\nThe annotation directory should contain GFF annotation files:\nS1.gff\nS2.gff\nS3.gff\nS4.gff\nS5.gff\nS6.gff\nS7.gff\nS8.gff\n\n\n\n\n\n\nNoteImportant\n\n\n\nThe assembly files will be used for AMR, virulence factor, plasmid, and other genome-level analyses.\nThe GFF files will be used for pangenome analysis."
+    "text": "Expected files\nAfter running the script, the assemblies directory should contain filtered assembly FASTA files:\nS1_contigs_filtered.fasta\nS2_contigs_filtered.fasta\nS3_contigs_filtered.fasta\nS4_contigs_filtered.fasta\nS5_contigs_filtered.fasta\nS6_contigs_filtered.fasta\nS7_contigs_filtered.fasta\nS8_contigs_filtered.fasta\nThe annotation directory should contain GFF annotation files:\nS1.gff\nS2.gff\nS3.gff\nS4.gff\nS5.gff\nS6.gff\nS7.gff\nS8.gff\n\n\n\n\n\n\nNoteImportant\n\n\n\nThe assembly files will be used for AMR, virulence factor, plasmid, and other genome-level analyses.\nThe GFF files will be used for pangenome analysis.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#check-the-script",
     "href": "materials/11_copy-day2-files.html#check-the-script",
     "title": "Copy Day 2 Files",
     "section": "Check the script",
-    "text": "Check the script\nFirst, check that the script is available:\nls\nYou should see:\ncopy_day2_files\nIf the script is not in your current directory, ask the instructor or check the course data folder."
+    "text": "Check the script\nFirst, check that the script is available:\nls\nYou should see:\ncopy_day2_files\nIf the script is not in your current directory, ask the instructor or check the course data folder.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#run-the-script",
     "href": "materials/11_copy-day2-files.html#run-the-script",
     "title": "Copy Day 2 Files",
     "section": "Run the script",
-    "text": "Run the script\nRun the in-house bash script:\ncopy_day2_files"
+    "text": "Run the script\nRun the in-house bash script:\ncopy_day2_files",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#check-assembly-files",
     "href": "materials/11_copy-day2-files.html#check-assembly-files",
     "title": "Copy Day 2 Files",
     "section": "Check assembly files",
-    "text": "Check assembly files\nAfter the script finishes, check the assemblies directory:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\nS2_contigs_filtered.fasta\nS3_contigs_filtered.fasta\nS4_contigs_filtered.fasta\nS5_contigs_filtered.fasta\nS6_contigs_filtered.fasta\nS7_contigs_filtered.fasta\nS8_contigs_filtered.fasta\nCount the number of FASTA files:\nls assemblies/*_contigs_filtered.fasta | wc -l\nThe expected number is:\n8"
+    "text": "Check assembly files\nAfter the script finishes, check the assemblies directory:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\nS2_contigs_filtered.fasta\nS3_contigs_filtered.fasta\nS4_contigs_filtered.fasta\nS5_contigs_filtered.fasta\nS6_contigs_filtered.fasta\nS7_contigs_filtered.fasta\nS8_contigs_filtered.fasta\nCount the number of FASTA files:\nls assemblies/*_contigs_filtered.fasta | wc -l\nThe expected number is:\n8",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#check-annotation-files",
     "href": "materials/11_copy-day2-files.html#check-annotation-files",
     "title": "Copy Day 2 Files",
     "section": "Check annotation files",
-    "text": "Check annotation files\nCheck the annotation directory:\nls annotation\nYou should see:\nS1.gff\nS2.gff\nS3.gff\nS4.gff\nS5.gff\nS6.gff\nS7.gff\nS8.gff\nCount the number of GFF files:\nls annotation/*.gff | wc -l\nThe expected number is:\n8"
+    "text": "Check annotation files\nCheck the annotation directory:\nls annotation\nYou should see:\nS1.gff\nS2.gff\nS3.gff\nS4.gff\nS5.gff\nS6.gff\nS7.gff\nS8.gff\nCount the number of GFF files:\nls annotation/*.gff | wc -l\nThe expected number is:\n8",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#final-directory-structure",
     "href": "materials/11_copy-day2-files.html#final-directory-structure",
     "title": "Copy Day 2 Files",
     "section": "Final directory structure",
-    "text": "Final directory structure\nAfter running the script, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs_filtered.fasta\n│   ├── S2_contigs_filtered.fasta\n│   ├── S3_contigs_filtered.fasta\n│   ├── S4_contigs_filtered.fasta\n│   ├── S5_contigs_filtered.fasta\n│   ├── S6_contigs_filtered.fasta\n│   ├── S7_contigs_filtered.fasta\n│   └── S8_contigs_filtered.fasta\n└── annotation\n    ├── S1.gff\n    ├── S2.gff\n    ├── S3.gff\n    ├── S4.gff\n    ├── S5.gff\n    ├── S6.gff\n    ├── S7.gff\n    └── S8.gff"
+    "text": "Final directory structure\nAfter running the script, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs_filtered.fasta\n│   ├── S2_contigs_filtered.fasta\n│   ├── S3_contigs_filtered.fasta\n│   ├── S4_contigs_filtered.fasta\n│   ├── S5_contigs_filtered.fasta\n│   ├── S6_contigs_filtered.fasta\n│   ├── S7_contigs_filtered.fasta\n│   └── S8_contigs_filtered.fasta\n└── annotation\n    ├── S1.gff\n    ├── S2.gff\n    ├── S3.gff\n    ├── S4.gff\n    ├── S5.gff\n    ├── S6.gff\n    ├── S7.gff\n    └── S8.gff",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#troubleshooting",
     "href": "materials/11_copy-day2-files.html#troubleshooting",
     "title": "Copy Day 2 Files",
     "section": "Troubleshooting",
-    "text": "Troubleshooting\n\n\n\n\n\n\n\n\nProblem\nPossible reason\nSolution\n\n\n\n\nPermission denied\nScript is not executable\nRun chmod +x copy_day2_files.sh\n\n\nNo such file or directory\nScript is not in current folder\nCheck location using ls\n\n\nFewer than 8 FASTA files\nCopy failed or source files missing\nRe-run script or ask instructor\n\n\nFewer than 8 GFF files\nCopy failed or source files missing\nRe-run script or ask instructor\n\n\nWrong folder name\nScript expects specific directory names\nCheck with instructor"
+    "text": "Troubleshooting\n\n\n\n\n\n\n\n\nProblem\nPossible reason\nSolution\n\n\n\n\nPermission denied\nScript is not executable\nRun chmod +x copy_day2_files.sh\n\n\nNo such file or directory\nScript is not in current folder\nCheck location using ls\n\n\nFewer than 8 FASTA files\nCopy failed or source files missing\nRe-run script or ask instructor\n\n\nFewer than 8 GFF files\nCopy failed or source files missing\nRe-run script or ask instructor\n\n\nWrong folder name\nScript expects specific directory names\nCheck with instructor",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#practical-exercise",
     "href": "materials/11_copy-day2-files.html#practical-exercise",
     "title": "Copy Day 2 Files",
     "section": "Practical exercise",
-    "text": "Practical exercise\nRun the script and confirm that all eight samples were copied.\n\n\n\n\n\n\nCautionExercise: check copied files\n\n\n\nAfter running copy_day2_files.sh, answer the following:\n\nHow many filtered FASTA files are in assemblies?\nHow many GFF files are in annotation?\nAre sample IDs S1 to S8 present in both folders?\n\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nls assemblies/*_contigs_filtered.fasta | wc -l\nls annotation/*.gff | wc -l\n\nls assemblies\nls annotation\nExpected result:\n8 assembly FASTA files\n8 annotation GFF files"
+    "text": "Practical exercise\nRun the script and confirm that all eight samples were copied.\n\n\n\n\n\n\nCautionExercise: check copied files\n\n\n\nAfter running copy_day2_files.sh, answer the following:\n\nHow many filtered FASTA files are in assemblies?\nHow many GFF files are in annotation?\nAre sample IDs S1 to S8 present in both folders?\n\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nls assemblies/*_contigs_filtered.fasta | wc -l\nls annotation/*.gff | wc -l\n\nls assemblies\nls annotation\nExpected result:\n8 assembly FASTA files\n8 annotation GFF files",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#key-points",
     "href": "materials/11_copy-day2-files.html#key-points",
     "title": "Copy Day 2 Files",
     "section": "Key points",
-    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\ncopy_day2_files.sh is an in-house script for preparing Day 2 files.\nIt copies eight filtered assembly files into assemblies.\nIt copies eight annotation files into annotation.\nThese files are required for AMR, pangenome, and phylogenetic analysis."
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\ncopy_day2_files.sh is an in-house script for preparing Day 2 files.\nIt copies eight filtered assembly files into assemblies.\nIt copies eight annotation files into annotation.\nThese files are required for AMR, pangenome, and phylogenetic analysis.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html#next-step",
     "href": "materials/11_copy-day2-files.html#next-step",
     "title": "Copy Day 2 Files",
     "section": "Next step",
-    "text": "Next step\nIn the next lesson, we will screen the assemblies for AMR genes, virulence factors, and plasmid-associated sequences."
+    "text": "Next step\nIn the next lesson, we will screen the assemblies for AMR genes, virulence factors, and plasmid-associated sequences.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Copy Day 2 Files"
+    ]
   },
   {
     "objectID": "materials/1_pathogen_genomic_surveillances.html",
