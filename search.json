@@ -1479,70 +1479,216 @@
     "href": "materials/13_pangenome.html",
     "title": "Pangenome Analysis",
     "section": "",
-    "text": "After annotating multiple bacterial genomes, we can compare their gene content using pangenome analysis.\nThe pangenome represents the full set of genes found across a group of genomes. It includes:\n\ncore genes: genes shared by most or all samples\naccessory genes: genes present in some samples\nunique genes: genes found in only one sample\n\nIn this lesson, we will use Panaroo to perform pangenome analysis using .gff files from eight samples."
+    "text": "After annotating multiple bacterial genomes, we can compare their gene content using pangenome analysis.\nThe pangenome represents the full set of genes found across a group of genomes. It includes:\n\ncore genes: genes shared by most or all samples\naccessory genes: genes present in some samples\nunique genes: genes found in only one sample\n\nIn this lesson, we will use Panaroo to perform pangenome analysis using .gff files from eight samples.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
   },
   {
     "objectID": "materials/13_pangenome.html#overview",
     "href": "materials/13_pangenome.html#overview",
     "title": "Pangenome Analysis",
     "section": "",
-    "text": "After annotating multiple bacterial genomes, we can compare their gene content using pangenome analysis.\nThe pangenome represents the full set of genes found across a group of genomes. It includes:\n\ncore genes: genes shared by most or all samples\naccessory genes: genes present in some samples\nunique genes: genes found in only one sample\n\nIn this lesson, we will use Panaroo to perform pangenome analysis using .gff files from eight samples."
+    "text": "After annotating multiple bacterial genomes, we can compare their gene content using pangenome analysis.\nThe pangenome represents the full set of genes found across a group of genomes. It includes:\n\ncore genes: genes shared by most or all samples\naccessory genes: genes present in some samples\nunique genes: genes found in only one sample\n\nIn this lesson, we will use Panaroo to perform pangenome analysis using .gff files from eight samples.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
   },
   {
     "objectID": "materials/13_pangenome.html#learning-objectives",
     "href": "materials/13_pangenome.html#learning-objectives",
     "title": "Pangenome Analysis",
     "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nexplain what a pangenome is\ndistinguish between core and accessory genes\nactivate the pangenome environment\nrun Panaroo using multiple .gff files\nidentify important Panaroo output files\nprepare the core gene alignment for phylogenetic analysis"
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nexplain what a pangenome is\ndistinguish between core and accessory genes\nactivate the pangenome environment\nrun Panaroo using multiple .gff files\nidentify important Panaroo output files\nprepare the core gene alignment for phylogenetic analysis",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
   },
   {
     "objectID": "materials/13_pangenome.html#input-files",
     "href": "materials/13_pangenome.html#input-files",
     "title": "Pangenome Analysis",
     "section": "Input files",
-    "text": "Input files\nIn the previous lessons, we prepared annotation files for eight samples.\nThe input files for Panaroo are:\nannotation/S1.gff\nannotation/S2.gff\nannotation/S3.gff\nannotation/S4.gff\nannotation/S5.gff\nannotation/S6.gff\nannotation/S7.gff\nannotation/S8.gff\nCheck that the files are present:\nls annotation/*.gff\nCount the number of GFF files:\nls annotation/*.gff | wc -l\nThe expected number is:\n8\n\n\n\n\n\n\nNoteImportant\n\n\n\nPanaroo uses .gff files as input.\nFor this lesson, we will use:\nannotation/*.gff"
+    "text": "Input files\nIn the previous lessons, we prepared annotation files for eight samples.\nThe input files for Panaroo are:\nannotation/S1.gff\nannotation/S2.gff\nannotation/S3.gff\nannotation/S4.gff\nannotation/S5.gff\nannotation/S6.gff\nannotation/S7.gff\nannotation/S8.gff\nCheck that the files are present:\nls annotation/*.gff\nCount the number of GFF files:\nls annotation/*.gff | wc -l\nThe expected number is:\n8\n\n\n\n\n\n\nNoteImportant\n\n\n\nPanaroo uses .gff files as input.\nFor this lesson, we will use:\nannotation/*.gff",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
   },
   {
     "objectID": "materials/13_pangenome.html#activate-the-pangenome-environment",
     "href": "materials/13_pangenome.html#activate-the-pangenome-environment",
     "title": "Pangenome Analysis",
     "section": "Activate the pangenome environment",
-    "text": "Activate the pangenome environment\nActivate the pangenome environment:\nconda activate pangenome\nCheck that panaroo is available:\npanaroo --version\n\nRun Panaroo\nRun Panaroo using all .gff files:\npanaroo \\\n  -t 4 \\\n  -o pangenome \\\n  -c 0.95 \\\n  -a core \\\n  --input annotation/*.gff \\\n  --clean-mode strict\n\n\nUnderstanding the Panaroo command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\npanaroo\nRuns the Panaroo pangenome tool\n\n\n-t 4\nUses 4 CPU threads\n\n\n-o pangenome\nOutput directory\n\n\n-c 0.95\nCore gene threshold\n\n\n-a core\nGenerates a core gene alignment\n\n\n--input annotation/*.gff\nUses all GFF files in the annotation folder\n\n\n--clean-mode strict\nUses strict cleaning mode\n\n\n\n\n\n\n\n\n\nNoteAbout the core threshold\n\n\n\nThe value of -c defines the core gene threshold.\nFor example:\n-c 0.95\nmeans genes present in at least 95% of genomes are considered core genes.\nYou may choose a different value depending on the analysis goal.\n\n\n\n\nCheck Panaroo outputs\nAfter Panaroo finishes, list the output directory:\nls pangenome\nYou should see several output files.\nImportant files may include:\ngene_presence_absence.csv\ngene_presence_absence.Rtab\ncore_gene_alignment.aln\ncore_gene_alignment_filtered.aln\nsummary_statistics.txt\n\n\nImportant Panaroo output files\n\n\n\nFile\nDescription\n\n\n\n\ngene_presence_absence.csv\nMain gene presence/absence table\n\n\ngene_presence_absence.Rtab\nGene presence/absence matrix\n\n\ncore_gene_alignment.aln\nCore gene alignment\n\n\ncore_gene_alignment_filtered.aln\nFiltered core gene alignment\n\n\nsummary_statistics.txt\nSummary of pangenome results, if produced\n\n\n\n\n\nView gene presence/absence table\nCheck the first few lines:\nhead pangenome/gene_presence_absence.csv\nThis file shows which genes are present or absent across the samples.\n\n\nCheck core gene alignment\nCheck the core alignment files:\nls -lh pangenome/*alignment*\nYou should see files such as:\ncore_gene_alignment.aln\ncore_gene_alignment_filtered.aln\n\n\n\n\n\n\nNoteExercise\n\n\n\nWhich Panaroo output file will be used later for phylogenetic tree construction?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe filtered core gene alignment will be used for phylogenetic analysis:\npangenome/core_gene_alignment_filtered.aln\n\n\n\n\n\nCore and accessory genome\nPanaroo helps identify genes shared across all or most genomes, as well as genes found in only some samples.\n\n\n\nGene category\nMeaning\n\n\n\n\nCore genes\nPresent in most or all genomes\n\n\nAccessory genes\nPresent in some genomes\n\n\nUnique genes\nPresent in only one genome\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhy are core genes useful for phylogenetic analysis?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nCore genes are shared across samples, so they can be aligned and compared across all genomes. This makes them useful for estimating evolutionary relationships.\n\n\n\n\n\nOptional: inspect summary statistics\nIf Panaroo creates a summary statistics file, view it using:\ncat pangenome/summary_statistics.txt\nIf the file does not exist, check the available output files:\nls pangenome"
+    "text": "Activate the pangenome environment\nActivate the pangenome environment:\nconda activate pangenome\nCheck that panaroo is available:\npanaroo --version\n\nRun Panaroo\nRun Panaroo using all .gff files:\npanaroo \\\n  -t 4 \\\n  -o pangenome \\\n  -c 0.95 \\\n  -a core \\\n  --input annotation/*.gff \\\n  --clean-mode strict\n\n\nUnderstanding the Panaroo command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\npanaroo\nRuns the Panaroo pangenome tool\n\n\n-t 4\nUses 4 CPU threads\n\n\n-o pangenome\nOutput directory\n\n\n-c 0.95\nCore gene threshold\n\n\n-a core\nGenerates a core gene alignment\n\n\n--input annotation/*.gff\nUses all GFF files in the annotation folder\n\n\n--clean-mode strict\nUses strict cleaning mode\n\n\n\n\n\n\n\n\n\nNoteAbout the core threshold\n\n\n\nThe value of -c defines the core gene threshold.\nFor example:\n-c 0.95\nmeans genes present in at least 95% of genomes are considered core genes.\nYou may choose a different value depending on the analysis goal.\n\n\n\n\nCheck Panaroo outputs\nAfter Panaroo finishes, list the output directory:\nls pangenome\nYou should see several output files.\nImportant files may include:\ngene_presence_absence.csv\ngene_presence_absence.Rtab\ncore_gene_alignment.aln\ncore_gene_alignment_filtered.aln\nsummary_statistics.txt\n\n\nImportant Panaroo output files\n\n\n\nFile\nDescription\n\n\n\n\ngene_presence_absence.csv\nMain gene presence/absence table\n\n\ngene_presence_absence.Rtab\nGene presence/absence matrix\n\n\ncore_gene_alignment.aln\nCore gene alignment\n\n\ncore_gene_alignment_filtered.aln\nFiltered core gene alignment\n\n\nsummary_statistics.txt\nSummary of pangenome results, if produced\n\n\n\n\n\nView gene presence/absence table\nCheck the first few lines:\nhead pangenome/gene_presence_absence.csv\nThis file shows which genes are present or absent across the samples.\nGene,Non-unique Gene name,Annotation,S1,S2,S3,S4,S5,S6,S7,S8\ngroup_1515,,hypothetical protein,S1_03472,S2_03486,S3_03567,S4_03467,S5_03504,S6_03533,S7_03454,S8_03471\ngroup_1514,,hypothetical protein,S1_03471,S2_03487,S3_03566,S4_03466,S5_03503,S6_03532,S7_03453,S8_03470\ntacT,tacT,tRNA-acetylating toxin,S1_03465,S2_03485,S3_03562,S4_03461,S5_03516,S6_03517,S7_03444,S8_03465\ngroup_1507,,hypothetical protein,S1_03464,S2_03484,S3_03561,S4_03460,S5_03517,S6_03518,S7_03443,S8_03466\ntufB,tufB,Elongation factor Tu 2,S1_03462,S2_03513,S3_03558,S4_03457,S5_03512,S6_03513,S7_03439,S8_03462\ngroup_1492,,hypothetical protein,S1_03430,S2_03525,S3_03526,S4_03434,S5_01638,S6_03538,S7_03388,S8_03430\nrimI_5,rimI_5;,[Ribosomal protein bS18]-alanine N-acetyltransferase;hypothetical protein,S1_03431,S2_03524,S3_03527,S4_03435,S5_01637,S6_03537,S7_03387,S8_03429\ngroup_1488,,hypothetical protein,S1_03420,S2_03475,S3_03577,S4_03421,S5_03487,5_refound_27,6_refound_32,S8_03407\ngroup_1483,,hypothetical protein,S1_03413,S2_03514,S3_03529,S4_03384,S5_03513,S6_03475,S7_03465,S8_03437",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/13_pangenome.html#interpreting-the-output",
+    "href": "materials/13_pangenome.html#interpreting-the-output",
+    "title": "Pangenome Analysis",
+    "section": "Interpreting the output",
+    "text": "Interpreting the output\nThe file gene_presence_absence.csv shows which genes are present or absent across all genomes included in the pangenome analysis.\n\n\n\nColumn\nMeaning\n\n\n\n\nGene\nGene cluster name assigned by Panaroo\n\n\nNon-unique Gene name\nGene name, if available\n\n\nAnnotation\nFunctional annotation of the gene\n\n\nS1 to S8\nGene ID found in each sample",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/13_pangenome.html#how-to-read-the-table",
+    "href": "materials/13_pangenome.html#how-to-read-the-table",
+    "title": "Pangenome Analysis",
+    "section": "How to read the table",
+    "text": "How to read the table\nEach row represents one gene cluster.\nFor example:\ntacT\nis annotated as:\ntRNA-acetylating toxin\nIt is present in all eight samples:\nS1\nS2\nS3\nS4\nS5\nS6\nS7\nS8\nThe sample columns contain gene identifiers such as:\nS1_03465\nS2_03485\nS3_03562\nThis means Panaroo found a corresponding gene in those samples.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/13_pangenome.html#core-genes",
+    "href": "materials/13_pangenome.html#core-genes",
+    "title": "Pangenome Analysis",
+    "section": "Core genes",
+    "text": "Core genes\nIf a gene is present in all samples, it is part of the core genome for this dataset.\nIn this example, the genes shown are present in all eight samples, so they are examples of core gene clusters.\nExamples include:\ntacT\ntufB\nrimI_5",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/13_pangenome.html#refound-genes",
+    "href": "materials/13_pangenome.html#refound-genes",
+    "title": "Pangenome Analysis",
+    "section": "Refound genes",
+    "text": "Refound genes\nSome entries may include names such as:\n5_refound_27\n6_refound_32\nThis means Panaroo recovered or refound a gene that may have been missed or fragmented during annotation.\nIn this example, group_1488 includes refound genes in samples S6 and S7.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/13_pangenome.html#questions",
+    "href": "materials/13_pangenome.html#questions",
+    "title": "Pangenome Analysis",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\nNoteQuestion 1\n\n\n\nWhat does each row in gene_presence_absence.csv represent?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nEach row represents one gene cluster across the genomes included in the pangenome analysis.\n\n\n\n\n\n\n\n\n\nNoteQuestion 2\n\n\n\nWhat does it mean if a gene has entries in all samples from S1 to S8?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nIt means the gene is present in all samples.\nFor this dataset, that gene is part of the core genome.\n\n\n\n\n\n\n\n\n\nNoteQuestion 3\n\n\n\nWhich gene is annotated as tRNA-acetylating toxin?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe gene is:\ntacT\n\n\n\n\n\n\n\n\n\nNoteQuestion 4\n\n\n\nWhich gene is annotated as Elongation factor Tu 2?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe gene is:\ntufB\n\n\n\n\nCheck core gene alignment\nCheck the core alignment files:\nls -lh pangenome/*alignment*\nYou should see files such as:\ncore_gene_alignment.aln\ncore_gene_alignment_filtered.aln\n\n\n\n\n\n\nNoteExercise\n\n\n\nWhich Panaroo output file will be used later for phylogenetic tree construction?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe filtered core gene alignment will be used for phylogenetic analysis:\npangenome/core_gene_alignment_filtered.aln\n\n\n\n\n\nCore and accessory genome\nPanaroo helps identify genes shared across all or most genomes, as well as genes found in only some samples.\n\n\n\nGene category\nMeaning\n\n\n\n\nCore genes\nPresent in most or all genomes\n\n\nAccessory genes\nPresent in some genomes\n\n\nUnique genes\nPresent in only one genome\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhy are core genes useful for phylogenetic analysis?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nCore genes are shared across samples, so they can be aligned and compared across all genomes. This makes them useful for estimating evolutionary relationships.\n\n\n\n\n\nOptional: inspect summary statistics\nIf Panaroo creates a summary statistics file, view it using:\ncat pangenome/summary_statistics.txt\nyou may see output like this:\nCore genes      (99% &lt;= strains &lt;= 100%)    3075\nSoft core genes (95% &lt;= strains &lt; 99%)      0\nShell genes     (15% &lt;= strains &lt; 95%)      728\nCloud genes     (0% &lt;= strains &lt; 15%)       228\nTotal genes     (0% &lt;= strains &lt;= 100%)     4031",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/13_pangenome.html#interpreting-the-pangenome-summary",
+    "href": "materials/13_pangenome.html#interpreting-the-pangenome-summary",
+    "title": "Pangenome Analysis",
+    "section": "Interpreting the pangenome summary",
+    "text": "Interpreting the pangenome summary\n\n\n\nCategory\nDefinition\nNumber of genes\n\n\n\n\nCore genes\nPresent in 99% to 100% of strains\n3,075\n\n\nSoft core genes\nPresent in 95% to less than 99% of strains\n0\n\n\nShell genes\nPresent in 15% to less than 95% of strains\n728\n\n\nCloud genes\nPresent in 0% to less than 15% of strains\n228\n\n\nTotal genes\nAll genes detected across all strains\n4,031",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/13_pangenome.html#what-does-this-mean",
+    "href": "materials/13_pangenome.html#what-does-this-mean",
+    "title": "Pangenome Analysis",
+    "section": "What does this mean?",
+    "text": "What does this mean?\nIn this dataset, most genes are part of the core genome.\nCore genes = 3075\nTotal genes = 4031\nThis means many genes are shared across almost all samples.\nThe remaining genes are part of the accessory genome:\nShell genes = 728\nCloud genes = 228\nThese genes vary between samples and may represent differences in gene content, mobile genetic elements, virulence factors, resistance genes, or other accessory functions.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
+  },
+  {
+    "objectID": "materials/13_pangenome.html#pangenome-categories",
+    "href": "materials/13_pangenome.html#pangenome-categories",
+    "title": "Pangenome Analysis",
+    "section": "Pangenome categories",
+    "text": "Pangenome categories\n\n\n\nCategory\nSimple meaning\n\n\n\n\nCore genome\nGenes found in almost all samples\n\n\nSoft core genome\nGenes found in most samples\n\n\nShell genome\nGenes found in several, but not all, samples\n\n\nCloud genome\nRare genes found in only a few samples\n\n\nPangenome\nTotal set of all genes found in all samples",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
   },
   {
     "objectID": "materials/13_pangenome.html#download-pangenome-outputs-from-the-server",
     "href": "materials/13_pangenome.html#download-pangenome-outputs-from-the-server",
     "title": "Pangenome Analysis",
     "section": "Download pangenome outputs from the server",
-    "text": "Download pangenome outputs from the server\nIf you are working on a remote server, download the pangenome output folder to your local computer.\nFrom your local desktop terminal, run:\nscp -r genomevm@172.28.28.12:~/tanzim/pangenome .\nThis downloads the full pangenome directory.\nIf you only want the main gene presence/absence table, run:\nscp genomevm@172.28.28.12:~/tanzim/pangenome/gene_presence_absence.csv .\n\nWindowsmacOSLinux\n\n\nOpen .csv files using Excel, LibreOffice Calc, or VS Code.\n\n\nUse:\nopen gene_presence_absence.csv\n\n\nUse:\nxdg-open gene_presence_absence.csv"
+    "text": "Download pangenome outputs from the server\nIf you are working on a remote server, download the pangenome output folder to your local computer.\nFrom your local desktop terminal, run:\n\nWindows/Linux OSMacOS\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/pangenome .\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/`pangenome` .\n\n\n\nThis downloads the full pangenome directory.\nIf you only want the main gene presence/absence table, run:\nFrom your local desktop terminal, run:\n\nWindows/Linux OSMacOS\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/pangenome/gene_presence_absence.csv .\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/pangenome/`gene_presence_absence.csv` .",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
   },
   {
     "objectID": "materials/13_pangenome.html#final-directory-structure",
     "href": "materials/13_pangenome.html#final-directory-structure",
     "title": "Pangenome Analysis",
     "section": "Final directory structure",
-    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── annotation\n│   ├── S1.gff\n│   ├── S2.gff\n│   ├── S3.gff\n│   ├── S4.gff\n│   ├── S5.gff\n│   ├── S6.gff\n│   ├── S7.gff\n│   └── S8.gff\n└── pangenome\n    ├── gene_presence_absence.csv\n    ├── gene_presence_absence.Rtab\n    ├── core_gene_alignment.aln\n    ├── core_gene_alignment_filtered.aln\n    └── summary_statistics.txt"
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── annotation\n│   ├── S1.gff\n│   ├── S2.gff\n│   ├── S3.gff\n│   ├── S4.gff\n│   ├── S5.gff\n│   ├── S6.gff\n│   ├── S7.gff\n│   └── S8.gff\n└── pangenome\n    ├── gene_presence_absence.csv\n    ├── gene_presence_absence.Rtab\n    ├── core_gene_alignment.aln\n    ├── core_gene_alignment_filtered.aln\n    └── summary_statistics.txt",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
   },
   {
     "objectID": "materials/13_pangenome.html#practical-exercise",
     "href": "materials/13_pangenome.html#practical-exercise",
     "title": "Pangenome Analysis",
     "section": "Practical exercise",
-    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the pangenome environment.\nConfirm that eight .gff files are present in annotation.\nRun Panaroo using all .gff files.\nOpen gene_presence_absence.csv.\nIdentify the core gene alignment file.\nRecord which file will be used for phylogenetic analysis.\n\n\n\n\n\n\n\nCautionExercise: pangenome summary\n\n\n\nCreate a small table in your notes:\n\n\n\nItem\nFile or value\n\n\n\n\nNumber of input GFF files\n\n\n\nPanaroo output directory\npangenome\n\n\nGene presence/absence table\n\n\n\nCore gene alignment\n\n\n\nFiltered core gene alignment\n\n\n\n\nFill in the table using the files inside the pangenome directory."
+    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the pangenome environment.\nConfirm that eight .gff files are present in annotation.\nRun Panaroo using all .gff files.\nOpen gene_presence_absence.csv.\nIdentify the core gene alignment file.\nRecord which file will be used for phylogenetic analysis.\n\n\n\n\n\n\n\nCautionExercise: pangenome summary\n\n\n\nCreate a small table in your notes:\n\n\n\nItem\nFile or value\n\n\n\n\nNumber of input GFF files\n\n\n\nPanaroo output directory\npangenome\n\n\nGene presence/absence table\n\n\n\nCore gene alignment\n\n\n\nFiltered core gene alignment\n\n\n\n\nFill in the table using the files inside the pangenome directory.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
   },
   {
     "objectID": "materials/13_pangenome.html#key-points",
     "href": "materials/13_pangenome.html#key-points",
     "title": "Pangenome Analysis",
     "section": "Key points",
-    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nPangenome analysis compares gene content across multiple genomes.\nPanaroo uses .gff annotation files as input.\nCore genes are shared across most or all samples.\nAccessory genes are present in only some samples.\ncore_gene_alignment_filtered.aln will be used for phylogenetic tree construction."
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nPangenome analysis compares gene content across multiple genomes.\nPanaroo uses .gff annotation files as input.\nCore genes are shared across most or all samples.\nAccessory genes are present in only some samples.\ncore_gene_alignment_filtered.aln will be used for phylogenetic tree construction.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
   },
   {
     "objectID": "materials/13_pangenome.html#next-step",
     "href": "materials/13_pangenome.html#next-step",
     "title": "Pangenome Analysis",
     "section": "Next step",
-    "text": "Next step\nIn the next lesson, we will use the filtered core gene alignment to construct a phylogenetic tree."
+    "text": "Next step\nIn the next lesson, we will use the filtered core gene alignment to construct a phylogenetic tree.",
+    "crumbs": [
+      "Materials",
+      "Phylogenetics",
+      "Pangenome Analysis"
+    ]
   },
   {
     "objectID": "materials/11_copy-day2-files.html",
