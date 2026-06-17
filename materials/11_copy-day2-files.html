@@ -381,11 +381,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
   <li><a href="#expected-files" id="toc-expected-files" class="nav-link" data-scroll-target="#expected-files">Expected files</a></li>
   <li><a href="#check-the-script" id="toc-check-the-script" class="nav-link" data-scroll-target="#check-the-script">Check the script</a></li>
-  <li><a href="#make-the-script-executable" id="toc-make-the-script-executable" class="nav-link" data-scroll-target="#make-the-script-executable">Make the script executable</a></li>
   <li><a href="#run-the-script" id="toc-run-the-script" class="nav-link" data-scroll-target="#run-the-script">Run the script</a></li>
   <li><a href="#check-assembly-files" id="toc-check-assembly-files" class="nav-link" data-scroll-target="#check-assembly-files">Check assembly files</a></li>
   <li><a href="#check-annotation-files" id="toc-check-annotation-files" class="nav-link" data-scroll-target="#check-annotation-files">Check annotation files</a></li>
-  <li><a href="#check-both-directories-together" id="toc-check-both-directories-together" class="nav-link" data-scroll-target="#check-both-directories-together">Check both directories together</a></li>
   <li><a href="#final-directory-structure" id="toc-final-directory-structure" class="nav-link" data-scroll-target="#final-directory-structure">Final directory structure</a></li>
   <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
   <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical exercise</a></li>
@@ -421,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>In the previous lessons, we completed analysis for sample <code>S1</code>.</p>
 <p>For the next parts of the course, we will work with <strong>eight samples</strong>. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:</p>
-<pre class="text"><code>copy_day2_files.sh</code></pre>
+<pre class="text"><code>copy_day2_files</code></pre>
 <p>This script will copy:</p>
 <ul>
 <li>filtered assembly files into the <code>assemblies</code> directory</li>
@@ -479,36 +477,18 @@ S8.gff</code></pre>
 <p>First, check that the script is available:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see:</p>
-<pre class="text"><code>copy_day2_files.sh</code></pre>
+<pre class="text"><code>copy_day2_files</code></pre>
 <p>If the script is not in your current directory, ask the instructor or check the course data folder.</p>
-</section>
-<section id="make-the-script-executable" class="level2">
-<h2 class="anchored" data-anchor-id="make-the-script-executable">Make the script executable</h2>
-<p>Before running the script, make it executable:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x copy_day2_files.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="run-the-script" class="level2">
 <h2 class="anchored" data-anchor-id="run-the-script">Run the script</h2>
 <p>Run the in-house bash script:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./copy_day2_files.sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Tip">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <code>./</code> means “run the script from the current directory”.</p>
-</div>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">copy_day2_files</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="check-assembly-files" class="level2">
 <h2 class="anchored" data-anchor-id="check-assembly-files">Check assembly files</h2>
 <p>After the script finishes, check the <code>assemblies</code> directory:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see:</p>
 <pre class="text"><code>S1_contigs_filtered.fasta
 S2_contigs_filtered.fasta
@@ -519,14 +499,14 @@ S6_contigs_filtered.fasta
 S7_contigs_filtered.fasta
 S8_contigs_filtered.fasta</code></pre>
 <p>Count the number of FASTA files:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies/<span class="pp">*</span>_contigs_filtered.fasta <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies/<span class="pp">*</span>_contigs_filtered.fasta <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The expected number is:</p>
 <pre class="text"><code>8</code></pre>
 </section>
 <section id="check-annotation-files" class="level2">
 <h2 class="anchored" data-anchor-id="check-annotation-files">Check annotation files</h2>
 <p>Check the <code>annotation</code> directory:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see:</p>
 <pre class="text"><code>S1.gff
 S2.gff
@@ -537,18 +517,9 @@ S6.gff
 S7.gff
 S8.gff</code></pre>
 <p>Count the number of GFF files:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation/<span class="pp">*</span>.gff <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation/<span class="pp">*</span>.gff <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The expected number is:</p>
 <pre class="text"><code>8</code></pre>
-</section>
-<section id="check-both-directories-together" class="level2">
-<h2 class="anchored" data-anchor-id="check-both-directories-together">Check both directories together</h2>
-<p>Use the following commands to check both folders:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Assembly files:"</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies/<span class="pp">*</span>_contigs_filtered.fasta</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Annotation files:"</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation/<span class="pp">*</span>.gff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="final-directory-structure" class="level2">
 <h2 class="anchored" data-anchor-id="final-directory-structure">Final directory structure</h2>
@@ -639,7 +610,7 @@ S8.gff</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -648,13 +619,13 @@ S8.gff</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies/<span class="pp">*</span>_contigs_filtered.fasta <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation/<span class="pp">*</span>.gff <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies/<span class="pp">*</span>_contigs_filtered.fasta <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation/<span class="pp">*</span>.gff <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> assemblies</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> annotation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Expected result:</p>
 <pre class="text"><code>8 assembly FASTA files
 8 annotation GFF files</code></pre>

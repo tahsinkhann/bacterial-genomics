@@ -207,14 +207,56 @@
     "href": "materials/12_amr-vf-plasmid.html#activate-the-amr-environment",
     "title": "AMR and Virulence Factors",
     "section": "Activate the AMR environment",
-    "text": "Activate the AMR environment\nActivate the amr environment:\nconda activate amr\nCheck that ABRicate is available:\nabricate --version\nCheck available ABRicate databases:\nabricate --list\nYou should see databases such as:\nncbi\nvfdb\n\nCreate output directory\nCreate a directory named abricate:\nmkdir -p abricate\nCheck that the directory was created:\nls\n\n\nRun ABRicate for AMR genes\nRun ABRicate using the ncbi database:\nabricate \\\n  --db ncbi \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/amr.tsv\n\n\nUnderstanding the AMR command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nabricate\nRuns ABRicate\n\n\n--db ncbi\nUses the NCBI AMR database\n\n\n--threads 4\nUses 4 CPU threads\n\n\nassemblies/*_contigs_filtered.fasta\nScreens all filtered assembly files\n\n\n&gt;\nRedirects output to a file\n\n\nabricate/amr.tsv\nAMR output table\n\n\n\n\n\nCheck AMR output\nCheck that the output file was created:\nls abricate\nView the first few lines:\nhead abricate/amr.tsv\n\n\nRun ABRicate for virulence factors\nRun ABRicate using the vfdb database:\nabricate \\\n  --db vfdb \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/vf.tsv\n\n\nUnderstanding the virulence factor command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\n--db vfdb\nUses the virulence factor database\n\n\nassemblies/*_contigs_filtered.fasta\nScreens all filtered assembly files\n\n\nabricate/vf.tsv\nVirulence factor output table"
+    "text": "Activate the AMR environment\nActivate the amr environment:\nconda activate amr\nCheck that ABRicate is available:\nabricate --version\nYou will see:\nabricate 1.4.0\nCheck available ABRicate databases:\nabricate --list"
+  },
+  {
+    "objectID": "materials/12_amr-vf-plasmid.html#example-abricate-database-list",
+    "href": "materials/12_amr-vf-plasmid.html#example-abricate-database-list",
+    "title": "AMR and Virulence Factors",
+    "section": "Example ABRicate database list",
+    "text": "Example ABRicate database list\nAfter running:\nabricate --list\nyou may see output like this:\nDATABASE        SEQUENCES  DBTYPE  DATE\necoli_vf        2701       nucl    2026-Apr-3\nncbi            8232       nucl    2026-Apr-3\nvfdb            4592       nucl    2026-Apr-3\nargannot        2224       nucl    2026-Apr-3\nupec_expec_vf   77         nucl    2026-Apr-3\nresfinder       3206       nucl    2026-Apr-3\ncard            6052       nucl    2026-Apr-3\nplasmidfinder   488        nucl    2026-Apr-3\nbacmet2         746        prot    2026-Apr-3\necoh            597        nucl    2026-Apr-3\nvictors         4545       nucl    2026-Apr-3\nmegares         6635       nucl    2026-Apr-3"
+  },
+  {
+    "objectID": "materials/12_amr-vf-plasmid.html#interpreting-the-database-list",
+    "href": "materials/12_amr-vf-plasmid.html#interpreting-the-database-list",
+    "title": "AMR and Virulence Factors",
+    "section": "Interpreting the database list",
+    "text": "Interpreting the database list\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\nDATABASE\nName of the ABRicate database\n\n\nSEQUENCES\nNumber of sequences in the database\n\n\nDBTYPE\nDatabase type, usually nucleotide (nucl) or protein (prot)\n\n\nDATE\nDate when the database was last updated\n\n\n\nFor this lesson, we will mainly use:\n\n\n\nAnalysis\nDatabase\n\n\n\n\nAMR gene screening\nncbi\n\n\nVirulence factor screening\nvfdb\n\n\nPlasmid screening\nplasmidfinder\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich ABRicate database will we use for AMR gene screening?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nWe will use:\nncbi\nfor AMR gene screening.\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich ABRicate database will we use for virulence factor screening?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nWe will use:\nvfdb\nfor virulence factor screening.\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich database can be used for plasmid screening?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nWe can use:\nplasmidfinder\nfor plasmid screening.\n\n\n\n\nCreate output directory\nCreate a directory named abricate:\nmkdir -p abricate\nCheck that the directory was created:\nls\nyou will see:\nabricate  \nannotation  \nassemblies  \nclassify\n\n\nRun ABRicate for AMR genes\nRun ABRicate using the ncbi database:\nabricate \\\n  --db ncbi \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/amr.tsv\n\n\nUnderstanding the AMR command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nabricate\nRuns ABRicate\n\n\n--db ncbi\nUses the NCBI AMR database\n\n\n--threads 4\nUses 4 CPU threads\n\n\nassemblies/*_contigs_filtered.fasta\nScreens all filtered assembly files\n\n\n&gt;\nRedirects output to a file\n\n\nabricate/amr.tsv\nAMR output table\n\n\n\n\n\nCheck AMR output\nCheck that the output file was created:\nls abricate\nOutput:\namr.tsv\nView the first few lines:\nhead abricate/amr.tsv\n\n\nRun ABRicate for virulence factors\nRun ABRicate using the vfdb database:\nabricate \\\n  --db vfdb \\\n  --threads 4 \\\n  assemblies/*_contigs_filtered.fasta \\\n  &gt; abricate/vf.tsv\n\n\nUnderstanding the virulence factor command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\n--db vfdb\nUses the virulence factor database\n\n\nassemblies/*_contigs_filtered.fasta\nScreens all filtered assembly files\n\n\nabricate/vf.tsv\nVirulence factor output table"
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#check-virulence-factor-output",
     "href": "materials/12_amr-vf-plasmid.html#check-virulence-factor-output",
     "title": "AMR and Virulence Factors",
     "section": "Check virulence factor output",
-    "text": "Check virulence factor output\nView the first few lines:\nhead abricate/vf.tsv\nYou should now have:\nabricate/amr.tsv\nabricate/vf.tsv\n\nUnderstanding ABRicate output\nABRicate output usually includes columns such as:\n\n\n\nColumn\nMeaning\n\n\n\n\nFILE\nInput genome file\n\n\nSEQUENCE\nContig name\n\n\nSTART\nStart position of hit\n\n\nEND\nEnd position of hit\n\n\nGENE\nDetected gene\n\n\nCOVERAGE\nQuery coverage\n\n\nCOVERAGE_MAP\nCoverage pattern\n\n\nGAPS\nNumber of gaps\n\n\n%COVERAGE\nPercentage of gene covered\n\n\n%IDENTITY\nSequence identity\n\n\nDATABASE\nDatabase used\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen abricate/amr.tsv.\nWhich AMR genes are detected in sample S1?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Look for rows where the FILE column contains S1_contigs_filtered.fasta.\n\n\n\n\n\nSummarise AMR results\nCreate a summary table for AMR genes:\nabricate --summary abricate/amr.tsv &gt; abricate/amr_summary.tsv\nView the summary:\ncat abricate/amr_summary.tsv\n\n\nSummarise virulence factor results\nCreate a summary table for virulence factor genes:\nabricate --summary abricate/vf.tsv &gt; abricate/vf_summary.tsv\nView the summary:\ncat abricate/vf_summary.tsv\n\n\nCheck all ABRicate outputs\nList the output directory:\nls abricate\nExpected files:\namr.tsv\namr_summary.tsv\nvf.tsv\nvf_summary.tsv\n\n\nCompare AMR and virulence factor results\nAMR and virulence factor screening answer different biological questions.\n\n\n\n\n\n\n\n\n\nAnalysis\nDatabase\nOutput\nQuestion answered\n\n\n\n\nAMR screening\nncbi\namr.tsv\nWhich resistance genes are present?\n\n\nAMR summary\nncbi\namr_summary.tsv\nWhich samples contain which AMR genes?\n\n\nVirulence factor screening\nvfdb\nvf.tsv\nWhich virulence-associated genes are present?\n\n\nVirulence summary\nvfdb\nvf_summary.tsv\nWhich samples contain which virulence factors?\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich sample has the highest number of AMR gene hits?\nWhich sample has the highest number of virulence factor hits?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nUse the summary files to compare samples:\ncat abricate/amr_summary.tsv\ncat abricate/vf_summary.tsv\nThe sample with the most gene columns marked as present has the highest number of detected hits."
+    "text": "Check virulence factor output\nView the first few lines:\nls abricate\nYou should now have:\namr.tsv\nvf.tsv\nView the first few lines:\nhead abricate/vf.tsv\n\nUnderstanding ABRicate output\nABRicate output usually includes columns such as:\n\n\n\nColumn\nMeaning\n\n\n\n\nFILE\nInput genome file\n\n\nSEQUENCE\nContig name\n\n\nSTART\nStart position of hit\n\n\nEND\nEnd position of hit\n\n\nGENE\nDetected gene\n\n\nCOVERAGE\nQuery coverage\n\n\nCOVERAGE_MAP\nCoverage pattern\n\n\nGAPS\nNumber of gaps\n\n\n%COVERAGE\nPercentage of gene covered\n\n\n%IDENTITY\nSequence identity\n\n\nDATABASE\nDatabase used\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen abricate/amr.tsv.\nWhich AMR genes are detected in sample S1?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Look for rows where the FILE column contains S1_contigs_filtered.fasta.\n\n\n\n\n\nSummarise AMR results\nCreate a summary table for AMR genes:\nabricate --summary abricate/amr.tsv &gt; abricate/amr_summary.tsv\nls abricate\nOutput:\namr.tsv  amr_summary.tsv  vf.tsv\nView the summary:\ncat abricate/amr_summary.tsv"
+  },
+  {
+    "objectID": "materials/12_amr-vf-plasmid.html#example-amr-summary-result",
+    "href": "materials/12_amr-vf-plasmid.html#example-amr-summary-result",
+    "title": "AMR and Virulence Factors",
+    "section": "Example AMR summary result",
+    "text": "Example AMR summary result\nAfter running:\ncat abricate/amr_summary.tsv\nyou may see output like this:\n#FILE                                   NUM_FOUND  almE    almF    almG    catB9   dfrA1   dfrA31  qnrVC5  varG\nassemblies/S1_contigs_filtered.fasta    5          100.00  100.00  100.00  100.00  .       .       .       100.00\nassemblies/S2_contigs_filtered.fasta    5          100.00  100.00  100.00  .       .       100.00  100.00  .\nassemblies/S3_contigs_filtered.fasta    6          100.00  100.00  100.00  100.00  100.00  .       .       100.00\nassemblies/S4_contigs_filtered.fasta    5          100.00  100.00  100.00  100.00  .       .       .       100.00\nassemblies/S5_contigs_filtered.fasta    3          100.00  100.00  100.00  .       .       .       .       .\nassemblies/S6_contigs_filtered.fasta    4          100.00  100.00  100.00  .       .       .       .       100.00\nassemblies/S7_contigs_filtered.fasta    4          100.00  100.00  100.00  .       .       .       .       100.00\nassemblies/S8_contigs_filtered.fasta    5          100.00  100.00  100.00  100.00  .       .       .       100.00"
+  },
+  {
+    "objectID": "materials/12_amr-vf-plasmid.html#interpreting-the-amr-summary",
+    "href": "materials/12_amr-vf-plasmid.html#interpreting-the-amr-summary",
+    "title": "AMR and Virulence Factors",
+    "section": "Interpreting the AMR summary",
+    "text": "Interpreting the AMR summary\nEach row represents one genome assembly.\nEach column after NUM_FOUND represents an AMR-associated gene detected by ABRicate.\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\n#FILE\nInput assembly file\n\n\nNUM_FOUND\nNumber of AMR genes detected in that assembly\n\n\nGene columns\nPercentage identity or coverage reported for each detected gene\n\n\n.\nGene was not detected in that assembly\n\n\n\nIn this example, all samples contain:\nalmE\nalmF\nalmG\nThese genes were detected at 100.00 in all eight assemblies."
+  },
+  {
+    "objectID": "materials/12_amr-vf-plasmid.html#summary-of-amr-gene-presence",
+    "href": "materials/12_amr-vf-plasmid.html#summary-of-amr-gene-presence",
+    "title": "AMR and Virulence Factors",
+    "section": "Summary of AMR gene presence",
+    "text": "Summary of AMR gene presence\n\n\n\nSample\nNumber of genes detected\nGenes detected\n\n\n\n\nS1\n5\nalmE, almF, almG, catB9, varG\n\n\nS2\n5\nalmE, almF, almG, dfrA31, qnrVC5\n\n\nS3\n6\nalmE, almF, almG, catB9, dfrA1, varG\n\n\nS4\n5\nalmE, almF, almG, catB9, varG\n\n\nS5\n3\nalmE, almF, almG\n\n\nS6\n4\nalmE, almF, almG, varG\n\n\nS7\n4\nalmE, almF, almG, varG\n\n\nS8\n5\nalmE, almF, almG, catB9, varG"
+  },
+  {
+    "objectID": "materials/12_amr-vf-plasmid.html#questions",
+    "href": "materials/12_amr-vf-plasmid.html#questions",
+    "title": "AMR and Virulence Factors",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\nNoteQuestion 1\n\n\n\nWhich sample has the highest number of AMR genes detected?\n\n\n\n\n\n\n\n\n\nNoteQuestion 2\n\n\n\nWhich AMR genes are found in all eight samples?\n\n\n\n\n\n\n\n\n\nNoteQuestion 3\n\n\n\nWhich sample contains qnrVC5?\n\n\n\n\n\n\n\n\n\nNoteQuestion 4\n\n\n\nWhich samples contain catB9?\n\n\n\n\nSummarise virulence factor results\nCreate a summary table for virulence factor genes:\nabricate --summary abricate/vf.tsv &gt; abricate/vf_summary.tsv\nView the summary:\ncat abricate/vf_summary.tsv\n\n\nCheck all ABRicate outputs\nList the output directory:\nls abricate\nExpected files:\namr.tsv\namr_summary.tsv\nvf.tsv\nvf_summary.tsv\n\n\nCompare AMR and virulence factor results\nAMR and virulence factor screening answer different biological questions.\n\n\n\n\n\n\n\n\n\nAnalysis\nDatabase\nOutput\nQuestion answered\n\n\n\n\nAMR screening\nncbi\namr.tsv\nWhich resistance genes are present?\n\n\nAMR summary\nncbi\namr_summary.tsv\nWhich samples contain which AMR genes?\n\n\nVirulence factor screening\nvfdb\nvf.tsv\nWhich virulence-associated genes are present?\n\n\nVirulence summary\nvfdb\nvf_summary.tsv\nWhich samples contain which virulence factors?\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich sample has the highest number of AMR gene hits?\nWhich sample has the highest number of virulence factor hits?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nUse the summary files to compare samples:\ncat abricate/amr_summary.tsv\ncat abricate/vf_summary.tsv\nThe sample with the most gene columns marked as present has the highest number of detected hits."
   },
   {
     "objectID": "materials/12_amr-vf-plasmid.html#download-abricate-results-from-the-server",
@@ -1191,7 +1233,7 @@
     "href": "materials/day2_recap.html#input-files",
     "title": "Learnings from Day 1",
     "section": "Input files",
-    "text": "Input files\nThe input files for this recap are:\nS2_R1.fastq.gz\nS2_R2.fastq.gz\nAfter copying the files, they should be located in:\nraw_reads/S2_R1.fastq.gz\nraw_reads/S2_R2.fastq.gz\n\nConnect to the server\nOpen your terminal and type your server IP, for example:\nssh genomevm@172.28.28.12\nGo to your directory\ncd tanzim\nCreate a directory called recap\nmkdir recap\nEnter to recap directory\ncd recap\n\n\nStep 1: Create directories\nCreate the required directories:\nmkdir -p raw_reads qc_reports trimmed_reads assemblies quast checkm2\nCheck the directories:\nls\nYou should see:\nraw_reads\nqc_reports\ntrimmed_reads\nassemblies\nquast\ncheckm2\n\n\nStep 2: Copy files\nCopy the recap data using the in-house script:\nday1_recap\nCheck that the raw read files were copied:\nls raw_reads\nYou should see:\nS2_R1.fastq.gz\nS2_R2.fastq.gz\n\n\n\n\n\n\nNoteCheckpoint\n\n\n\nBefore moving to the next step, make sure both raw read files are present inside raw_reads.\n\n\n\n\nStep 3: FastQC on raw reads\nActivate the QC environment:\nconda activate qc\nRun FastQC on the raw reads:\nfastqc \\\n  -t 4 \\\n  -o qc_reports \\\n  raw_reads/S2_R1.fastq.gz \\\n  raw_reads/S2_R2.fastq.gz\nCheck the output:\nls qc_reports\nYou should see raw-read FastQC reports:\nS2_R1_fastqc.html\nS2_R1_fastqc.zip\nS2_R2_fastqc.html\nS2_R2_fastqc.zip\n\n\nStep 4: Copy raw FastQC reports to your local computer\nIf you are working on the server, download the raw-read FastQC reports to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/YOUR_NAME/recap/qc_reports/S2_R1_fastqc.html .\nscp genomevm@172.28.28.12:~/YOUR_NAME/recap/qc_reports/S2_R2_fastqc.html .\nReplace YOUR_NAME with your working directory name.\nExample:\nscp genomevm@172.28.28.12:~/tanzim/recap/qc_reports/S2_R1_fastqc.html .\nscp genomevm@172.28.28.12:~/tanzim/recap/qc_reports/S2_R2_fastqc.html .\n\n\n\n\n\n\nWarningImportant\n\n\n\nRun scp from your local computer terminal, not from inside the SSH session.\n\n\n\n\nStep 5: Trim reads using Trimmomatic\nRun Trimmomatic in paired-end mode:\ntrimmomatic PE \\\n  -threads 3 \\\n  raw_reads/S2_R1.fastq.gz \\\n  raw_reads/S2_R2.fastq.gz \\\n  trimmed_reads/S2_trim_R1.fastq.gz \\\n  trimmed_reads/S2_unpaired_R1.fastq.gz \\\n  trimmed_reads/S2_trim_R2.fastq.gz \\\n  trimmed_reads/S2_unpaired_R2.fastq.gz \\\n  SLIDINGWINDOW:4:20 \\\n  LEADING:3 \\\n  TRAILING:3 \\\n  HEADCROP:15 \\\n  MINLEN:40\nCheck the trimmed read files:\nls trimmed_reads\nYou should see:\nS2_trim_R1.fastq.gz\nS2_trim_R2.fastq.gz\nS2_unpaired_R1.fastq.gz\nS2_unpaired_R2.fastq.gz\n\n\n\n\n\n\nNoteCheckpoint\n\n\n\nFor assembly, you will use the paired trimmed reads:\ntrimmed_reads/S2_trim_R1.fastq.gz\ntrimmed_reads/S2_trim_R2.fastq.gz\n\n\n\n\nStep 6: FastQC on trimmed reads\nRun FastQC on the trimmed paired reads:\nfastqc \\\n  -t 3 \\\n  -o qc_reports \\\n  trimmed_reads/S2_trim_R1.fastq.gz \\\n  trimmed_reads/S2_trim_R2.fastq.gz\nCheck the output:\nls qc_reports\nYou should now see both raw and trimmed FastQC reports.\n\n\nStep 6b: Copy trimmed FastQC reports to your local computer\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/YOUR_NAME/recap/qc_reports/S2_trim_R1_fastqc.html .\nscp genomevm@172.28.28.12:~/YOUR_NAME/recap/qc_reports/S2_trim_R2_fastqc.html .\nExample:\nscp genomevm@172.28.28.12:~/tanzim/recap/qc_reports/S2_trim_R1_fastqc.html .\nscp genomevm@172.28.28.12:~/tanzim/recap/qc_reports/S2_trim_R2_fastqc.html .\nAfter finishing QC and trimming, deactivate the QC environment:\nconda deactivate\n\n\nStep 7: Genome assembly using SPAdes\nActivate the assembly environment:\nconda activate assembly\nRun SPAdes using the paired trimmed reads:\nspades.py \\\n  -t 3 \\\n  -o assemblies/S2_assembly \\\n  -1 trimmed_reads/S2_trim_R1.fastq.gz \\\n  -2 trimmed_reads/S2_trim_R2.fastq.gz\nAfter assembly finishes, copy the main contig file:\ncp assemblies/S2_assembly/contigs.fasta assemblies/S2_contigs.fasta\nCheck that the assembly file exists:\nls assemblies\nYou should see:\nS2_assembly\nS2_contigs.fasta\n\n\nStep 8: QUAST on original assembly\nRun QUAST on the original assembly:\nquast \\\n  -t 3 \\\n  -o quast/S2_original \\\n  assemblies/S2_contigs.fasta\nView the report:\ncat quast/S2_original/report.txt\nRecord the following values:\n\nnumber of contigs\ntotal length\nN50\nL50\nGC%\n\n\n\n\n\n\n\nNoteCheckpoint\n\n\n\nUse the QUAST report to fill in the Original assembly row in the results table.\n\n\n\n\nStep 9: CheckM2 on original assembly\nRun CheckM2 on the original assembly:\ncheckm2 predict \\\n  -t 3 \\\n  -x .fasta \\\n  -i assemblies/S2_contigs.fasta \\\n  -o checkm2/S2_original\nView the CheckM2 report:\ncat checkm2/S2_original/quality_report.tsv\nRecord:\n\ncompleteness\ncontamination\n\n\n\nStep 10: Filter contigs smaller than 500 bp\nUse seqkit to remove contigs smaller than 500 bp:\nseqkit seq \\\n  -m 500 \\\n  assemblies/S2_contigs.fasta \\\n  &gt; assemblies/S2_contigs_filtered.fasta\nCheck that the filtered file exists:\nls assemblies\nYou should see:\nS2_contigs_filtered.fasta\nCount contigs before and after filtering:\ngrep -c \"^&gt;\" assemblies/S2_contigs.fasta\ngrep -c \"^&gt;\" assemblies/S2_contigs_filtered.fasta\n\n\nStep 11: QUAST and CheckM2 on filtered assembly\nRun QUAST on the filtered assembly:\nquast \\\n  -t 3 \\\n  -o quast/S2_filtered \\\n  assemblies/S2_contigs_filtered.fasta\nView the filtered QUAST report:\ncat quast/S2_filtered/report.txt\nRun CheckM2 on the filtered assembly:\ncheckm2 predict \\\n  -t 3 \\\n  -x .fasta \\\n  -i assemblies/S2_contigs_filtered.fasta \\\n  -o checkm2/S2_filtered\nView the filtered CheckM2 report:\ncat checkm2/S2_filtered/quality_report.tsv",
+    "text": "Input files\nThe input files for this recap are:\nS2_R1.fastq.gz\nS2_R2.fastq.gz\nAfter copying the files, they should be located in:\nraw_reads/S2_R1.fastq.gz\nraw_reads/S2_R2.fastq.gz\n\nConnect to the server\nOpen your terminal and type your server IP, for example:\nssh genomevm@172.28.28.12\nGo to your directory\ncd tanzim\nCreate a directory called recap\nmkdir recap\nEnter to recap directory\ncd recap\n\n\nStep 1: Create directories\nCreate the required directories:\nmkdir -p raw_reads qc_reports trimmed_reads assemblies quast checkm2\nCheck the directories:\nls\nYou should see:\nraw_reads\nqc_reports\ntrimmed_reads\nassemblies\nquast\ncheckm2\n\n\nStep 2: Copy files\nCopy the recap data using the in-house script:\nday1_recap\nCheck that the raw read files were copied:\nls raw_reads\nYou should see:\nS2_R1.fastq.gz\nS2_R2.fastq.gz\n\n\n\n\n\n\nNoteCheckpoint\n\n\n\nBefore moving to the next step, make sure both raw read files are present inside raw_reads.\n\n\n\n\nStep 3: FastQC on raw reads\nActivate the QC environment:\nconda activate qc\nRun FastQC on the raw reads:\nfastqc \\\n  -t 4 \\\n  -o qc_reports \\\n  raw_reads/S2_R1.fastq.gz \\\n  raw_reads/S2_R2.fastq.gz\nCheck the output:\nls qc_reports\nYou should see raw-read FastQC reports:\nS2_R1_fastqc.html\nS2_R1_fastqc.zip\nS2_R2_fastqc.html\nS2_R2_fastqc.zip\n\n\nStep 4: Copy raw FastQC reports to your local computer\nIf you are working on the server, download the raw-read FastQC reports to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/YOUR_NAME/recap/qc_reports/S2_R1_fastqc.html .\nscp genomevm@172.28.28.12:~/YOUR_NAME/recap/qc_reports/S2_R2_fastqc.html .\nReplace YOUR_NAME with your working directory name.\nExample:\nscp genomevm@172.28.28.12:~/tanzim/recap/qc_reports/S2_R1_fastqc.html .\nscp genomevm@172.28.28.12:~/tanzim/recap/qc_reports/S2_R2_fastqc.html .\n\n\n\n\n\n\nWarningImportant\n\n\n\nRun scp from your local computer terminal, not from inside the SSH session.\n\n\n\n\nStep 5: Trim reads using Trimmomatic\nRun Trimmomatic in paired-end mode:\ntrimmomatic PE \\\n  -threads 3 \\\n  raw_reads/S2_R1.fastq.gz \\\n  raw_reads/S2_R2.fastq.gz \\\n  trimmed_reads/S2_trim_R1.fastq.gz \\\n  trimmed_reads/S2_unpaired_R1.fastq.gz \\\n  trimmed_reads/S2_trim_R2.fastq.gz \\\n  trimmed_reads/S2_unpaired_R2.fastq.gz \\\n  SLIDINGWINDOW:4:20 \\\n  LEADING:3 \\\n  TRAILING:3 \\\n  HEADCROP:15 \\\n  MINLEN:40\nCheck the trimmed read files:\nls trimmed_reads\nYou should see:\nS2_trim_R1.fastq.gz\nS2_trim_R2.fastq.gz\nS2_unpaired_R1.fastq.gz\nS2_unpaired_R2.fastq.gz\n\n\n\n\n\n\nNoteCheckpoint\n\n\n\nFor assembly, you will use the paired trimmed reads:\ntrimmed_reads/S2_trim_R1.fastq.gz\ntrimmed_reads/S2_trim_R2.fastq.gz\n\n\n\n\nStep 6: FastQC on trimmed reads\nRun FastQC on the trimmed paired reads:\nfastqc \\\n  -t 3 \\\n  -o qc_reports \\\n  trimmed_reads/S2_trim_R1.fastq.gz \\\n  trimmed_reads/S2_trim_R2.fastq.gz\nCheck the output:\nls qc_reports\nYou should now see both raw and trimmed FastQC reports.\n\n\nStep 6b: Copy trimmed FastQC reports to your local computer\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/YOUR_NAME/recap/qc_reports/*.html .\nExample:\n\nWindows/Linux OSMacOS\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/recap/qc_reports/*.html .\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/recap/qc_reports/'*.html' .\n\n\n\nAfter finishing QC and trimming, deactivate the QC environment:\nconda deactivate\n\n\nStep 7: Genome assembly using SPAdes\nActivate the assembly environment:\nconda activate assembly\nRun SPAdes using the paired trimmed reads:\nspades.py \\\n  -t 3 \\\n  -o assemblies/S2_assembly \\\n  -1 trimmed_reads/S2_trim_R1.fastq.gz \\\n  -2 trimmed_reads/S2_trim_R2.fastq.gz\nAfter assembly finishes, copy the main contig file:\ncp assemblies/S2_assembly/contigs.fasta assemblies/S2_contigs.fasta\nCheck that the assembly file exists:\nls assemblies\nYou should see:\nS2_assembly\nS2_contigs.fasta\n\n\nStep 8: QUAST on original assembly\nRun QUAST on the original assembly:\nquast \\\n  -t 3 \\\n  -o quast/S2_original \\\n  assemblies/S2_contigs.fasta\nView the report:\ncat quast/S2_original/report.txt\nRecord the following values:\n\nnumber of contigs\ntotal length\nN50\nL50\nGC%\n\n\n\n\n\n\n\nNoteCheckpoint\n\n\n\nUse the QUAST report to fill in the Original assembly row in the results table.\n\n\n\n\nStep 9: CheckM2 on original assembly\nRun CheckM2 on the original assembly:\ncheckm2 predict \\\n  -t 3 \\\n  -x .fasta \\\n  -i assemblies/S2_contigs.fasta \\\n  -o checkm2/S2_original\nView the CheckM2 report:\ncat checkm2/S2_original/quality_report.tsv\nRecord:\n\ncompleteness\ncontamination\n\n\n\nStep 10: Filter contigs smaller than 500 bp\nUse seqkit to remove contigs smaller than 500 bp:\nseqkit seq \\\n  -m 500 \\\n  assemblies/S2_contigs.fasta \\\n  &gt; assemblies/S2_contigs_filtered.fasta\nCheck that the filtered file exists:\nls assemblies\nYou should see:\nS2_contigs_filtered.fasta\nCount contigs before and after filtering:\ngrep -c \"^&gt;\" assemblies/S2_contigs.fasta\ngrep -c \"^&gt;\" assemblies/S2_contigs_filtered.fasta\n\n\nStep 11: QUAST and CheckM2 on filtered assembly\nRun QUAST on the filtered assembly:\nquast \\\n  -t 3 \\\n  -o quast/S2_filtered \\\n  assemblies/S2_contigs_filtered.fasta\nView the filtered QUAST report:\ncat quast/S2_filtered/report.txt\nRun CheckM2 on the filtered assembly:\ncheckm2 predict \\\n  -t 3 \\\n  -x .fasta \\\n  -i assemblies/S2_contigs_filtered.fasta \\\n  -o checkm2/S2_filtered\nView the filtered CheckM2 report:\ncat checkm2/S2_filtered/quality_report.tsv",
     "crumbs": [
       "Materials",
       "Day 2: Recap",
@@ -1441,14 +1483,14 @@
     "href": "materials/11_copy-day2-files.html",
     "title": "Copy Day 2 Files",
     "section": "",
-    "text": "In the previous lessons, we completed analysis for sample S1.\nFor the next parts of the course, we will work with eight samples. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:\ncopy_day2_files.sh\nThis script will copy:\n\nfiltered assembly files into the assemblies directory\nannotation files into the annotation directory"
+    "text": "In the previous lessons, we completed analysis for sample S1.\nFor the next parts of the course, we will work with eight samples. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:\ncopy_day2_files\nThis script will copy:\n\nfiltered assembly files into the assemblies directory\nannotation files into the annotation directory"
   },
   {
     "objectID": "materials/11_copy-day2-files.html#overview",
     "href": "materials/11_copy-day2-files.html#overview",
     "title": "Copy Day 2 Files",
     "section": "",
-    "text": "In the previous lessons, we completed analysis for sample S1.\nFor the next parts of the course, we will work with eight samples. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:\ncopy_day2_files.sh\nThis script will copy:\n\nfiltered assembly files into the assemblies directory\nannotation files into the annotation directory"
+    "text": "In the previous lessons, we completed analysis for sample S1.\nFor the next parts of the course, we will work with eight samples. Instead of manually copying each assembly and annotation file, we will use an in-house bash script called:\ncopy_day2_files\nThis script will copy:\n\nfiltered assembly files into the assemblies directory\nannotation files into the annotation directory"
   },
   {
     "objectID": "materials/11_copy-day2-files.html#learning-objectives",
@@ -1469,21 +1511,14 @@
     "href": "materials/11_copy-day2-files.html#check-the-script",
     "title": "Copy Day 2 Files",
     "section": "Check the script",
-    "text": "Check the script\nFirst, check that the script is available:\nls\nYou should see:\ncopy_day2_files.sh\nIf the script is not in your current directory, ask the instructor or check the course data folder."
-  },
-  {
-    "objectID": "materials/11_copy-day2-files.html#make-the-script-executable",
-    "href": "materials/11_copy-day2-files.html#make-the-script-executable",
-    "title": "Copy Day 2 Files",
-    "section": "Make the script executable",
-    "text": "Make the script executable\nBefore running the script, make it executable:\nchmod +x copy_day2_files.sh"
+    "text": "Check the script\nFirst, check that the script is available:\nls\nYou should see:\ncopy_day2_files\nIf the script is not in your current directory, ask the instructor or check the course data folder."
   },
   {
     "objectID": "materials/11_copy-day2-files.html#run-the-script",
     "href": "materials/11_copy-day2-files.html#run-the-script",
     "title": "Copy Day 2 Files",
     "section": "Run the script",
-    "text": "Run the script\nRun the in-house bash script:\n./copy_day2_files.sh\n\n\n\n\n\n\nTipTip\n\n\n\nThe ./ means “run the script from the current directory”."
+    "text": "Run the script\nRun the in-house bash script:\ncopy_day2_files"
   },
   {
     "objectID": "materials/11_copy-day2-files.html#check-assembly-files",
@@ -1498,13 +1533,6 @@
     "title": "Copy Day 2 Files",
     "section": "Check annotation files",
     "text": "Check annotation files\nCheck the annotation directory:\nls annotation\nYou should see:\nS1.gff\nS2.gff\nS3.gff\nS4.gff\nS5.gff\nS6.gff\nS7.gff\nS8.gff\nCount the number of GFF files:\nls annotation/*.gff | wc -l\nThe expected number is:\n8"
-  },
-  {
-    "objectID": "materials/11_copy-day2-files.html#check-both-directories-together",
-    "href": "materials/11_copy-day2-files.html#check-both-directories-together",
-    "title": "Copy Day 2 Files",
-    "section": "Check both directories together",
-    "text": "Check both directories together\nUse the following commands to check both folders:\necho \"Assembly files:\"\nls assemblies/*_contigs_filtered.fasta\n\necho \"Annotation files:\"\nls annotation/*.gff"
   },
   {
     "objectID": "materials/11_copy-day2-files.html#final-directory-structure",
@@ -1606,91 +1634,156 @@
     "href": "materials/10_annotation.html",
     "title": "Genome Annotation with Prokka",
     "section": "",
-    "text": "After taxonomy and MLST, the next step is to annotate the assembled genome.\nGenome annotation is the process of identifying genes and other genomic features in an assembly. These features may include protein-coding genes, rRNA genes, tRNA genes, and other functional elements.\nIn this lesson, we will use Prokka to annotate the filtered assembly file."
+    "text": "After taxonomy and MLST, the next step is to annotate the assembled genome.\nGenome annotation is the process of identifying genes and other genomic features in an assembly. These features may include protein-coding genes, rRNA genes, tRNA genes, and other functional elements.\nIn this lesson, we will use Prokka to annotate the filtered assembly file.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#overview",
     "href": "materials/10_annotation.html#overview",
     "title": "Genome Annotation with Prokka",
     "section": "",
-    "text": "After taxonomy and MLST, the next step is to annotate the assembled genome.\nGenome annotation is the process of identifying genes and other genomic features in an assembly. These features may include protein-coding genes, rRNA genes, tRNA genes, and other functional elements.\nIn this lesson, we will use Prokka to annotate the filtered assembly file."
+    "text": "After taxonomy and MLST, the next step is to annotate the assembled genome.\nGenome annotation is the process of identifying genes and other genomic features in an assembly. These features may include protein-coding genes, rRNA genes, tRNA genes, and other functional elements.\nIn this lesson, we will use Prokka to annotate the filtered assembly file.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#learning-objectives",
     "href": "materials/10_annotation.html#learning-objectives",
     "title": "Genome Annotation with Prokka",
     "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nexplain what genome annotation means\nactivate the annotation environment\nrun Prokka on a filtered assembly file\nidentify important Prokka output files\nunderstand why .gff files are needed for pangenome analysis\ndownload annotation files from the server"
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nexplain what genome annotation means\nactivate the annotation environment\nrun Prokka on a filtered assembly file\nidentify important Prokka output files\nunderstand why .gff files are needed for pangenome analysis\ndownload annotation files from the server",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#input-file",
     "href": "materials/10_annotation.html#input-file",
     "title": "Genome Annotation with Prokka",
     "section": "Input file",
-    "text": "Input file\nIn the previous lessons, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta"
+    "text": "Input file\nIn the previous lessons, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#activate-the-annotation-environment",
     "href": "materials/10_annotation.html#activate-the-annotation-environment",
     "title": "Genome Annotation with Prokka",
     "section": "Activate the annotation environment",
-    "text": "Activate the annotation environment\nActivate the annotation environment:\nconda activate annotation\nCheck that Prokka is available:\nprokka --version\n\nRun Prokka\nRun Prokka on the filtered assembly:\nprokka \\\n  --outdir annotation \\\n  --force \\\n  --cpus 4 \\\n  --prefix S1 \\\n  --locustag S1 \\\n  assemblies/S1_contigs_filtered.fasta\n\n\nUnderstanding the Prokka command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nprokka\nRuns the Prokka annotation tool\n\n\n--outdir annotation\nOutput directory\n\n\n--force\nOverwrite the output directory if it already exists\n\n\n--cpus 4\nUse 4 CPU threads\n\n\n--prefix S1\nPrefix for output file names\n\n\n--locustag S1\nPrefix for gene locus tags\n\n\nassemblies/S1_contigs_filtered.fasta\nInput filtered assembly file\n\n\n\nOnce command started running you will see below message: \n\n\n\n\n\n\nWarningNote\n\n\n\nThe option --force allows Prokka to overwrite the existing annotation folder.\nUse it carefully if you already have files in the annotation directory.\n\n\n\n\nCheck Prokka outputs\nList the annotation directory:\nls annotation\nYou should see files such as:\nS1.err\nS1.faa\nS1.ffn\nS1.fna\nS1.fsa\nS1.gbk\nS1.gff\nS1.log\nS1.sqn\nS1.tbl\nS1.tsv\nS1.txt\n\n\nImportant Prokka output files\n\n\n\nFile\nDescription\n\n\n\n\nS1.gff\nMain annotation file; used later for pangenome analysis\n\n\nS1.gbk\nGenBank format annotation\n\n\nS1.faa\nProtein sequences\n\n\nS1.ffn\nNucleotide sequences of predicted coding genes\n\n\nS1.fna\nContig sequences\n\n\nS1.tsv\nTab-separated annotation table\n\n\nS1.txt\nAnnotation summary\n\n\nS1.log\nProkka log file"
+    "text": "Activate the annotation environment\nActivate the annotation environment:\nconda activate annotation\nCheck that Prokka is available:\nprokka --version\n\nRun Prokka\nRun Prokka on the filtered assembly:\nprokka \\\n  --outdir annotation \\\n  --force \\\n  --cpus 4 \\\n  --prefix S1 \\\n  --locustag S1 \\\n  assemblies/S1_contigs_filtered.fasta\n\n\nUnderstanding the Prokka command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nprokka\nRuns the Prokka annotation tool\n\n\n--outdir annotation\nOutput directory\n\n\n--force\nOverwrite the output directory if it already exists\n\n\n--cpus 4\nUse 4 CPU threads\n\n\n--prefix S1\nPrefix for output file names\n\n\n--locustag S1\nPrefix for gene locus tags\n\n\nassemblies/S1_contigs_filtered.fasta\nInput filtered assembly file\n\n\n\nOnce command started running you will see below message: \n\n\n\n\n\n\nWarningNote\n\n\n\nThe option --force allows Prokka to overwrite the existing annotation folder.\nUse it carefully if you already have files in the annotation directory.\n\n\nOnce you are done working here deactivate the environment:\nconda deactivate\n\n\nCheck Prokka outputs\nList the annotation directory:\nls annotation\nYou should see files such as:\nS1.err\nS1.faa\nS1.ffn\nS1.fna\nS1.fsa\nS1.gbk\nS1.gff\nS1.log\nS1.sqn\nS1.tbl\nS1.tsv\nS1.txt\n\n\nImportant Prokka output files\n\n\n\nFile\nDescription\n\n\n\n\nS1.gff\nMain annotation file; used later for pangenome analysis\n\n\nS1.gbk\nGenBank format annotation\n\n\nS1.faa\nProtein sequences\n\n\nS1.ffn\nNucleotide sequences of predicted coding genes\n\n\nS1.fna\nContig sequences\n\n\nS1.tsv\nTab-separated annotation table\n\n\nS1.txt\nAnnotation summary\n\n\nS1.log\nProkka log file",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#example-prokka-summary",
     "href": "materials/10_annotation.html#example-prokka-summary",
     "title": "Genome Annotation with Prokka",
     "section": "Example Prokka summary",
-    "text": "Example Prokka summary\nAfter running:\ncat annotation/S1.txt\nyou may see output like this:\norganism: Genus species strain \ncontigs: 80\nbases: 3912637\nCDS: 3449\nrRNA: 5\ntRNA: 28\ntmRNA: 1"
+    "text": "Example Prokka summary\nAfter running:\ncat annotation/S1.txt\nyou may see output like this:\norganism: Genus species strain \ncontigs: 80\nbases: 3912637\nCDS: 3449\nrRNA: 5\ntRNA: 28\ntmRNA: 1",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#interpreting-this-summary",
     "href": "materials/10_annotation.html#interpreting-this-summary",
     "title": "Genome Annotation with Prokka",
     "section": "Interpreting this summary",
-    "text": "Interpreting this summary\n\n\n\nField\nValue\nMeaning\n\n\n\n\norganism\nGenus species strain\nOrganism name used by Prokka\n\n\ncontigs\n80\nNumber of contigs in the assembly\n\n\nbases\n3,912,637\nTotal assembly size in base pairs\n\n\nCDS\n3,449\nNumber of predicted coding sequences\n\n\nrRNA\n5\nNumber of ribosomal RNA genes\n\n\ntRNA\n28\nNumber of transfer RNA genes\n\n\ntmRNA\n1\nNumber of transfer-messenger RNA genes\n\n\n\nThis means Prokka predicted 3,449 coding sequences from an assembly containing 80 contigs and approximately 3.91 Mbp of sequence.\n\n\n\n\n\n\nNoteQuestion\n\n\n\nHow many coding sequences were predicted in sample S1?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe number of predicted coding sequences is:\n3449\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhat is the total assembly size reported by Prokka?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe total assembly size is:\n3912637 bp\nThis is approximately:\n3.91 Mbp\n\n\n\n\nInspect the GFF file\nThe .gff file is one of the most important Prokka outputs.\nView the first few lines:\nhead annotation/S1.gff\nA GFF file contains information about genomic features, including their location and annotation.\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen the Prokka summary file.\nHow many coding sequences were predicted?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Check the coding sequence count in:\nannotation/S1.txt\n\n\n\n\n\nWhy is the GFF file important?\nThe .gff file combines genome sequence information with gene annotation information.\nIn this course, the .gff file will be used later for pangenome analysis.\nS1.gff  →  pangenome analysis\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich Prokka output file will be used for pangenome analysis?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe file used for pangenome analysis is:\nannotation/S1.gff"
+    "text": "Interpreting this summary\n\n\n\nField\nValue\nMeaning\n\n\n\n\norganism\nGenus species strain\nOrganism name used by Prokka\n\n\ncontigs\n80\nNumber of contigs in the assembly\n\n\nbases\n3,912,637\nTotal assembly size in base pairs\n\n\nCDS\n3,449\nNumber of predicted coding sequences\n\n\nrRNA\n5\nNumber of ribosomal RNA genes\n\n\ntRNA\n28\nNumber of transfer RNA genes\n\n\ntmRNA\n1\nNumber of transfer-messenger RNA genes\n\n\n\nThis means Prokka predicted 3,449 coding sequences from an assembly containing 80 contigs and approximately 3.91 Mbp of sequence.\n\n\n\n\n\n\nNoteQuestion\n\n\n\nHow many coding sequences were predicted in sample S1?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe number of predicted coding sequences is:\n3449\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhat is the total assembly size reported by Prokka?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe total assembly size is:\n3912637 bp\nThis is approximately:\n3.91 Mbp",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#download-annotation-files-from-the-server",
     "href": "materials/10_annotation.html#download-annotation-files-from-the-server",
     "title": "Genome Annotation with Prokka",
     "section": "Download annotation files from the server",
-    "text": "Download annotation files from the server\nIf you are working on a remote server, download the annotation folder to your local computer.\nFrom your local desktop terminal, run:\nscp -r genomevm@172.28.28.12:~/tanzim/annotation .\nThis downloads the full annotation directory to your current local folder.\nIf you only want the GFF file, run:\nscp genomevm@172.28.28.12:~/tanzim/annotation/S1.gff .\n\nWindowsmacOSLinux\n\n\nOpen S1.gff using Notepad++, VS Code, or another text editor.\n\n\nUse:\nopen S1.gff\n\n\nUse:\nxdg-open S1.gff"
+    "text": "Download annotation files from the server\nIf you are working on a remote server, download the annotation folder to your local computer.\nFrom your local desktop terminal, run:\n\nWindows/Linux OSMacOS\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/annotation .\n\n\nscp -r genomevm@172.28.28.12:~/tanzim/`annotation` .\n\n\n\nThis downloads the full annotation directory to your current local folder. Now open the desired file S1.ffn or S1.faa or S1.gff\n\nWindowsmacOSLinux\n\n\nOpen S1.ffn using Notepad++, VS Code, or another text editor.\n\n\nUse:\nopen S1.ffn\n\n\nUse:\nxdg-open S1.ffn\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Gene/Nucleotide output as .ffn\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Protein/aminoacid output as .faa\n\n\n\n\n\n\n\nFigure 1: Annotation: .ffn vs .faa file\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen the Prokka summary file.\nHow many coding sequences were predicted?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Check the coding sequence count in:\nannotation/S1.txt\n\n\n\n\nWhy is the GFF file important?\nThe .gff file combines genome sequence information with gene annotation information.\nIn this course, the .gff file will be used later for pangenome analysis.\nS1.gff  →  pangenome analysis\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich Prokka output file will be used for pangenome analysis?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe file used for pangenome analysis is:\nannotation/S1.gff",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#compare-annotation-with-previous-results",
     "href": "materials/10_annotation.html#compare-annotation-with-previous-results",
     "title": "Genome Annotation with Prokka",
     "section": "Compare annotation with previous results",
-    "text": "Compare annotation with previous results\nAt this stage, you have several outputs for sample S1.\n\n\n\n\n\n\n\n\nAnalysis\nOutput file\nPurpose\n\n\n\n\nTaxonomy\nclassify/S1.kraken2.report\nTaxonomic identity\n\n\nMLST\nclassify/S1_mlst.txt\nSequence type\n\n\nAnnotation\nannotation/S1.gff\nGene annotation\n\n\nAnnotation summary\nannotation/S1.txt\nSummary of predicted features\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nDo the taxonomy, MLST, and annotation results look consistent for sample S1?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nThe results should be interpreted together. Kraken2 gives the likely organism, MLST gives the sequence type if the species has a supported scheme, and Prokka provides predicted genes and functional annotation."
+    "text": "Compare annotation with previous results\nAt this stage, you have several outputs for sample S1.\n\n\n\n\n\n\n\n\nAnalysis\nOutput file\nPurpose\n\n\n\n\nTaxonomy\nclassify/S1.kraken2.report\nTaxonomic identity\n\n\nMLST\nclassify/S1_mlst.txt\nSequence type\n\n\nAnnotation\nannotation/S1.gff\nGene annotation\n\n\nAnnotation summary\nannotation/S1.txt\nSummary of predicted features\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nDo the taxonomy, MLST, and annotation results look consistent for sample S1?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nThe results should be interpreted together. Kraken2 gives the likely organism, MLST gives the sequence type if the species has a supported scheme, and Prokka provides predicted genes and functional annotation.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#final-directory-structure",
     "href": "materials/10_annotation.html#final-directory-structure",
     "title": "Genome Annotation with Prokka",
     "section": "Final directory structure",
-    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n├── classify\n│   ├── S1.kraken2.output\n│   ├── S1.kraken2.report\n│   ├── S1.krona\n│   ├── S1.krona.html\n│   └── S1_mlst.txt\n└── annotation\n    ├── S1.faa\n    ├── S1.ffn\n    ├── S1.fna\n    ├── S1.gbk\n    ├── S1.gff\n    ├── S1.tsv\n    └── S1.txt"
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n├── classify\n│   ├── S1.kraken2.output\n│   ├── S1.kraken2.report\n│   ├── S1.krona\n│   ├── S1.krona.html\n│   └── S1_mlst.txt\n└── annotation\n    ├── S1.faa\n    ├── S1.ffn\n    ├── S1.fna\n    ├── S1.gbk\n    ├── S1.gff\n    ├── S1.tsv\n    └── S1.txt",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#practical-exercise",
     "href": "materials/10_annotation.html#practical-exercise",
     "title": "Genome Annotation with Prokka",
     "section": "Practical exercise",
-    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the annotation environment.\nRun Prokka on S1_contigs_filtered.fasta.\nCheck the files inside the annotation directory.\nOpen annotation/S1.txt.\nRecord the number of predicted coding sequences.\nOpen annotation/S1.gff.\nIdentify why the .gff file is important for the next analysis.\n\n\n\n\n\n\n\nCautionExercise: annotation summary\n\n\n\nCreate a small table in your notes:\n\n\n\n\n\n\n\n\n\n\n\nSample\nNumber of contigs\nNumber of CDS\nrRNA genes\ntRNA genes\nGFF file\n\n\n\n\nS1\n\n\n\n\nannotation/S1.gff\n\n\n\nFill in the values using:\nannotation/S1.txt"
+    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the annotation environment.\nRun Prokka on S1_contigs_filtered.fasta.\nCheck the files inside the annotation directory.\nOpen annotation/S1.txt.\nRecord the number of predicted coding sequences.\nOpen annotation/S1.gff.\nIdentify why the .gff file is important for the next analysis.\n\n\n\n\n\n\n\nCautionExercise: annotation summary\n\n\n\nCreate a small table in your notes:\n\n\n\n\n\n\n\n\n\n\n\nSample\nNumber of contigs\nNumber of CDS\nrRNA genes\ntRNA genes\nGFF file\n\n\n\n\nS1\n\n\n\n\nannotation/S1.gff\n\n\n\nFill in the values using:\nannotation/S1.txt",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#key-points",
     "href": "materials/10_annotation.html#key-points",
     "title": "Genome Annotation with Prokka",
     "section": "Key points",
-    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nGenome annotation identifies genes and other genomic features.\nProkka is commonly used for bacterial genome annotation.\nThe main output file for downstream pangenome analysis is annotation/S1.gff.\nThe S1.txt file contains a useful annotation summary.\nAnnotation results should be interpreted together with taxonomy and MLST results."
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nGenome annotation identifies genes and other genomic features.\nProkka is commonly used for bacterial genome annotation.\nThe main output file for downstream pangenome analysis is annotation/S1.gff.\nThe S1.txt file contains a useful annotation summary.\nAnnotation results should be interpreted together with taxonomy and MLST results.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "materials/10_annotation.html#next-step",
     "href": "materials/10_annotation.html#next-step",
     "title": "Genome Annotation with Prokka",
     "section": "Next step",
-    "text": "Next step\nIn the next lesson, we will copy prepared files for multiple samples and use them for AMR, virulence factor, pangenome, and phylogenetic analysis."
+    "text": "Next step\nIn the next lesson, we will copy prepared files for multiple samples and use them for AMR, virulence factor, pangenome, and phylogenetic analysis.",
+    "crumbs": [
+      "Materials",
+      "Annotation",
+      "Genome Annotation with Prokka"
+    ]
   },
   {
     "objectID": "about.html",
