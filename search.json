@@ -459,182 +459,336 @@
     "href": "materials/9_mlst.html",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "",
-    "text": "After taxonomic classification, we can identify the sequence type of a bacterial genome using MLST.\nMLST stands for multilocus sequence typing. It compares specific housekeeping genes against known allele databases and assigns a sequence type when a matching profile is found.\nIn this lesson, we will run mlst on the filtered assembly file and save the result inside the classify directory."
+    "text": "After taxonomic classification, we can identify the sequence type of a bacterial genome using MLST.\nMLST stands for multilocus sequence typing. It compares specific housekeeping genes against known allele databases and assigns a sequence type when a matching profile is found.\nIn this lesson, we will run mlst on the filtered assembly file and save the result inside the classify directory.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#overview",
     "href": "materials/9_mlst.html#overview",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "",
-    "text": "After taxonomic classification, we can identify the sequence type of a bacterial genome using MLST.\nMLST stands for multilocus sequence typing. It compares specific housekeeping genes against known allele databases and assigns a sequence type when a matching profile is found.\nIn this lesson, we will run mlst on the filtered assembly file and save the result inside the classify directory."
+    "text": "After taxonomic classification, we can identify the sequence type of a bacterial genome using MLST.\nMLST stands for multilocus sequence typing. It compares specific housekeeping genes against known allele databases and assigns a sequence type when a matching profile is found.\nIn this lesson, we will run mlst on the filtered assembly file and save the result inside the classify directory.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#learning-objectives",
     "href": "materials/9_mlst.html#learning-objectives",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nexplain what MLST is\nactivate the mlst environment\nrun mlst on an assembled genome\nsave MLST results into the classify directory\ninterpret the basic MLST output"
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\nexplain what MLST is\nactivate the mlst environment\nrun mlst on an assembled genome\nsave MLST results into the classify directory\ninterpret the basic MLST output",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#input-file",
     "href": "materials/9_mlst.html#input-file",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Input file",
-    "text": "Input file\nIn the previous lessons, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\n\n\n\nCreate output directory\nWe will save the MLST result inside the classify directory.\nmkdir -p classify\nCheck that the directory exists:\nls\n\n\nActivate the MLST environment\nActivate the mlst environment:\nconda activate mlst\nCheck that mlst is available:\nmlst --version"
+    "text": "Input file\nIn the previous lessons, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\n\n\n\nCreate output directory\nWe will save the MLST result inside the classify directory.\nCheck that the directory exists from Kraken2 analysis:\nls\n\n\nActivate the MLST environment\nActivate the mlst environment:\nconda activate mlst\nCheck that mlst is available:\nmlst --version\nyou will see:\nmlst 2.33.1",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#run-mlst",
     "href": "materials/9_mlst.html#run-mlst",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Run MLST",
-    "text": "Run MLST\nRun mlst on the filtered assembly:\nmlst assemblies/S1_contigs_filtered.fasta &gt; classify/S1_mlst.txt\n\nUnderstanding the MLST command\n\n\n\n\n\n\n\nPart\nMeaning\n\n\n\n\nmlst\nRuns the MLST tool\n\n\nassemblies/S1_contigs_filtered.fasta\nInput filtered assembly file\n\n\n&gt;\nRedirects the output to a file\n\n\nclassify/S1_mlst.txt\nOutput MLST result file"
+    "text": "Run MLST\nRun mlst on the filtered assembly:\nmlst assemblies/S1_contigs_filtered.fasta &gt; classify/S1_mlst.txt\n\nUnderstanding the MLST command\n\n\n\n\n\n\n\nPart\nMeaning\n\n\n\n\nmlst\nRuns the MLST tool\n\n\nassemblies/S1_contigs_filtered.fasta\nInput filtered assembly file\n\n\n&gt;\nRedirects the output to a file\n\n\nclassify/S1_mlst.txt\nOutput MLST result file",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#check-mlst-output",
     "href": "materials/9_mlst.html#check-mlst-output",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Check MLST output",
-    "text": "Check MLST output\nList the classify directory:\nls classify\nYou should see:\nS1_mlst.txt\nView the MLST result:\ncat classify/S1_mlst.txt"
+    "text": "Check MLST output\nList the classify directory:\nls classify\nYou should see:\nS1_mlst.txt\nView the MLST result:\ncat classify/S1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
-    "objectID": "materials/9_mlst.html#understanding-mlst-output",
-    "href": "materials/9_mlst.html#understanding-mlst-output",
+    "objectID": "materials/9_mlst.html#example-mlst-result",
+    "href": "materials/9_mlst.html#example-mlst-result",
     "title": "MLST-Multilocus Sequence Typing",
-    "section": "Understanding MLST output",
-    "text": "Understanding MLST output\nThe MLST output usually contains the following information:\n\n\n\nColumn\nMeaning\n\n\n\n\nFile name\nInput assembly file\n\n\nScheme\nMLST scheme used\n\n\nST\nSequence type\n\n\nAlleles\nAllele numbers for housekeeping genes\n\n\n\nAn example output may look like this:\nassemblies/S1_contigs_filtered.fasta  ecoli  131  adk(53) fumC(40) gyrB(47) icd(13) mdh(36) purA(28) recA(29)\nIn this example:\n\n\n\nItem\nMeaning\n\n\n\n\necoli\nMLST scheme\n\n\n131\nSequence type\n\n\nadk(53)\nAllele 53 for the adk gene\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nRun mlst on S1_contigs_filtered.fasta.\nWhat sequence type was assigned to sample S1?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Check the sequence type in:\nclassify/S1_mlst.txt"
+    "section": "Example MLST result",
+    "text": "Example MLST result\nAfter running:\ncat classify/S1_mlst.txt\nyou may see output like this:\nassemblies/S1_contigs_filtered.fasta    vcholerae   69  adk(7)  gyrB(11)    mdh(4)  metE(37)    pntA(12)    purM(1) pyrC(20)",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
+  },
+  {
+    "objectID": "materials/9_mlst.html#interpreting-this-result",
+    "href": "materials/9_mlst.html#interpreting-this-result",
+    "title": "MLST-Multilocus Sequence Typing",
+    "section": "Interpreting this result",
+    "text": "Interpreting this result\n\n\n\n\n\n\n\n\nField\nValue\nMeaning\n\n\n\n\nInput file\nassemblies/S1_contigs_filtered.fasta\nAssembly file used for MLST\n\n\nScheme\nvcholerae\nVibrio cholerae MLST scheme\n\n\nSequence type\n69\nAssigned MLST sequence type\n\n\nadk\n7\nAllele 7 for the adk gene\n\n\ngyrB\n11\nAllele 11 for the gyrB gene\n\n\nmdh\n4\nAllele 4 for the mdh gene\n\n\nmetE\n37\nAllele 37 for the metE gene\n\n\npntA\n12\nAllele 12 for the pntA gene\n\n\npurM\n1\nAllele 1 for the purM gene\n\n\npyrC\n20\nAllele 20 for the pyrC gene\n\n\n\nThis result means that sample S1 was assigned to the Vibrio cholerae MLST scheme and identified as ST69:\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhat is the MLST sequence type of sample S1?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe MLST sequence type is:\nST69\nThe MLST scheme is:\nvcholerae",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#save-and-organize-results",
     "href": "materials/9_mlst.html#save-and-organize-results",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Save and organize results",
-    "text": "Save and organize results\nYour classification folder should now contain results from taxonomy and MLST.\nCheck the folder:\nls classify\nYou may see files such as:\nS1.kraken2.output\nS1.kraken2.report\nS1.krona\nS1.krona.html\nS1_mlst.txt"
+    "text": "Save and organize results\nYour classification folder should now contain results from taxonomy and MLST.\nCheck the folder:\nls classify\nYou may see files such as:\nS1.kraken2.output\nS1.kraken2.report\nS1.krona\nS1.krona.html\nS1_mlst.txt\nDeactivate the classify environment:\nconda deactivate",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#download-mlst-result-from-the-server",
     "href": "materials/9_mlst.html#download-mlst-result-from-the-server",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Download MLST result from the server",
-    "text": "Download MLST result from the server\nIf you are working on a remote server, download the MLST result to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/classify/S1_mlst.txt .\nThis downloads S1_mlst.txt to your current local folder.\n\nWindowsmacOSLinux\n\n\nOpen S1_mlst.txt manually using Notepad, Notepad++, Excel, or VS Code.\n\n\nUse:\nopen S1_mlst.txt\n\n\nUse:\nxdg-open S1_mlst.txt"
+    "text": "Download MLST result from the server\nIf you are working on a remote server, download the MLST result to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/classify/S1_mlst.txt .\nThis downloads S1_mlst.txt to your current local folder.\n\nWindowsmacOSLinux\n\n\nOpen S1_mlst.txt manually using Notepad, Notepad++, Excel, or VS Code.\n\n\nUse:\nopen S1_mlst.txt\n\n\nUse:\nxdg-open S1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#compare-taxonomy-and-mlst",
     "href": "materials/9_mlst.html#compare-taxonomy-and-mlst",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Compare taxonomy and MLST",
-    "text": "Compare taxonomy and MLST\nTaxonomic classification and MLST provide different but complementary information.\n\n\n\nAnalysis\nTool\nMain output\n\n\n\n\nTaxonomic classification\nKraken2\nLikely organism identity\n\n\nInteractive taxonomy plot\nKrona\nVisual taxonomic hierarchy\n\n\nSequence typing\nMLST\nSequence type based on allele profile\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nDo your Kraken2 and MLST results agree?\nFor example, does the MLST scheme match the organism suggested by Kraken2?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nThe results should generally agree. For example, if Kraken2 suggests the sample is Escherichia coli, the MLST tool should ideally use an E. coli MLST scheme. If the scheme and taxonomy do not match, the sample identity or classification should be checked carefully."
+    "text": "Compare taxonomy and MLST\nTaxonomic classification and MLST provide different but complementary information.\n\n\n\nAnalysis\nTool\nMain output\n\n\n\n\nTaxonomic classification\nKraken2\nLikely organism identity\n\n\nInteractive taxonomy plot\nKrona\nVisual taxonomic hierarchy\n\n\nSequence typing\nMLST\nSequence type based on allele profile\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nDo your Kraken2 and MLST results agree?\nFor example, does the MLST scheme match the organism suggested by Kraken2?\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Kraken2 report\n\n\n\n\n\n\n\nFigure 1:  Taxonomy: Kraken2 vs MLST scheme\n\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nThe results should generally agree. For example, if Kraken2 suggests the sample is Vibrio cholerae, the MLST tool should ideally use an vcholerae MLST scheme. If the scheme and taxonomy do not match, the sample identity or classification should be checked carefully.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
+  },
+  {
+    "objectID": "materials/9_mlst.html#importance-of-vibrio-cholerae-st69",
+    "href": "materials/9_mlst.html#importance-of-vibrio-cholerae-st69",
+    "title": "MLST-Multilocus Sequence Typing",
+    "section": "Importance of Vibrio cholerae ST69",
+    "text": "Importance of Vibrio cholerae ST69\n\n\n\n\n\n\nFigure 2: Prevailing clone (ST69) of Vibrio cholerae O139 in India over 10 years",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#final-directory-structure",
     "href": "materials/9_mlst.html#final-directory-structure",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Final directory structure",
-    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n└── classify\n    ├── S1.kraken2.output\n    ├── S1.kraken2.report\n    ├── S1.krona\n    ├── S1.krona.html\n    └── S1_mlst.txt"
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n└── classify\n    ├── S1.kraken2.output\n    ├── S1.kraken2.report\n    ├── S1.krona\n    ├── S1.krona.html\n    └── S1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#practical-exercise",
     "href": "materials/9_mlst.html#practical-exercise",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Practical exercise",
-    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the mlst environment.\nRun mlst on S1_contigs_filtered.fasta.\nSave the result as classify/S1_mlst.txt.\nOpen the MLST result.\nRecord the MLST scheme and sequence type.\nCompare the MLST result with the Kraken2 taxonomy result.\n\n\n\n\n\n\n\nCautionExercise: MLST summary\n\n\n\nCreate a small table in your notes:\n\n\n\nSample\nKraken2 main assignment\nMLST scheme\nSequence type\n\n\n\n\nS1\n\n\n\n\n\n\nFill in the table using:\nclassify/S1.kraken2.report\nclassify/S1_mlst.txt"
+    "text": "Practical exercise\nComplete the following tasks:\n\nActivate the mlst environment.\nRun mlst on S1_contigs_filtered.fasta.\nSave the result as classify/S1_mlst.txt.\nOpen the MLST result.\nRecord the MLST scheme and sequence type.\nCompare the MLST result with the Kraken2 taxonomy result.\n\n\n\n\n\n\n\nCautionExercise: MLST summary\n\n\n\nCreate a small table in your notes:\n\n\n\nSample\nKraken2 main assignment\nMLST scheme\nSequence type\n\n\n\n\nS1\n\n\n\n\n\n\nFill in the table using:\nclassify/S1.kraken2.report\nclassify/S1_mlst.txt",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#key-points",
     "href": "materials/9_mlst.html#key-points",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Key points",
-    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nMLST assigns a sequence type using housekeeping gene allele profiles.\nThe input is the filtered assembly file.\nThe output is saved as classify/S1_mlst.txt.\nMLST results can be compared with Kraken2 taxonomy results.\nIf taxonomy and MLST disagree, the sample should be checked carefully."
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nMLST assigns a sequence type using housekeeping gene allele profiles.\nThe input is the filtered assembly file.\nThe output is saved as classify/S1_mlst.txt.\nMLST results can be compared with Kraken2 taxonomy results.\nIf taxonomy and MLST disagree, the sample should be checked carefully.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html#next-step",
     "href": "materials/9_mlst.html#next-step",
     "title": "MLST-Multilocus Sequence Typing",
     "section": "Next step",
-    "text": "Next step\nIn the next lesson, we will annotate the filtered assembly file using Prokka."
+    "text": "Next step\nIn the next lesson, we will annotate the filtered assembly file using Prokka.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "MLST-Multilocus Sequence Typing"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html",
     "href": "materials/8_taxonomy.html",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "",
-    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization."
+    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#overview",
     "href": "materials/8_taxonomy.html#overview",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "",
-    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization."
+    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#learning-objectives",
     "href": "materials/8_taxonomy.html#learning-objectives",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ncreate a folder for taxonomic classification results\nactivate the classify environment\nrun Kraken2 on an assembled genome\ngenerate a Kraken2 taxonomic report\nconvert the Kraken2 report into Krona format\ncreate and download an interactive Krona HTML plot"
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ncreate a folder for taxonomic classification results\nactivate the classify environment\nrun Kraken2 on an assembled genome\ngenerate a Kraken2 taxonomic report\nconvert the Kraken2 report into Krona format\ncreate and download an interactive Krona HTML plot",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#input-file",
     "href": "materials/8_taxonomy.html#input-file",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "Input file",
-    "text": "Input file\nIn the previous assembly QC lesson, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\nS2_contigs_filtered.fasta\nS3_contigs_filtered.fasta\nS4_contigs_filtered.fasta\nS5_contigs_filtered.fasta\nS6_contigs_filtered.fasta\nS7_contigs_filtered.fasta\nS8_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\n\n\n\nCreate a classification directory\nCreate a directory named classify:\nmkdir -p classify\nCheck that the directory was created:\nls\n\n\nActivate the classify environment\nActivate the classify environment:\nconda activate classify\nCheck that kraken2 is available:\nkraken2 --version\nCheck that the Krona tools are available:\nktImportText\nIf the command prints help text or usage information, Krona is available."
+    "text": "Input file\nIn the previous assembly QC lesson, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\n\n\n\nCreate a classification directory\nCreate a directory named classify:\nmkdir -p classify\nCheck that the directory was created:\nls\n\n\nActivate the classify environment\nActivate the classify environment:\nconda activate classify\nCheck that kraken2 is available:\nkraken2 --version\nCheck that the Krona tools are available:\nktImportText\nIf the command prints help text or usage information, Krona is available.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#run-kraken2",
     "href": "materials/8_taxonomy.html#run-kraken2",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "Run Kraken2",
-    "text": "Run Kraken2\nRun Kraken2 on the filtered assembly:\nkraken2 \\\n  --db ~/databases/kraken2db \\\n  --threads 4 \\\n  --report classify/S1.kraken2.report \\\n  --output classify/S1.kraken2.output \\\n  assemblies/S1_contigs_filtered.fasta\n\nUnderstanding the Kraken2 command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nkraken2\nRuns Kraken2\n\n\n--db ~/databases/kraken2db\nPath to the Kraken2 database\n\n\n--threads 4\nUse 4 CPU threads\n\n\n--report classify/S1.kraken2.report\nSummary taxonomic report\n\n\n--output classify/S1.kraken2.output\nDetailed classification output\n\n\nassemblies/S1_contigs_filtered.fasta\nInput assembly file\n\n\n\n\n\nCheck Kraken2 outputs\nList the classify directory:\nls classify\nYou should see:\nS1.kraken2.output\nS1.kraken2.report\nView the first few lines of the report:\nhead classify/S1.kraken2.report\n\n\n\n\n\n\nNoteS1.kraken2.report\n\n\n\n100.00  80  0   R   1        root\n100.00  80  0   R1  131567     cellular organisms\n100.00  80  0   D   2            Bacteria\n100.00  80  0   K   3379134        Pseudomonadati\n100.00  80  0   P   1224             Pseudomonadota\n100.00  80  0   C   1236               Gammaproteobacteria\n100.00  80  0   O   135623               Vibrionales\n100.00  80  0   F   641                    Vibrionaceae\n100.00  80  6   G   662                      Vibrio\n 92.50  74  65  S   666                        Vibrio cholerae\n\n\nThe Kraken2 report contains taxonomic classification information, including the percentage of sequences assigned to different taxa.\n\n\nKraken2 report columns\nA Kraken2 report usually contains columns similar to:\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\nPercentage\nPercentage of sequences assigned to the taxon\n\n\nClade reads\nReads/sequences assigned to the taxon and its descendants\n\n\nTaxon reads\nReads/sequences assigned directly to the taxon\n\n\nRank code\nTaxonomic rank\n\n\nNCBI taxonomic ID\nTaxonomy ID\n\n\nScientific name\nTaxon name\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich genus or species has the highest assignment?\n\n\nIn this example, most classified sequences belong to:\nVibrio cholerae\nThis suggests that sample S1 is likely Vibrio cholerae.\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhat is the main species-level taxonomic assignment in this report?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe main species-level assignment is:\nVibrio cholerae\nIt has 92.50% assignment in this example.\n\n\n\n\n\nCreate Krona input file\nTo visualize the Kraken2 report interactively, first convert it into Krona-compatible format.\nkreport2krona.py \\\n  -r classify/S1.kraken2.report \\\n  -o classify/S1.krona\nCheck that the Krona input file was created:\nls classify\nYou should see:\nS1.krona\n\n\nCreate Krona HTML plot\nNow create an interactive Krona HTML plot:\nktImportText \\\n  -o classify/S1.krona.html \\\n  classify/S1.krona\nCheck that the HTML file was created:\nls classify\nYou should see:\nS1.krona.html"
+    "text": "Run Kraken2\nRun Kraken2 on the filtered assembly:\nkraken2 \\\n  --db ~/databases/kraken2db \\\n  --threads 4 \\\n  --report classify/S1.kraken2.report \\\n  --output classify/S1.kraken2.output \\\n  assemblies/S1_contigs_filtered.fasta\n\nUnderstanding the Kraken2 command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nkraken2\nRuns Kraken2\n\n\n--db ~/databases/kraken2db\nPath to the Kraken2 database\n\n\n--threads 4\nUse 4 CPU threads\n\n\n--report classify/S1.kraken2.report\nSummary taxonomic report\n\n\n--output classify/S1.kraken2.output\nDetailed classification output\n\n\nassemblies/S1_contigs_filtered.fasta\nInput assembly file\n\n\n\n\n\nCheck Kraken2 outputs\nList the classify directory:\nls classify\nYou should see:\nS1.kraken2.output\nS1.kraken2.report\nView the first few lines of the report:\nhead classify/S1.kraken2.report\n\n\n\n\n\n\nNoteS1.kraken2.report\n\n\n\n100.00  80  0   R   1        root\n100.00  80  0   R1  131567     cellular organisms\n100.00  80  0   D   2            Bacteria\n100.00  80  0   K   3379134        Pseudomonadati\n100.00  80  0   P   1224             Pseudomonadota\n100.00  80  0   C   1236               Gammaproteobacteria\n100.00  80  0   O   135623               Vibrionales\n100.00  80  0   F   641                    Vibrionaceae\n100.00  80  6   G   662                      Vibrio\n 92.50  74  65  S   666                        Vibrio cholerae\n\n\nThe Kraken2 report contains taxonomic classification information, including the percentage of sequences assigned to different taxa.\n\n\nKraken2 report columns\nA Kraken2 report usually contains columns similar to:\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\nPercentage\nPercentage of sequences assigned to the taxon\n\n\nClade reads\nReads/sequences assigned to the taxon and its descendants\n\n\nTaxon reads\nReads/sequences assigned directly to the taxon\n\n\nRank code\nTaxonomic rank\n\n\nNCBI taxonomic ID\nTaxonomy ID\n\n\nScientific name\nTaxon name\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich genus or species has the highest assignment?\n\n\nIn this example, most classified sequences belong to:\nVibrio cholerae\nThis suggests that sample S1 is likely Vibrio cholerae.\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhat is the main species-level taxonomic assignment in this report?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe main species-level assignment is:\nVibrio cholerae\nIt has 92.50% assignment in this example.\n\n\n\n\n\nCreate Krona input file\nTo visualize the Kraken2 report interactively, first convert it into Krona-compatible format.\nkreport2krona.py \\\n  -r classify/S1.kraken2.report \\\n  -o classify/S1.krona\nCheck that the Krona input file was created:\nls classify\nYou should see:\nS1.krona\n\n\nCreate Krona HTML plot\nNow create an interactive Krona HTML plot:\nktImportText \\\n  -o classify/S1.krona.html \\\n  classify/S1.krona\nCheck that the HTML file was created:\nls classify\nYou should see:\nS1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#download-krona-plot-from-the-server",
     "href": "materials/8_taxonomy.html#download-krona-plot-from-the-server",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "Download Krona plot from the server",
-    "text": "Download Krona plot from the server\nIf you want to visualize the interactive Krona file, download the S1.krona.html file to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/classify/S1.krona.html .\nThis downloads the interactive Krona HTML file to your current local folder.\n\nWindowsmacOSLinux\n\n\nOpen S1.krona.html manually from File Explorer using a web browser.\n\n\nUse:\nopen S1.krona.html\n\n\nUse:\nxdg-open S1.krona.html\n\n\n\n\n![Krona output]"
+    "text": "Download Krona plot from the server\nIf you want to visualize the interactive Krona file, download the S1.krona.html file to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/classify/S1.krona.html .\nThis downloads the interactive Krona HTML file to your current local folder.\n\nWindowsmacOSLinux\n\n\nOpen S1.krona.html manually from File Explorer using a web browser.\n\n\nUse:\nopen S1.krona.html\n\n\nUse:\nxdg-open S1.krona.html\n\n\n\n\n![Krona output]",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#compare-kraken2-report-and-krona-plot",
     "href": "materials/8_taxonomy.html#compare-kraken2-report-and-krona-plot",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "Compare Kraken2 report and Krona plot",
-    "text": "Compare Kraken2 report and Krona plot\nThe Kraken2 report is useful for checking exact taxonomic assignments in text format.\nThe Krona plot is useful for interactively exploring the taxonomic hierarchy.\n\n\n\nOutput\nUse\n\n\n\n\nS1.kraken2.report\nText summary of taxonomic classification\n\n\nS1.kraken2.output\nDetailed sequence-level classification output\n\n\nS1.krona\nIntermediate Krona input file\n\n\nS1.krona.html\nInteractive Krona visualization\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nCompare the Kraken2 report and Krona plot.\nDo they suggest the same main organism?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nBoth outputs should point to the same main organism if the classification is consistent. The Kraken2 report gives the detailed text summary, while Krona provides an interactive visualization of the same taxonomic information."
+    "text": "Compare Kraken2 report and Krona plot\nThe Kraken2 report is useful for checking exact taxonomic assignments in text format.\nThe Krona plot is useful for interactively exploring the taxonomic hierarchy.\n\n\n\nOutput\nUse\n\n\n\n\nS1.kraken2.report\nText summary of taxonomic classification\n\n\nS1.kraken2.output\nDetailed sequence-level classification output\n\n\nS1.krona\nIntermediate Krona input file\n\n\nS1.krona.html\nInteractive Krona visualization\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nCompare the Kraken2 report and Krona plot.\nDo they suggest the same main organism?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nBoth outputs should point to the same main organism if the classification is consistent. The Kraken2 report gives the detailed text summary, while Krona provides an interactive visualization of the same taxonomic information.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#organize-classification-results",
     "href": "materials/8_taxonomy.html#organize-classification-results",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "Organize classification results",
-    "text": "Organize classification results\nYour working directory should now contain:\nclassify\nCheck the folder:\nls classify\nExpected files:\nS1.kraken2.output\nS1.kraken2.report\nS1.krona\nS1.krona.html"
+    "text": "Organize classification results\nYour working directory should now contain:\nclassify\nCheck the folder:\nls classify\nExpected files:\nS1.kraken2.output\nS1.kraken2.report\nS1.krona\nS1.krona.html\nDeactivate the classify environment:\nconda deactivate",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#final-directory-structure",
     "href": "materials/8_taxonomy.html#final-directory-structure",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "Final directory structure",
-    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n└── classify\n    ├── S1.kraken2.output\n    ├── S1.kraken2.report\n    ├── S1.krona\n    └── S1.krona.html"
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n└── classify\n    ├── S1.kraken2.output\n    ├── S1.kraken2.report\n    ├── S1.krona\n    └── S1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#practical-exercise",
     "href": "materials/8_taxonomy.html#practical-exercise",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "Practical exercise",
-    "text": "Practical exercise\nComplete the following tasks:\n\nCreate the classify directory.\nActivate the classify environment.\nRun Kraken2 on S1_contigs_filtered.fasta.\nOpen the Kraken2 report.\nConvert the Kraken2 report to Krona format.\nCreate a Krona HTML plot.\nDownload the Krona HTML file to your local computer.\nOpen the Krona plot in a browser.\n\n\n\n\n\n\n\nCautionExercise: taxonomy summary\n\n\n\nCreate a small table in your notes:\n\n\n\n\n\n\n\n\n\nSample\nMain taxonomic assignment\nEvidence from Kraken2\nEvidence from Krona\n\n\n\n\nS1\n\n\n\n\n\n\nFill in the table using S1.kraken2.report and S1.krona.html."
+    "text": "Practical exercise\nComplete the following tasks for sample S1:\n\nCreate the classify directory.\nActivate the classify environment.\nRun Kraken2 on S1_contigs_filtered.fasta.\nOpen the Kraken2 report.\nConvert the Kraken2 report to Krona format.\nCreate a Krona HTML plot.\nDownload the Krona HTML file to your local computer.\nOpen the Krona plot in a browser.\n\n\n\n\n\n\n\nCautionExercise: taxonomy summary\n\n\n\nCreate a small table in your notes:\n\n\n\n\n\n\n\n\n\nSample\nMain taxonomic assignment\nEvidence from Kraken2\nEvidence from Krona\n\n\n\n\nS1\n\n\n\n\n\n\nFill in the table using S1.kraken2.report and S1.krona.html.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#key-points",
     "href": "materials/8_taxonomy.html#key-points",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "Key points",
-    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nKraken2 can classify sequences using a reference taxonomy database.\nThe input for this lesson is the filtered assembly file.\nThe Kraken2 report gives a text summary of taxonomic classification.\nKrona creates an interactive HTML visualization.\nDownload the .html Krona file to visualize it on your local computer."
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nKraken2 can classify sequences using a reference taxonomy database.\nThe input for this lesson is the filtered assembly file.\nThe Kraken2 report gives a text summary of taxonomic classification.\nKrona creates an interactive HTML visualization.\nDownload the .html Krona file to visualize it on your local computer.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/8_taxonomy.html#next-step",
     "href": "materials/8_taxonomy.html#next-step",
-    "title": "Taxonomy",
+    "title": "Taxonomy: Kraken2",
     "section": "Next step",
-    "text": "Next step\nIn the next lesson, we will continue downstream analysis using the filtered assembly file."
+    "text": "Next step\nIn the next lesson, we will continue downstream analysis using the filtered assembly file.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
   },
   {
     "objectID": "materials/14_phylogenetics.html",
@@ -1480,7 +1634,21 @@
     "href": "materials/10_annotation.html#activate-the-annotation-environment",
     "title": "Genome Annotation with Prokka",
     "section": "Activate the annotation environment",
-    "text": "Activate the annotation environment\nActivate the annotation environment:\nconda activate annotation\nCheck that Prokka is available:\nprokka --version\n\nRun Prokka\nRun Prokka on the filtered assembly:\nprokka \\\n  --outdir annotation \\\n  --force \\\n  --cpus 4 \\\n  --prefix S1 \\\n  --locustag S1 \\\n  assemblies/S1_contigs_filtered.fasta\n\n\nUnderstanding the Prokka command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nprokka\nRuns the Prokka annotation tool\n\n\n--outdir annotation\nOutput directory\n\n\n--force\nOverwrite the output directory if it already exists\n\n\n--cpus 4\nUse 4 CPU threads\n\n\n--prefix S1\nPrefix for output file names\n\n\n--locustag S1\nPrefix for gene locus tags\n\n\nassemblies/S1_contigs_filtered.fasta\nInput filtered assembly file\n\n\n\n\n\n\n\n\n\nWarningNote\n\n\n\nThe option --force allows Prokka to overwrite the existing annotation folder.\nUse it carefully if you already have files in the annotation directory.\n\n\n\n\nCheck Prokka outputs\nList the annotation directory:\nls annotation\nYou should see files such as:\nS1.err\nS1.faa\nS1.ffn\nS1.fna\nS1.fsa\nS1.gbk\nS1.gff\nS1.log\nS1.sqn\nS1.tbl\nS1.tsv\nS1.txt\n\n\nImportant Prokka output files\n\n\n\nFile\nDescription\n\n\n\n\nS1.gff\nMain annotation file; used later for pangenome analysis\n\n\nS1.gbk\nGenBank format annotation\n\n\nS1.faa\nProtein sequences\n\n\nS1.ffn\nNucleotide sequences of predicted coding genes\n\n\nS1.fna\nContig sequences\n\n\nS1.tsv\nTab-separated annotation table\n\n\nS1.txt\nAnnotation summary\n\n\nS1.log\nProkka log file\n\n\n\n\n\nView annotation summary\nView the summary report:\ncat annotation/S1.txt\nThis report usually includes information such as:\n\nnumber of contigs\nnumber of bases\nnumber of coding sequences\nnumber of rRNA genes\nnumber of tRNA genes\n\n\n\nInspect the GFF file\nThe .gff file is one of the most important Prokka outputs.\nView the first few lines:\nhead annotation/S1.gff\nA GFF file contains information about genomic features, including their location and annotation.\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen the Prokka summary file.\nHow many coding sequences were predicted?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Check the coding sequence count in:\nannotation/S1.txt\n\n\n\n\n\nWhy is the GFF file important?\nThe .gff file combines genome sequence information with gene annotation information.\nIn this course, the .gff file will be used later for pangenome analysis.\nS1.gff  →  pangenome analysis\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich Prokka output file will be used for pangenome analysis?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe file used for pangenome analysis is:\nannotation/S1.gff"
+    "text": "Activate the annotation environment\nActivate the annotation environment:\nconda activate annotation\nCheck that Prokka is available:\nprokka --version\n\nRun Prokka\nRun Prokka on the filtered assembly:\nprokka \\\n  --outdir annotation \\\n  --force \\\n  --cpus 4 \\\n  --prefix S1 \\\n  --locustag S1 \\\n  assemblies/S1_contigs_filtered.fasta\n\n\nUnderstanding the Prokka command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nprokka\nRuns the Prokka annotation tool\n\n\n--outdir annotation\nOutput directory\n\n\n--force\nOverwrite the output directory if it already exists\n\n\n--cpus 4\nUse 4 CPU threads\n\n\n--prefix S1\nPrefix for output file names\n\n\n--locustag S1\nPrefix for gene locus tags\n\n\nassemblies/S1_contigs_filtered.fasta\nInput filtered assembly file\n\n\n\nOnce command started running you will see below message: \n\n\n\n\n\n\nWarningNote\n\n\n\nThe option --force allows Prokka to overwrite the existing annotation folder.\nUse it carefully if you already have files in the annotation directory.\n\n\n\n\nCheck Prokka outputs\nList the annotation directory:\nls annotation\nYou should see files such as:\nS1.err\nS1.faa\nS1.ffn\nS1.fna\nS1.fsa\nS1.gbk\nS1.gff\nS1.log\nS1.sqn\nS1.tbl\nS1.tsv\nS1.txt\n\n\nImportant Prokka output files\n\n\n\nFile\nDescription\n\n\n\n\nS1.gff\nMain annotation file; used later for pangenome analysis\n\n\nS1.gbk\nGenBank format annotation\n\n\nS1.faa\nProtein sequences\n\n\nS1.ffn\nNucleotide sequences of predicted coding genes\n\n\nS1.fna\nContig sequences\n\n\nS1.tsv\nTab-separated annotation table\n\n\nS1.txt\nAnnotation summary\n\n\nS1.log\nProkka log file"
+  },
+  {
+    "objectID": "materials/10_annotation.html#example-prokka-summary",
+    "href": "materials/10_annotation.html#example-prokka-summary",
+    "title": "Genome Annotation with Prokka",
+    "section": "Example Prokka summary",
+    "text": "Example Prokka summary\nAfter running:\ncat annotation/S1.txt\nyou may see output like this:\norganism: Genus species strain \ncontigs: 80\nbases: 3912637\nCDS: 3449\nrRNA: 5\ntRNA: 28\ntmRNA: 1"
+  },
+  {
+    "objectID": "materials/10_annotation.html#interpreting-this-summary",
+    "href": "materials/10_annotation.html#interpreting-this-summary",
+    "title": "Genome Annotation with Prokka",
+    "section": "Interpreting this summary",
+    "text": "Interpreting this summary\n\n\n\nField\nValue\nMeaning\n\n\n\n\norganism\nGenus species strain\nOrganism name used by Prokka\n\n\ncontigs\n80\nNumber of contigs in the assembly\n\n\nbases\n3,912,637\nTotal assembly size in base pairs\n\n\nCDS\n3,449\nNumber of predicted coding sequences\n\n\nrRNA\n5\nNumber of ribosomal RNA genes\n\n\ntRNA\n28\nNumber of transfer RNA genes\n\n\ntmRNA\n1\nNumber of transfer-messenger RNA genes\n\n\n\nThis means Prokka predicted 3,449 coding sequences from an assembly containing 80 contigs and approximately 3.91 Mbp of sequence.\n\n\n\n\n\n\nNoteQuestion\n\n\n\nHow many coding sequences were predicted in sample S1?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe number of predicted coding sequences is:\n3449\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhat is the total assembly size reported by Prokka?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe total assembly size is:\n3912637 bp\nThis is approximately:\n3.91 Mbp\n\n\n\n\nInspect the GFF file\nThe .gff file is one of the most important Prokka outputs.\nView the first few lines:\nhead annotation/S1.gff\nA GFF file contains information about genomic features, including their location and annotation.\n\n\n\n\n\n\nNoteExercise\n\n\n\nOpen the Prokka summary file.\nHow many coding sequences were predicted?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe answer depends on your dataset. Check the coding sequence count in:\nannotation/S1.txt\n\n\n\n\n\nWhy is the GFF file important?\nThe .gff file combines genome sequence information with gene annotation information.\nIn this course, the .gff file will be used later for pangenome analysis.\nS1.gff  →  pangenome analysis\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich Prokka output file will be used for pangenome analysis?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe file used for pangenome analysis is:\nannotation/S1.gff"
   },
   {
     "objectID": "materials/10_annotation.html#download-annotation-files-from-the-server",
