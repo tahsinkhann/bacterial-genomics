@@ -621,7 +621,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tree-inference-iq-tree" id="toc-tree-inference-iq-tree" class="nav-link" data-scroll-target="#tree-inference-iq-tree">Tree inference: IQ-TREE</a>
   <ul class="collapse">
   <li><a href="#construct-the-phylogenetic-tree" id="toc-construct-the-phylogenetic-tree" class="nav-link" data-scroll-target="#construct-the-phylogenetic-tree">Construct the phylogenetic tree</a></li>
+  <li><a href="#understanding-the-iq-tree-command" id="toc-understanding-the-iq-tree-command" class="nav-link" data-scroll-target="#understanding-the-iq-tree-command">Understanding the IQ-TREE command</a></li>
+  <li><a href="#check-iq-tree-outputs" id="toc-check-iq-tree-outputs" class="nav-link" data-scroll-target="#check-iq-tree-outputs">Check IQ-TREE outputs</a></li>
+  <li><a href="#important-iq-tree-output-files" id="toc-important-iq-tree-output-files" class="nav-link" data-scroll-target="#important-iq-tree-output-files">Important IQ-TREE output files</a></li>
+  <li><a href="#view-the-tree-file" id="toc-view-the-tree-file" class="nav-link" data-scroll-target="#view-the-tree-file">View the tree file</a></li>
   </ul></li>
+  <li><a href="#download-tree-file-from-the-server" id="toc-download-tree-file-from-the-server" class="nav-link" data-scroll-target="#download-tree-file-from-the-server">Download tree file from the server</a></li>
+  <li><a href="#check-tree-support-values" id="toc-check-tree-support-values" class="nav-link" data-scroll-target="#check-tree-support-values">Check tree support values</a></li>
+  <li><a href="#compare-tree-with-metadata" id="toc-compare-tree-with-metadata" class="nav-link" data-scroll-target="#compare-tree-with-metadata">Compare tree with metadata</a></li>
+  <li><a href="#final-directory-structure" id="toc-final-directory-structure" class="nav-link" data-scroll-target="#final-directory-structure">Final directory structure</a></li>
+  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical exercise</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
   </ul>
 </nav>
     </div>
@@ -733,7 +744,7 @@ S3  T A A</code></pre>
 <p>Use <code>snp-sites</code> to extract variable sites:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">snp-sites</span> <span class="dt">\</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  pangenome/core_gene_alignment_filtered.aln <span class="dt">\</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> pangenome/core_gene_alignment_countconstant </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> pangenome/core_gene_alignment.snp.aln </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="check-snp-alignment" class="level3">
 <h3 class="anchored" data-anchor-id="check-snp-alignment">Check SNP alignment</h3>
@@ -770,7 +781,7 @@ S3  T A A</code></pre>
 <p>Maximum likelihood aims to find the tree topology and branch lengths that make the observed DNA sequences most probable, given the chosen model. It does this by exploring various tree shapes and lengths to calculate the likelihood of the observed sequences. The tree with the highest likelihood is considered the best representation of the evolutionary relationships among the sequences. The process involves making educated guesses about the tree’s parameters, calculating the likelihood of the data under these guesses, and refining the parameters iteratively to find the optimal tree that best explains the observed genetic variations.</p>
 <p>IQ-TREE offers various sequence evolution models, allowing researchers to match their analyses to different types of data and research questions. Conveniently, this software can identify the most fitting substituion model for a dataset (using a tool called ModelFinder), while considering the complexity of each model.</p>
 <section id="construct-the-phylogenetic-tree" class="level3">
-<h3 class="anchored">Construct the phylogenetic tree</h3>
+<h3 class="anchored" data-anchor-id="construct-the-phylogenetic-tree">Construct the phylogenetic tree</h3>
 <p>We run IQ-TREE on the output from SNP-sites, i.e.&nbsp;using the variable sites extracted from the core genome alignment and replace <code>FCONST_VALUE</code> with the value from:</p>
 <pre class="text"><code>pangenome/core_gene_alignment_countconstant</code></pre>
 <p>Run iq-tree:</p>
@@ -782,12 +793,7 @@ S3  T A A</code></pre>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">-m</span> GTR+F <span class="dt">\</span></span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">-nt</span> 4 <span class="dt">\</span></span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">-pre</span> tree/iqtree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
+<p>::: {.callout-tip title=“iq-tree command with -fconst value collapse=true}</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iqtree</span> <span class="dt">\</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-s</span> pangenome/core_gene_alignment.snp.aln <span class="dt">\</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-fconst</span> 716495,650538,717930,710604 <span class="dt">\</span></span>
@@ -796,6 +802,7 @@ S3  T A A</code></pre>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">-m</span> GTR+F <span class="dt">\</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">-nt</span> 4 <span class="dt">\</span></span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">-pre</span> tree/iqtree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 <section id="understanding-the-iq-tree-command" class="level3">
 <h3 class="anchored" data-anchor-id="understanding-the-iq-tree-command">Understanding the IQ-TREE command</h3>
 <table class="caption-top table">
@@ -947,6 +954,7 @@ iqtree.ckp.gz  iqtree.iqtree   iqtree.mldist  iqtree.treefile</code></pre>
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="download-tree-file-from-the-server" class="level2">
 <h2 class="anchored" data-anchor-id="download-tree-file-from-the-server">Download tree file from the server</h2>
@@ -1137,11 +1145,6 @@ iqtree.ckp.gz  iqtree.iqtree   iqtree.mldist  iqtree.treefile</code></pre>
 <p>In the next lesson, we will visualize and interpret the phylogenetic tree.</p>
 
 
-</section>
-</div>
-</div>
-</div>
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
