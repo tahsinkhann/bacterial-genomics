@@ -965,87 +965,147 @@
     ]
   },
   {
-    "objectID": "materials/4_qc.html",
-    "href": "materials/4_qc.html",
-    "title": "Quality Control of Raw Reads",
+    "objectID": "materials/8_taxonomy.html",
+    "href": "materials/8_taxonomy.html",
+    "title": "Taxonomy: Kraken2",
     "section": "",
-    "text": "Read quality control is the first checkpoint in bacterial whole-genome sequencing analysis. Before genome assembly or downstream analysis, we need to check whether the raw sequencing reads are suitable for analysis.\nIn this lesson, we will inspect FASTQ files, run quality-control checks, summarise QC reports, and decide whether the reads need trimming.",
+    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "Classification",
+      "Taxonomy: Kraken2"
     ]
   },
   {
-    "objectID": "materials/4_qc.html#overview",
-    "href": "materials/4_qc.html#overview",
-    "title": "Quality Control of Raw Reads",
+    "objectID": "materials/8_taxonomy.html#overview",
+    "href": "materials/8_taxonomy.html#overview",
+    "title": "Taxonomy: Kraken2",
     "section": "",
-    "text": "Read quality control is the first checkpoint in bacterial whole-genome sequencing analysis. Before genome assembly or downstream analysis, we need to check whether the raw sequencing reads are suitable for analysis.\nIn this lesson, we will inspect FASTQ files, run quality-control checks, summarise QC reports, and decide whether the reads need trimming.",
+    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "Classification",
+      "Taxonomy: Kraken2"
     ]
   },
   {
-    "objectID": "materials/4_qc.html#learning-objectives",
-    "href": "materials/4_qc.html#learning-objectives",
-    "title": "Quality Control of Raw Reads",
+    "objectID": "materials/8_taxonomy.html#learning-objectives",
+    "href": "materials/8_taxonomy.html#learning-objectives",
+    "title": "Taxonomy: Kraken2",
     "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ndescribe the structure of a FASTQ file\nexplain why read quality control is important\nrun FastQC on raw sequencing reads\nsummarise multiple QC reports using MultiQC\ninterpret common QC metrics\ndecide whether trimming is needed before assembly",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ncreate a folder for taxonomic classification results\nactivate the classify environment\nrun Kraken2 on an assembled genome\ngenerate a Kraken2 taxonomic report\nconvert the Kraken2 report into Krona format\ncreate and download an interactive Krona HTML plot",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "Classification",
+      "Taxonomy: Kraken2"
     ]
   },
   {
-    "objectID": "materials/4_qc.html#why-do-we-perform-read-quality-control",
-    "href": "materials/4_qc.html#why-do-we-perform-read-quality-control",
-    "title": "Quality Control of Raw Reads",
-    "section": "Why do we perform read quality control?",
-    "text": "Why do we perform read quality control?\nRaw sequencing reads may contain technical problems such as:\n\nlow-quality bases\nadapter contamination\nunusually short reads\nbiased base composition\nunexpected GC content\noverrepresented sequences\npossible contamination\n\nIf poor-quality reads are used directly, they can affect genome assembly, species identification, antimicrobial resistance gene detection, and phylogenetic analysis.\n\n\n\n\n\n\nNoteKey idea\n\n\n\nQuality control helps us decide whether the sequencing data are good enough for downstream analysis.",
+    "objectID": "materials/8_taxonomy.html#input-file",
+    "href": "materials/8_taxonomy.html#input-file",
+    "title": "Taxonomy: Kraken2",
+    "section": "Input file",
+    "text": "Input file\nIn the previous assembly QC lesson, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\n\n\n\nCreate a classification directory\nCreate a directory named classify:\nmkdir -p classify\nCheck that the directory was created:\nls\n\n\nActivate the classify environment\nActivate the classify environment:\nconda activate classify\nCheck that kraken2 is available:\nkraken2 --version\nCheck that the Krona tools are available:\nktImportText\nIf the command prints help text or usage information, Krona is available.",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "Classification",
+      "Taxonomy: Kraken2"
     ]
   },
   {
-    "objectID": "materials/4_qc.html#fastq-file-structure",
-    "href": "materials/4_qc.html#fastq-file-structure",
-    "title": "Quality Control of Raw Reads",
-    "section": "FASTQ file structure",
-    "text": "FASTQ file structure\nShort-read sequencing data are usually stored in FASTQ format. A FASTQ record has four lines:\n@read_id\nACGTACGTACGTACGT\n+\nFFFFFFFFFFFFFFFF\n\n\n\nLine\nDescription\n\n\n\n\nLine 1\nRead identifier\n\n\nLine 2\nDNA sequence\n\n\nLine 3\nSeparator\n\n\nLine 4\nQuality score\n\n\n\nThe fourth line contains quality scores. These scores represent confidence in each base call.",
+    "objectID": "materials/8_taxonomy.html#run-kraken2",
+    "href": "materials/8_taxonomy.html#run-kraken2",
+    "title": "Taxonomy: Kraken2",
+    "section": "Run Kraken2",
+    "text": "Run Kraken2\nRun Kraken2 on the filtered assembly:\nkraken2 \\\n  --db ~/databases/kraken2db \\\n  --threads 4 \\\n  --report classify/S1.kraken2.report \\\n  --output classify/S1.kraken2.output \\\n  assemblies/S1_contigs_filtered.fasta\n\nUnderstanding the Kraken2 command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nkraken2\nRuns Kraken2\n\n\n--db ~/databases/kraken2db\nPath to the Kraken2 database\n\n\n--threads 4\nUse 4 CPU threads\n\n\n--report classify/S1.kraken2.report\nSummary taxonomic report\n\n\n--output classify/S1.kraken2.output\nDetailed classification output\n\n\nassemblies/S1_contigs_filtered.fasta\nInput assembly file\n\n\n\n\n\nCheck Kraken2 outputs\nList the classify directory:\nls classify\nYou should see:\nS1.kraken2.output\nS1.kraken2.report\nView the first few lines of the report:\nhead classify/S1.kraken2.report\n\n\n\n\n\n\nNoteS1.kraken2.report\n\n\n\n100.00  80  0   R   1        root\n100.00  80  0   R1  131567     cellular organisms\n100.00  80  0   D   2            Bacteria\n100.00  80  0   K   3379134        Pseudomonadati\n100.00  80  0   P   1224             Pseudomonadota\n100.00  80  0   C   1236               Gammaproteobacteria\n100.00  80  0   O   135623               Vibrionales\n100.00  80  0   F   641                    Vibrionaceae\n100.00  80  6   G   662                      Vibrio\n 92.50  74  65  S   666                        Vibrio cholerae\n\n\nThe Kraken2 report contains taxonomic classification information, including the percentage of sequences assigned to different taxa.\n\n\nKraken2 report columns\nA Kraken2 report usually contains columns similar to:\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\nPercentage\nPercentage of sequences assigned to the taxon\n\n\nClade reads\nReads/sequences assigned to the taxon and its descendants\n\n\nTaxon reads\nReads/sequences assigned directly to the taxon\n\n\nRank code\nTaxonomic rank\n\n\nNCBI taxonomic ID\nTaxonomy ID\n\n\nScientific name\nTaxon name\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich genus or species has the highest assignment?\n\n\nIn this example, most classified sequences belong to:\nVibrio cholerae\nThis suggests that sample S1 is likely Vibrio cholerae.\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhat is the main species-level taxonomic assignment in this report?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe main species-level assignment is:\nVibrio cholerae\nIt has 92.50% assignment in this example.\n\n\n\n\n\nCreate Krona input file\nTo visualize the Kraken2 report interactively, first convert it into Krona-compatible format.\nkreport2krona.py \\\n  -r classify/S1.kraken2.report \\\n  -o classify/S1.krona\nCheck that the Krona input file was created:\nls classify\nYou should see:\nS1.krona\n\n\nCreate Krona HTML plot\nNow create an interactive Krona HTML plot:\nktImportText \\\n  -o classify/S1.krona.html \\\n  classify/S1.krona\nCheck that the HTML file was created:\nls classify\nYou should see:\nS1.krona.html",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "Classification",
+      "Taxonomy: Kraken2"
     ]
   },
   {
-    "objectID": "materials/4_qc.html#paired-end-sequencing-files",
-    "href": "materials/4_qc.html#paired-end-sequencing-files",
-    "title": "Quality Control of Raw Reads",
-    "section": "Paired-end sequencing files",
-    "text": "Paired-end sequencing files\nFor paired-end Illumina data, each sample usually has two FASTQ files:\nS1_R1.fastq.gz\nS1_R2.fastq.gz\n\n\n\nFile\nMeaning\n\n\n\n\nR1\nForward reads\n\n\nR2\nReverse reads\n\n\n.gz\nCompressed file\n\n\n\nFor example:\nSRR123456_R1.fastq.gz\nSRR123456_R2.fastq.gz\n\n\nInspect a FASTQ file\nBecause FASTQ files are often compressed, use zcat to view them.\nzcat S1_R1.fastq.gz | head\nTo view the first 8 lines:\nzcat S1_R1.fastq.gz | head -n 8\nThis should show the first two FASTQ records.\n\n\n\n\n\n\nFigure 1: First 8 lines (two records) of S1_R1.fastq.gz file\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nInspect the first 16 lines of a FASTQ file. How many sequencing reads are shown?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nA FASTQ record contains 4 lines. Therefore, 8 lines show 2 sequencing reads.\n\n\n\nFor example, if the file has 400000 lines, then the number of reads is:\n400000 / 4 = 100000 reads\nYou can calculate this directly:\necho $(( $(zcat S1_R1.fastq.gz | wc -l) / 4 ))\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\n2745664\n\n\n\n\n\n\nRun FastQC\nWe need to activate the qc environment\nconda activate qc\nNow will run fastqc on sample S1\nfastqc -t 4 S1_R1.fastq.gz S1_R2.fastq.gz\n\n\n\n\n\n\nFigure 2: fastqc tool working on first sample files\n\n\n\nType ls to see the file lists\nls\n\n\n\nOpen FastQC report\nWe need to download the report file as we cannot visualize from servers.\nFrom local desktop terminal (note that you need to replace tanzim by your name), run:\nscp -r genomevm@172.28.28.12:~/tanzim/*.html .\n\n\n\n\n\n\nFigure 3: Downloading html repert of fastqc analysis\n\n\n\n\nWindowsmacOSLinux\n\n\nOn Windows, open the file manually from the file explorer.\n\n\nIf you are working on your own computer, open the .html file in a browser. On macOS:\nopen S1_R1_fastqc.html\n\n\nOn Linux:\nxdg-open S1_R1_fastqc.html\n\n\n\nIn a similar way, open the S1_R2_fastqc.html",
+    "objectID": "materials/8_taxonomy.html#download-krona-plot-from-the-server",
+    "href": "materials/8_taxonomy.html#download-krona-plot-from-the-server",
+    "title": "Taxonomy: Kraken2",
+    "section": "Download Krona plot from the server",
+    "text": "Download Krona plot from the server\nIf you want to visualize the interactive Krona file, download the S1.krona.html file to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/classify/S1.krona.html .\nThis downloads the interactive Krona HTML file to your current local folder.\n\nWindowsmacOSLinux\n\n\nOpen S1.krona.html manually from File Explorer using a web browser.\n\n\nUse:\nopen S1.krona.html\n\n\nUse:\nxdg-open S1.krona.html\n\n\n\n\n![Krona output]",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "Classification",
+      "Taxonomy: Kraken2"
     ]
   },
   {
-    "objectID": "materials/4_qc.html#understand-the-fastqc-results",
-    "href": "materials/4_qc.html#understand-the-fastqc-results",
-    "title": "Quality Control of Raw Reads",
-    "section": "Understand the fastqc results",
-    "text": "Understand the fastqc results\nOnce you open the html file you will see a summary information with. What important here are\n\nBasic Statistics\nPer base sequence quality\nPer base sequence content\n\n\n\n\n\n\n\nFigure 4: Basic Statistics\n\n\n\nHere,\n\nnumber of reads is 2745664\nsequence length 35-151\n%GC 48\n\n Here, green is best, yellow is good and red is low quality bases. We can see the average quality score dropping at the end of each read. So we need to trim these bases to keep all the reads above Phred score 20.\nAlso we need to consider the report of Per base sequence content as some bases are generated randomly, which alternatively we call machine noises.\n\n\n\n\n\n\nFigure 5: Per base sequence content\n\n\n\nHere, we can see first 15 bases are highly fluctuating, even though they have Phred score 30. The reason is the first 10-15 bases are randomly sequenced and machines can’t capture the fluorescence properly. So, we need to trim the first few bases from each sequencing read.",
+    "objectID": "materials/8_taxonomy.html#compare-kraken2-report-and-krona-plot",
+    "href": "materials/8_taxonomy.html#compare-kraken2-report-and-krona-plot",
+    "title": "Taxonomy: Kraken2",
+    "section": "Compare Kraken2 report and Krona plot",
+    "text": "Compare Kraken2 report and Krona plot\nThe Kraken2 report is useful for checking exact taxonomic assignments in text format.\nThe Krona plot is useful for interactively exploring the taxonomic hierarchy.\n\n\n\nOutput\nUse\n\n\n\n\nS1.kraken2.report\nText summary of taxonomic classification\n\n\nS1.kraken2.output\nDetailed sequence-level classification output\n\n\nS1.krona\nIntermediate Krona input file\n\n\nS1.krona.html\nInteractive Krona visualization\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nCompare the Kraken2 report and Krona plot.\nDo they suggest the same main organism?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nBoth outputs should point to the same main organism if the classification is consistent. The Kraken2 report gives the detailed text summary, while Krona provides an interactive visualization of the same taxonomic information.",
     "crumbs": [
       "Materials",
-      "Quality Control of Raw Reads",
-      "Quality Control of Raw Reads"
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
+  },
+  {
+    "objectID": "materials/8_taxonomy.html#organize-classification-results",
+    "href": "materials/8_taxonomy.html#organize-classification-results",
+    "title": "Taxonomy: Kraken2",
+    "section": "Organize classification results",
+    "text": "Organize classification results\nYour working directory should now contain:\nclassify\nCheck the folder:\nls classify\nExpected files:\nS1.kraken2.output\nS1.kraken2.report\nS1.krona\nS1.krona.html\nDeactivate the classify environment:\nconda deactivate",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
+  },
+  {
+    "objectID": "materials/8_taxonomy.html#final-directory-structure",
+    "href": "materials/8_taxonomy.html#final-directory-structure",
+    "title": "Taxonomy: Kraken2",
+    "section": "Final directory structure",
+    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n└── classify\n    ├── S1.kraken2.output\n    ├── S1.kraken2.report\n    ├── S1.krona\n    └── S1.krona.html",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
+  },
+  {
+    "objectID": "materials/8_taxonomy.html#practical-exercise",
+    "href": "materials/8_taxonomy.html#practical-exercise",
+    "title": "Taxonomy: Kraken2",
+    "section": "Practical exercise",
+    "text": "Practical exercise\nComplete the following tasks for sample S1:\n\nCreate the classify directory.\nActivate the classify environment.\nRun Kraken2 on S1_contigs_filtered.fasta.\nOpen the Kraken2 report.\nConvert the Kraken2 report to Krona format.\nCreate a Krona HTML plot.\nDownload the Krona HTML file to your local computer.\nOpen the Krona plot in a browser.\n\n\n\n\n\n\n\nCautionExercise: taxonomy summary\n\n\n\nCreate a small table in your notes:\n\n\n\n\n\n\n\n\n\nSample\nMain taxonomic assignment\nEvidence from Kraken2\nEvidence from Krona\n\n\n\n\nS1\n\n\n\n\n\n\nFill in the table using S1.kraken2.report and S1.krona.html.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
+  },
+  {
+    "objectID": "materials/8_taxonomy.html#key-points",
+    "href": "materials/8_taxonomy.html#key-points",
+    "title": "Taxonomy: Kraken2",
+    "section": "Key points",
+    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nKraken2 can classify sequences using a reference taxonomy database.\nThe input for this lesson is the filtered assembly file.\nThe Kraken2 report gives a text summary of taxonomic classification.\nKrona creates an interactive HTML visualization.\nDownload the .html Krona file to visualize it on your local computer.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
+    ]
+  },
+  {
+    "objectID": "materials/8_taxonomy.html#next-step",
+    "href": "materials/8_taxonomy.html#next-step",
+    "title": "Taxonomy: Kraken2",
+    "section": "Next step",
+    "text": "Next step\nIn the next lesson, we will continue downstream analysis using the filtered assembly file.",
+    "crumbs": [
+      "Materials",
+      "Classification",
+      "Taxonomy: Kraken2"
     ]
   },
   {
@@ -1193,148 +1253,116 @@
     ]
   },
   {
-    "objectID": "materials/8_taxonomy.html",
-    "href": "materials/8_taxonomy.html",
-    "title": "Taxonomy: Kraken2",
+    "objectID": "materials/4_qc.html",
+    "href": "materials/4_qc.html",
+    "title": "Quality Control of Raw Reads",
     "section": "",
-    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
+    "text": "Read quality control is the first checkpoint in bacterial whole-genome sequencing analysis. Before genome assembly or downstream analysis, we need to check whether the raw sequencing reads are suitable for analysis.\nIn this lesson, we will inspect FASTQ files, run quality-control checks, summarise QC reports, and decide whether the reads need trimming.",
     "crumbs": [
       "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
     ]
   },
   {
-    "objectID": "materials/8_taxonomy.html#overview",
-    "href": "materials/8_taxonomy.html#overview",
-    "title": "Taxonomy: Kraken2",
+    "objectID": "materials/4_qc.html#overview",
+    "href": "materials/4_qc.html#overview",
+    "title": "Quality Control of Raw Reads",
     "section": "",
-    "text": "After assembly quality control, we can classify the assembled genome to check the likely taxonomic identity of the sample.\nIn this lesson, we will use Kraken2 to classify the filtered assembly file and Krona to create an interactive taxonomic visualization.",
+    "text": "Read quality control is the first checkpoint in bacterial whole-genome sequencing analysis. Before genome assembly or downstream analysis, we need to check whether the raw sequencing reads are suitable for analysis.\nIn this lesson, we will inspect FASTQ files, run quality-control checks, summarise QC reports, and decide whether the reads need trimming.",
     "crumbs": [
       "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
     ]
   },
   {
-    "objectID": "materials/8_taxonomy.html#learning-objectives",
-    "href": "materials/8_taxonomy.html#learning-objectives",
-    "title": "Taxonomy: Kraken2",
+    "objectID": "materials/4_qc.html#learning-objectives",
+    "href": "materials/4_qc.html#learning-objectives",
+    "title": "Quality Control of Raw Reads",
     "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ncreate a folder for taxonomic classification results\nactivate the classify environment\nrun Kraken2 on an assembled genome\ngenerate a Kraken2 taxonomic report\nconvert the Kraken2 report into Krona format\ncreate and download an interactive Krona HTML plot",
+    "text": "Learning objectives\nBy the end of this lesson, you should be able to:\n\ndescribe the structure of a FASTQ file\nexplain why read quality control is important\nrun FastQC on raw sequencing reads\nsummarise multiple QC reports using MultiQC\ninterpret common QC metrics\ndecide whether trimming is needed before assembly",
     "crumbs": [
       "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
     ]
   },
   {
-    "objectID": "materials/8_taxonomy.html#input-file",
-    "href": "materials/8_taxonomy.html#input-file",
-    "title": "Taxonomy: Kraken2",
-    "section": "Input file",
-    "text": "Input file\nIn the previous assembly QC lesson, we created a filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\nCheck that the file exists:\nls assemblies\nYou should see:\nS1_contigs_filtered.fasta\n\n\n\n\n\n\nNoteImportant\n\n\n\nFor this lesson, we will use the filtered assembly file:\nassemblies/S1_contigs_filtered.fasta\n\n\n\nCreate a classification directory\nCreate a directory named classify:\nmkdir -p classify\nCheck that the directory was created:\nls\n\n\nActivate the classify environment\nActivate the classify environment:\nconda activate classify\nCheck that kraken2 is available:\nkraken2 --version\nCheck that the Krona tools are available:\nktImportText\nIf the command prints help text or usage information, Krona is available.",
+    "objectID": "materials/4_qc.html#why-do-we-perform-read-quality-control",
+    "href": "materials/4_qc.html#why-do-we-perform-read-quality-control",
+    "title": "Quality Control of Raw Reads",
+    "section": "Why do we perform read quality control?",
+    "text": "Why do we perform read quality control?\nRaw sequencing reads may contain technical problems such as:\n\nlow-quality bases\nadapter contamination\nunusually short reads\nbiased base composition\nunexpected GC content\noverrepresented sequences\npossible contamination\n\nIf poor-quality reads are used directly, they can affect genome assembly, species identification, antimicrobial resistance gene detection, and phylogenetic analysis.\n\n\n\n\n\n\nNoteKey idea\n\n\n\nQuality control helps us decide whether the sequencing data are good enough for downstream analysis.",
     "crumbs": [
       "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
     ]
   },
   {
-    "objectID": "materials/8_taxonomy.html#run-kraken2",
-    "href": "materials/8_taxonomy.html#run-kraken2",
-    "title": "Taxonomy: Kraken2",
-    "section": "Run Kraken2",
-    "text": "Run Kraken2\nRun Kraken2 on the filtered assembly:\nkraken2 \\\n  --db ~/databases/kraken2db \\\n  --threads 4 \\\n  --report classify/S1.kraken2.report \\\n  --output classify/S1.kraken2.output \\\n  assemblies/S1_contigs_filtered.fasta\n\nUnderstanding the Kraken2 command\n\n\n\n\n\n\n\nOption\nMeaning\n\n\n\n\nkraken2\nRuns Kraken2\n\n\n--db ~/databases/kraken2db\nPath to the Kraken2 database\n\n\n--threads 4\nUse 4 CPU threads\n\n\n--report classify/S1.kraken2.report\nSummary taxonomic report\n\n\n--output classify/S1.kraken2.output\nDetailed classification output\n\n\nassemblies/S1_contigs_filtered.fasta\nInput assembly file\n\n\n\n\n\nCheck Kraken2 outputs\nList the classify directory:\nls classify\nYou should see:\nS1.kraken2.output\nS1.kraken2.report\nView the first few lines of the report:\nhead classify/S1.kraken2.report\n\n\n\n\n\n\nNoteS1.kraken2.report\n\n\n\n100.00  80  0   R   1        root\n100.00  80  0   R1  131567     cellular organisms\n100.00  80  0   D   2            Bacteria\n100.00  80  0   K   3379134        Pseudomonadati\n100.00  80  0   P   1224             Pseudomonadota\n100.00  80  0   C   1236               Gammaproteobacteria\n100.00  80  0   O   135623               Vibrionales\n100.00  80  0   F   641                    Vibrionaceae\n100.00  80  6   G   662                      Vibrio\n 92.50  74  65  S   666                        Vibrio cholerae\n\n\nThe Kraken2 report contains taxonomic classification information, including the percentage of sequences assigned to different taxa.\n\n\nKraken2 report columns\nA Kraken2 report usually contains columns similar to:\n\n\n\n\n\n\n\nColumn\nMeaning\n\n\n\n\nPercentage\nPercentage of sequences assigned to the taxon\n\n\nClade reads\nReads/sequences assigned to the taxon and its descendants\n\n\nTaxon reads\nReads/sequences assigned directly to the taxon\n\n\nRank code\nTaxonomic rank\n\n\nNCBI taxonomic ID\nTaxonomy ID\n\n\nScientific name\nTaxon name\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhich genus or species has the highest assignment?\n\n\nIn this example, most classified sequences belong to:\nVibrio cholerae\nThis suggests that sample S1 is likely Vibrio cholerae.\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhat is the main species-level taxonomic assignment in this report?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nThe main species-level assignment is:\nVibrio cholerae\nIt has 92.50% assignment in this example.\n\n\n\n\n\nCreate Krona input file\nTo visualize the Kraken2 report interactively, first convert it into Krona-compatible format.\nkreport2krona.py \\\n  -r classify/S1.kraken2.report \\\n  -o classify/S1.krona\nCheck that the Krona input file was created:\nls classify\nYou should see:\nS1.krona\n\n\nCreate Krona HTML plot\nNow create an interactive Krona HTML plot:\nktImportText \\\n  -o classify/S1.krona.html \\\n  classify/S1.krona\nCheck that the HTML file was created:\nls classify\nYou should see:\nS1.krona.html",
+    "objectID": "materials/4_qc.html#fastq-file-structure",
+    "href": "materials/4_qc.html#fastq-file-structure",
+    "title": "Quality Control of Raw Reads",
+    "section": "FASTQ file structure",
+    "text": "FASTQ file structure\nShort-read sequencing data are usually stored in FASTQ format. A FASTQ record has four lines:\n@read_id\nACGTACGTACGTACGT\n+\nFFFFFFFFFFFFFFFF\n\n\n\nLine\nDescription\n\n\n\n\nLine 1\nRead identifier\n\n\nLine 2\nDNA sequence\n\n\nLine 3\nSeparator\n\n\nLine 4\nQuality score\n\n\n\nThe fourth line contains quality scores. These scores represent confidence in each base call.",
     "crumbs": [
       "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
     ]
   },
   {
-    "objectID": "materials/8_taxonomy.html#download-krona-plot-from-the-server",
-    "href": "materials/8_taxonomy.html#download-krona-plot-from-the-server",
-    "title": "Taxonomy: Kraken2",
-    "section": "Download Krona plot from the server",
-    "text": "Download Krona plot from the server\nIf you want to visualize the interactive Krona file, download the S1.krona.html file to your local computer.\nFrom your local desktop terminal, run:\nscp genomevm@172.28.28.12:~/tanzim/classify/S1.krona.html .\nThis downloads the interactive Krona HTML file to your current local folder.\n\nWindowsmacOSLinux\n\n\nOpen S1.krona.html manually from File Explorer using a web browser.\n\n\nUse:\nopen S1.krona.html\n\n\nUse:\nxdg-open S1.krona.html\n\n\n\n\n![Krona output]",
+    "objectID": "materials/4_qc.html#paired-end-sequencing-files",
+    "href": "materials/4_qc.html#paired-end-sequencing-files",
+    "title": "Quality Control of Raw Reads",
+    "section": "Paired-end sequencing files",
+    "text": "Paired-end sequencing files\nFor paired-end Illumina data, each sample usually has two FASTQ files:\nS1_R1.fastq.gz\nS1_R2.fastq.gz\n\n\n\nFile\nMeaning\n\n\n\n\nR1\nForward reads\n\n\nR2\nReverse reads\n\n\n.gz\nCompressed file\n\n\n\nFor example:\nSRR123456_R1.fastq.gz\nSRR123456_R2.fastq.gz\n\n\nInspect a FASTQ file\nBecause FASTQ files are often compressed, use zcat to view them.\nzcat S1_R1.fastq.gz | head\nTo view the first 8 lines:\nzcat S1_R1.fastq.gz | head -n 8\nThis should show the first two FASTQ records.\n\n\n\n\n\n\nFigure 1: First 8 lines (two records) of S1_R1.fastq.gz file\n\n\n\n\n\n\n\n\n\nNoteExercise\n\n\n\nInspect the first 16 lines of a FASTQ file. How many sequencing reads are shown?\n\n\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\nA FASTQ record contains 4 lines. Therefore, 8 lines show 2 sequencing reads.\n\n\n\nFor example, if the file has 400000 lines, then the number of reads is:\n400000 / 4 = 100000 reads\nYou can calculate this directly:\necho $(( $(zcat S1_R1.fastq.gz | wc -l) / 4 ))\n\n\n\n\n\n\nTipAnswer\n\n\n\n\n\n2745664\n\n\n\n\n\n\nRun FastQC\nWe need to activate the qc environment\nconda activate qc\nNow will run fastqc on sample S1\nfastqc -t 4 S1_R1.fastq.gz S1_R2.fastq.gz\n\n\n\n\n\n\nFigure 2: fastqc tool working on first sample files\n\n\n\nType ls to see the file lists\nls\n\n\n\nOpen FastQC report\nWe need to download the report file as we cannot visualize from servers.\nFrom local desktop terminal (note that you need to replace tanzim by your name), run:\nscp -r genomevm@172.28.28.12:~/tanzim/*.html .\n\n\n\n\n\n\nFigure 3: Downloading html repert of fastqc analysis\n\n\n\n\nWindowsmacOSLinux\n\n\nOn Windows, open the file manually from the file explorer.\n\n\nIf you are working on your own computer, open the .html file in a browser. On macOS:\nopen S1_R1_fastqc.html\n\n\nOn Linux:\nxdg-open S1_R1_fastqc.html\n\n\n\nIn a similar way, open the S1_R2_fastqc.html",
     "crumbs": [
       "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
     ]
   },
   {
-    "objectID": "materials/8_taxonomy.html#compare-kraken2-report-and-krona-plot",
-    "href": "materials/8_taxonomy.html#compare-kraken2-report-and-krona-plot",
-    "title": "Taxonomy: Kraken2",
-    "section": "Compare Kraken2 report and Krona plot",
-    "text": "Compare Kraken2 report and Krona plot\nThe Kraken2 report is useful for checking exact taxonomic assignments in text format.\nThe Krona plot is useful for interactively exploring the taxonomic hierarchy.\n\n\n\nOutput\nUse\n\n\n\n\nS1.kraken2.report\nText summary of taxonomic classification\n\n\nS1.kraken2.output\nDetailed sequence-level classification output\n\n\nS1.krona\nIntermediate Krona input file\n\n\nS1.krona.html\nInteractive Krona visualization\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nCompare the Kraken2 report and Krona plot.\nDo they suggest the same main organism?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nBoth outputs should point to the same main organism if the classification is consistent. The Kraken2 report gives the detailed text summary, while Krona provides an interactive visualization of the same taxonomic information.",
+    "objectID": "materials/4_qc.html#understand-the-fastqc-results",
+    "href": "materials/4_qc.html#understand-the-fastqc-results",
+    "title": "Quality Control of Raw Reads",
+    "section": "Understand the fastqc results",
+    "text": "Understand the fastqc results\nOnce you open the html file you will see a summary information with. What important here are\n\nBasic Statistics\nPer base sequence quality\nPer base sequence content\n\n\n\n\n\n\n\nFigure 4: Basic Statistics\n\n\n\nHere,\n\nnumber of reads is 2745664\nsequence length 35-151\n%GC 48\n\n Here, green is best, yellow is good and red is low quality bases. We can see the average quality score dropping at the end of each read. So we need to trim these bases to keep all the reads above Phred score 20.\nAlso we need to consider the report of Per base sequence content as some bases are generated randomly, which alternatively we call machine noises.\n\n\n\n\n\n\nFigure 5: Per base sequence content\n\n\n\nHere, we can see first 15 bases are highly fluctuating, even though they have Phred score 30. The reason is the first 10-15 bases are randomly sequenced and machines can’t capture the fluorescence properly. So, we need to trim the first few bases from each sequencing read.",
     "crumbs": [
       "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
+      "Quality Control of Raw Reads",
+      "Quality Control of Raw Reads"
     ]
   },
   {
-    "objectID": "materials/8_taxonomy.html#organize-classification-results",
-    "href": "materials/8_taxonomy.html#organize-classification-results",
-    "title": "Taxonomy: Kraken2",
-    "section": "Organize classification results",
-    "text": "Organize classification results\nYour working directory should now contain:\nclassify\nCheck the folder:\nls classify\nExpected files:\nS1.kraken2.output\nS1.kraken2.report\nS1.krona\nS1.krona.html\nDeactivate the classify environment:\nconda deactivate",
-    "crumbs": [
-      "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
-    ]
+    "objectID": "materials/workshop.html",
+    "href": "materials/workshop.html",
+    "title": "Worksop",
+    "section": "",
+    "text": "In this activity, participants will work in groups and compare the methods used in two published genome papers:\n\nPaper 1: Pasteurella multocida\nPaper 2: Clostridium thermobutyricum\n\nDraw the following table on a large white paper. Read both papers carefully and fill in all steps you can find for both wet-lab and dry-lab workflows."
   },
   {
-    "objectID": "materials/8_taxonomy.html#final-directory-structure",
-    "href": "materials/8_taxonomy.html#final-directory-structure",
-    "title": "Taxonomy: Kraken2",
-    "section": "Final directory structure",
-    "text": "Final directory structure\nAt the end of this lesson, your directory should look like this:\n.\n├── assemblies\n│   ├── S1_contigs.fasta\n│   └── S1_contigs_filtered.fasta\n└── classify\n    ├── S1.kraken2.output\n    ├── S1.kraken2.report\n    ├── S1.krona\n    └── S1.krona.html",
-    "crumbs": [
-      "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
-    ]
+    "objectID": "materials/workshop.html#workshop-activity-wet-lab-and-dry-lab-workflow-comparison",
+    "href": "materials/workshop.html#workshop-activity-wet-lab-and-dry-lab-workflow-comparison",
+    "title": "Worksop",
+    "section": "",
+    "text": "In this activity, participants will work in groups and compare the methods used in two published genome papers:\n\nPaper 1: Pasteurella multocida\nPaper 2: Clostridium thermobutyricum\n\nDraw the following table on a large white paper. Read both papers carefully and fill in all steps you can find for both wet-lab and dry-lab workflows."
   },
   {
-    "objectID": "materials/8_taxonomy.html#practical-exercise",
-    "href": "materials/8_taxonomy.html#practical-exercise",
-    "title": "Taxonomy: Kraken2",
-    "section": "Practical exercise",
-    "text": "Practical exercise\nComplete the following tasks for sample S1:\n\nCreate the classify directory.\nActivate the classify environment.\nRun Kraken2 on S1_contigs_filtered.fasta.\nOpen the Kraken2 report.\nConvert the Kraken2 report to Krona format.\nCreate a Krona HTML plot.\nDownload the Krona HTML file to your local computer.\nOpen the Krona plot in a browser.\n\n\n\n\n\n\n\nCautionExercise: taxonomy summary\n\n\n\nCreate a small table in your notes:\n\n\n\n\n\n\n\n\n\nSample\nMain taxonomic assignment\nEvidence from Kraken2\nEvidence from Krona\n\n\n\n\nS1\n\n\n\n\n\n\nFill in the table using S1.kraken2.report and S1.krona.html.",
-    "crumbs": [
-      "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
-    ]
+    "objectID": "materials/workshop.html#comparison-table",
+    "href": "materials/workshop.html#comparison-table",
+    "title": "Worksop",
+    "section": "Comparison table",
+    "text": "Comparison table\nDraw the following table on a large white paper. Use the two papers to fill in the wet-lab and dry-lab steps for both organisms.\n\n\n\nSteps\nPasteurella multocida\nClostridium thermobutyricum\n\n\n\n\nSample\nISA Brown Chicken\nChicken gut\n\n\nSample processing / culture\n\n\n\n\nDNA extraction\n\n\n\n\nLibrary preparation\n\n\n\n\nSequencing platform\n\n\n\n\nRaw read quality assessment\n\n\n\n\nRead cleaning/trimming\n\n\n\n\nGenome assembly\n\n\n\n\nAssembly quality assessment\n\n\n\n\nAssembly accuracy/completeness check\n\n\n\n\nTaxonomic identification/classification\n\n\n\n\nGene prediction\n\n\n\n\nGenome annotation\n\n\n\n\nFunctional analysis\n\n\n\n\nDatabase/accession information"
   },
   {
-    "objectID": "materials/8_taxonomy.html#key-points",
-    "href": "materials/8_taxonomy.html#key-points",
-    "title": "Taxonomy: Kraken2",
-    "section": "Key points",
-    "text": "Key points\n\n\n\n\n\n\nNoteImportant\n\n\n\n\nKraken2 can classify sequences using a reference taxonomy database.\nThe input for this lesson is the filtered assembly file.\nThe Kraken2 report gives a text summary of taxonomic classification.\nKrona creates an interactive HTML visualization.\nDownload the .html Krona file to visualize it on your local computer.",
-    "crumbs": [
-      "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
-    ]
-  },
-  {
-    "objectID": "materials/8_taxonomy.html#next-step",
-    "href": "materials/8_taxonomy.html#next-step",
-    "title": "Taxonomy: Kraken2",
-    "section": "Next step",
-    "text": "Next step\nIn the next lesson, we will continue downstream analysis using the filtered assembly file.",
-    "crumbs": [
-      "Materials",
-      "Classification",
-      "Taxonomy: Kraken2"
-    ]
+    "objectID": "materials/workshop.html#instructions",
+    "href": "materials/workshop.html#instructions",
+    "title": "Worksop",
+    "section": "Instructions",
+    "text": "Instructions\nFor each step, fill in the information reported in the paper.\nInclude:\n\nmethod or protocol used\nsoftware/tool name\nsoftware version\ndatabase name\naccession number, where available\nimportant parameters, where available\n\n\n\n\n\n\n\nNoteGroup task\n\n\n\nIf a paper does not mention a method, tool, version, or database, write:\nNot reported"
   },
   {
     "objectID": "materials/9_mlst.html",
