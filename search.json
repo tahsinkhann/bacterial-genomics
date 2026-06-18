@@ -1341,28 +1341,48 @@
     "href": "materials/workshop.html",
     "title": "Worksop",
     "section": "",
-    "text": "In this activity, participants will work in groups and compare the methods used in two published genome papers:\n\nPaper 1: Pasteurella multocida\nPaper 2: Clostridium thermobutyricum\n\nDraw the following table on a large white paper. Read both papers carefully and fill in all steps you can find for both wet-lab and dry-lab workflows."
+    "text": "In this activity, participants will work in groups and compare the methods used in two published genome papers:\n\nPaper 1: Pasteurella multocida\nPaper 2: Clostridium thermobutyricum\n\nDraw the following table on a large white paper. Read both papers carefully and fill in all steps you can find for both wet-lab and dry-lab workflows.",
+    "crumbs": [
+      "Materials",
+      "Workshop",
+      "Worksop"
+    ]
   },
   {
     "objectID": "materials/workshop.html#workshop-activity-wet-lab-and-dry-lab-workflow-comparison",
     "href": "materials/workshop.html#workshop-activity-wet-lab-and-dry-lab-workflow-comparison",
     "title": "Worksop",
     "section": "",
-    "text": "In this activity, participants will work in groups and compare the methods used in two published genome papers:\n\nPaper 1: Pasteurella multocida\nPaper 2: Clostridium thermobutyricum\n\nDraw the following table on a large white paper. Read both papers carefully and fill in all steps you can find for both wet-lab and dry-lab workflows."
+    "text": "In this activity, participants will work in groups and compare the methods used in two published genome papers:\n\nPaper 1: Pasteurella multocida\nPaper 2: Clostridium thermobutyricum\n\nDraw the following table on a large white paper. Read both papers carefully and fill in all steps you can find for both wet-lab and dry-lab workflows.",
+    "crumbs": [
+      "Materials",
+      "Workshop",
+      "Worksop"
+    ]
   },
   {
     "objectID": "materials/workshop.html#comparison-table",
     "href": "materials/workshop.html#comparison-table",
     "title": "Worksop",
     "section": "Comparison table",
-    "text": "Comparison table\nDraw the following table on a large white paper. Use the two papers to fill in the wet-lab and dry-lab steps for both organisms.\n\n\n\nSteps\nPasteurella multocida\nClostridium thermobutyricum\n\n\n\n\nSample\nISA Brown Chicken\nChicken gut\n\n\nSample processing / culture\n\n\n\n\nDNA extraction\n\n\n\n\nLibrary preparation\n\n\n\n\nSequencing platform\n\n\n\n\nRaw read quality assessment\n\n\n\n\nRead cleaning/trimming\n\n\n\n\nGenome assembly\n\n\n\n\nAssembly quality assessment\n\n\n\n\nAssembly accuracy/completeness check\n\n\n\n\nTaxonomic identification/classification\n\n\n\n\nGene prediction\n\n\n\n\nGenome annotation\n\n\n\n\nFunctional analysis\n\n\n\n\nDatabase/accession information"
+    "text": "Comparison table\nDraw the following table on a large white paper. Use the two papers to fill in the wet-lab and dry-lab steps for both organisms.\n\n\n\nSteps\nPasteurella multocida\nClostridium thermobutyricum\n\n\n\n\nSample\nISA Brown Chicken\nChicken gut\n\n\nSample processing / culture\n\n\n\n\nDNA extraction\n\n\n\n\nLibrary preparation\n\n\n\n\nSequencing platform\n\n\n\n\nRaw read quality assessment\n\n\n\n\nRead cleaning/trimming\n\n\n\n\nGenome assembly\n\n\n\n\nAssembly quality assessment\n\n\n\n\nAssembly accuracy/completeness check\n\n\n\n\nTaxonomic identification/classification\n\n\n\n\nGene prediction\n\n\n\n\nGenome annotation\n\n\n\n\nFunctional analysis\n\n\n\n\nDatabase/accession information",
+    "crumbs": [
+      "Materials",
+      "Workshop",
+      "Worksop"
+    ]
   },
   {
     "objectID": "materials/workshop.html#instructions",
     "href": "materials/workshop.html#instructions",
     "title": "Worksop",
     "section": "Instructions",
-    "text": "Instructions\nFor each step, fill in the information reported in the paper.\nInclude:\n\nmethod or protocol used\nsoftware/tool name\nsoftware version\ndatabase name\naccession number, where available\nimportant parameters, where available\n\n\n\n\n\n\n\nNoteGroup task\n\n\n\nIf a paper does not mention a method, tool, version, or database, write:\nNot reported"
+    "text": "Instructions\nFor each step, fill in the information reported in the paper.\nInclude:\n\nmethod or protocol used\nsoftware/tool name\nsoftware version\ndatabase name\naccession number, where available\nimportant parameters, where available\n\n\n\n\n\n\n\nNoteGroup task\n\n\n\nIf a paper does not mention a method, tool, version, or database, write:\nNot reported",
+    "crumbs": [
+      "Materials",
+      "Workshop",
+      "Worksop"
+    ]
   },
   {
     "objectID": "materials/9_mlst.html",
