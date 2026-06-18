@@ -586,6 +586,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#workshop-activity-wet-lab-and-dry-lab-workflow-comparison" id="toc-workshop-activity-wet-lab-and-dry-lab-workflow-comparison" class="nav-link active" data-scroll-target="#workshop-activity-wet-lab-and-dry-lab-workflow-comparison">Workshop activity: Wet-lab and dry-lab workflow comparison</a></li>
   <li><a href="#comparison-table" id="toc-comparison-table" class="nav-link" data-scroll-target="#comparison-table">Comparison table</a></li>
   <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#answer" id="toc-answer" class="nav-link" data-scroll-target="#answer">Answer</a></li>
+  <li><a href="#key-comparison" id="toc-key-comparison" class="nav-link" data-scroll-target="#key-comparison">Key comparison</a></li>
   </ul>
 </nav>
     </div>
@@ -634,7 +636,7 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Sample</td>
+<td>Sample Isolation</td>
 <td>ISA Brown Chicken</td>
 <td>Chicken gut</td>
 </tr>
@@ -737,50 +739,171 @@ ul.task-list li input[type="checkbox"] {
 <pre class="text"><code>Not reported</code></pre>
 </div>
 </div>
-<!--
-
-## Answer
-
-| Steps | **Pasteurella multocida** | **Clostridium thermobutyricum** |
-|---|---|---|
-| Sample Isolation | ISA Brown chicken | swine gut |
-| Sample processing / culture | LB broth; Blood agar with 5% sheep blood | 1x PBS, RCM, RCM liquid medium |
-| DNA extraction | QIAamp DNA Mini Kit | TIANcombi DNA Lyse & Det PCR Kit |
-| Library preparation | Illumina DNA Prep Kit | NEBNext Ultra II DNA Library Prep Kit |
-| Sequencing platform | Illumina NovaSeq 6000 | Illumina NovaSeq 6000 |
-| Raw read quality assessment | FastQC v0.12.1 | Not separately mentioned |
-| Read cleaning/trimming | fastp v0.24.0 | Trimmomatic v0.39-2 |
-| Genome assembly | SKESA v2.2 | SPAdes v4.0.0 |
-| Assembly quality assessment | QUAST v5.3.0 | CheckM v1.2 |
-| Assembly accuracy/completeness check | CheckM v1.2.3 | CheckM v1.2 |
-| Taxonomic identification/classification | FastANI | Not specified |
-| Gene prediction | Through NCBI PGAP annotation | Prodigal v6.8 |
-| Genome annotation | NCBI PGAP v6.9 | NCBI PGAP v6.10; GTDB-Tk v2.4.0 |
-| Functional analysis | ResFinder; VFDB | Not specified |
-| Database/accession information | BioProject: PRJNA514245; SRA: SRR32921853, SRR32921852, SRR32921851 | BioProject: PRJNA1304223 |
-
-## Key comparison
-
-| Category | Observation |
-|---|---|
-| Sample source | *Pasteurella multocida* was isolated from chicken, while *Clostridium thermobutyricum* was isolated from swine gut. |
-| Sequencing platform | Both studies used Illumina NovaSeq 6000. |
-| Read trimming | *Pasteurella multocida* used fastp, while *Clostridium thermobutyricum* used Trimmomatic. |
-| Genome assembly | *Pasteurella multocida* used SKESA, while *Clostridium thermobutyricum* used SPAdes. |
-| Annotation | Both studies used NCBI PGAP, but different versions were reported. |
-| Functional analysis | Functional analysis was reported for *Pasteurella multocida*, but not specified for *Clostridium thermobutyricum*. |
-
-::: {.callout-note title="Discussion point"}
-Which paper provides more complete information for reproducing the analysis?
-:::
-
-::: {.callout-tip title="Suggested answer" collapse="true"}
-The *Pasteurella multocida* paper appears to provide more complete information for reproducibility because it reports tools for raw read quality assessment, trimming, assembly, assembly quality assessment, completeness checking, taxonomic classification, annotation, functional analysis, and accession information.
-
-The *Clostridium thermobutyricum* paper also reports several important tools, but some steps such as raw read quality assessment, taxonomic classification, and functional analysis are not clearly specified.
-:::
-
--->
+</section>
+<section id="answer" class="level2">
+<h2 class="anchored" data-anchor-id="answer">Answer</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Steps</th>
+<th><strong>Pasteurella multocida</strong></th>
+<th><strong>Clostridium thermobutyricum</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sample Isolation</td>
+<td>ISA Brown chicken</td>
+<td>swine gut</td>
+</tr>
+<tr class="even">
+<td>Sample processing / culture</td>
+<td>LB broth; Blood agar with 5% sheep blood</td>
+<td>1x PBS, RCM, RCM liquid medium</td>
+</tr>
+<tr class="odd">
+<td>DNA extraction</td>
+<td>QIAamp DNA Mini Kit</td>
+<td>TIANcombi DNA Lyse &amp; Det PCR Kit</td>
+</tr>
+<tr class="even">
+<td>Library preparation</td>
+<td>Illumina DNA Prep Kit</td>
+<td>NEBNext Ultra II DNA Library Prep Kit</td>
+</tr>
+<tr class="odd">
+<td>Sequencing platform</td>
+<td>Illumina NovaSeq 6000</td>
+<td>Illumina NovaSeq 6000</td>
+</tr>
+<tr class="even">
+<td>Raw read quality assessment</td>
+<td>FastQC v0.12.1</td>
+<td>Not separately mentioned</td>
+</tr>
+<tr class="odd">
+<td>Read cleaning/trimming</td>
+<td>fastp v0.24.0</td>
+<td>Trimmomatic v0.39-2</td>
+</tr>
+<tr class="even">
+<td>Genome assembly</td>
+<td>SKESA v2.2</td>
+<td>SPAdes v4.0.0</td>
+</tr>
+<tr class="odd">
+<td>Assembly quality assessment</td>
+<td>QUAST v5.3.0</td>
+<td>CheckM v1.2</td>
+</tr>
+<tr class="even">
+<td>Assembly accuracy/completeness check</td>
+<td>CheckM v1.2.3</td>
+<td>CheckM v1.2</td>
+</tr>
+<tr class="odd">
+<td>Taxonomic identification/classification</td>
+<td>FastANI</td>
+<td>Not specified</td>
+</tr>
+<tr class="even">
+<td>Gene prediction</td>
+<td>Through NCBI PGAP annotation</td>
+<td>Prodigal v6.8</td>
+</tr>
+<tr class="odd">
+<td>Genome annotation</td>
+<td>NCBI PGAP v6.9</td>
+<td>NCBI PGAP v6.10; GTDB-Tk v2.4.0</td>
+</tr>
+<tr class="even">
+<td>Functional analysis</td>
+<td>ResFinder; VFDB</td>
+<td>Not specified</td>
+</tr>
+<tr class="odd">
+<td>Database/accession information</td>
+<td>BioProject: PRJNA514245; SRA: SRR32921853, SRR32921852, SRR32921851</td>
+<td>BioProject: PRJNA1304223</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="key-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="key-comparison">Key comparison</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sample source</td>
+<td><em>Pasteurella multocida</em> was isolated from chicken, while <em>Clostridium thermobutyricum</em> was isolated from swine gut.</td>
+</tr>
+<tr class="even">
+<td>Sequencing platform</td>
+<td>Both studies used Illumina NovaSeq 6000.</td>
+</tr>
+<tr class="odd">
+<td>Read trimming</td>
+<td><em>Pasteurella multocida</em> used fastp, while <em>Clostridium thermobutyricum</em> used Trimmomatic.</td>
+</tr>
+<tr class="even">
+<td>Genome assembly</td>
+<td><em>Pasteurella multocida</em> used SKESA, while <em>Clostridium thermobutyricum</em> used SPAdes.</td>
+</tr>
+<tr class="odd">
+<td>Annotation</td>
+<td>Both studies used NCBI PGAP, but different versions were reported.</td>
+</tr>
+<tr class="even">
+<td>Functional analysis</td>
+<td>Functional analysis was reported for <em>Pasteurella multocida</em>, but not specified for <em>Clostridium thermobutyricum</em>.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Discussion point">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Discussion point
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Which paper provides more complete information for reproducing the analysis?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Suggested answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Suggested answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The <em>Pasteurella multocida</em> paper appears to provide more complete information for reproducibility because it reports tools for raw read quality assessment, trimming, assembly, assembly quality assessment, completeness checking, taxonomic classification, annotation, functional analysis, and accession information.</p>
+<p>The <em>Clostridium thermobutyricum</em> paper also reports several important tools, but some steps such as raw read quality assessment, taxonomic classification, and functional analysis are not clearly specified.</p>
+</div>
+</div>
+</div>
 
 
 </section>

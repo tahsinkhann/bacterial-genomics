@@ -1365,7 +1365,7 @@
     "href": "materials/workshop.html#comparison-table",
     "title": "Worksop",
     "section": "Comparison table",
-    "text": "Comparison table\nDraw the following table on a large white paper. Use the two papers to fill in the wet-lab and dry-lab steps for both organisms.\n\n\n\nSteps\nPasteurella multocida\nClostridium thermobutyricum\n\n\n\n\nSample\nISA Brown Chicken\nChicken gut\n\n\nSample processing / culture\n\n\n\n\nDNA extraction\n\n\n\n\nLibrary preparation\n\n\n\n\nSequencing platform\n\n\n\n\nRaw read quality assessment\n\n\n\n\nRead cleaning/trimming\n\n\n\n\nGenome assembly\n\n\n\n\nAssembly quality assessment\n\n\n\n\nAssembly accuracy/completeness check\n\n\n\n\nTaxonomic identification/classification\n\n\n\n\nGene prediction\n\n\n\n\nGenome annotation\n\n\n\n\nFunctional analysis\n\n\n\n\nDatabase/accession information",
+    "text": "Comparison table\nDraw the following table on a large white paper. Use the two papers to fill in the wet-lab and dry-lab steps for both organisms.\n\n\n\nSteps\nPasteurella multocida\nClostridium thermobutyricum\n\n\n\n\nSample Isolation\nISA Brown Chicken\nChicken gut\n\n\nSample processing / culture\n\n\n\n\nDNA extraction\n\n\n\n\nLibrary preparation\n\n\n\n\nSequencing platform\n\n\n\n\nRaw read quality assessment\n\n\n\n\nRead cleaning/trimming\n\n\n\n\nGenome assembly\n\n\n\n\nAssembly quality assessment\n\n\n\n\nAssembly accuracy/completeness check\n\n\n\n\nTaxonomic identification/classification\n\n\n\n\nGene prediction\n\n\n\n\nGenome annotation\n\n\n\n\nFunctional analysis\n\n\n\n\nDatabase/accession information",
     "crumbs": [
       "Materials",
       "Workshop",
@@ -1378,6 +1378,30 @@
     "title": "Worksop",
     "section": "Instructions",
     "text": "Instructions\nFor each step, fill in the information reported in the paper.\nInclude:\n\nmethod or protocol used\nsoftware/tool name\nsoftware version\ndatabase name\naccession number, where available\nimportant parameters, where available\n\n\n\n\n\n\n\nNoteGroup task\n\n\n\nIf a paper does not mention a method, tool, version, or database, write:\nNot reported",
+    "crumbs": [
+      "Materials",
+      "Workshop",
+      "Worksop"
+    ]
+  },
+  {
+    "objectID": "materials/workshop.html#answer",
+    "href": "materials/workshop.html#answer",
+    "title": "Worksop",
+    "section": "Answer",
+    "text": "Answer\n\n\n\n\n\n\n\n\nSteps\nPasteurella multocida\nClostridium thermobutyricum\n\n\n\n\nSample Isolation\nISA Brown chicken\nswine gut\n\n\nSample processing / culture\nLB broth; Blood agar with 5% sheep blood\n1x PBS, RCM, RCM liquid medium\n\n\nDNA extraction\nQIAamp DNA Mini Kit\nTIANcombi DNA Lyse & Det PCR Kit\n\n\nLibrary preparation\nIllumina DNA Prep Kit\nNEBNext Ultra II DNA Library Prep Kit\n\n\nSequencing platform\nIllumina NovaSeq 6000\nIllumina NovaSeq 6000\n\n\nRaw read quality assessment\nFastQC v0.12.1\nNot separately mentioned\n\n\nRead cleaning/trimming\nfastp v0.24.0\nTrimmomatic v0.39-2\n\n\nGenome assembly\nSKESA v2.2\nSPAdes v4.0.0\n\n\nAssembly quality assessment\nQUAST v5.3.0\nCheckM v1.2\n\n\nAssembly accuracy/completeness check\nCheckM v1.2.3\nCheckM v1.2\n\n\nTaxonomic identification/classification\nFastANI\nNot specified\n\n\nGene prediction\nThrough NCBI PGAP annotation\nProdigal v6.8\n\n\nGenome annotation\nNCBI PGAP v6.9\nNCBI PGAP v6.10; GTDB-Tk v2.4.0\n\n\nFunctional analysis\nResFinder; VFDB\nNot specified\n\n\nDatabase/accession information\nBioProject: PRJNA514245; SRA: SRR32921853, SRR32921852, SRR32921851\nBioProject: PRJNA1304223",
+    "crumbs": [
+      "Materials",
+      "Workshop",
+      "Worksop"
+    ]
+  },
+  {
+    "objectID": "materials/workshop.html#key-comparison",
+    "href": "materials/workshop.html#key-comparison",
+    "title": "Worksop",
+    "section": "Key comparison",
+    "text": "Key comparison\n\n\n\n\n\n\n\nCategory\nObservation\n\n\n\n\nSample source\nPasteurella multocida was isolated from chicken, while Clostridium thermobutyricum was isolated from swine gut.\n\n\nSequencing platform\nBoth studies used Illumina NovaSeq 6000.\n\n\nRead trimming\nPasteurella multocida used fastp, while Clostridium thermobutyricum used Trimmomatic.\n\n\nGenome assembly\nPasteurella multocida used SKESA, while Clostridium thermobutyricum used SPAdes.\n\n\nAnnotation\nBoth studies used NCBI PGAP, but different versions were reported.\n\n\nFunctional analysis\nFunctional analysis was reported for Pasteurella multocida, but not specified for Clostridium thermobutyricum.\n\n\n\n\n\n\n\n\n\nNoteDiscussion point\n\n\n\nWhich paper provides more complete information for reproducing the analysis?\n\n\n\n\n\n\n\n\nTipSuggested answer\n\n\n\n\n\nThe Pasteurella multocida paper appears to provide more complete information for reproducibility because it reports tools for raw read quality assessment, trimming, assembly, assembly quality assessment, completeness checking, taxonomic classification, annotation, functional analysis, and accession information.\nThe Clostridium thermobutyricum paper also reports several important tools, but some steps such as raw read quality assessment, taxonomic classification, and functional analysis are not clearly specified.",
     "crumbs": [
       "Materials",
       "Workshop",
