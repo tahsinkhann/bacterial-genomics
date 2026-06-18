@@ -595,6 +595,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Know your bug</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/sra_download.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Obtaining Genomic Data from Public Repositories</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -793,7 +799,18 @@ S3  T A A</code></pre>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">-m</span> GTR+F <span class="dt">\</span></span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">-nt</span> 4 <span class="dt">\</span></span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">-pre</span> tree/iqtree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>::: {.callout-tip title=“iq-tree command with -fconst value collapse=true}</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="iq-tree command with -fconst value">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>iq-tree command with -fconst value
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iqtree</span> <span class="dt">\</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-s</span> pangenome/core_gene_alignment.snp.aln <span class="dt">\</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-fconst</span> 716495,650538,717930,710604 <span class="dt">\</span></span>
@@ -802,6 +819,9 @@ S3  T A A</code></pre>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">-m</span> GTR+F <span class="dt">\</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">-nt</span> 4 <span class="dt">\</span></span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">-pre</span> tree/iqtree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
 </section>
 <section id="understanding-the-iq-tree-command" class="level3">
 <h3 class="anchored" data-anchor-id="understanding-the-iq-tree-command">Understanding the IQ-TREE command</h3>
@@ -938,7 +958,7 @@ iqtree.ckp.gz  iqtree.iqtree   iqtree.mldist  iqtree.treefile</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -947,7 +967,7 @@ iqtree.ckp.gz  iqtree.iqtree   iqtree.mldist  iqtree.treefile</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The main tree output file is:</p>
 <pre class="text"><code>tree/iqtree.treefile</code></pre>
@@ -1029,7 +1049,7 @@ iqtree.ckp.gz  iqtree.iqtree   iqtree.mldist  iqtree.treefile</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Suggested answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1038,7 +1058,7 @@ iqtree.ckp.gz  iqtree.iqtree   iqtree.mldist  iqtree.treefile</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Closely related samples may cluster together and may share similar MLST, AMR, or virulence profiles. However, clustering should be interpreted carefully together with metadata and quality-control results.</p>
 </div>
