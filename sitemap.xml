@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/abcd.html</loc>
-    <lastmod>2025-09-26T18:33:52.251Z</lastmod>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/installing_conda.html</loc>
+    <lastmod>2026-06-19T19:41:59.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/sra_comparative_analysis.html</loc>
+    <lastmod>2026-06-19T20:13:30.120Z</lastmod>
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/help/conda_tutorial/data_download.html</loc>
@@ -26,7 +30,7 @@
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/15_know-your-bug.html</loc>
-    <lastmod>2026-06-18T05:46:11.792Z</lastmod>
+    <lastmod>2026-06-19T20:15:23.747Z</lastmod>
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/materials/3_navigating-files.html</loc>
@@ -123,5 +127,9 @@
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/help/conda_tutorial/conda_installation.html</loc>
     <lastmod>2025-09-28T09:02:44.143Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/abcd.html</loc>
+    <lastmod>2025-09-26T18:33:52.251Z</lastmod>
   </url>
 </urlset>
