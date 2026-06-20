@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Materials – Introduction to Bacterial Genomics</title>
+<title>Installing Windows Subsystem for Linux (WSL) for Windows OS Users – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,31 +20,67 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./materials/1_pathogen_genomic_surveillances.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-81fe5dcfeb64615fe1e55f802320c342.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../help/installing_conda.html" rel="next">
+<link href="../help/workflow_management.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-81fe5dcfeb64615fe1e55f802320c342.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,10 +110,13 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Materials – Introduction to Bacterial Genomics">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Installing Windows Subsystem for Linux (WSL) for Windows OS Users – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://tahsinkhann.github.io/bacterial-genomics/help/wsl/01-start.png">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:width" content="1920">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -258,11 +297,11 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/images.png" alt="icddr,b" class="navbar-logo light-content">
-    <img src="./assets/images.png" alt="icddr,b" class="navbar-logo dark-content">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/images.png" alt="icddr,b" class="navbar-logo light-content">
+    <img src="../assets/images.png" alt="icddr,b" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Introduction to Bacterial Genomics</span>
     </a>
   </div>
@@ -277,15 +316,15 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html"> 
+    <a class="nav-link" href="../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./materials.html"> 
+    <a class="nav-link" href="../materials.html"> 
 <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -294,11 +333,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="./help/workflow_management.html">
+    <a class="dropdown-item" href="../help/workflow_management.html">
  <span class="dropdown-text">Workflow Management Systems</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./help/unix_cheat_sheet.html">
+    <a class="dropdown-item" href="../help/unix_cheat_sheet.html">
  <span class="dropdown-text">Unix Cheat Sheet</span></a>
   </li>  
         <li>
@@ -335,7 +374,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Materials</h1>
+          <h1 class="quarto-secondary-nav-title">Installing Windows Subsystem for Linux (WSL) for Windows OS Users</h1>
         </a>     
     </div>
   </nav>
@@ -345,21 +384,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
+      <a href="../index.html" class="sidebar-logo-link">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./materials.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Materials</span></a>
+  <a href="../help/workflow_management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Workflow Management Systems</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Pathogen of Interest</span></a>
+ <span class="menu-text">Conda Setup</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -367,8 +406,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./materials/1_pathogen_genomic_surveillances.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pathogen genomic surveillances</span></a>
+  <a href="../help/wsl_installation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Installing Windows Subsystem for Linux (WSL) for Windows OS Users</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../help/installing_conda.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing Conda and Bioinformatics Tools</span></a>
   </div>
 </li>
       </ul>
@@ -376,7 +421,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Introduction to NGS</span></a>
+ <span class="menu-text">Public Dataset</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -384,187 +429,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./materials/2_into-ngs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to NGS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/3_navigating-files.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Server Connection and Navigating Files</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/conda_environments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conda Environments</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Quality Control of Raw Reads</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/4_qc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quality Control of Raw Reads</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/5_trimming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Trimming to Retain High Quality Data</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Genome Assembly</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/6_assembly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><em>De novo</em> Assembly</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/7_qc_assembly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quality Control of Assembly File</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Day 2: Recap</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/day2_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Learnings from Day 1</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Classification</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/8_taxonomy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taxonomy: Kraken2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/9_mlst.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MLST-Multilocus Sequence Typing</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Annotation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/10_annotation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Genome Annotation with Prokka</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/11_copy-day2-files.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Copy Day 2 Files</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/12_amr-vf-plasmid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AMR and Virulence Factors</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Phylogenetics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/13_pangenome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pangenome Analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/14_phylogenetics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Phylogenetics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
- <span class="menu-text">Workshop</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/15_know-your-bug.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Know Your Bug</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/sra_download.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Obtaining Genomic Data from Public Repositories</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/workshop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worksop</span></a>
+  <a href="../help/sra_comparative_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SRA Data Download and Comparative Genome Analysis</span></a>
   </div>
 </li>
       </ul>
@@ -574,8 +440,39 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#step-01-open-the-start-menu" id="toc-step-01-open-the-start-menu" class="nav-link" data-scroll-target="#step-01-open-the-start-menu">Step 01: Open the Start Menu</a></li>
+  <li><a href="#step-02-open-powershell-as-administrator" id="toc-step-02-open-powershell-as-administrator" class="nav-link" data-scroll-target="#step-02-open-powershell-as-administrator">Step 02: Open PowerShell as Administrator</a></li>
+  <li><a href="#step-03-powershell-opens" id="toc-step-03-powershell-opens" class="nav-link" data-scroll-target="#step-03-powershell-opens">Step 03: PowerShell Opens</a></li>
+  <li><a href="#step-04-install-wsl" id="toc-step-04-install-wsl" class="nav-link" data-scroll-target="#step-04-install-wsl">Step 04: Install WSL</a></li>
+  <li><a href="#step-05-close-the-wsl-manual" id="toc-step-05-close-the-wsl-manual" class="nav-link" data-scroll-target="#step-05-close-the-wsl-manual">Step 05: Close the WSL Manual</a></li>
+  <li><a href="#step-06-create-a-username" id="toc-step-06-create-a-username" class="nav-link" data-scroll-target="#step-06-create-a-username">Step 06: Create a Username</a></li>
+  <li><a href="#step-07-create-a-password" id="toc-step-07-create-a-password" class="nav-link" data-scroll-target="#step-07-create-a-password">Step 07: Create a Password</a></li>
+  <li><a href="#step-08-platform-metrics-collection" id="toc-step-08-platform-metrics-collection" class="nav-link" data-scroll-target="#step-08-platform-metrics-collection">Step 08: Platform Metrics Collection</a></li>
+  <li><a href="#step-09-installation-complete" id="toc-step-09-installation-complete" class="nav-link" data-scroll-target="#step-09-installation-complete">Step 09: Installation Complete</a></li>
+  <li><a href="#step-10-open-ubuntu" id="toc-step-10-open-ubuntu" class="nav-link" data-scroll-target="#step-10-open-ubuntu">Step 10: Open Ubuntu</a></li>
+  <li><a href="#step-11-the-bash-terminal" id="toc-step-11-the-bash-terminal" class="nav-link" data-scroll-target="#step-11-the-bash-terminal">Step 11: The Bash Terminal</a></li>
+  <li><a href="#step-12-open-linux-files-in-file-explorer" id="toc-step-12-open-linux-files-in-file-explorer" class="nav-link" data-scroll-target="#step-12-open-linux-files-in-file-explorer">Step 12: Open Linux Files in File Explorer</a></li>
+  <li><a href="#step-13-open-ubuntu" id="toc-step-13-open-ubuntu" class="nav-link" data-scroll-target="#step-13-open-ubuntu">Step 13: Open Ubuntu</a></li>
+  <li><a href="#step-14-open-home" id="toc-step-14-open-home" class="nav-link" data-scroll-target="#step-14-open-home">Step 14: Open Home</a></li>
+  <li><a href="#step-15-open-your-user-folder" id="toc-step-15-open-your-user-folder" class="nav-link" data-scroll-target="#step-15-open-your-user-folder">Step 15: Open Your User Folder</a></li>
+  <li><a href="#step-16-view-the-home-directory" id="toc-step-16-view-the-home-directory" class="nav-link" data-scroll-target="#step-16-view-the-home-directory">Step 16: View the Home Directory</a></li>
+  <li><a href="#step-17-create-a-new-folder" id="toc-step-17-create-a-new-folder" class="nav-link" data-scroll-target="#step-17-create-a-new-folder">Step 17: Create a New Folder</a></li>
+  <li><a href="#step-18-refresh-file-explorer" id="toc-step-18-refresh-file-explorer" class="nav-link" data-scroll-target="#step-18-refresh-file-explorer">Step 18: Refresh File Explorer</a></li>
+  <li><a href="#step-19-verify-the-new-folder" id="toc-step-19-verify-the-new-folder" class="nav-link" data-scroll-target="#step-19-verify-the-new-folder">Step 19: Verify the New Folder</a></li>
+  </ul></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next Step</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -583,7 +480,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Materials</h1>
+<h1 class="title d-none d-lg-block">Installing Windows Subsystem for Linux (WSL) for Windows OS Users</h1>
 </div>
 
 
@@ -600,13 +497,326 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Detailed course materials can be found in this section, including exercises to practice. If you are a self-learner, and working on your local desktop/laptop make sure to check the</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are working on Linux OS or macOS, please skip this tutorial and move on to <a href="../help/installing_conda.html">Installing Conda and Bioinformatics Tools</a> and follow the instructions</p>
+</div>
+</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this lesson, we will install <strong>Windows Subsystem for Linux (WSL)</strong> and Ubuntu on a Windows laptop.</p>
+<p>WSL provides a Linux environment inside Windows, allowing us to run bioinformatics software and command-line tools without needing a separate Linux installation.</p>
+<p>We will cover:</p>
 <ul>
-<li><a href="./help/workflow_management.html">Conda installation guideline</a> for setting up <code>WSL</code> (<strong>only if working in Windows OS</strong>) and <code>Conda</code> environment.</li>
-<li><a href="./help/unix_cheat_sheet.html">Unix Cheat Sheet</a> for navigating basic shell commands.</li>
+<li>Installing WSL</li>
+<li>Setting up Ubuntu</li>
+<li>Creating a Linux user account</li>
+<li>Navigating the Linux filesystem</li>
+<li>Accessing Linux files through Windows File Explorer</li>
+<li>Creating directories from the Linux terminal</li>
 </ul>
+<p>After completing this lesson, your system will be ready for the <strong>Conda installation and bioinformatics software setup</strong> described in the next lesson.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Why use WSL?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why use WSL?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Many bioinformatics tools are designed to run on Linux. WSL provides a Linux environment within Windows, allowing you to use the same commands and software as Linux users without needing a virtual machine or a separate computer.</p>
+</div>
+</div>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this lesson, you should be able to:</p>
+<ul>
+<li>install Windows Subsystem for Linux (WSL)</li>
+<li>install and launch Ubuntu</li>
+<li>create a Linux user account</li>
+<li>understand the Linux home directory</li>
+<li>access Linux files using Windows File Explorer</li>
+<li>create directories using the Linux terminal</li>
+<li>verify that WSL is working correctly</li>
+<li>prepare your system for Conda and bioinformatics software installation</li>
+</ul>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This guide explains how to install Windows Subsystem for Linux (WSL) and Ubuntu on Windows.</p>
+<section id="step-01-open-the-start-menu" class="level3">
+<h3 class="anchored" data-anchor-id="step-01-open-the-start-menu">Step 01: Open the Start Menu</h3>
+<p>Click on the <strong>Start Menu</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/01-start.png" class="img-fluid figure-img"></p>
+<figcaption>Start Menu</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-02-open-powershell-as-administrator" class="level3">
+<h3 class="anchored" data-anchor-id="step-02-open-powershell-as-administrator">Step 02: Open PowerShell as Administrator</h3>
+<p>Search for <strong>PowerShell</strong> and click <strong>Run as administrator</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/02-powershell.png" class="img-fluid figure-img"></p>
+<figcaption>PowerShell Search</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-03-powershell-opens" class="level3">
+<h3 class="anchored" data-anchor-id="step-03-powershell-opens">Step 03: PowerShell Opens</h3>
+<p>The PowerShell terminal will open. You will see something similar to the picture below. The colour of the terminal may be different depending on the PowerShell version.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/03-powershell-admin.png" class="img-fluid figure-img"></p>
+<figcaption>PowerShell Window</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-04-install-wsl" class="level3">
+<h3 class="anchored" data-anchor-id="step-04-install-wsl">Step 04: Install WSL</h3>
+<p>Type the following command and press <strong>ENTER</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--install</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This may take a while.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/04-wsl.png" class="img-fluid figure-img"></p>
+<figcaption>WSL Install Command</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-05-close-the-wsl-manual" class="level3">
+<h3 class="anchored" data-anchor-id="step-05-close-the-wsl-manual">Step 05: Close the WSL Manual</h3>
+<p>A window may pop up showing the WSL user manual. You can safely close this window.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/05-welcome-wsl.png" class="img-fluid figure-img"></p>
+<figcaption>WSL Manual</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-06-create-a-username" class="level3">
+<h3 class="anchored" data-anchor-id="step-06-create-a-username">Step 06: Create a Username</h3>
+<p>During installation, you will be asked to enter a username.</p>
+<p>Type a username and press <strong>ENTER</strong>.</p>
+<p>Guidelines:</p>
+<ul>
+<li>Do not use spaces.</li>
+<li>You may use letters, numbers, underscores (<code>_</code>) and dashes (<code>-</code>).</li>
+<li>Best practice is to keep everything lowercase.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/06-username.png" class="img-fluid figure-img"></p>
+<figcaption>Create Username</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-07-create-a-password" class="level3">
+<h3 class="anchored" data-anchor-id="step-07-create-a-password">Step 07: Create a Password</h3>
+<p>You will be asked to set a password.</p>
+<p>When typing your password, <strong>no characters will appear on the screen</strong>. This is normal and done for security reasons.</p>
+<p>Type a password and press <strong>ENTER</strong>.</p>
+<p>You will then be asked to re-type the password. Enter it again and press <strong>ENTER</strong>.</p>
+<p><strong>Tip:</strong> Linux systems require frequent password entry, so choose a password that is easy for you to remember and type.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/07-password.png" class="img-fluid figure-img"></p>
+<figcaption>Set Password</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-08-platform-metrics-collection" class="level3">
+<h3 class="anchored" data-anchor-id="step-08-platform-metrics-collection">Step 08: Platform Metrics Collection</h3>
+<p>You may be asked whether you want to participate in platform metrics collection.</p>
+<p>Type:</p>
+<pre class="text"><code>n</code></pre>
+<p>and press <strong>ENTER</strong>.</p>
+<p>You may choose <code>y</code> if you wish, but this is not required.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/08-collection.png" class="img-fluid figure-img"></p>
+<figcaption>Metrics Collection</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-09-installation-complete" class="level3">
+<h3 class="anchored" data-anchor-id="step-09-installation-complete">Step 09: Installation Complete</h3>
+<p>Installation is complete when you see a prompt similar to:</p>
+<pre class="text"><code>username@computer-name:~$</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/09-wsl-complete.png" class="img-fluid figure-img"></p>
+<figcaption>Installation Complete</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-10-open-ubuntu" class="level3">
+<h3 class="anchored" data-anchor-id="step-10-open-ubuntu">Step 10: Open Ubuntu</h3>
+<p>Close the terminal.</p>
+<ol type="1">
+<li>Click the <strong>Start Menu</strong>.</li>
+<li>Search for <strong>Ubuntu</strong>.</li>
+<li>Click <strong>Ubuntu</strong>.</li>
+</ol>
+<p>Running as administrator is <strong>not</strong> required.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/10-ubuntu.png" class="img-fluid figure-img"></p>
+<figcaption>Open Ubuntu</figcaption>
+</figure>
+</div>
+<p>This is how you will open an Ubuntu terminal inside Windows.</p>
+</section>
+<section id="step-11-the-bash-terminal" class="level3">
+<h3 class="anchored" data-anchor-id="step-11-the-bash-terminal">Step 11: The Bash Terminal</h3>
+<p>This is called the <strong>Bash terminal</strong>.</p>
+<p>You will see a prompt similar to:</p>
+<pre class="text"><code>username@computer-name:~$</code></pre>
+<p>The tilde character (<code>~</code>) represents your <strong>home directory</strong>.</p>
+<p>If you think of your computer as a house, the home directory is like entering through the front door.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/11-ubuntu-terminal.png" class="img-fluid figure-img"></p>
+<figcaption>Bash Terminal</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-12-open-linux-files-in-file-explorer" class="level3">
+<h3 class="anchored" data-anchor-id="step-12-open-linux-files-in-file-explorer">Step 12: Open Linux Files in File Explorer</h3>
+<p>Open a <strong>File Explorer</strong> window.</p>
+<ol type="1">
+<li>Open File Explorer.</li>
+<li>In the left-side panel, locate <strong>Linux</strong> (penguin icon).</li>
+<li>Click <strong>Linux</strong>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/12-this-pc.png" class="img-fluid figure-img"></p>
+<figcaption>Linux in File Explorer</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-13-open-ubuntu" class="level3">
+<h3 class="anchored" data-anchor-id="step-13-open-ubuntu">Step 13: Open Ubuntu</h3>
+<p>Double-click on <strong>Ubuntu</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/13-linux-dir.png" class="img-fluid figure-img"></p>
+<figcaption>Ubuntu Folder</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-14-open-home" class="level3">
+<h3 class="anchored" data-anchor-id="step-14-open-home">Step 14: Open Home</h3>
+<p>Double-click on <strong>home</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/14-ubuntu-root.png" class="img-fluid figure-img"></p>
+<figcaption>Home Folder</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-15-open-your-user-folder" class="level3">
+<h3 class="anchored" data-anchor-id="step-15-open-your-user-folder">Step 15: Open Your User Folder</h3>
+<p>Double-click on the folder that matches the username you entered in Step 06.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/15-home.png" class="img-fluid figure-img"></p>
+<figcaption>User Folder</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-16-view-the-home-directory" class="level3">
+<h3 class="anchored" data-anchor-id="step-16-view-the-home-directory">Step 16: View the Home Directory</h3>
+<p>You are now viewing the same home directory that is shown in the Ubuntu terminal, but through File Explorer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/16-user-home.png" class="img-fluid figure-img"></p>
+<figcaption>Home Directory</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-17-create-a-new-folder" class="level3">
+<h3 class="anchored" data-anchor-id="step-17-create-a-new-folder">Step 17: Create a New Folder</h3>
+<p>Return to the Ubuntu terminal.</p>
+<p>Type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> test</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and press <strong>ENTER</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/17-mkdir-test.png" class="img-fluid figure-img"></p>
+<figcaption>Create Folder</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-18-refresh-file-explorer" class="level3">
+<h3 class="anchored" data-anchor-id="step-18-refresh-file-explorer">Step 18: Refresh File Explorer</h3>
+<p>Nothing may appear immediately in File Explorer.</p>
+<p>In WSL, you often need to refresh the window before changes become visible.</p>
+<p>Click the <strong>Refresh</strong> button near the top of the File Explorer window.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/18-refresh.png" class="img-fluid figure-img"></p>
+<figcaption>Refresh Explorer</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-19-verify-the-new-folder" class="level3">
+<h3 class="anchored" data-anchor-id="step-19-verify-the-new-folder">Step 19: Verify the New Folder</h3>
+<p>After refreshing, you should now see the newly created <strong>test</strong> folder.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wsl/19-mkdir-result.png" class="img-fluid figure-img"></p>
+<figcaption>Test Folder Visible</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="key-points" class="level2">
+<h2 class="anchored" data-anchor-id="key-points">Key points</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>WSL allows Linux software to run directly within Windows.</li>
+<li>Ubuntu is the Linux distribution used throughout this course.</li>
+<li>Your Linux files are stored separately from your Windows files.</li>
+<li>The <code>~</code> symbol represents your Linux home directory.</li>
+<li>Changes made in the terminal may require refreshing File Explorer before they appear.</li>
+<li>You do not need administrator privileges to use Ubuntu after installation.</li>
+<li>WSL only needs to be installed once on your computer.</li>
+<li>After completing this lesson, you can proceed to Conda installation.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="next-step" class="level2">
+<h2 class="anchored" data-anchor-id="next-step">Next Step</h2>
+<p>WSL has now been successfully installed.</p>
+<p>You may now proceed to the <strong>Conda Installation Guide</strong>.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1029,10 +1239,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../help/workflow_management.html" class="pagination-link" aria-label="Workflow Management Systems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Workflow Management Systems</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./materials/1_pathogen_genomic_surveillances.html" class="pagination-link" aria-label="Pathogen genomic surveillances">
-        <span class="nav-page-text">Pathogen genomic surveillances</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../help/installing_conda.html" class="pagination-link" aria-label="Installing Conda and Bioinformatics Tools">
+        <span class="nav-page-text">Installing Conda and Bioinformatics Tools</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
