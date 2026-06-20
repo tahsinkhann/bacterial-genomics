@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Working with sra-tools – Introduction to Bacterial Genomics</title>
+<title>Training Support – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,65 +20,30 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-81fe5dcfeb64615fe1e55f802320c342.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-81fe5dcfeb64615fe1e55f802320c342.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,8 +73,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Working with sra-tools – Introduction to Bacterial Genomics">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Training Support – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
 </head>
@@ -292,11 +257,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../assets/images.png" alt="icddr,b" class="navbar-logo light-content">
-    <img src="../../assets/images.png" alt="icddr,b" class="navbar-logo dark-content">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/images.png" alt="icddr,b" class="navbar-logo light-content">
+    <img src="../assets/images.png" alt="icddr,b" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Introduction to Bacterial Genomics</span>
     </a>
   </div>
@@ -311,15 +276,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../schedule.html"> 
+    <a class="nav-link" href="../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../materials.html"> 
+    <a class="nav-link" href="../materials.html"> 
 <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -328,11 +293,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="../../help/workflow_management.html">
+    <a class="dropdown-item" href="../help/workflow_management.html">
  <span class="dropdown-text">Workflow Management Systems</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../help/unix_cheat_sheet.html">
+    <a class="dropdown-item" href="../help/unix_cheat_sheet.html">
  <span class="dropdown-text">Unix Cheat Sheet</span></a>
   </li>  
         <li>
@@ -340,11 +305,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Report bugs</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../help/forum.html">
+    <a class="dropdown-item" href="../help/forum.html">
  <span class="dropdown-text">Forum Q&amp;A Github</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../help/google_form.html">
+    <a class="dropdown-item" href="../help/google_form.html">
  <span class="dropdown-text">Forum Q&amp;A Google Form</span></a>
   </li>  
     </ul>
@@ -376,8 +341,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#need-help" id="toc-need-help" class="nav-link active" data-scroll-target="#need-help">Need Help?</a></li>
+  <li><a href="#submit-a-question" id="toc-submit-a-question" class="nav-link" data-scroll-target="#submit-a-question">Submit a Question</a></li>
+  <li><a href="#response-time" id="toc-response-time" class="nav-link" data-scroll-target="#response-time">Response Time</a></li>
+  <li><a href="#before-submitting" id="toc-before-submitting" class="nav-link" data-scroll-target="#before-submitting">Before submitting</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -385,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Working with sra-tools</h1>
+<h1 class="title">Training Support</h1>
 </div>
 
 
@@ -402,28 +376,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>If you have completed <a href="../../help/wsl/conda_installation.html">conda installation tutorial</a>, our first step would be to downalod data from public repositories. for this we have to install <code>sra-tools</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate wgs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install bioconda::sra-tools <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Let’s download the sequence files for <em>Aeromonas caviae</em> <code>SRR31323044</code> from NCBI SRA database.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">prefetch</span> <span class="at">--help</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># if it works move to next command</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">prefetch</span> SRR31323044</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If the file is downloaded successfully, our step would to split files into two files, <code>R1/forward read</code> and <code>R2/reverence read</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fasterq-dump</span> SRR31323044/SRR31323044.sra <span class="at">--split-files</span> <span class="at">--threads</span> 8 </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You will two files have been created as</p>
-<ul>
-<li><code>SRR31323044_1.fastq</code></li>
-<li><code>SRR31323044_2.fastq</code></li>
-</ul>
-<p>Your step would be to run:</p>
-<pre><code>- FastQC        #quality check the raw reads 
-- Trimmomatic   #trimming the raw reads
-- Spades        #contigs generation from trimmed reads
-- Quast         #quality check for the generated contigs</code></pre>
-<p>You can do it by yourself, I believe you gained enough cofidence to do all the analysis by yourself. Best wishes!!!</p>
+<section id="need-help" class="level2">
+<h2 class="anchored" data-anchor-id="need-help">Need Help?</h2>
+<p>If you encounter any problems during or after the training, please submit your question using the form below.</p>
+</section>
+<section id="submit-a-question" class="level2">
+<h2 class="anchored" data-anchor-id="submit-a-question">Submit a Question</h2>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfiV4OMza3oqWQzaxMN_l-xJOzc_EKfwhB0Sj-37l8y6Cg7og/viewform?usp=publish-editor" target="_blank"> Click here to submit a question </a></p>
+</section>
+<section id="response-time" class="level2">
+<h2 class="anchored" data-anchor-id="response-time">Response Time</h2>
+<p>Questions are usually answered within 24–48 hours.</p>
+</section>
+<section id="before-submitting" class="level2">
+<h2 class="anchored" data-anchor-id="before-submitting">Before submitting</h2>
+<p>Please include:</p>
+<ol type="1">
+<li>The exercise or module</li>
+<li>The command you ran</li>
+<li>The error message</li>
+</ol>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
