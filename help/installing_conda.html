@@ -685,7 +685,7 @@ Using separate environments keeps tools organised and reduces software conflicts
 </section>
 <section id="step-5-update-conda-2" class="level4">
 <h4 class="anchored" data-anchor-id="step-5-update-conda-2">Step 5: Update conda</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> update <span class="at">-n</span> base <span class="at">-c</span> defaults conda</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> update <span class="at">-n</span> base conda</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </div>
 </div>
@@ -741,7 +741,7 @@ defaults</code></pre>
 </tr>
 <tr class="even">
 <td>Update conda</td>
-<td><code>conda update -n base -c defaults conda</code></td>
+<td><code>conda update -n base conda</code></td>
 </tr>
 <tr class="odd">
 <td>List environments</td>
@@ -858,24 +858,24 @@ Tip
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install sra-tools=3.4.1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Check installation:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">prefetch</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Deactivate:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Note">
+<div class="callout callout-style-default callout-warning callout-titled" title="Warning">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Note
+<span class="screen-reader-only">Warning</span>Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>If you face errors due to <code>sra-tools</code> conflicting with latest <code>Conda</code> version, type the following and install again</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--set</span> plugins.use_sharded_repodata false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> clean <span class="at">--index-cache</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install sra-tools=3.4.1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--set</span> plugins.use_sharded_repodata false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> clean <span class="at">--index-cache</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install sra-tools=3.4.1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
+<p>Deactivate:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="environment-2-qc" class="level3">
 <h3 class="anchored" data-anchor-id="environment-2-qc">Environment 2: QC</h3>
@@ -936,7 +936,7 @@ Tip
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb70"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> annotation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb71"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate annotation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Install annotation tools:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb72"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge prokka=1.15.6</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb72"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install prokka=1.15.6</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Check installation:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb73"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="ex">prokka</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Deactivate:</p>
@@ -1191,52 +1191,51 @@ taxo.k2d</code></pre>
 <span id="cb112-23"><a href="#cb112-23" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> classify</span>
 <span id="cb112-24"><a href="#cb112-24" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate classify</span>
 <span id="cb112-25"><a href="#cb112-25" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install kraken2 krona</span>
-<span id="cb112-26"><a href="#cb112-26" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge wget</span>
-<span id="cb112-27"><a href="#cb112-27" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
-<span id="cb112-28"><a href="#cb112-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-29"><a href="#cb112-29" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> mlst</span>
-<span id="cb112-30"><a href="#cb112-30" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate mlst</span>
-<span id="cb112-31"><a href="#cb112-31" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install mlst</span>
-<span id="cb112-32"><a href="#cb112-32" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
-<span id="cb112-33"><a href="#cb112-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-34"><a href="#cb112-34" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> annotation</span>
-<span id="cb112-35"><a href="#cb112-35" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate annotation</span>
-<span id="cb112-36"><a href="#cb112-36" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install prokka</span>
-<span id="cb112-37"><a href="#cb112-37" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
-<span id="cb112-38"><a href="#cb112-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-39"><a href="#cb112-39" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> amr</span>
-<span id="cb112-40"><a href="#cb112-40" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate amr</span>
-<span id="cb112-41"><a href="#cb112-41" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install abricate</span>
-<span id="cb112-42"><a href="#cb112-42" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
-<span id="cb112-43"><a href="#cb112-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-44"><a href="#cb112-44" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> pangenome</span>
-<span id="cb112-45"><a href="#cb112-45" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pangenome</span>
-<span id="cb112-46"><a href="#cb112-46" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install panaroo</span>
-<span id="cb112-47"><a href="#cb112-47" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
-<span id="cb112-48"><a href="#cb112-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-49"><a href="#cb112-49" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> phylogeny</span>
-<span id="cb112-50"><a href="#cb112-50" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate phylogeny</span>
-<span id="cb112-51"><a href="#cb112-51" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install snp-sites iqtree</span>
-<span id="cb112-52"><a href="#cb112-52" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
-<span id="cb112-53"><a href="#cb112-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-54"><a href="#cb112-54" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate assembly</span>
-<span id="cb112-55"><a href="#cb112-55" aria-hidden="true" tabindex="-1"></a><span class="ex">checkm2</span> database <span class="at">--download</span></span>
-<span id="cb112-56"><a href="#cb112-56" aria-hidden="true" tabindex="-1"></a><span class="ex">checkm2</span> database <span class="at">--list</span></span>
-<span id="cb112-57"><a href="#cb112-57" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
-<span id="cb112-58"><a href="#cb112-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-59"><a href="#cb112-59" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate classify</span>
-<span id="cb112-60"><a href="#cb112-60" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/databases</span>
-<span id="cb112-61"><a href="#cb112-61" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/databases</span>
-<span id="cb112-62"><a href="#cb112-62" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://genome-idx.s3.amazonaws.com/kraken/k2_standard_08gb_20260226.tar.gz</span>
-<span id="cb112-63"><a href="#cb112-63" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> minikrakendb</span>
-<span id="cb112-64"><a href="#cb112-64" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvzf</span> k2_standard_08gb_20260226.tar.gz <span class="at">-C</span> minikrakendb</span>
-<span id="cb112-65"><a href="#cb112-65" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> minikrakendb</span>
-<span id="cb112-66"><a href="#cb112-66" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
-<span id="cb112-67"><a href="#cb112-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-68"><a href="#cb112-68" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate annotation</span>
-<span id="cb112-69"><a href="#cb112-69" aria-hidden="true" tabindex="-1"></a><span class="ex">prokka</span> <span class="at">--setupdb</span></span>
-<span id="cb112-70"><a href="#cb112-70" aria-hidden="true" tabindex="-1"></a><span class="ex">prokka</span> <span class="at">--listdb</span></span>
-<span id="cb112-71"><a href="#cb112-71" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb112-26"><a href="#cb112-26" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
+<span id="cb112-27"><a href="#cb112-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-28"><a href="#cb112-28" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> mlst</span>
+<span id="cb112-29"><a href="#cb112-29" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate mlst</span>
+<span id="cb112-30"><a href="#cb112-30" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install mlst</span>
+<span id="cb112-31"><a href="#cb112-31" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
+<span id="cb112-32"><a href="#cb112-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-33"><a href="#cb112-33" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> annotation</span>
+<span id="cb112-34"><a href="#cb112-34" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate annotation</span>
+<span id="cb112-35"><a href="#cb112-35" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install prokka</span>
+<span id="cb112-36"><a href="#cb112-36" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
+<span id="cb112-37"><a href="#cb112-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-38"><a href="#cb112-38" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> amr</span>
+<span id="cb112-39"><a href="#cb112-39" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate amr</span>
+<span id="cb112-40"><a href="#cb112-40" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install abricate</span>
+<span id="cb112-41"><a href="#cb112-41" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
+<span id="cb112-42"><a href="#cb112-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-43"><a href="#cb112-43" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> pangenome</span>
+<span id="cb112-44"><a href="#cb112-44" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pangenome</span>
+<span id="cb112-45"><a href="#cb112-45" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install panaroo</span>
+<span id="cb112-46"><a href="#cb112-46" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
+<span id="cb112-47"><a href="#cb112-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-48"><a href="#cb112-48" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> phylogeny</span>
+<span id="cb112-49"><a href="#cb112-49" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate phylogeny</span>
+<span id="cb112-50"><a href="#cb112-50" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install snp-sites iqtree</span>
+<span id="cb112-51"><a href="#cb112-51" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
+<span id="cb112-52"><a href="#cb112-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-53"><a href="#cb112-53" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate assembly</span>
+<span id="cb112-54"><a href="#cb112-54" aria-hidden="true" tabindex="-1"></a><span class="ex">checkm2</span> database <span class="at">--download</span></span>
+<span id="cb112-55"><a href="#cb112-55" aria-hidden="true" tabindex="-1"></a><span class="ex">checkm2</span> database <span class="at">--list</span></span>
+<span id="cb112-56"><a href="#cb112-56" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
+<span id="cb112-57"><a href="#cb112-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-58"><a href="#cb112-58" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate classify</span>
+<span id="cb112-59"><a href="#cb112-59" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/databases</span>
+<span id="cb112-60"><a href="#cb112-60" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/databases</span>
+<span id="cb112-61"><a href="#cb112-61" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://genome-idx.s3.amazonaws.com/kraken/k2_standard_08gb_20260226.tar.gz</span>
+<span id="cb112-62"><a href="#cb112-62" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> minikrakendb</span>
+<span id="cb112-63"><a href="#cb112-63" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvzf</span> k2_standard_08gb_20260226.tar.gz <span class="at">-C</span> minikrakendb</span>
+<span id="cb112-64"><a href="#cb112-64" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> minikrakendb</span>
+<span id="cb112-65"><a href="#cb112-65" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
+<span id="cb112-66"><a href="#cb112-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-67"><a href="#cb112-67" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate annotation</span>
+<span id="cb112-68"><a href="#cb112-68" aria-hidden="true" tabindex="-1"></a><span class="ex">prokka</span> <span class="at">--setupdb</span></span>
+<span id="cb112-69"><a href="#cb112-69" aria-hidden="true" tabindex="-1"></a><span class="ex">prokka</span> <span class="at">--listdb</span></span>
+<span id="cb112-70"><a href="#cb112-70" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
