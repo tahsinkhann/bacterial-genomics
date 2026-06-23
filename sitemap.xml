@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/help/installing_conda.html</loc>
-    <lastmod>2026-06-21T09:21:01.816Z</lastmod>
+    <lastmod>2026-06-23T17:14:44.390Z</lastmod>
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/help/abcd.html</loc>
@@ -10,7 +10,11 @@
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/help/wsl_installation.html</loc>
-    <lastmod>2026-06-20T11:10:39.554Z</lastmod>
+    <lastmod>2026-06-23T17:08:14.542Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/conda_tutorial/data_download.html</loc>
+    <lastmod>2025-09-30T10:04:12.521Z</lastmod>
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/help/workflow_management.html</loc>
@@ -19,10 +23,6 @@
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/help/unix_cheat_sheet.html</loc>
     <lastmod>2025-09-25T17:34:31.293Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/wsl/data_download.html</loc>
-    <lastmod>2025-09-30T10:04:12.521Z</lastmod>
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/setup.html</loc>
@@ -125,16 +125,16 @@
     <lastmod>2026-06-19T20:29:42.305Z</lastmod>
   </url>
   <url>
-    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/wsl/conda_installation.html</loc>
-    <lastmod>2025-09-28T09:02:44.143Z</lastmod>
-  </url>
-  <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/help/docker_tutorial.html</loc>
     <lastmod>2025-09-20T20:53:57.562Z</lastmod>
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/help/forum.html</loc>
     <lastmod>2026-06-20T12:03:10.479Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tahsinkhann.github.io/bacterial-genomics/help/conda_tutorial/conda_installation.html</loc>
+    <lastmod>2025-09-28T09:02:44.143Z</lastmod>
   </url>
   <url>
     <loc>https://tahsinkhann.github.io/bacterial-genomics/help/sra_comparative_analysis.html</loc>
