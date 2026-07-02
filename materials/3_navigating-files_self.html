@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Materials – Introduction to Bacterial Genomics</title>
+<title>Navigating Files – Introduction to Bacterial Genomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,31 +20,65 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./materials/1_pathogen_genomic_surveillances.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-81fe5dcfeb64615fe1e55f802320c342.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-81fe5dcfeb64615fe1e55f802320c342.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-0fa2875a370f11cf65aa352d0a19802e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,13 +108,15 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Materials – Introduction to Bacterial Genomics">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Navigating Files – Introduction to Bacterial Genomics">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://tahsinkhann.github.io/bacterial-genomics/help/.png">
 <meta property="og:site_name" content="Introduction to Bacterial Genomics">
+<meta property="og:image:alt" content="o">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -258,11 +294,11 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/images.png" alt="icddr,b" class="navbar-logo light-content">
-    <img src="./assets/images.png" alt="icddr,b" class="navbar-logo dark-content">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/images.png" alt="icddr,b" class="navbar-logo light-content">
+    <img src="../assets/images.png" alt="icddr,b" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Introduction to Bacterial Genomics</span>
     </a>
   </div>
@@ -277,15 +313,15 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html"> 
+    <a class="nav-link" href="../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./materials.html"> 
+    <a class="nav-link" href="../materials.html"> 
 <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -294,19 +330,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="./help/workflow_management.html">
+    <a class="dropdown-item" href="../help/workflow_management.html">
  <span class="dropdown-text">Workflow Management Systems</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./help/unix_cheat_sheet.html">
+    <a class="dropdown-item" href="../help/unix_cheat_sheet.html">
  <span class="dropdown-text">Unix Cheat Sheet</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./help/forum.html">
+    <a class="dropdown-item" href="../help/forum.html">
  <span class="dropdown-text">Forum Q&amp;A Github</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./help/google_form.html">
+    <a class="dropdown-item" href="../help/google_form.html">
  <span class="dropdown-text">Forum Q&amp;A Google Form</span></a>
   </li>  
     </ul>
@@ -333,149 +369,35 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Materials</h1>
-        </a>     
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
-      </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Materials</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Pathogen of Interest</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/1_pathogen_genomic_surveillances.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pathogen genomic surveillances</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Introduction to NGS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/2_into-ngs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to NGS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/conda_environments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conda Environments</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Quality Control of Raw Reads</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/4_qc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quality Control of Raw Reads</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/5_trimming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Trimming to Retain High Quality Data</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Genome Assembly</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/6_assembly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><em>De novo</em> Assembly</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/7_qc_assembly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quality Control of Assembly File</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Classification</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/8_taxonomy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taxonomy: Kraken2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./materials/9_mlst.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MLST-Multilocus Sequence Typing</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a>
+  <ul class="collapse">
+  <li><a href="#step-1-open-ubuntu" id="toc-step-1-open-ubuntu" class="nav-link" data-scroll-target="#step-1-open-ubuntu">Step 1: Open Ubuntu</a></li>
+  <li><a href="#step-2-the-bash-terminal" id="toc-step-2-the-bash-terminal" class="nav-link" data-scroll-target="#step-2-the-bash-terminal">Step 2: The Bash Terminal</a></li>
+  <li><a href="#step-3-open-linux-files-in-file-explorer" id="toc-step-3-open-linux-files-in-file-explorer" class="nav-link" data-scroll-target="#step-3-open-linux-files-in-file-explorer">Step 3: Open Linux Files in File Explorer</a></li>
+  <li><a href="#step-4-open-ubuntu" id="toc-step-4-open-ubuntu" class="nav-link" data-scroll-target="#step-4-open-ubuntu">Step 4: Open Ubuntu</a></li>
+  <li><a href="#step-5-open-home" id="toc-step-5-open-home" class="nav-link" data-scroll-target="#step-5-open-home">Step 5: Open Home</a></li>
+  <li><a href="#step-6-open-your-user-folder" id="toc-step-6-open-your-user-folder" class="nav-link" data-scroll-target="#step-6-open-your-user-folder">Step 6: Open Your User Folder</a></li>
+  <li><a href="#step-16-view-the-home-directory" id="toc-step-16-view-the-home-directory" class="nav-link" data-scroll-target="#step-16-view-the-home-directory">Step 16: View the Home Directory</a></li>
+  <li><a href="#step-17-create-a-new-folder" id="toc-step-17-create-a-new-folder" class="nav-link" data-scroll-target="#step-17-create-a-new-folder">Step 17: Create a New Folder</a></li>
+  <li><a href="#step-18-refresh-file-explorer" id="toc-step-18-refresh-file-explorer" class="nav-link" data-scroll-target="#step-18-refresh-file-explorer">Step 18: Refresh File Explorer</a></li>
+  <li><a href="#step-19-verify-the-new-folder" id="toc-step-19-verify-the-new-folder" class="nav-link" data-scroll-target="#step-19-verify-the-new-folder">Step 19: Verify the New Folder</a></li>
+  </ul></li>
+  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical exercise</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next step</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -483,7 +405,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Materials</h1>
+<h1 class="title">Navigating Files</h1>
 </div>
 
 
@@ -500,13 +422,453 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Detailed course materials can be found in this section, including exercises to practice. If you are a self-learner, and working on your local desktop/laptop make sure to check the</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this lesson, we will create a personal working directory, and copy the Day 1 training files into that directory.</p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this lesson, you should be able to:</p>
 <ul>
-<li><a href="./help/workflow_management.html">Conda installation guideline</a> for setting up <code>WSL</code> (<strong>only if working in Windows OS</strong>) and <code>Conda</code> environment.</li>
-<li><a href="./help/unix_cheat_sheet.html">Unix Cheat Sheet</a> for navigating basic shell commands.</li>
+<li>check your current location using <code>pwd</code></li>
+<li>list files using <code>ls</code></li>
+<li>create a personal working directory</li>
+<li>copy Day 1 files using the in-house script</li>
 </ul>
+<!--
+## Connect to the server
+
+Open your terminal and type:
+
+```bash
+ssh genomevm@172.28.28.12
+```
+
+##### Accept the fingerprint
+
+The first time you connect to the server, it may ask for permission to continue connecting.
+
+You may see a message like this:
+
+```text
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+
+Type `yes` and press **Enter**.
+
+```bash
+yes
+```
+
+::: {.callout-note title="Important" collapse=true}
+This fingerprint message usually appears only the first time you connect to the server from your computer.
+:::
+
+##### Enter your password
+
+After accepting the fingerprint, the server will ask for your password. Type your password and press **Enter**.
+
+```bash
+
+```
+
+::: {.callout-warning title="Password note" collapse=true}
+When you type your password in the terminal, it will not be visible.
+
+You will not see letters, dots, or stars. This is normal. Type the password carefully and press **Enter**.
+:::
+
+##### Confirm that you are inside the server
+
+After successful login, you will see the server command prompt.
+
+It may look something like this:
+
+```text
+genomevm@genome-clone-vm2:~$
+```
+
+This means you are now inside the virtual machine.
 
 
+##### Check your current location
+
+Type:
+
+```bash
+pwd
+```
+
+`pwd` means **print working directory**.
+
+It shows where you are currently located in the file system.
+
+You may see something like:
+
+```text
+/home/genomevm
+```
+
+##### List files and folders
+
+Type:
+
+```bash
+ls
+```
+
+`ls` lists the files and folders in your current directory.
+
+You may see something like:
+
+```text
+Desktop   Downloads   Music       Public    Videos
+databases Documents   miniconda3  pictures  Templates
+```
+
+-->
+<section id="step-1-open-ubuntu" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-open-ubuntu">Step 1: Open Ubuntu</h3>
+<ol type="1">
+<li>Click the <strong>Start Menu</strong>.</li>
+<li>Search for <strong>Ubuntu</strong>.</li>
+<li>Click <strong>Ubuntu</strong>.</li>
+</ol>
+<p>Running as administrator is <strong>not</strong> required.</p>
+<p><img src="../help/.png" class="img-fluid" alt="o"> <img src="../../.. 10-ubuntu.png" class="img-fluid" alt="Open Ubuntu"></p>
+<p>This is how you will open an Ubuntu terminal inside Windows.</p>
+</section>
+<section id="step-2-the-bash-terminal" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-the-bash-terminal">Step 2: The Bash Terminal</h3>
+<p>This is called the <strong>Bash terminal</strong>.</p>
+<p>You will see a prompt similar to:</p>
+<pre class="text"><code>username@computer-name:~$</code></pre>
+<p>The tilde character (<code>~</code>) represents your <strong>home directory</strong>.</p>
+<p>If you think of your computer as a house, the home directory is like entering through the front door.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../bacterial-genomics/docs/help/wsl/11-ubuntu-terminal.png" class="img-fluid figure-img"></p>
+<figcaption>Bash Terminal</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-3-open-linux-files-in-file-explorer" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-open-linux-files-in-file-explorer">Step 3: Open Linux Files in File Explorer</h3>
+<p>Open a <strong>File Explorer</strong> window.</p>
+<ol type="1">
+<li>Open File Explorer.</li>
+<li>In the left-side panel, locate <strong>Linux</strong> (penguin icon).</li>
+<li>Click <strong>Linux</strong>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../bacterial-genomics/docs/help/wsl/12-this-pc.png" class="img-fluid figure-img"></p>
+<figcaption>Linux in File Explorer</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-4-open-ubuntu" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-open-ubuntu">Step 4: Open Ubuntu</h3>
+<p>Double-click on <strong>Ubuntu</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../bacterial-genomics/docs/help/wsl/13-linux-dir.png" class="img-fluid figure-img"></p>
+<figcaption>Ubuntu Folder</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-5-open-home" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-open-home">Step 5: Open Home</h3>
+<p>Double-click on <strong>home</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../bacterial-genomics/docs/help/wsl/14-ubuntu-root.png" class="img-fluid figure-img"></p>
+<figcaption>Home Folder</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-6-open-your-user-folder" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-open-your-user-folder">Step 6: Open Your User Folder</h3>
+<p>Double-click on the folder that matches the username you entered in Step 06.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../bacterial-genomics/docs/help/wsl/15-home.png" class="img-fluid figure-img"></p>
+<figcaption>User Folder</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-16-view-the-home-directory" class="level3">
+<h3 class="anchored" data-anchor-id="step-16-view-the-home-directory">Step 16: View the Home Directory</h3>
+<p>You are now viewing the same home directory that is shown in the Ubuntu terminal, but through File Explorer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../bacterial-genomics/docs/help/wsl/16-user-home.png" class="img-fluid figure-img"></p>
+<figcaption>Home Directory</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-17-create-a-new-folder" class="level3">
+<h3 class="anchored" data-anchor-id="step-17-create-a-new-folder">Step 17: Create a New Folder</h3>
+<p>Return to the Ubuntu terminal.</p>
+<p>Type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> test</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and press <strong>ENTER</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../bacterial-genomics/docs/help/wsl/17-mkdir-test.png" class="img-fluid figure-img"></p>
+<figcaption>Create Folder</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-18-refresh-file-explorer" class="level3">
+<h3 class="anchored" data-anchor-id="step-18-refresh-file-explorer">Step 18: Refresh File Explorer</h3>
+<p>Nothing may appear immediately in File Explorer.</p>
+<p>In WSL, you often need to refresh the window before changes become visible.</p>
+<p>Click the <strong>Refresh</strong> button near the top of the File Explorer window.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../bacterial-genomics/docs/help/wsl/18-refresh.png" class="img-fluid figure-img"></p>
+<figcaption>Refresh Explorer</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-19-verify-the-new-folder" class="level3">
+<h3 class="anchored" data-anchor-id="step-19-verify-the-new-folder">Step 19: Verify the New Folder</h3>
+<p>After refreshing, you should now see the newly created <strong>test</strong> folder.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../bacterial-genomics/docs/help/wsl/19-mkdir-result.png" class="img-fluid figure-img"></p>
+<figcaption>Test Folder Visible</figcaption>
+</figure>
+</div>
+<section id="create-a-directory-with-your-name" class="level5">
+<h5 class="anchored" data-anchor-id="create-a-directory-with-your-name">Create a directory with your name</h5>
+<p>Create a directory using your own name.</p>
+<p>For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> tanzim</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use your own name or assigned participant name instead of <code>tanzim</code>.</p>
+<p>For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> tahsin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+<section id="go-inside-your-directory" class="level5">
+<h5 class="anchored" data-anchor-id="go-inside-your-directory">Go inside your directory</h5>
+<p>Move into the directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> tanzim</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check your current location:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You may see something like:</p>
+<pre class="text"><code>/home/genomevm/tanzim</code></pre>
+<p>List the contents:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!--
+At this stage, the directory should be empty.
+
+##### Copy Day 1 files
+
+Now copy the Day 1 files into your working directory using the in-house script:
+
+```bash
+copy_day1_files
+```
+-->
+<p>After the command finishes, list the files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should now see the training files in your directory.</p>
+</section>
+<section id="check-copied-files" class="level5">
+<h5 class="anchored" data-anchor-id="check-copied-files">Check copied files</h5>
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This shows the file names and file sizes in a readable format.</p>
+<p>You may see files such as:</p>
+<pre class="text"><code>S1_R1.fastq.gz      S1_R2.fastq.gz</code></pre>
+</section>
+<section id="basic-navigation-commands" class="level5">
+<h5 class="anchored" data-anchor-id="basic-navigation-commands">Basic navigation commands</h5>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pwd</code></td>
+<td>Show current directory</td>
+</tr>
+<tr class="even">
+<td><code>ls</code></td>
+<td>List files and folders</td>
+</tr>
+<tr class="odd">
+<td><code>mkdir tanzim</code></td>
+<td>Create a directory named <code>tanzim</code></td>
+</tr>
+<tr class="even">
+<td><code>cd tanzim</code></td>
+<td>Move into the <code>tanzim</code> directory</td>
+</tr>
+<tr class="odd">
+<td><code>cd ..</code></td>
+<td>Move one directory back</td>
+</tr>
+<tr class="even">
+<td><code>clear</code></td>
+<td>Clear the terminal screen</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="practical-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise">Practical exercise</h2>
+<p>Complete the following tasks:</p>
+<ol type="1">
+<li>Connect to the server using <code>ssh</code>.</li>
+<li>Accept the fingerprint by typing <code>yes</code>.</li>
+<li>Enter your password.</li>
+<li>Check your current directory using <code>pwd</code>.</li>
+<li>Create a directory with your name.</li>
+<li>Move into your directory.</li>
+<li>Run <code>copy_day1_files</code>.</li>
+<li>Use <code>ls</code> to confirm that files were copied.</li>
+</ol>
+<div class="callout callout-style-default callout-caution callout-titled" title="Exercise: server setup">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Exercise: server setup
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create your own working directory and copy the Day 1 files.</p>
+<p>Replace <code>tanzim</code> with your own name:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> tanzim</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> tanzim</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">copy_day1_files</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A successful setup should look like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> genomevm@172.28.28.12</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">yes</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># type password when prompted</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> tanzim</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> tanzim</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="ex">copy_day1_files</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After running <code>ls</code>, you should see the copied training files.</p>
+</div>
+</div>
+</div>
+<section id="common-problems" class="level5">
+<h5 class="anchored" data-anchor-id="common-problems">Common problems</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problem</th>
+<th>Possible reason</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Permission denied</code></td>
+<td>Wrong password</td>
+<td>Try again carefully</td>
+</tr>
+<tr class="even">
+<td>Password not showing</td>
+<td>Normal terminal behavior</td>
+<td>Type password and press Enter</td>
+</tr>
+<tr class="odd">
+<td><code>ssh: command not found</code></td>
+<td>SSH is not installed or terminal issue</td>
+<td>Use another terminal or install SSH</td>
+</tr>
+<tr class="even">
+<td><code>copy_day1_files: command not found</code></td>
+<td>Script not available in PATH</td>
+<td>Ask instructor</td>
+</tr>
+<tr class="odd">
+<td>Directory already exists</td>
+<td>You already created the folder</td>
+<td>Use <code>cd folder_name</code> or choose a different name</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="key-points" class="level2">
+<h2 class="anchored" data-anchor-id="key-points">Key points</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Use <code>ssh</code> to connect to the training server.</li>
+<li>Type <code>yes</code> if the fingerprint message appears.</li>
+<li>Passwords are invisible while typing in the terminal.</li>
+<li>Use <code>pwd</code> to check your location.</li>
+<li>Use <code>ls</code> to list files.</li>
+<li>Use <code>mkdir</code> to create your own working directory.</li>
+<li>Run <code>copy_day1_files</code> to copy the Day 1 training data.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="next-step" class="level2">
+<h2 class="anchored" data-anchor-id="next-step">Next step</h2>
+<p>In the next lesson, we will inspect FASTQ files and begin read quality control.</p>
+
+
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -927,15 +1289,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./materials/1_pathogen_genomic_surveillances.html" class="pagination-link" aria-label="Pathogen genomic surveillances">
-        <span class="nav-page-text">Pathogen genomic surveillances</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
